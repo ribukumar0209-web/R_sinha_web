@@ -305,103 +305,142 @@ nav {
         .hero-profile::before { background: rgba(0, 12, 24, 0.85); }
     }
 
-    #lab {
-    position: relative;
-    padding: 80px 20px;
-    background-color: #0a0e14; /* Deep Tech Blue/Black */
-    /* CSS-only Hexagon Pattern */
-    background-image: 
-        linear-gradient(30deg, #16202e 12%, transparent 12.5%, transparent 87%, #16202e 87.5%, #16202e),
-        linear-gradient(150deg, #16202e 12%, transparent 12.5%, transparent 87%, #16202e 87.5%, #16202e),
-        linear-gradient(30deg, #16202e 12%, transparent 12.5%, transparent 87%, #16202e 87.5%, #16202e),
-        linear-gradient(150deg, #16202e 12%, transparent 12.5%, transparent 87%, #16202e 87.5%, #16202e),
-        linear-gradient(60deg, #1c2a3d 25%, transparent 25.5%, transparent 75%, #1c2a3d 75%, #1c2a3d),
-        linear-gradient(60deg, #1c2a3d 25%, transparent 25.5%, transparent 75%, #1c2a3d 75%, #1c2a3d);
-    background-size: 80px 140px;
-    background-position: 0 0, 0 0, 40px 70px, 40px 70px, 0 0, 40px 70px;
-    color: #ffffff;
-    text-align: center;
+/* Unique prefix 'res-' to prevent CSS conflicts */
+.res-light-theme {
+    background-color: #ffffff;
+    padding: 100px 5%;
+    color: #333;
+    font-family: 'Plus Jakarta Sans', sans-serif;
 }
 
-/* 2. Text Colors & Typography */
-.section-tag {
-    display: inline-block;
-    color: #00d4ff; /* Tech Cyan */
-    font-weight: 600;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    margin-bottom: 10px;
-}
-
-.section-title {
-    font-size: 2.5rem;
-    color: #ffffff;
-    margin-bottom: 15px;
-}
-
-.section-subtitle {
-    color: #a0aec0; /* Soft Grey for readability */
-    max-width: 700px;
-    margin: 0 auto 50px;
-}
-
-/* 3. Card Styling */
-.lab-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
+.res-container {
     max-width: 1200px;
     margin: 0 auto;
 }
 
-.lab-card {
-    background: rgba(255, 255, 255, 0.03); /* Translucent Glass */
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 16px;
+.res-header {
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.res-tag {
+    color: #b3a369; /* Academic Gold */
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 0.85rem;
+    font-weight: 800;
+}
+
+.res-title {
+    font-size: 2.5rem;
+    color: rgba(0, 12, 24, 0.85); /* Your Primary Blue */
+    margin: 15px 0;
+    font-weight: 700;
+}
+
+.res-accent-line {
+    width: 60px;
+    height: 3px;
+    background: #b3a369;
+    margin: 0 auto 25px;
+}
+
+.res-subtitle {
+    color: #666;
+    max-width: 700px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+/* 3-in-a-row Force Grid */
+.res-grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.res-node {
+    background: #fdfdfd;
+    border: 1px solid #eeeeee;
+    border-radius: 8px;
     overflow: hidden;
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    display: flex;
+    flex-direction: column;
 }
 
-.lab-card:hover {
-    transform: translateY(-10px);
-    border-color: #00d4ff;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+.res-node:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+    border-color: #b3a369;
 }
 
-.card-image img {
+.res-media {
+    height: 200px;
+    overflow: hidden;
+}
+
+.res-media img {
     width: 100%;
-    height: 220px;
+    height: 100%;
     object-fit: cover;
-    opacity: 0.9;
+    transition: transform 0.6s ease;
 }
 
-.card-content {
-    padding: 30px;
+.res-node:hover .res-media img {
+    transform: scale(1.08);
 }
 
-.card-content h3 {
-    color: #ffffff;
+.res-content {
+    padding: 25px;
+    text-align: center;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.res-content h3 {
+    font-size: 1.2rem;
+    color: rgba(0, 12, 24, 0.85);
+    margin-bottom: 12px;
+}
+
+.res-node-text {
+    font-size: 0.9rem;
+    color: #777;
     margin-bottom: 25px;
-    font-size: 1.25rem;
 }
 
-/* 4. Button Design */
-.view-more-btn {
+/* View More Button Styling */
+.res-action-btn {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: #b3a369; /* Gold */
+    color: white;
     text-decoration: none;
-    padding: 12px 28px;
-    border-radius: 50px;
-    background: transparent;
-    border: 2px solid #00d4ff;
-    color: #00d4ff;
+    border-radius: 4px;
     font-weight: 600;
+    font-size: 0.85rem;
     transition: all 0.3s ease;
+    border: 2px solid #b3a369;
+    align-self: center;
 }
 
-.view-more-btn:hover {
-    background: #00d4ff;
-    color: #0a0e14;
-    box-shadow: 0 0 15px rgba(0, 212, 255, 0.5);
+.res-action-btn:hover {
+    background-color: transparent;
+    color: #b3a369;
+}
+
+/* Responsive Scaling */
+@media (max-width: 1024px) {
+    .res-grid-3 { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 650px) {
+    .res-grid-3 { grid-template-columns: 1fr; }
+    .res-title { font-size: 2rem; }
 }
         /* --- SECTION COMMONS --- */
         section { padding: 100px 10%; position: relative; }
@@ -714,7 +753,7 @@ nav {
                 <button class="view-more-toggle">View More</button>
             </div>
             <div class="teaching-card" onclick="toggleTeachingCard(this)">
-                <h4>ES415: Remote Sensing and GIS for Georesource Evaluation</h4>
+                <h4>ES415:Remote Sensing and GIS for Georesource Evaluation</h4>
                 <p>This course focuses on remote sensing and GIS techniques for various earth science related applications. Basic principles of remote sensing and GIS techniques is covered and application studies are discussed using examples and case studies from India and other parts of the world.</p>
                 <div class="expand-content">
                     <p>Remote sensing platforms – satellite-based and airborne sensors; Basic principles of image interpretation; Spectra of earth’s surface material; Interpretation of regional geological and geomorphological features; Lithological and structural mapping, mapping of landforms and interpretation; Basic principles of Geographic Information System (GIS) and its application; Analytical Hierarchy Process (AHP) technique and its integration into GIS. River basin management – drainage mapping, channel movement and morphological changes; river erosion studies; Identification of groundwater potential zones; criteria for identification, integration of controlling factors into GIS; Lake and wetland studies using remote sensing; Water quality mapping; water quality parameters, indices of water quality monitoring; Vegetation Mapping and forestry applications; Application in glaciology and snow hydrology; Coastal zone mapping and other related applications; Natural hazards – floods, landslides, earthquakes; causative factors, choice of data and use of remote sensing technique for mapping and prediction; Mineral resources evaluation with particular reference to digital remote sensing; Application of thermal infrared data for mapping surface moisture and rock types and environmental studies.</p>
@@ -750,64 +789,65 @@ nav {
         <div style="text-align:center;"><a href="https://home.iitk.ac.in/~rsinha/students.html" class="action-btn">Students</a></div>
     </section>
 
-    <section id="lab" class="lab-hero reveal">
-    <div class="content-wrapper">
-        <span class="section-tag">Facilities</span>
-        <h2 class="section-title">Our Laboratories</h2>
-        <p class="section-subtitle">
-            Advanced environments for UAV LiDAR mapping, geospatial analysis, and computational modeling.
-        </p>
+    <section id="research-light-hub" class="res-light-theme">
+    <div class="res-container">
+        <div class="res-header" data-aos="fade-up">
+            <span class="res-tag">Research Infrastructure</span>
+            <h2 class="res-title">Remote Sensing Laboratories</h2>
+            <div class="res-accent-line"></div>
+            <p class="res-subtitle">A world-class facility specializing in UAV-based LiDAR mapping, geospatial modeling, and river basin analysis.</p>
+        </div>
 
-        <div class="lab-grid">
-            
-            <div class="lab-card">
-                <div class="card-image">
-                    <img src="UAV_lab.jpg" alt="Remote Sensing Lab">
+        <div class="res-grid-3">
+            <div class="res-node" data-aos="fade-up">
+                <div class="res-media">
+                    <img src="UAV_lab.jpg" alt="UAV Data Processing Lab">
                 </div>
-                <div class="card-content">
+                <div class="res-content">
                     <h3>UAV Data Processing Lab</h3>
-                    <a href="https://ribukumar0209-web.github.io/my_website/HB_new.html" class="view-more-btn">View More</a>
+                    <a href="https://ribukumar0209-web.github.io/my_website/HB_new.html" class="res-action-btn">View More</a>
                 </div>
             </div>
 
-            <div class="lab-card">
-                <div class="card-image">
-                    <img src="sediment_gate.jpg" alt="UAV Technology Lab">
+            <div class="res-node" data-aos="fade-up" data-aos-delay="100">
+                <div class="res-media">
+                    <img src="sediment_gate.jpg" alt="Sedimentology Lab">
                 </div>
-                <div class="card-content">
+                <div class="res-content">
                     <h3>Sedimentology Lab</h3>
-                    <a href="https://ribukumar0209-web.github.io/my_website/HB_new.html" class="view-more-btn">View More</a>
+                    <a href="https://ribukumar0209-web.github.io/my_website/HB_new.html" class="res-action-btn">View More</a>
                 </div>
             </div>
-            <div class="lab-card">
-                <div class="card-image">
-                    <img src="RS_and_GIS.jpg" alt="Computational Modeling">
-                </div>
-                <div class="card-content">
-                    <h3>Remote Sensing & GIS Lab</h3>
-                    <a href="https://ribukumar0209-web.github.io/my_website/HB_new.html" class="view-more-btn">View More</a>
-                </div>
-            </div>
-            <div class="lab-card">
-                <div class="card-image">
-                    <img src="core_gate.jpg" alt="Computational Modeling">
-                </div>
-                <div class="card-content">
-                    <h3>Core Archive Lab</h3>
-                    <a href="https://ribukumar0209-web.github.io/my_website/HB_new.html" class="view-more-btn">View More</a>
-                </div>
-            </div>
-            <div class="lab-card">
-                <div class="card-image">
-                    <img src="CZO_gate.png" alt="Computational Modeling">
-                </div>
-                <div class="card-content">
-                    <h3>CZO Lab</h3>
-                    <a href="https://ribukumar0209-web.github.io/my_website/HB_new.html" class="view-more-btn">View More</a>
-                </div>
-            </div>
-            
 
+            <div class="res-node" data-aos="fade-up" data-aos-delay="200">
+                <div class="res-media">
+                    <img src="RS_and_GIS.jpg" alt="RS & GIS Lab">
+                </div>
+                <div class="res-content">
+                    <h3>Remote Sensing & GIS Lab</h3>
+                    <a href="https://ribukumar0209-web.github.io/my_website/HB_new.html" class="res-action-btn">View More</a>
+                </div>
+            </div>
+
+            <div class="res-node" data-aos="fade-up">
+                <div class="res-media">
+                    <img src="core_gate.jpg" alt="Core Archive Lab">
+                </div>
+                <div class="res-content">
+                    <h3>Core Archive Lab</h3>
+                    <a href="https://ribukumar0209-web.github.io/my_website/HB_new.html" class="res-action-btn">View More</a>
+                </div>
+            </div>
+
+            <div class="res-node" data-aos="fade-up" data-aos-delay="100">
+                <div class="res-media">
+                    <img src="CZO_gate.png" alt="CZO Lab">
+                </div>
+                <div class="res-content">
+                    <h3>CZO Lab</h3>
+                    <a href="https://ribukumar0209-web.github.io/my_website/HB_new.html" class="res-action-btn">View More</a>
+                </div>
+            </div>
         </div>
     </div>
 </section>
