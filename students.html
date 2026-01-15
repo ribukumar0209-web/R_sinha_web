@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Students Mentored | RS Lab</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            background-color: #f8fafc;
+            color: #1e293b;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 1.5rem;
+        }
+        h1, h2 {
+            text-align: center;
+            color: #1e40af;
+        }
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 3rem;
+        }
+        h2 {
+            font-size: 1.75rem;
+            font-weight: 600;
+            margin: 3rem 0 2rem;
+        }
+        .students-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+        }
+        .student-card {
+            background-color: #fff;
+            border-radius: 1.5rem;
+            padding: 1.5rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            text-align: center;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .student-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+        }
+        .avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background-color: #e0e7ff;
+            color: #1e40af;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin: 0 auto 0.75rem auto;
+        }
+        .student-name {
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+        .student-field {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            color: #64748b;
+            margin-bottom: 0.5rem;
+        }
+        .student-desc {
+            font-size: 0.8rem;
+            color: #475569;
+        }
+        footer {
+            background-color: #1e293b;
+            color: #fff;
+            text-align: center;
+            padding: 2rem 1rem;
+            margin-top: 3rem;
+        }
+    </style>
+</head>
+<body>
+
+    <section class="container">
+        <h1>Students Mentored</h1>
+
+        <!-- Current PhD Scholars -->
+        <h2>Current Ph.D Scholars</h2>
+        <div class="students-grid">
+            <div class="student-card">
+    <div class="avatar">SS</div>
+    <div class="student-name">Shobhit Singh</div>
+    <div class="student-field">Hydro-Geomorphic</div>
+    <div class="student-desc">Flood risk assessment of the Ghaghra River system.</div>
+</div>
+
+<div class="student-card">
+    <div class="avatar">AS</div>
+    <div class="student-name">Abhishek Sinha</div>
+    <div class="student-field">Wetland Health</div>
+    <div class="student-desc">Assessment of hydrologic connectivity in Ganga wetlands.</div>
+</div>
+
+<div class="student-card">
+    <div class="avatar">MA</div>
+    <div class="student-name">Moumika Akuria</div>
+    <div class="student-field">Connectivity</div>
+    <div class="student-desc">Anthropogenic impacts on hydrological connectivity.</div>
+</div>
+
+<div class="student-card">
+    <div class="avatar">AY</div>
+    <div class="student-name">Ankit Yadav</div>
+    <div class="student-field">Sediment Dynamics</div>
+    <div class="student-desc">Sediment dynamics and cascading hazards.</div>
+</div>
+
+<div class="student-card">
+    <div class="avatar">SS</div>
+    <div class="student-name">Sarita Sahoo</div>
+    <div class="student-field">Hyperspectral Remote Sensing</div>
+    <div class="student-desc">Shoreline dynamics and implications on Chilika wetland's stability.</div>
+</div>
+
+<div class="student-card">
+    <div class="avatar">AV</div>
+    <div class="student-name">Ajusree VK</div>
+    <div class="student-field">Hydrology & Remote Sensing</div>
+    <div class="student-desc">Hydrology and Remote Sensing.</div>
+</div>
+
+<div class="student-card">
+    <div class="avatar">AR</div>
+    <div class="student-name">Atmika Ray</div>
+    <div class="student-field">River Sciences</div>
+    <div class="student-desc">Spatiotemporal dynamics of riverine islands.</div>
+</div>
+
+<div class="student-card">
+    <div class="avatar">SK</div>
+    <div class="student-name">Shefali Kuril</div>
+    <div class="student-field">Agricultural Monitoring</div>
+    <div class="student-desc">Thermal imaging in agriculture-dominated CZO in Ganga basin.</div>
+</div>
+        </div>
+
+        <!-- Past PhD Scholars -->
+        <h2>Past Ph.D Scholars</h2>
+        <div class="students-grid">
+            <div class="student-card">
+    <div class="avatar">SD</div>
+    <div class="student-name">Saroj Kumar Dash</div>
+    <div class="student-field">CZO Modeling</div>
+    <div class="student-desc">Estimating soil moisture & crop water stress in Ganga CZO.</div>
+</div>
+
+<div class="student-card">
+    <div class="avatar">SB</div>
+    <div class="student-name">Sohini Bhattacharya</div>
+    <div class="student-field">Sediment Flux</div>
+    <div class="student-desc">Understanding soil variability in the Anthropocene (U. Potsdam joint).</div>
+</div>
+
+<div class="student-card">
+    <div class="avatar">AA</div>
+    <div class="student-name">Aqib Ansari</div>
+    <div class="student-field">River Health</div>
+    <div class="student-desc">Health assessment of Ganga-Ramganga using Flow Cytometry.</div>
+</div>
+
+<div class="student-card">
+    <div class="avatar">AK</div>
+    <div class="student-name">Abid Khan</div>
+    <div class="student-field">Groundwater</div>
+    <div class="student-desc">Groundwater modelling in urban settings.</div>
+</div>
+
+<div class="student-card">
+    <div class="avatar">KM</div>
+    <div class="student-name">Kanchan Mishra</div>
+    <div class="student-field">Sedimentology</div>
+    <div class="student-desc">Sediment dynamics and sediment connectivity in the Kosi basin: implications for river hazards.</div>
+</div>
+
+<div class="student-card">
+    <div class="avatar">AS</div>
+    <div class="student-name">Ajit Singh</div>
+    <div class="student-field">Sedimentology</div>
+    <div class="student-desc">Sub-surface stratigraphy and sedimentology of the Ghaggar plains: linkage of landscape evolution and cultural heritage.</div>
+</div>
+
+<div class="student-card">
+    <div class="avatar">DS</div>
+    <div class="student-name">Dipro Sarkar</div>
+    <div class="student-field">Terrain Monitoring</div>
+    <div class="student-desc">Terrain mapping and water quality monitoring from airborne platforms. Integrating UAV technology with community-based tools for monitoring water quality of the Ganga River.</div>
+</div>
+
+<div class="student-card">
+    <div class="avatar">PM</div>
+    <div class="student-name">Pavani Mishra</div>
+    <div class="student-field">Deposition Analysis</div>
+    <div class="student-desc">High-resolution paleoclimatic reconstruction and depositional environments of paleolake sediments in the Ganga plains.</div>
+</div>
+
+<div class="student-card">
+    <div class="avatar">IK</div>
+    <div class="student-name">Imran Khan</div>
+    <div class="student-field">Drainage Analysis</div>
+    <div class="student-desc">Drainage reorganisation and sub-surface stratigraphy of the paleo-Yamuna River in Haryana Plains, NW India and its linkage to Harappan Civilization.</div>
+</div>
+
+<div class="student-card">
+    <div class="avatar">SS</div>
+    <div class="student-name">Somil Swrankar</div>
+    <div class="student-field">Sedimentology</div>
+    <div class="student-desc">Soil erosion and sediment flux estimation from landscape evolution models.</div>
+</div>
+
+<div class="student-card">
+    <div class="avatar">MN</div>
+    <div class="student-name">Manudeo Narayan Singh</div>
+    <div class="student-field">Wetlands</div>
+    <div class="student-desc">Wetland dynamics and hydrological connectivity in a tropical floodplain setting, Kaabar Tal, North Bihar, India.</div>
+</div>
+
+<div class="student-card">
+    <div class="avatar">HM</div>
+    <div class="student-name">Haridas Mohanta</div>
+    <div class="student-field">Geomorphology</div>
+    <div class="student-desc">Geomorphic diversity, connectivity and river health assessment of the Ganga River and their application for river management.</div>
+</div>
+
+<div class="student-card">
+    <div class="avatar">SK</div>
+    <div class="student-name">Suneel Kumar Joshi</div>
+    <div class="student-field">Groundwater Dynamics</div>
+    <div class="student-desc">Deciphering groundwater dynamics in the Ghaggar basin in northwest India using historical water level data and isotopic techniques.</div>
+</div>
+
+<div class="student-card">
+    <div class="avatar">GK</div>
+    <div class="student-name">Gaurav Kumar</div>
+    <div class="student-field">Morphology</div>
+    <div class="student-desc">Morphology of alluvial rivers (jointly with Francois Metivier and Olivier Devauchelle, IPG Paris).</div>
+</div>
+
+<div class="student-card">
+    <div class="avatar">SS</div>
+    <div class="student-name">Swati Sinha</div>
+    <div class="student-field">Climate</div>
+    <div class="student-desc">Tectonic and climatic controls on landscape evolution in the Dehradun-Nahan salient-recess in the frontal Himalaya.</div>
+</div>
+
+<div class="student-card">
+    <div class="avatar">SK</div>
+    <div class="student-name">S. K. Lahiri</div>
+    <div class="student-field">Morphology</div>
+    <div class="student-desc">Basin evolution, morpho-tectonics and fluvial processes in the Brahmaputra river system, Assam.</div>
+</div>
+
+<div class="student-card">
+    <div class="avatar">AS</div>
+    <div class="student-name">Ananda Sankar Dasgupta</div>
+    <div class="student-field">Geomorphology</div>
+    <div class="student-desc">Valley and interfluve geomorphology and stratigraphy of the southern Ganga plains: implications for Late Quaternary landscape evolution.</div>
+</div>
+
+<div class="student-card">
+    <div class="avatar">NG</div>
+    <div class="student-name">Noni Gopal Roy</div>
+    <div class="student-field">Morphology</div>
+    <div class="student-desc">Morphodynamics and Late Quaternary valley-interfluve stratigraphy of the Western Ganga Plains: rhythmic sequences and monsoonal forcing.</div>
+</div>
+
+<div class="student-card">
+    <div class="avatar">VJ</div>
+    <div class="student-name">Vikrant Jain</div>
+    <div class="student-field">Geomorphology</div>
+    <div class="student-desc">Fluvio-geomorphological analysis of Baghmati river system, North Bihar with special reference to fluvial hazard.</div>
+</div>
+
+        </div>
+
+        <!-- Current M.Tech Scholars -->
+        <h2>M.Tech Scholars</h2>
+        <div class="students-grid">
+            <div class="student-card">
+    <div class="avatar">AT</div>
+    <div class="student-name">Aayush Tiwari</div>
+    <div class="student-field">Morphology</div>
+    <div class="student-desc">Morphological study of the smooth impact melt deposits on the Moon's far side.</div>
+</div>
+
+<div class="student-card">
+    <div class="avatar">AY</div>
+    <div class="student-name">Ankit Yadav</div>
+    <div class="student-field">Active Remote Sensing</div>
+    <div class="student-desc">Active Remote sensing.</div>
+</div>
+
+<div class="student-card">
+    <div class="avatar">SK</div>
+    <div class="student-name">Shefali Kuril</div>
+    <div class="student-field">Agriculture</div>
+    <div class="student-desc">Agricultural monitoring, CZO, Ganga Basin.</div>
+</div>
+
+<div class="student-card">
+    <div class="avatar">NK</div>
+    <div class="student-name">Niharika Kote</div>
+    <div class="student-field">CZO Modeling</div>
+    <div class="student-desc">Estimating soil moisture & crop water stress in Ganga CZO.</div>
+</div>
+
+<div class="student-card">
+    <div class="avatar">SS</div>
+    <div class="student-name">Shobhit Singh</div>
+    <div class="student-field">Hydro-Geomorphic</div>
+    <div class="student-desc">Flood risk assessment of the Ghaghra River system.</div>
+</div>
+
+<div class="student-card">
+    <div class="avatar">SB</div>
+    <div class="student-name">Sambit Behera</div>
+    <div class="student-field">Agriculture</div>
+    <div class="student-desc">Understanding soil moisture–temperature interaction in an agriculture-dominated CZO in the Ganga Basin, India.</div>
+</div>
+
+<div class="student-card">
+    <div class="avatar">SB</div>
+    <div class="student-name">Unnati Patel</div>
+    <div class="student-field">Geomorphology</div>
+    <div class="student-desc">Assessment of geomorphic connectivity under changing LULC scenarios and its implications for management of a coastal wetland, Chilika Lagoon, Odisha, India.</div>
+</div>
+
+        </div>
+
+        
+
+    </section>
+
+    <footer>
+        &copy; 2026 RS Lab, IIT Kanpur. All rights reserved.
+    </footer>
+
+</body>
+</html>
