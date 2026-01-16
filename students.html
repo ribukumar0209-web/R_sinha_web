@@ -9,8 +9,9 @@
         body {
             font-family: 'Inter', sans-serif;
             margin: 0;
-            background-color: #f8fafc;
-            color: #1e293b;
+            /* Dark background is required for the 0.05 transparency to show */
+            background-color: #0f172a; 
+            color: #ffffff;
         }
         .container {
             max-width: 1200px;
@@ -19,17 +20,21 @@
         }
         h1, h2 {
             text-align: center;
-            color: #1e40af;
         }
         h1 {
             font-size: 2.5rem;
             font-weight: 700;
             margin-bottom: 3rem;
+            color: #b3a369; /* Gold Accent */
         }
         h2 {
             font-size: 1.75rem;
             font-weight: 600;
             margin: 3rem 0 2rem;
+            color: #ffffff;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 10px;
+            display: inline-block;
         }
         .students-grid {
             display: grid;
@@ -37,50 +42,59 @@
             gap: 1.5rem;
         }
         .student-card {
-            background-color: #fff;
+            /* Using your requested transparent white */
+            background-color: rgba(255, 255, 255, 0.05); 
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 1.5rem;
             padding: 1.5rem;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
             text-align: center;
-            transition: transform 0.2s, box-shadow 0.2s;
+            transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
         }
         .student-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+            background-color: rgba(255, 255, 255, 0.08);
+            border-color: #b3a369;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
         }
         .avatar {
             width: 80px;
             height: 80px;
             border-radius: 50%;
-            background-color: #e0e7ff;
-            color: #1e40af;
+            /* Using your requested Gold color */
+            background-color: #b3a369; 
+            color: #000000;
             font-weight: 700;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 1.5rem;
             margin: 0 auto 0.75rem auto;
+            box-shadow: 0 4px 15px rgba(241, 196, 15, 0.2);
         }
         .student-name {
             font-weight: 600;
             margin-bottom: 0.25rem;
+            color: #b3a369; /* Names in Gold */
         }
         .student-field {
             font-size: 0.75rem;
             text-transform: uppercase;
-            color: #64748b;
+            color: #94a3b8;
             margin-bottom: 0.5rem;
+            letter-spacing: 0.05em;
         }
         .student-desc {
             font-size: 0.8rem;
-            color: #475569;
+            color: #cbd5e1;
         }
         footer {
-            background-color: #1e293b;
-            color: #fff;
+            background-color: rgba(0, 0, 0, 0.3);
+            color: #94a3b8;
             text-align: center;
             padding: 2rem 1rem;
             margin-top: 3rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
         }
     </style>
 </head>
@@ -351,3 +365,5 @@
 
 </body>
 </html>
+
+
