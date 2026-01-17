@@ -6,6 +6,8 @@
     <title>Prof. Rajiv Sinha | Earth & River Dynamics</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
             --primary: #000c18; 
@@ -445,7 +447,7 @@ nav {
         /* --- SECTION COMMONS --- */
         section { padding: 100px 10%; position: relative; }
         .centered { text-align: center; max-width: 900px; margin: 0 auto; }
-        .section-tag { color: var(--accent); font-weight: 800; letter-spacing: 4px; text-transform: uppercase; font-size: 0.75rem; display: block; margin-bottom: 15px; }
+        .section-tag { color: var(--accent); font-weight: 800; letter-spacing: 4px; text-transform: uppercase; font-size: 1.0rem; display: block; margin-bottom: 15px; }
         h2 { font-family: 'Playfair Display', serif; font-size: 3rem; color: var(--primary); margin-bottom: 40px; }
         .cat-title { font-family: 'Playfair Display', serif; font-size: 1.8rem; color: var(--primary); margin: 40px 0 20px 0; border-bottom: 2px solid var(--accent); display: inline-block; }
 
@@ -627,72 +629,126 @@ nav {
     }
 }
 /* --- REVEAL SYSTEM --- */
-.know-reveal-section {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.8s ease-out;
+/* --- UNIFIED EXPERTISE SECTION --- */
+#expertise-portal {
+    padding: 100px 5%;
+    background: #f8fafc; /* Modern slate background */
+    font-family: 'Inter', sans-serif;
 }
 
-/* This is the class the JavaScript will add */
-.know-reveal-section.know-active {
-    opacity: 1 !important;
-    transform: translateY(0) !important;
+.adv-container { max-width: 1300px; margin: 0 auto; }
+
+.adv-header { text-align: center; margin-bottom: 60px; }
+.adv-tag { 
+    background: #e2e8f0; color: #475569; 
+    padding: 6px 16px; border-radius: 50px; 
+    font-size: 0.75rem; font-weight: 700; text-transform: uppercase; 
 }
+.adv-title { font-size: 2.5rem; color: #1e293b; margin-top: 15px; font-weight: 800; }
 
-/* --- LAYOUT --- */
-.know-section-padding { padding: 80px 10%; }
-.know-container { max-width: 1200px; margin: 0 auto; }
-.know-centered-box { text-align: center; margin-bottom: 50px; }
-.know-label { color: var(--accent); font-weight: 700; text-transform: uppercase; letter-spacing: 1px; font-size: 0.8rem; }
-.know-bg-alt { background: var(--bg-light); }
-
-/* --- GRID --- */
-.know-grid-standard {
+/* --- GRID SYSTEM --- */
+.adv-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 35px;
 }
 
-/* --- CARDS (Awards) --- */
-.know-award-card {
-    background: white;
-    padding: 30px;
-    border-radius: 12px;
-    text-align: center;
-    border: 1px solid #eee;
-}
-
-/* --- CARDS (Skills with Slider) --- */
-.know-feature-card {
-    background: white;
-    border-radius: 15px;
+/* --- ADVANCED CARDS --- */
+.adv-card {
+    background: #ffffff;
+    border-radius: 24px;
     overflow: hidden;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    border: 1px solid rgba(0,0,0,0.05);
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
 }
 
-.know-slider-wrapper { position: relative; height: 200px; overflow: hidden; }
-.know-slider-wrapper img { width: 100%; height: 100%; object-fit: cover; display: none; }
-.know-slider-wrapper img.know-img-active { display: block; }
+.adv-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 25px 50px -12px rgba(0,0,0,0.15);
+}
 
-.know-nav-btn {
+/* --- ADVANCED SLIDER --- */
+.adv-slider { position: relative; height: 240px; width: 100%; overflow: hidden; background: #000; }
+.adv-slides img {
+    position: absolute; width: 100%; height: 100%; object-fit: cover;
+    opacity: 0; transition: opacity 0.6s ease-in-out, transform 0.8s ease;
+    transform: scale(1.05);
+}
+.adv-slides img.active { opacity: 1; transform: scale(1); }
+
+/* Navigation buttons (Glass effect) */
+.adv-nav {
     position: absolute; top: 50%; transform: translateY(-50%);
-    background: rgba(255,255,255,0.8); border: none; width: 35px; height: 35px;
-    border-radius: 50%; cursor: pointer; z-index: 5; transition: 0.3s;
+    background: rgba(255, 255, 255, 0.2); backdrop-filter: blur(8px);
+    border: 1px solid rgba(255,255,255,0.3); color: white;
+    width: 40px; height: 40px; border-radius: 50%; cursor: pointer;
+    z-index: 10; opacity: 0; transition: 0.3s ease;
 }
-.know-nav-btn:hover { background: var(--accent); color: white; }
-.know-prev { left: 10px; }
-.know-next { right: 10px; }
+.adv-card:hover .adv-nav { opacity: 1; }
+.adv-nav:hover { background: #fff; color: #333; }
+.adv-nav.prev { left: 15px; }
+.adv-nav.next { right: 15px; }
 
-.know-card-details { padding: 25px; }
-.know-card-details h3 { font-size: 1.1rem; margin-bottom: 10px; color: var(--primary); }
-.know-card-details p { font-size: 0.9rem; color: #666; }
+/* --- CARD CONTENT --- */
+.adv-content { padding: 30px; flex-grow: 1; }
+.adv-content h3 { font-size: 1.25rem; color: #0f172a; margin-bottom: 12px; font-weight: 700; line-height: 1.3; }
+.adv-content p { color: #64748b; font-size: 0.95rem; line-height: 1.6; }
+
+/* Distinction for Skills sub-section cards */
+.skill-style { border-top: 4px solid #b3a369; }
+
+/* --- UTILITIES --- */
+.adv-divider { border: 0; height: 1px; background: linear-gradient(90deg, transparent, #e2e8f0, transparent); margin: 80px 0; }
+.adv-cta { text-align: center; margin-top: 50px; }
+
+/* --- REVEAL ANIMATION --- */
+.adv-reveal-section { opacity: 0; transform: translateY(40px); transition: all 1s ease; }
+.adv-reveal-section.active { opacity: 1; transform: translateY(0); }
+
+/* --- RESUME SECTION CONTAINER --- */
+#resume {
+    /* Base Contrast: Deep Midnight Navy/Slate */
+    background-color: #8da0d1; 
+    
+    /* EFFECTIVE LAYERING:
+       1. Top-left: Subtle Indigo glow
+       2. Bottom-right: Subtle Teal/Steel glow 
+       3. Overlay: Professional technical grid
+    */
+    background-image: 
+        radial-gradient(at 0% 0%, rgba(99, 102, 241, 0.15) 0px, transparent 50%),
+        radial-gradient(at 100% 100%, rgba(45, 212, 191, 0.1) 0px, transparent 50%),
+        linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    
+    background-size: 100% 100%, 100% 100%, 40px 40px, 40px 40px;
+    
+    /* Layout & Polish */
+    padding: 120px 10%;
+    position: relative;
+    overflow: hidden;
+    color: #f8fafc; /* Ensures section titles/tags are visible on dark */
+}
+
+/* Subtle separator lines to define the contrast */
+#resume::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 10%; right: 10%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+}
+
     </style>
 </head>
 <body>
 
     <header>
     <nav>
-        <div class="logo">Prof. Rajiv <span>Sinha</span></div>
+        <div class="logo">Rajiv <span>Sinha</span></div>
         
         <div class="menu-toggle" id="mobile-menu">
             <div class="bar"></div>
@@ -702,11 +758,11 @@ nav {
 
         <ul class="nav-links" id="nav-list">
             <li><a href="#hero">About</a></li>
-            <li><a href="#research">Research</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#resume">Resume</a></li>
-            <li><a href="#teaching">Teaching</a></li>
-            <li><a href="#research-light-hub">Laboratory</a></li>
+            <li><a href="#expertise-portal">Research</a></li>
+            <li><a href="#resume">Experiences</a></li>
+            <li><a href="#teaching">Courses</a></li>
+            <li><a href="#team">Students</a></li>
+            <li><a href="https://ribukumar0209-web.github.io/my_website/HB_new.html">Laboratory</a></li>
             <li><a href="#honours">Awards</a></li>
             <li><a href="#contact" class="nav-contact-btn-more">Contact</a></li>
         </ul>
@@ -716,11 +772,11 @@ nav {
     <section id="hero"class="hero-profile">
     <div class="profile-container">
         <div class="profile-details reveal">
-            <h2>Prof. Rajiv Sinha</h2>
+            <h2>Rajiv Sinha</h2>
             <div class="designation-badge">Professor | Dept. of Earth Sciences, IIT Kanpur</div>
             
             <p class="modern-p">
-                Renowned for his pioneering work in fluvial geomorphology, Prof. Sinha has dedicated over three decades to deciphering the complex evolution of the Gangetic plains. His research provides critical insights into river connectivity, flood hazards, and landscape responses to climate change, bridging the gap between historical geological records and modern environmental management at IIT Kanpur.
+                Integrating high-resolution Earth Observation with deep time stratigraphic records to decode the complex evolution of Earth’s landscapes, from the pulse of Himalayan rivers to the critical dynamics of modern soil and water systems.
             </p>
             
             <div class="social-icons-bar">
@@ -729,184 +785,232 @@ nav {
                 <a href="mailto:rsinha@iitk.ac.in" title="Email"><i class="fas fa-envelope"></i></a>
             </div>
 
-            <div class="stats-bar">
+            <!-- <div class="stats-bar">
                 <div class="stat-item"><h3>30+</h3><p>Years of Impact</p></div>
                 <div class="stat-item"><h3>400+</h3><p>Publications</p></div>
                 <div class="stat-item"><h3>32+</h3><p>Students Supervised</p></div>
                 <div class="stat-item"><h3>12+</h3><p>National Policies</p></div>
-            </div>
+            </div>-->
         </div>
         
         <div class="profile-visual"></div>
     </div>
 </section>
 
-    <section id="research" class="reveal" style="background: var(--bg-alt);">
-        <div class="centered"><span class="section-tag">Domains</span><h2>Research Interests</h2></div>
-        <div class="grid-3-col">
-            <div class="card-with-slider">
-                <div class="card-slider-container">
-                    <button class="slider-arrow arrow-left"><i class="fas fa-chevron-left"></i></button>
-                    <img src="https://tse4.mm.bing.net/th/id/OIP.x8_VSK8jzyX7lF1a5SO7ZQHaDt?rs=1&pid=ImgDetMain&o=7&rm=3" class="active">
-                    <img src="https://i0.wp.com/esd-iiserkol.in/wp-content/uploads/2021/08/Panorama_IMG1180-IMG1185-scaled.jpg?fit=2560%2C636&ssl=1">
-                    <img src="https://i0.wp.com/esd-iiserkol.in/wp-content/uploads/2021/08/Panorama1-scaled.jpg?fit=2560%2C697&ssl=1">
-                    <button class="slider-arrow arrow-right"><i class="fas fa-chevron-right"></i></button>
-                </div>
-                <div class="card-content">
-                    <h3>Earth Surface dynamics</h3>
-                    <p>Terrain characterisation and landscape analysis using Earth Observation data,Soil moisture and crop water stress estimation using drone-based thermal imaging, wetland hydrology, connectivity and dynamics.</p>
-                </div>
-            </div>
-            <div class="card-with-slider">
-                <div class="card-slider-container">
-                    <button class="slider-arrow arrow-left"><i class="fas fa-chevron-left"></i></button>
-                    <img src="https://th.bing.com/th/id/OIP.sOOVQRgl5oGuQk7AymtbbAHaE7?w=302&h=201&c=7&r=0&o=5&pid=1.7" class="active">
-                    <img src="https://th.bing.com/th/id/OIP.BIyZ6IAYYCR48oAAvqLqAwHaEK?w=280&h=180&c=7&r=0&o=5&pid=1.7">
-                    <img src="https://dailygalaxy.com/wp-content/uploads/2026/01/This-River-Is-Older-Than-Dinosaurs-and-Its-Still-Flowing-scaled.jpg">
-                    <button class="slider-arrow arrow-right"><i class="fas fa-chevron-right"></i></button>
-                </div>
-                <div class="card-content">
-                    <h3>River science</h3>
-                    <p>River dynamics, flood risk assessment, sediment dynamics, river response to climate change, rivers and ancient civilization.</p>
-                </div>
-            </div>
-            <div class="card-with-slider">
-                <div class="card-slider-container">
-                    <button class="slider-arrow arrow-left"><i class="fas fa-chevron-left"></i></button>
-                    <img src="https://thumbs.dreamstime.com/b/raging-water-fast-mountain-river-picturesque-beautiful-mountainous-area-flowing-water-splashes-selective-focus-324389371.jpg" class="active">
-                    <img src="https://thumbs.dreamstime.com/b/water-flowing-over-river-rocks-near-mountains-nathia-gali-abbottabad-pakistan-281410178.jpg">
-                    <img src="https://img.freepik.com/premium-photo/shallow-river-water-stream-with-rocks_632879-65.jpg">
-                    <button class="slider-arrow arrow-right"><i class="fas fa-chevron-right"></i></button>
-                </div>
-                <div class="card-content">
-                    <h3>Groundwater structure and dynamics</h3>
-                    <p>Historical time series analysis, Aquifer stratigraphy.</p>
-                </div>
-            </div>
-            <div class="card-with-slider">
-                <div class="card-slider-container">
-                    <button class="slider-arrow arrow-left"><i class="fas fa-chevron-left"></i></button>
-                    <img src="https://tse1.mm.bing.net/th/id/OIP.Kv-kJNfxzH573PAIQhHkfgHaFN?rs=1&pid=ImgDetMain&o=7&rm=3" class="active">
-                    <img src="https://tse2.mm.bing.net/th/id/OIP.hBDHRHOAvnBKFQq6KNPsXAHaE5?w=850&h=562&rs=1&pid=ImgDetMain&o=7&rm=3">
-                    <img src="https://th.bing.com/th/id/OIP.F-oRh5j4B68Plb7Gmq-rxwHaFD?o=7rm=3&rs=1&pid=ImgDetMain&o=7&rm=3">
-                    <button class="slider-arrow arrow-right"><i class="fas fa-chevron-right"></i></button>
-                </div>
-                <div class="card-content">
-                    <h3>Fluvial sedimentology and stratigraphy</h3>
-                    <p>Late Quaternary stratigraphic development in Himalayan basins.</p>
-                </div>
-            </div>
-            <div class="card-with-slider">
-                <div class="card-slider-container">
-                    <button class="slider-arrow arrow-left"><i class="fas fa-chevron-left"></i></button>
-                    <img src="https://news.mit.edu/sites/default/files/styles/news_article__image_gallery/public/images/202102/MIT-Paleo-Mud-02-press.jpg?itok=2RaJKbHB" class="active">
-                    <img src="https://media.cnn.com/api/v1/images/stellar/prod/220920163825-01-glaciers-gallery-restricted.jpg?c=original&q=h_447,c_fill">
-                    <button class="slider-arrow arrow-right"><i class="fas fa-chevron-right"></i></button>
-                </div>
-                <div class="card-content">
-                    <h3>Palaeoclimatic reconstructions</h3>
-                    <p>High resolution Holocene paleoclimatic reconstruction using a multi-proxy approach.</p>
-                </div>
-            </div>
-        </div>
-        <div style="text-align:center;"><a href="research.html" class="action-btn">Research and Publications</a></div>
-    </section>
+    <section id="expertise-portal" class="adv-reveal-section">
+    <div class="adv-container">
 
-    <section id="skills" class="know-reveal-section know-section-padding know-bg-alt">
-    <div class="know-container">
-        <div class="know-centered-box">
-            <span class="know-label">Core Skills</span>
-            <h2>Technical Expertise</h2>
+        <div class="adv-header">
+            <span class="section-tag">Research & Skills</span>
+            <h2 class="adv-title">Technical Expertise</h2>
         </div>
-        <div class="know-grid-standard">
-            <div class="know-feature-card">
-                <div class="know-slider-wrapper">
-                    <button class="know-nav-btn know-prev"><i class="fas fa-chevron-left"></i></button>
-                    <img src="https://tse4.mm.bing.net/th/id/OIP.P7LBOZiCkGIMyudn3lFHxgHaEM?rs=1&pid=ImgDetMain&o=7&rm=3" class="know-img-active">
-                    <img src="https://tse4.mm.bing.net/th/id/OIP.1S73mpILGuD6Wtk66TzKFQHaC5?rs=1&pid=ImgDetMain&o=7&rm=3">
-                    <button class="know-nav-btn know-next"><i class="fas fa-chevron-right"></i></button>
+
+        <div class="adv-grid">
+            <div class="adv-card skill-style">
+                <div class="adv-slider" data-slider>
+                    <button class="adv-nav prev"><i class="fas fa-chevron-left"></i></button>
+                    <div class="adv-slides">
+                        <img src="https://tse4.mm.bing.net/th/id/OIP.P7LBOZiCkGIMyudn3lFHxgHaEM?rs=1&pid=ImgDetMain&o=7&rm=3" class="active">
+                        <img src="https://tse4.mm.bing.net/th/id/OIP.1S73mpILGuD6Wtk66TzKFQHaC5?rs=1&pid=ImgDetMain&o=7&rm=3">
+                    </div>
+                    <button class="adv-nav next"><i class="fas fa-chevron-right"></i></button>
                 </div>
-                <div class="know-card-details">
+                <div class="adv-content">
                     <h3>Remote Sensing & GIS</h3>
                     <p>Spatial data interpretation and geospatial modeling.</p>
                 </div>
             </div>
 
-            <div class="know-feature-card">
-                <div class="know-slider-wrapper">
-                    <button class="know-nav-btn know-prev"><i class="fas fa-chevron-left"></i></button>
-                    <img src="https://powersuk.com/wp-content/uploads/2022/08/AdobeStock_218870939-scaled.jpeg" class="know-img-active">
-                    <img src="https://www.technology-innovators.com/wp-content/uploads/2023/05/Drone-based-3D-Mapping-and-Surveying-Revolutionizing-Geospatial-Data-Collection-min.jpg">
-                    <button class="know-nav-btn know-next"><i class="fas fa-chevron-right"></i></button>
+            <div class="adv-card skill-style">
+                <div class="adv-slider" data-slider>
+                    <button class="adv-nav prev"><i class="fas fa-chevron-left"></i></button>
+                    <div class="adv-slides">
+                        <img src="https://powersuk.com/wp-content/uploads/2022/08/AdobeStock_218870939-scaled.jpeg" >
+                        <img src="https://www.technology-innovators.com/wp-content/uploads/2023/05/Drone-based-3D-Mapping-and-Surveying-Revolutionizing-Geospatial-Data-Collection-min.jpg" class="active">
+                    </div>
+                    <button class="adv-nav next"><i class="fas fa-chevron-right"></i></button>
                 </div>
-                <div class="know-card-details">
+                <div class="adv-content">
                     <h3>Drone-based Imaging</h3>
                     <p>UAV LiDAR data acquisition and 3D mapping.</p>
                 </div>
             </div>
 
-            <div class="know-feature-card">
-                <div class="know-slider-wrapper">
-                    <button class="know-nav-btn know-prev"><i class="fas fa-chevron-left"></i></button>
-                    <img src="https://tse4.mm.bing.net/th/id/OIP.GUeET2gO77xxmfEg0lmfbgHaE8?rs=1&pid=ImgDetMain&o=7&rm=3" class="know-img-active">
-                    <img src="https://tse3.mm.bing.net/th/id/OIP.geN_XTbVIGa6ZK3aE2chvwHaED?rs=1&pid=ImgDetMain&o=7&rm=3">
-                    <button class="know-nav-btn know-next"><i class="fas fa-chevron-right"></i></button>
+            <div class="adv-card skill-style">
+                <div class="adv-slider" data-slider>
+                    <button class="adv-nav prev"><i class="fas fa-chevron-left"></i></button>
+                    <div class="adv-slides">
+                        <img src="https://tse4.mm.bing.net/th/id/OIP.GUeET2gO77xxmfEg0lmfbgHaE8?rs=1&pid=ImgDetMain&o=7&rm=3" class="active">
+                        <img src="https://tse3.mm.bing.net/th/id/OIP.geN_XTbVIGa6ZK3aE2chvwHaED?rs=1&pid=ImgDetMain&o=7&rm=3">
+                    </div>
+                    <button class="adv-nav next"><i class="fas fa-chevron-right"></i></button>
                 </div>
-                <div class="know-card-details">
+                <div class="adv-content">
                     <h3>Hydrological modeling</h3>
                     <p>Simulating complex rainfall–runoff processes.</p>
                 </div>
             </div>
 
-            <div class="know-feature-card">
-                <div class="know-slider-wrapper">
-                    <button class="know-nav-btn know-prev"><i class="fas fa-chevron-left"></i></button>
-                    <img src="https://thumbs.dreamstime.com/b/captivating-d-geological-cross-section-model-offers-detailed-visualization-earth-s-rock-formations-stratigraphy-355554046.jpg" class="know-img-active">
-                    <img src="https://tse1.mm.bing.net/th/id/OIP.xgn8SpWYbeWHwoFn1H3AvAAAAA?rs=1&pid=ImgDetMain&o=7&rm=3">
-                    <button class="know-nav-btn know-next"><i class="fas fa-chevron-right"></i></button>
+            <div class="adv-card skill-style">
+                <div class="adv-slider" data-slider>
+                    <button class="adv-nav prev"><i class="fas fa-chevron-left"></i></button>
+                    <div class="adv-slides">
+                        <img src="https://thumbs.dreamstime.com/b/captivating-d-geological-cross-section-model-offers-detailed-visualization-earth-s-rock-formations-stratigraphy-355554046.jpg" class="active">
+                        <img src="https://tse1.mm.bing.net/th/id/OIP.xgn8SpWYbeWHwoFn1H3AvAAAAA?rs=1&pid=ImgDetMain&o=7&rm=3">
+                    </div>
+                    <button class="adv-nav next"><i class="fas fa-chevron-right"></i></button>
                 </div>
-                <div class="know-card-details">
+                <div class="adv-content">
                     <h3>Stratigraphic Analysis</h3>
                     <p>Detailed interpretation of drill cores and sediment sequences.</p>
                 </div>
             </div>
 
-            <div class="know-feature-card">
-                <div class="know-slider-wrapper">
-                    <button class="know-nav-btn know-prev"><i class="fas fa-chevron-left"></i></button>
-                    <img src="https://www.sismoelettrica.it/wp-content/uploads/elementor/thumbs/Geoelettrica-1-ppv2iifioy9g5g859pi1slyff2j97odfezv8exr8mo.jpeg" class="know-img-active">
-                    <img src="https://www.sismoelettrica.it/wp-content/uploads/elementor/thumbs/Geoelettrica-2-ppv2i59s19rfmwr9ejt9tp9z3oc47wx6p6qfp2ar1s.jpeg">
-                    <button class="know-nav-btn know-next"><i class="fas fa-chevron-right"></i></button>
+            <div class="adv-card skill-style">
+                <div class="adv-slider" data-slider>
+                    <button class="adv-nav prev"><i class="fas fa-chevron-left"></i></button>
+                    <div class="adv-slides">
+                        <img src="https://www.sismoelettrica.it/wp-content/uploads/elementor/thumbs/Geoelettrica-1-ppv2iifioy9g5g859pi1slyff2j97odfezv8exr8mo.jpeg" class="active">
+                        <img src="https://www.sismoelettrica.it/wp-content/uploads/elementor/thumbs/Geoelettrica-2-ppv2i59s19rfmwr9ejt9tp9z3oc47wx6p6qfp2ar1s.jpeg">
+                    </div>
+                    <button class="adv-nav next"><i class="fas fa-chevron-right"></i></button>
                 </div>
-                <div class="know-card-details">
+                <div class="adv-content">
                     <h3>Geoelectrical surveys</h3>
                     <p>Subsurface resistivity mapping and soil analysis.</p>
                 </div>
             </div>
         </div>
+        
+        <hr class="adv-divider">
+        
+        <div class="adv-header">
+            <h2 class="adv-title">Research Interests</h2>
+        </div>
+
+        <div class="adv-grid">
+            <div class="adv-card">
+                <div class="adv-slider" data-slider>
+                    <button class="adv-nav prev"><i class="fas fa-chevron-left"></i></button>
+                    <div class="adv-slides">
+                        <img src="https://tse4.mm.bing.net/th/id/OIP.x8_VSK8jzyX7lF1a5SO7ZQHaDt?rs=1&pid=ImgDetMain&o=7&rm=3" class="active">
+                        <img src="https://i0.wp.com/esd-iiserkol.in/wp-content/uploads/2021/08/Panorama_IMG1180-IMG1185-scaled.jpg?fit=2560%2C636&ssl=1">
+                        <img src="https://i0.wp.com/esd-iiserkol.in/wp-content/uploads/2021/08/Panorama1-scaled.jpg?fit=2560%2C697&ssl=1">
+                    </div>
+                    <button class="adv-nav next"><i class="fas fa-chevron-right"></i></button>
+                </div>
+                <div class="adv-content">
+                    <h3>Earth Surface dynamics</h3>
+                    <p>Terrain characterisation and landscape analysis using Earth Observation data,Soil moisture and crop water stress estimation using drone-based thermal imaging, wetland hydrology, connectivity and dynamics.</p>
+                </div>
+            </div>
+           
+            <div class="adv-card">
+                <div class="adv-slider" data-slider>
+                    <button class="adv-nav prev"><i class="fas fa-chevron-left"></i></button>
+                    <div class="adv-slides">
+                        <img src="https://th.bing.com/th/id/OIP.sOOVQRgl5oGuQk7AymtbbAHaE7?w=302&h=201&c=7&r=0&o=5&pid=1.7" class="active">
+                        <img src="https://th.bing.com/th/id/OIP.BIyZ6IAYYCR48oAAvqLqAwHaEK?w=280&h=180&c=7&r=0&o=5&pid=1.7">
+                        <img src="https://dailygalaxy.com/wp-content/uploads/2026/01/This-River-Is-Older-Than-Dinosaurs-and-Its-Still-Flowing-scaled.jpg">
+                    </div>
+                    <button class="adv-nav next"><i class="fas fa-chevron-right"></i></button>
+                </div>
+                <div class="adv-content">
+                    <h3>River science</h3>
+                    <p>River dynamics, flood risk assessment, sediment dynamics, river response to climate change, rivers and ancient civilization.</p>
+                </div>
+            </div>
+
+            <div class="adv-card">
+                <div class="adv-slider" data-slider>
+                    <button class="adv-nav prev"><i class="fas fa-chevron-left"></i></button>
+                    <div class="adv-slides">
+                        <img src="https://tse1.mm.bing.net/th/id/OIP.Kv-kJNfxzH573PAIQhHkfgHaFN?rs=1&pid=ImgDetMain&o=7&rm=3" class="active">
+                        <img src="https://tse2.mm.bing.net/th/id/OIP.hBDHRHOAvnBKFQq6KNPsXAHaE5?w=850&h=562&rs=1&pid=ImgDetMain&o=7&rm=3">
+                        <img src="https://th.bing.com/th/id/OIP.F-oRh5j4B68Plb7Gmq-rxwHaFD?o=7rm=3&rs=1&pid=ImgDetMain&o=7&rm=3">
+                    </div>
+                    <button class="adv-nav next"><i class="fas fa-chevron-right"></i></button>
+                </div>
+                <div class="adv-content">
+                    <h3>Fluvial sedimentology and stratigraphy</h3>
+                    <p>Late Quaternary stratigraphic development in Himalayan basins.</p>
+                </div>
+            </div>
+
+            <div class="adv-card">
+                <div class="adv-slider" data-slider>
+                    <button class="adv-nav prev"><i class="fas fa-chevron-left"></i></button>
+                    <div class="adv-slides">
+                        <img src="https://thumbs.dreamstime.com/b/raging-water-fast-mountain-river-picturesque-beautiful-mountainous-area-flowing-water-splashes-selective-focus-324389371.jpg" class="active">
+                        <img src="https://thumbs.dreamstime.com/b/water-flowing-over-river-rocks-near-mountains-nathia-gali-abbottabad-pakistan-281410178.jpg">
+                        <img src="https://img.freepik.com/premium-photo/shallow-river-water-stream-with-rocks_632879-65.jpg">
+                    </div>
+                    <button class="adv-nav next"><i class="fas fa-chevron-right"></i></button>
+                </div>
+                <div class="adv-content">
+                    <h3>Groundwater structure and dynamics</h3>
+                    <p>Historical time series analysis, Aquifer stratigraphy.</p>
+                </div>
+            </div>
+
+            <div class="adv-card">
+                <div class="adv-slider" data-slider>
+                    <button class="adv-nav prev"><i class="fas fa-chevron-left"></i></button>
+                    <div class="adv-slides">
+                        <img src="https://news.mit.edu/sites/default/files/styles/news_article__image_gallery/public/images/202102/MIT-Paleo-Mud-02-press.jpg?itok=2RaJKbHB" class="active">
+                        <img src="https://media.cnn.com/api/v1/images/stellar/prod/220920163825-01-glaciers-gallery-restricted.jpg?c=original&q=h_447,c_fill">
+                    </div>
+                    <button class="adv-nav next"><i class="fas fa-chevron-right"></i></button>
+                </div>
+                <div class="adv-content">
+                    <h3>Palaeoclimatic reconstructions</h3>
+                    <p>High resolution Holocene paleoclimatic reconstruction using a multi-proxy approach.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="adv-cta">
+            <a href="research.html" class="action-btn">Research and Publications</a>
+        </div>       
     </div>
 </section>
     <section id="resume" class="resume-grid reveal">
+
         <div>
-            <span class="section-tag">Career</span><h2>Experience</h2>
+
+            <span class="section-tag">Career</span><h2 class="text-4xl font-black text-slate-900 mb-4">Experience</h2>
+
             <div class="timeline-item"><h4>Professor, Dept. of Earth Sciences</h4><p>IIT Kanpur (April 2014 - Present)</p></div>
+
             <div class="timeline-item"><h4>Professor, Dept. of Civil Engineering</h4><p>IIT Kanpur (June 1994 - April 2014)</p></div>
+
             <div class="timeline-item"><h4>Scientist</h4><p>National Institute of Hydrology, Roorkee (April 1993 - June 1994)</p></div>
 
+
+
         </div>
+
         <div>
-            <span class="section-tag">Academic</span><h2>Education</h2>
+
+            <span class="section-tag">Academic</span><h2 class="text-4xl font-black text-slate-900 mb-4">Education</h2>
+
             <div class="timeline-item"><h4>Doctor of Philosophy (Fluvial geomorphology and Sedimentology)</h4><p>University of Cambridge, UK, 1992</p></div>
+
             <div class="timeline-item"><h4>Master of Technology (Applied Geology)</h4><p>University of Roorkee, India,  1987</p></div>
+
             <div class="timeline-item"><h4>Bachelor's in Science, (Geology)</h4><p>Patna University, India, 1983</p></div>
+
         </div>
+
     </section>
 
+
+
     <section id="teaching" class="reveal">
-        <div class="centered"><span class="section-tag">Teaching & Mentorship</span><h2>Courses</h2></div>
+        <div class="centered"><span class="section-tag">Teaching & Mentorship</span><h2 class="text-4xl font-black text-slate-900 mb-4">Courses</h2></div>
         <div class="grid-3-col">
             <div class="teaching-card" onclick="toggleTeachingCard(this)">
-                <h4>ES313: Earth System Processes</h4>
+                <h4 class="text-2xl font-black text-slate-500 mb-4">ES313: Earth System Processes</h4>
                 <p>Earth system is characterized by an interaction of atmosphere, lithosphere, hydrosphere and biosphere. Each of these sub-systems have a distinct set of processes and feedbacks the understanding of which form the main emphasis of this course. Some of the important topics include hydrological cycle, surface and ground water systems, tectonic processes and landform evolution under different geomorphic settings.</p>
                 <div class="expand-content">
                     <p>Earth System processes, geomorphic systems, Threshold and equilibrium; scale in geomorphology, key concepts in geomorphology, hydrologic cycle. Exogenetic and endogenetic processes, climatic vs. geomorphic processes, soil and weathering system. Drainage basins and river systems, river morphology and hydrology, fluvial erosion, transport and sedimentation, fluvial depositional landforms, geomorphometric concepts and drainage basin morphometry; Groundwater in hydrological cycle, water table, groundwater flow and storage; porosity and permeability, aquifers, chemistry of groundwater. Atmospheric composition and mixing, atmospheric circulation, greenhouse effect. Coastal environment, waves, tides and currents, description and classification of coasts, shoreline development, coastal erosion and resulting topographic features, coastal deposition and landforms. Earth’s physiography and landscape evolution; Landforms and tectonics of plate margins and plate interiors; Tectonic uplifts and denudation – rates and controlling factors, Sea level change – evidence, mechanism and effects; coupled tectonic-surface process models.</p>
@@ -917,7 +1021,7 @@ nav {
                 <button class="view-more-toggle">View More</button>
             </div>
             <div class="teaching-card" onclick="toggleTeachingCard(this)">
-                <h4>ES645: River Science</h4>
+                <h4 class="text-2xl font-black text-slate-500 mb-4">ES645: River Science</h4>
                 <p>This course deals with the science of rivers particularly on the geomorphic processes in river systems and their relationship with river ecology. The course will aim to develop awareness about rivers and their sustainable management through process-based understanding.</p>
                 <div class="expand-content">
                     <p>Integrated Multi-Disciplinary Approach in river science; River Science in Indian Context; Geomorphic Analysis of River Systems - Key Concepts in River Geomorphology, Catchment Scale Controls on River Morphology, Catchment Hydrology, Sediment Movement and Deposition in River System, Channel Geometry, Floodplain Forms and Processes, River Diversity and River Evolution, Human Impacts on River Systems; River Ecosystem Synthesis - Introduction to hydrogeomorphic patches, functional process zones, hierarchical patch dynamics and biocomplexity, river as a continuum, longitudinal, lateral, temporal, vertical dimensions; Hierarchical patch dynamics in riverine landscapes; hydrogeomorphic character of a riverine ecosystem.; Ecological Implications of RES Biocomplexity Concepts; River Health and River Futures - Human impacts on river systems including climate change impacts; river hazards and their causes, Environmental Flow (e-flow) – definition, data requirement, different approaches for e-flow estimation; Integrated approach to river management, River health and river futures.</p>
@@ -928,7 +1032,7 @@ nav {
                 <button class="view-more-toggle">View More</button>
             </div>
             <div class="teaching-card" onclick="toggleTeachingCard(this)">
-                <h4>ES415:Remote Sensing and GIS for Georesource Evaluation</h4>
+                <h4 class="text-2xl font-black text-slate-500 mb-4">ES415:Remote Sensing and GIS for Georesource Evaluation</h4>
                 <p>This course focuses on remote sensing and GIS techniques for various earth science related applications. Basic principles of remote sensing and GIS techniques is covered and application studies are discussed using examples and case studies from India and other parts of the world.</p>
                 <div class="expand-content">
                     <p>Remote sensing platforms – satellite-based and airborne sensors; Basic principles of image interpretation; Spectra of earth’s surface material; Interpretation of regional geological and geomorphological features; Lithological and structural mapping, mapping of landforms and interpretation; Basic principles of Geographic Information System (GIS) and its application; Analytical Hierarchy Process (AHP) technique and its integration into GIS. River basin management – drainage mapping, channel movement and morphological changes; river erosion studies; Identification of groundwater potential zones; criteria for identification, integration of controlling factors into GIS; Lake and wetland studies using remote sensing; Water quality mapping; water quality parameters, indices of water quality monitoring; Vegetation Mapping and forestry applications; Application in glaciology and snow hydrology; Coastal zone mapping and other related applications; Natural hazards – floods, landslides, earthquakes; causative factors, choice of data and use of remote sensing technique for mapping and prediction; Mineral resources evaluation with particular reference to digital remote sensing; Application of thermal infrared data for mapping surface moisture and rock types and environmental studies.</p>
@@ -939,7 +1043,7 @@ nav {
                 <button class="view-more-toggle">View More</button>
             </div>
             <div class="teaching-card" onclick="toggleTeachingCard(this)">
-                <h4>Global Climatic Change</h4>
+                <h4 class="text-2xl font-black text-slate-500 mb-4">Global Climatic Change</h4>
                 <p>This course focuses on the science of climate change and its impacts on oceans, rivers, and cryosphere. The course covers the forcing functions of climate change operating at various spatio-temporal scales and geopolitics of climate change.</p>
                 <div class="expand-content">
                     <p>Introduction, geologic time, time scale of climate change, earth systems; Climate system and interactions, climate forcings, Earth’s radiation budget, factors controlling heat receipt, climate system response, climate feedbacks; Earth’s radiation budget, water in climate system; Climate forcings, feedbacks and climate sensitivity; Energy-climate Nexus; Carbon cycle and climate change; Archives and proxies; Historical-scale climate change; Future climate change, projections of emission scenarios; Orbital scale climate change, Eccentricity, tilt and precession; Climate change impacts on Oceans, Cryosphere, rivers and water resources; Orbital scale changes in CO2 and CH4, carbon cycle and exchanges, carbon reservoirs, ocean pumping hypothesis; Stable isotopes and orbital response; Deglacial and millennial scale climate change, glacial maximum, deglacial sea level rise and melt water pulses, Younger Drayas, Tropical monsoon maximum, millennial scale oscillations, Heinrich events, Solar variability, CH4 changes, monsoonal reconstruction, teleconnections, Indian case studies; CCS, Climate policy, protocols and summits.</p>
@@ -950,7 +1054,7 @@ nav {
                 <button class="view-more-toggle">View More</button>
             </div>
             <div class="teaching-card" onclick="toggleTeachingCard(this)">
-                <h4>ES653: Applied Sedimentology and Basin Analysis</h4>
+                <h4 class="text-2xl font-black text-slate-500 mb-4">ES653: Applied Sedimentology and Basin Analysis</h4>
                 <p>This course deals with sedimentary basins in different environments ranging from continental to marine. Sedimentary basins are important reservoirs of water and hydrocarbons and they evolve through long-term geological processes. A thorough understanding of sedimentary basins and sedimentology could be very rewarding for resource exploration.</p>
                 <div class="expand-content">
                     <p>Introduction to Applied Sedimentology; Clastic sediment as a chemical and physical breakdown product; Carbonate, Silicates, Iron-rich and Evaporite sediments; Physical properties of particles, porosity and permeability; Types of fluid motion and sediment in fluid and fluid flow; Bedforms and sedimentary structures in flows and under waves; Deposits of sediment gravity flows; Sediment to rock - the Subsurface Environment; Allochthonous Sediments; Autochthonous Sediments; Sedimentary Basins- Basin-forming mechanisms; Basins due to lithospheric stretching; Basins due to flexure; Sedimentary basins: classification, evolution, metallogeny, and petroleum system; Major external controls on sedimentation; Continental sedimentary environments; Marine sedimentary environment; Basin fills and stratigraphy; Subsidence and Thermal history.</p>
@@ -961,67 +1065,410 @@ nav {
                 <button class="view-more-toggle">View More</button>
             </div>
         </div>
-        <div style="text-align:center;"><a href="students.html" class="action-btn">Students</a></div>
     </section>
 
-    <section id="research-light-hub" class="res-light-theme">
-    <div class="res-container">
-        <div class="res-header" data-aos="fade-up">
-            <span class="res-tag">Research Infrastructure</span>
-            <h2 class="res-title">Laboratories</h2>
-            <div class="res-accent-line"></div>
-            <p class="res-subtitle">A world-class facility specializing in UAV-based LiDAR mapping, geospatial modeling, and river basin analysis.</p>
+
+    <!-- Scholars & Collaborators (Updated Section) -->
+    <section id="team" class="py-32 bg-[#c5a059]/20">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-20">
+                <span class="section-tag">Scholars</span>
+                <h2 class="text-4xl font-black text-slate-900 mb-4">Students Mentored</h2>
+            </div>
+
+            <!-- Current PhD Scholars -->
+            <div class="mb-20">
+    <h3 class="text-xl font-bold text-[#000c18] mb-10 flex items-center gap-4 uppercase tracking-widest">
+        <span class="w-10 h-px bg-blue-900"></span> Current PhD Scholars
+    </h3>
+    
+    <div class="relative group">
+        <button id="scholarPrev" onclick="moveScholar(-1)" class="absolute -left-4 md:-left-12 top-1/2 -translate-y-1/2 z-10 bg-white border border-slate-200 h-10 w-10 rounded-full flex items-center justify-center text-slate-400 hover:text-[#c5a059] hover:shadow-lg transition shadow-sm disabled:opacity-0">
+            <i class="fas fa-chevron-left text-sm"></i>
+        </button>
+
+        <button id="scholarNext" onclick="moveScholar(1)" class="absolute -right-4 md:-right-12 top-1/2 -translate-y-1/2 z-10 bg-white border border-slate-200 h-10 w-10 rounded-full flex items-center justify-center text-slate-400 hover:text-[#c5a059] hover:shadow-lg transition shadow-sm disabled:opacity-0">
+            <i class="fas fa-chevron-right text-sm"></i>
+        </button>
+
+        <div class="overflow-hidden">
+            <div id="scholarTrack" class="flex transition-transform duration-500 ease-in-out">
+                
+                <div class="min-w-full sm:min-w-[50%] lg:min-w-[25%] p-3">
+                    <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200 flex flex-col items-center text-center h-full hover:border-[#c5a059] hover:shadow-md transition-all">
+                        <div class="w-20 h-20 bg-[#f0e5d0] text-[#c5a059] rounded-full flex items-center justify-center text-2xl font-bold mb-4">SS</div>
+                        <h4 class="font-bold text-slate-900">Shobhit Singh</h4>
+                        <p class="text-[10px] text-slate-400 mt-2 uppercase tracking-widest">Hydro-Geomorphic</p>
+                        <p class="text-[11px] text-slate-500 mt-3 leading-relaxed">Flood risk assessment of the Ghaghra River system.</p>
+                    </div>
+                </div>
+
+                <div class="min-w-full sm:min-w-[50%] lg:min-w-[25%] p-3">
+                    <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200 flex flex-col items-center text-center h-full hover:border-[#c5a059] hover:shadow-md transition-all">
+                        <div class="w-20 h-20 bg-[#f0e5d0] text-[#c5a059] rounded-full flex items-center justify-center text-2xl font-bold mb-4">AS</div>
+                        <h4 class="font-bold text-slate-900">Abhishek Sinha</h4>
+                        <p class="text-[10px] text-slate-400 mt-2 uppercase tracking-widest">Wetland Health</p>
+                        <p class="text-[11px] text-slate-500 mt-3 leading-relaxed">Assessment of hydrologic connectivity in Ganga wetlands.</p>
+                    </div>
+                </div>
+
+                <div class="min-w-full sm:min-w-[50%] lg:min-w-[25%] p-3">
+                    <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200 flex flex-col items-center text-center h-full hover:border-[#c5a059] hover:shadow-md transition-all">
+                        <div class="w-20 h-20 bg-[#f0e5d0] text-[#c5a059] rounded-full flex items-center justify-center text-2xl font-bold mb-4">MA</div>
+                        <h4 class="font-bold text-slate-900">Moumika Akuria</h4>
+                        <p class="text-[10px] text-slate-400 mt-2 uppercase tracking-widest">Connectivity</p>
+                        <p class="text-[11px] text-slate-500 mt-3 leading-relaxed">Anthropogenic impacts on hydrological connectivity.</p>
+                    </div>
+                </div>
+
+                <div class="min-w-full sm:min-w-[50%] lg:min-w-[25%] p-3">
+                    <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200 flex flex-col items-center text-center h-full hover:border-[#c5a059] hover:shadow-md transition-all">
+                        <div class="w-20 h-20 bg-[#f0e5d0] text-[#c5a059] rounded-full flex items-center justify-center text-2xl font-bold mb-4">AY</div>
+                        <h4 class="font-bold text-slate-900">Ankit Yadav</h4>
+                        <p class="text-[10px] text-slate-400 mt-2 uppercase tracking-widest">Sediment dynamics</p>
+                        <p class="text-[11px] text-slate-500 mt-3 leading-relaxed">Sediment dynamics and Cascading Hazards.</p>
+                    </div>
+                </div>
+
+                <div class="min-w-full sm:min-w-[50%] lg:min-w-[25%] p-3">
+                    <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200 flex flex-col items-center text-center h-full hover:border-[#c5a059] hover:shadow-md transition-all">
+                        <div class="w-20 h-20 bg-[#f0e5d0] text-[#c5a059] rounded-full flex items-center justify-center text-2xl font-bold mb-4">SS</div>
+                        <h4 class="font-bold text-slate-900">Sarita Sahoo</h4>
+                        <p class="text-[10px] text-slate-400 mt-2 uppercase tracking-widest">Hyperspectral Remote Sensing</p>
+                        <p class="text-[11px] text-slate-500 mt-3 leading-relaxed">Shoreline Dynamics and implication on chilika wetland's stability.</p>
+                    </div>
+                </div>
+
+                <div class="min-w-full sm:min-w-[50%] lg:min-w-[25%] p-3">
+                    <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200 flex flex-col items-center text-center h-full hover:border-[#c5a059] hover:shadow-md transition-all">
+                        <div class="w-20 h-20 bg-[#f0e5d0] text-[#c5a059] rounded-full flex items-center justify-center text-2xl font-bold mb-4">AV</div>
+                        <h4 class="font-bold text-slate-900">Ajusree VK</h4>
+                        <p class="text-[10px] text-slate-400 mt-2 uppercase tracking-widest">Hydrology and Remote Sensing</p>
+                        <p class="text-[11px] text-slate-500 mt-3 leading-relaxed">Hydrology and Remote Sensing.</p>
+                    </div>
+                </div>
+
+                <div class="min-w-full sm:min-w-[50%] lg:min-w-[25%] p-3">
+                    <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200 flex flex-col items-center text-center h-full hover:border-[#c5a059] hover:shadow-md transition-all">
+                        <div class="w-20 h-20 bg-[#f0e5d0] text-[#c5a059] rounded-full flex items-center justify-center text-2xl font-bold mb-4">AR</div>
+                        <h4 class="font-bold text-slate-900">Atmika Ray</h4>
+                        <p class="text-[10px] text-slate-400 mt-2 uppercase tracking-widest">River Sciences</p>
+                        <p class="text-[11px] text-slate-500 mt-3 leading-relaxed">Spatial temporal dynamics of riverine islands.</p>
+                    </div>
+                </div>
+
+                <div class="min-w-full sm:min-w-[50%] lg:min-w-[25%] p-3">
+                    <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200 flex flex-col items-center text-center h-full hover:border-[#c5a059] hover:shadow-md transition-all">
+                        <div class="w-20 h-20 bg-[#f0e5d0] text-[#c5a059] rounded-full flex items-center justify-center text-2xl font-bold mb-4">SK</div>
+                        <h4 class="font-bold text-slate-900">Shefali Kuril</h4>
+                        <p class="text-[10px] text-slate-400 mt-2 uppercase tracking-widest">Agricultural Monitoring</p>
+                        <p class="text-[11px] text-slate-500 mt-3 leading-relaxed">Thermal abd Multi-spectral imaging in agriculture-dominated CZO in Ganga basin.</p>
+                    </div>
+                </div>
+
+                </div>
         </div>
+    </div>
+</div>
+            <!-- Past PhD Scholars -->
+            <div class="mb-20 px-6 max-w-7xl mx-auto">
+    <h3 class="text-xl font-bold text-[#000c18] mb-10 flex items-center gap-4 uppercase tracking-widest">
+        <span class="w-10 h-px bg-blue-900"></span> Past PhD Scholars
+    </h3>
+    
+    <div class="relative group">
+        <button id="assocPrev" onclick="moveScholarSlider(-1, 'assocTrack')" class="absolute -left-4 md:-left-12 top-1/2 -translate-y-1/2 z-10 bg-white border border-slate-200 h-11 w-11 rounded-full flex items-center justify-center text-slate-400 hover:text-[#c5a059] hover:shadow-xl transition-all shadow-sm disabled:opacity-0">
+            <i class="fas fa-chevron-left text-lg"></i>
+        </button>
 
-        <div class="res-grid-3">
-            <div class="res-node" data-aos="fade-up">
-                <div class="res-content">
-                    <h3>UAV Data Processing Lab</h3>
-                    <p>Dedicated to high-resolution photogrammetry and point-cloud analysis. We process LiDAR and hyperspectral data.</p>
-                    <a href="https://ribukumar0209-web.github.io/my_website/HB_new.html" class="res-action-btn">View More</a>
-                </div>
-            </div>
+        <button id="assocNext" onclick="moveScholarSlider(1, 'assocTrack')" class="absolute -right-4 md:-right-12 top-1/2 -translate-y-1/2 z-10 bg-white border border-slate-200 h-11 w-11 rounded-full flex items-center justify-center text-slate-400 hover:text-[#c5a059] hover:shadow-xl transition-all shadow-sm disabled:opacity-0">
+            <i class="fas fa-chevron-right text-lg"></i>
+        </button>
 
-            <div class="res-node" data-aos="fade-up" data-aos-delay="100">
-                <div class="res-content">
-                    <h3>Sedimentology Lab</h3>
-                    <p>Equipped for physical and chemical characterization of riverine sediments. Focuses on grain-size and mineralogy.</p>
-                    <a href="https://ribukumar0209-web.github.io/my_website/HB_new.html" class="res-action-btn">View More</a>
+        <div class="overflow-hidden">
+            <div id="assocTrack" class="flex transition-transform duration-500 ease-out">
+                
+                <div class="min-w-full sm:min-w-[50%] lg:min-w-[25%] p-3">
+                    <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200 flex flex-col items-center text-center h-full hover:border-[#c5a059] hover:shadow-md transition-all">
+                        <div class="w-20 h-20 bg-[#f0e5d0] text-[#c5a059] rounded-full flex items-center justify-center text-2xl font-bold mb-4">SD</div>
+                        <h4 class="font-bold text-slate-900">Saroj Kumar Dash</h4>
+                        <p class="text-[10px] text-slate-400 mt-2 uppercase tracking-widest">CZO Modeling</p>
+                        <p class="text-[11px] text-slate-500 mt-3 leading-relaxed">Estimating soil moisture & crop water stress in Ganga CZO.</p>
+                    </div>
                 </div>
-            </div>
 
-            <div class="res-node" data-aos="fade-up" data-aos-delay="200">
-                <div class="res-content">
-                    <h3>Remote Sensing & GIS Lab</h3>
-                    <p>Central hub for satellite Earth Observation data and spatial models for basin-wide health monitoring.</p>
-                    <a href="https://ribukumar0209-web.github.io/my_website/HB_new.html" class="res-action-btn">View More</a>
+                <div class="min-w-full sm:min-w-[50%] lg:min-w-[25%] p-3">
+                    <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200 flex flex-col items-center text-center h-full hover:border-[#c5a059] hover:shadow-md transition-all">
+                        <div class="w-20 h-20 bg-[#f0e5d0] text-[#c5a059] rounded-full flex items-center justify-center text-2xl font-bold mb-4">SD</div>
+                        <h4 class="font-bold text-slate-900">Saroj Kumar Dash</h4>
+                        <p class="text-[10px] text-slate-400 mt-2 uppercase tracking-widest">CZO Modeling</p>
+                        <p class="text-[11px] text-slate-500 mt-3 leading-relaxed">Estimating soil moisture & crop water stress in Ganga CZO.</p>
+                    </div>
                 </div>
-            </div>
 
-            <div class="res-node" data-aos="fade-up">
-                <div class="res-content">
-                    <h3>Core Archive Lab</h3>
-                    <p>Extensive collections of sediment drill cores for Quaternary climate reconstruction.</p>
-                    <a href="https://ribukumar0209-web.github.io/my_website/HB_new.html" class="res-action-btn">View More</a>
+                <div class="min-w-full sm:min-w-[50%] lg:min-w-[25%] p-3">
+                    <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200 flex flex-col items-center text-center h-full hover:border-[#c5a059] hover:shadow-md transition-all">
+                        <div class="w-20 h-20 bg-[#f0e5d0] text-[#c5a059] rounded-full flex items-center justify-center text-2xl font-bold mb-4">SB</div>
+                        <h4 class="font-bold text-slate-900">Sohini Bhattacharya</h4>
+                        <p class="text-[10px] text-slate-400 mt-2 uppercase tracking-widest">Sediment Flux</p>
+                        <p class="text-[11px] text-slate-500 mt-3 leading-relaxed">Understanding soil variability in the Anthropocene (U. Potsdam joint).</p>
+                    </div>
                 </div>
-            </div>
 
-            <div class="res-node" data-aos="fade-up" data-aos-delay="100">
-                <div class="res-content">
-                    <h3>CZO Lab</h3>
-                    <p>Focuses on soil, water, and air interactions in agriculture-dominated Ganga plains.</p>
-                    <a href="https://ribukumar0209-web.github.io/my_website/HB_new.html" class="res-action-btn">View More</a>
+                <div class="min-w-full sm:min-w-[50%] lg:min-w-[25%] p-3">
+                    <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200 flex flex-col items-center text-center h-full hover:border-[#c5a059] hover:shadow-md transition-all">
+                        <div class="w-20 h-20 bg-[#f0e5d0] text-[#c5a059] rounded-full flex items-center justify-center text-2xl font-bold mb-4">AA</div>
+                        <h4 class="font-bold text-slate-900">Aqib Ansari</h4>
+                        <p class="text-[10px] text-slate-400 mt-2 uppercase tracking-widest">River Health</p>
+                        <p class="text-[11px] text-slate-500 mt-3 leading-relaxed">Health Assessment of Ganga-Ramganga using Flow Cytometry.</p>
+                    </div>
                 </div>
+
+                <div class="min-w-full sm:min-w-[50%] lg:min-w-[25%] p-3">
+                    <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200 flex flex-col items-center text-center h-full hover:border-[#c5a059] hover:shadow-md transition-all">
+                        <div class="w-20 h-20 bg-[#f0e5d0] text-[#c5a059] rounded-full flex items-center justify-center text-2xl font-bold mb-4">AK</div>
+                        <h4 class="font-bold text-slate-900">Abid Khan</h4>
+                        <p class="text-[10px] text-slate-400 mt-2 uppercase tracking-widest">Groundwater</p>
+                        <p class="text-[11px] text-slate-500 mt-3 leading-relaxed">Groundwater modelling in urban settings.</p>
+                    </div>
+                </div>
+
+                <div class="min-w-full sm:min-w-[50%] lg:min-w-[25%] p-3">
+                    <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200 flex flex-col items-center text-center h-full hover:border-[#c5a059] hover:shadow-md transition-all">
+                        <div class="w-20 h-20 bg-[#f0e5d0] text-[#c5a059] rounded-full flex items-center justify-center text-2xl font-bold mb-4">KM</div>
+                        <h4 class="font-bold text-slate-900">Kanchan Mishra</h4>
+                        <p class="text-[10px] text-slate-400 mt-2 uppercase tracking-widest">Sedimentology</p>
+                        <p class="text-[11px] text-slate-500 mt-3 leading-relaxed">Sediment dynamics and sediment connectivity in the Kosi basin: implications for river hazards.</p>
+                    </div>
+                </div>
+
+                <div class="min-w-full sm:min-w-[50%] lg:min-w-[25%] p-3">
+                    <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200 flex flex-col items-center text-center h-full hover:border-[#c5a059] hover:shadow-md transition-all">
+                        <div class="w-20 h-20 bg-[#f0e5d0] text-[#c5a059] rounded-full flex items-center justify-center text-2xl font-bold mb-4">AS</div>
+                        <h4 class="font-bold text-slate-900">Ajit Singh</h4>
+                        <p class="text-[10px] text-slate-400 mt-2 uppercase tracking-widest">Sedimentology</p>
+                        <p class="text-[11px] text-slate-500 mt-3 leading-relaxed">Sub-surface stratigraphy and sedimentology of the Ghaggar plains: linkage of landscape evolution and cultural heritage.</p>
+                    </div>
+                </div>
+
+                <div class="min-w-full sm:min-w-[50%] lg:min-w-[25%] p-3">
+                    <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200 flex flex-col items-center text-center h-full hover:border-[#c5a059] hover:shadow-md transition-all">
+                        <div class="w-20 h-20 bg-[#f0e5d0] text-[#c5a059] rounded-full flex items-center justify-center text-2xl font-bold mb-4">DS</div>
+                        <h4 class="font-bold text-slate-900">Dipro Sarkar</h4>
+                        <p class="text-[10px] text-slate-400 mt-2 uppercase tracking-widest">Terrain Monitoring</p>
+                        <p class="text-[11px] text-slate-500 mt-3 leading-relaxed">Terrain mapping and water quality monitoring from airborne platforms. Integrating UAV Technology with community-based tools for Monitoring Water Quality of the Ganga River.</p>
+                    </div>
+                </div>
+
+                <div class="min-w-full sm:min-w-[50%] lg:min-w-[25%] p-3">
+                    <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200 flex flex-col items-center text-center h-full hover:border-[#c5a059] hover:shadow-md transition-all">
+                        <div class="w-20 h-20 bg-[#f0e5d0] text-[#c5a059] rounded-full flex items-center justify-center text-2xl font-bold mb-4">PM</div>
+                        <h4 class="font-bold text-slate-900">Pavani Mishra</h4>
+                        <p class="text-[10px] text-slate-400 mt-2 uppercase tracking-widest">Deposition Analysis</p>
+                        <p class="text-[11px] text-slate-500 mt-3 leading-relaxed">High resolution paleoclimatic reconstruction and depositional environments of paleolake sediments in the Ganga plains.</p>
+                    </div>
+                </div>
+
+                <div class="min-w-full sm:min-w-[50%] lg:min-w-[25%] p-3">
+                    <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200 flex flex-col items-center text-center h-full hover:border-[#c5a059] hover:shadow-md transition-all">
+                        <div class="w-20 h-20 bg-[#f0e5d0] text-[#c5a059] rounded-full flex items-center justify-center text-2xl font-bold mb-4">IK</div>
+                        <h4 class="font-bold text-slate-900">Imran Khan</h4>
+                        <p class="text-[10px] text-slate-400 mt-2 uppercase tracking-widest">Drainage Analysis</p>
+                        <p class="text-[11px] text-slate-500 mt-3 leading-relaxed">Drainage reorganisation and sub-surface stratigraphy of the paleo-Yamuna River in Haryana Plains, NW India and its linkage to Harappan Civilization.</p>
+                    </div>
+                </div>
+
+                <div class="min-w-full sm:min-w-[50%] lg:min-w-[25%] p-3">
+                    <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200 flex flex-col items-center text-center h-full hover:border-[#c5a059] hover:shadow-md transition-all">
+                        <div class="w-20 h-20 bg-[#f0e5d0] text-[#c5a059] rounded-full flex items-center justify-center text-2xl font-bold mb-4">SS</div>
+                        <h4 class="font-bold text-slate-900">Somil Swrankar</h4>
+                        <p class="text-[10px] text-slate-400 mt-2 uppercase tracking-widest">Sedimentology</p>
+                        <p class="text-[11px] text-slate-500 mt-3 leading-relaxed">Soil erosion and sediment flux estimation from landscape evolution models.</p>
+                    </div>
+                </div>
+
+                <div class="min-w-full sm:min-w-[50%] lg:min-w-[25%] p-3">
+                    <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200 flex flex-col items-center text-center h-full hover:border-[#c5a059] hover:shadow-md transition-all">
+                        <div class="w-20 h-20 bg-[#f0e5d0] text-[#c5a059] rounded-full flex items-center justify-center text-2xl font-bold mb-4">MN</div>
+                        <h4 class="font-bold text-slate-900">Manudeo Narayan Singh</h4>
+                        <p class="text-[10px] text-slate-400 mt-2 uppercase tracking-widest">Wetlands</p>
+                        <p class="text-[11px] text-slate-500 mt-3 leading-relaxed">Wetland dynamics and hydrological connectivity in a tropical floodplain setting, Kaabar Tal, North Bihar, India.</p>
+                    </div>
+                </div>
+
+                <div class="min-w-full sm:min-w-[50%] lg:min-w-[25%] p-3">
+                    <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200 flex flex-col items-center text-center h-full hover:border-[#c5a059] hover:shadow-md transition-all">
+                        <div class="w-20 h-20 bg-[#f0e5d0] text-[#c5a059] rounded-full flex items-center justify-center text-2xl font-bold mb-4">HM</div>
+                        <h4 class="font-bold text-slate-900">Haridas Mohanta</h4>
+                        <p class="text-[10px] text-slate-400 mt-2 uppercase tracking-widest">Geomorphology</p>
+                        <p class="text-[11px] text-slate-500 mt-3 leading-relaxed">Geomorphic diversity, connectivity and river health assessment of the Ganga River and their application for river management.</p>
+                    </div>
+                </div>
+
+                <div class="min-w-full sm:min-w-[50%] lg:min-w-[25%] p-3">
+                    <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200 flex flex-col items-center text-center h-full hover:border-[#c5a059] hover:shadow-md transition-all">
+                        <div class="w-20 h-20 bg-[#f0e5d0] text-[#c5a059] rounded-full flex items-center justify-center text-2xl font-bold mb-4">SK</div>
+                        <h4 class="font-bold text-slate-900">Suneel Kumar Joshi</h4>
+                        <p class="text-[10px] text-slate-400 mt-2 uppercase tracking-widest">Groundwater Dynamics</p>
+                        <p class="text-[11px] text-slate-500 mt-3 leading-relaxed">Deciphering groundwater dynamics in the Ghaggar basin in northwest India using historical water level data and isotopic techniques.</p>
+                    </div>
+                </div>
+
+                <div class="min-w-full sm:min-w-[50%] lg:min-w-[25%] p-3">
+                    <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200 flex flex-col items-center text-center h-full hover:border-[#c5a059] hover:shadow-md transition-all">
+                        <div class="w-20 h-20 bg-[#f0e5d0] text-[#c5a059] rounded-full flex items-center justify-center text-2xl font-bold mb-4">GK</div>
+                        <h4 class="font-bold text-slate-900">Gaurav Kumar</h4>
+                        <p class="text-[10px] text-slate-400 mt-2 uppercase tracking-widest">Morphology</p>
+                        <p class="text-[11px] text-slate-500 mt-3 leading-relaxed">Morphology of alluvia rivers (jointly with Francois Metivier and Olivier Devauchelle, IPG Paris).</p>
+                    </div>
+                </div>
+
+                <div class="min-w-full sm:min-w-[50%] lg:min-w-[25%] p-3">
+                    <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200 flex flex-col items-center text-center h-full hover:border-[#c5a059] hover:shadow-md transition-all">
+                        <div class="w-20 h-20 bg-[#f0e5d0] text-[#c5a059] rounded-full flex items-center justify-center text-2xl font-bold mb-4">SS</div>
+                        <h4 class="font-bold text-slate-900">Swati Sinha</h4>
+                        <p class="text-[10px] text-slate-400 mt-2 uppercase tracking-widest">Climate</p>
+                        <p class="text-[11px] text-slate-500 mt-3 leading-relaxed">Tectonic and climatic controls on landscape evolution in the Dehradun-Nahan salient-recess in the frontal Himalaya.</p>
+                    </div>
+                </div>
+
+                <div class="min-w-full sm:min-w-[50%] lg:min-w-[25%] p-3">
+                    <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200 flex flex-col items-center text-center h-full hover:border-[#c5a059] hover:shadow-md transition-all">
+                        <div class="w-20 h-20 bg-[#f0e5d0] text-[#c5a059] rounded-full flex items-center justify-center text-2xl font-bold mb-4">SK</div>
+                        <h4 class="font-bold text-slate-900">S. K. Lahiri</h4>
+                        <p class="text-[10px] text-slate-400 mt-2 uppercase tracking-widest">Morphology</p>
+                        <p class="text-[11px] text-slate-500 mt-3 leading-relaxed">Basin evolution, morpho-tectonics and fluvial processes in the Brahmaputra river system, Assam.</p>
+                    </div>
+                </div>
+
+                <div class="min-w-full sm:min-w-[50%] lg:min-w-[25%] p-3">
+                    <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200 flex flex-col items-center text-center h-full hover:border-[#c5a059] hover:shadow-md transition-all">
+                        <div class="w-20 h-20 bg-[#f0e5d0] text-[#c5a059] rounded-full flex items-center justify-center text-2xl font-bold mb-4">AS</div>
+                        <h4 class="font-bold text-slate-900">Ananda Sankar Dasgupta</h4>
+                        <p class="text-[10px] text-slate-400 mt-2 uppercase tracking-widest">Geomorphology</p>
+                        <p class="text-[11px] text-slate-500 mt-3 leading-relaxed">Valley and interfluve geomorphology and stratigraphy of the southern Ganga plains: implications for Late Quaternary landscape evolution.</p>
+                    </div>
+                </div>
+
+                <div class="min-w-full sm:min-w-[50%] lg:min-w-[25%] p-3">
+                    <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200 flex flex-col items-center text-center h-full hover:border-[#c5a059] hover:shadow-md transition-all">
+                        <div class="w-20 h-20 bg-[#f0e5d0] text-[#c5a059] rounded-full flex items-center justify-center text-2xl font-bold mb-4">NG</div>
+                        <h4 class="font-bold text-slate-900">Noni Gopal Roy</h4>
+                        <p class="text-[10px] text-slate-400 mt-2 uppercase tracking-widest">Morphology</p>
+                        <p class="text-[11px] text-slate-500 mt-3 leading-relaxed">Morphodynamics and Late Quaternary Valley- interfluve Stratigraphy of the Western Ganga Plains: Rythmic Sequences and Monsoonal Forcing.</p>
+                    </div>
+                </div>
+
+                <div class="min-w-full sm:min-w-[50%] lg:min-w-[25%] p-3">
+                    <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200 flex flex-col items-center text-center h-full hover:border-[#c5a059] hover:shadow-md transition-all">
+                        <div class="w-20 h-20 bg-[#f0e5d0] text-[#c5a059] rounded-full flex items-center justify-center text-2xl font-bold mb-4">VJ</div>
+                        <h4 class="font-bold text-slate-900">Vikrant Jain</h4>
+                        <p class="text-[10px] text-slate-400 mt-2 uppercase tracking-widest">Geomorpholgy</p>
+                        <p class="text-[11px] text-slate-500 mt-3 leading-relaxed">Fluvio-Geomorphological analysis of Baghmati river system, North Bihar with special reference to fluvial hazard.</p>
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>
-</section>
+</div>
+
+
+            <!--Current M.tech Scholars -->
+            <div class="mb-20 px-6 max-w-7xl mx-auto">
+    <h3 class="text-xl font-bold text-[#000c18] mb-10 flex items-center gap-4 uppercase tracking-widest">
+        <span class="w-10 h-px bg-[#000c18]"></span> M.Tech Scholars
+    </h3>
+    
+    <div class="relative group">
+        <button id="mtechPrev" onclick="moveScholarSlider(-1, 'mtechTrack')" class="absolute -left-4 md:-left-12 top-1/2 -translate-y-1/2 z-10 bg-white border border-slate-200 h-11 w-11 rounded-full flex items-center justify-center text-slate-400 hover:text-[#c5a059] hover:shadow-xl transition-all shadow-sm disabled:opacity-0">
+            <i class="fas fa-chevron-left text-lg"></i>
+        </button>
+
+        <button id="mtechNext" onclick="moveScholarSlider(1, 'mtechTrack')" class="absolute -right-4 md:-right-12 top-1/2 -translate-y-1/2 z-10 bg-white border border-slate-200 h-11 w-11 rounded-full flex items-center justify-center text-slate-400 hover:text-[#c5a059] hover:shadow-xl transition-all shadow-sm disabled:opacity-0">
+            <i class="fas fa-chevron-right text-lg"></i>
+        </button>
+
+        <div class="overflow-hidden">
+            <div id="mtechTrack" class="flex transition-transform duration-500 ease-out">
+                
+                <div class="min-w-full sm:min-w-[50%] lg:min-w-[25%] p-3">
+                    <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200 flex flex-col items-center text-center h-full card-hover hover:border-[#c5a059] transition-all">
+                        <div class="w-20 h-20 bg-[#f0e5d0] text-[#c5a059] rounded-full flex items-center justify-center text-2xl font-bold mb-4">AT</div>
+                        <h4 class="font-bold text-slate-900">Aayush Tiwari</h4>
+                        <p class="text-[10px] text-slate-400 mt-2 uppercase tracking-widest">Morphology</p>
+                        <p class="text-[11px] text-slate-500 mt-3 leading-relaxed">Morphological study of the smooth impact melt deposits on the Moon's far side.</p>
+                    </div>
+                </div>
+
+                <div class="min-w-full sm:min-w-[50%] lg:min-w-[25%] p-3">
+                    <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200 flex flex-col items-center text-center h-full card-hover hover:border-[#c5a059] transition-all">
+                        <div class="w-20 h-20 bg-[#f0e5d0] text-[#c5a059] rounded-full flex items-center justify-center text-2xl font-bold mb-4">AY</div>
+                        <h4 class="font-bold text-slate-900">Ankit Yadav</h4>
+                        <p class="text-[10px] text-slate-400 mt-2 uppercase tracking-widest">Active Remote sensing</p>
+                        <p class="text-[11px] text-slate-500 mt-3 leading-relaxed">Active Remote sensing.</p>
+                    </div>
+                </div>
+
+                <div class="min-w-full sm:min-w-[50%] lg:min-w-[25%] p-3">
+                    <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200 flex flex-col items-center text-center h-full card-hover hover:border-[#c5a059] transition-all">
+                        <div class="w-20 h-20 bg-[#f0e5d0] text-[#c5a059] rounded-full flex items-center justify-center text-2xl font-bold mb-4">SK</div>
+                        <h4 class="font-bold text-slate-900">Shefali Kuril</h4>
+                        <p class="text-[10px] text-slate-400 mt-2 uppercase tracking-widest">Agriculture</p>
+                        <p class="text-[11px] text-slate-500 mt-3 leading-relaxed">Agricultural Monitoring, CZO, Ganga Basin.</p>
+                    </div>
+                </div>
+
+                <div class="min-w-full sm:min-w-[50%] lg:min-w-[25%] p-3">
+                    <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200 flex flex-col items-center text-center h-full card-hover hover:border-[#c5a059] transition-all">
+                        <div class="w-20 h-20 bg-[#f0e5d0] text-[#c5a059] rounded-full flex items-center justify-center text-2xl font-bold mb-4">NK</div>
+                        <h4 class="font-bold text-slate-900">Niharika Kote</h4>
+                        <p class="text-[10px] text-slate-400 mt-2 uppercase tracking-widest">CZO Modeling</p>
+                        <p class="text-[11px] text-slate-500 mt-3 leading-relaxed">Estimating soil moisture & crop water stress in Ganga CZO.</p>
+                    </div>
+                </div>
+
+                <div class="min-w-full sm:min-w-[50%] lg:min-w-[25%] p-3">
+                    <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200 flex flex-col items-center text-center h-full card-hover hover:border-[#c5a059] transition-all">
+                        <div class="w-20 h-20 bg-[#f0e5d0] text-[#c5a059] rounded-full flex items-center justify-center text-2xl font-bold mb-4">SS</div>
+                        <h4 class="font-bold text-slate-900">Shobhit Singh</h4>
+                        <p class="text-[10px] text-slate-400 mt-2 uppercase tracking-widest">Hydro-Geomorphic</p>
+                        <p class="text-[11px] text-slate-500 mt-3 leading-relaxed">Flood risk assessment of the Ghaghra River system.</p>
+                    </div>
+                </div>
+
+                <div class="min-w-full sm:min-w-[50%] lg:min-w-[25%] p-3">
+                    <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200 flex flex-col items-center text-center h-full card-hover hover:border-[#c5a059] transition-all">
+                        <div class="w-20 h-20 bg-[#f0e5d0] text-[#c5a059] rounded-full flex items-center justify-center text-2xl font-bold mb-4">SB</div>
+                        <h4 class="font-bold text-slate-900">Sambit Behera</h4>
+                        <p class="text-[10px] text-slate-400 mt-2 uppercase tracking-widest">Agriculture</p>
+                        <p class="text-[11px] text-slate-500 mt-3 leading-relaxed">Understanding soil moisture – temperature interaction in an Agriculture dominated CZO in the Ganga Basin, India</p>
+                    </div>
+                </div>
+
+                <div class="min-w-full sm:min-w-[50%] lg:min-w-[25%] p-3">
+                    <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200 flex flex-col items-center text-center h-full card-hover hover:border-[#c5a059] transition-all">
+                        <div class="w-20 h-20 bg-[#f0e5d0] text-[#c5a059] rounded-full flex items-center justify-center text-2xl font-bold mb-4">SB</div>
+                        <h4 class="font-bold text-slate-900">Unnati Patel</h4>
+                        <p class="text-[10px] text-slate-400 mt-2 uppercase tracking-widest">Geomorphology</p>
+                        <p class="text-[11px] text-slate-500 mt-3 leading-relaxed">Assessment of geomorphic connectivity under changing LULC scenarios and its implications for management of a coastal wetland, Chilika Lagoon, Odisha, India.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+            </div>
+
+        </div>
+    </section>
 
     <section id="honours" class="scroll-animate section-padding">
     <div class="container">
         <div class="centered">
             <span class="section-tag">Recognition</span>
-            <h2>Awards & Honours</h2>
+            <h2 class="text-4xl font-black text-slate-900 mb-4">Awards & Honours</h2>
         </div>
         <div class="grid-layout awards-grid">
             <div class="card award-card"><i class="fas fa-user-tie"></i><h4>Fellow, Indian Academy of Sciences</h4><p>Bangalore (2021)</p></div>
@@ -1044,7 +1491,7 @@ nav {
     <div class="container">
         <div class="centered">
             <span class="section-tag">Network</span>
-            <h2>Professional Affiliations</h2>
+            <h2 class="text-4xl font-black text-slate-900 mb-4">Professional Affiliations</h2>
         </div>
         <div class="grid-layout affiliation-grid">
             <div class="aff-item"><i class="fas fa-file-contract"></i><span>Journal of Sedimentary Research (SEPM) (2012-15)</span></div>
@@ -1069,7 +1516,7 @@ nav {
     <div class="container">
         <div class="centered">
             <span class="section-tag">Impact</span>
-            <h2>Special Achievements</h2>
+            <h2 class="text-4xl font-black text-slate-900 mb-4">Special Achievements</h2>
         </div>
         <div class="special-container">
             <div class="special-feature">
@@ -1114,28 +1561,46 @@ nav {
         let cur = 0; const slides = document.querySelectorAll('.slide');
         setInterval(() => { slides[cur].classList.remove('active'); cur = (cur + 1) % slides.length; slides[cur].classList.add('active'); }, 5000);
         
-        // Card Image Sliders (Research & Skills)
-        document.querySelectorAll('.card-slider-container').forEach(slider => {
-            const imgs = slider.querySelectorAll('img');
-            const next = slider.querySelector('.arrow-right');
-            const prev = slider.querySelector('.arrow-left');
-            let idx = 0;
-            
-            if(next && prev) {
-                next.addEventListener('click', (e) => {
-                    e.stopPropagation();
-                    imgs[idx].classList.remove('active');
-                    idx = (idx + 1) % imgs.length;
-                    imgs[idx].classList.add('active');
-                });
-                prev.addEventListener('click', (e) => {
-                    e.stopPropagation();
-                    imgs[idx].classList.remove('active');
-                    idx = (idx - 1 + imgs.length) % imgs.length;
-                    imgs[idx].classList.add('active');
-                });
-            }
+       document.addEventListener('DOMContentLoaded', () => {
+    // 1. Unified Slider Logic
+    const sliders = document.querySelectorAll('[data-slider]');
+    
+    sliders.forEach(slider => {
+        const slides = slider.querySelectorAll('.adv-slides img');
+        const nextBtn = slider.querySelector('.next');
+        const prevBtn = slider.querySelector('.prev');
+        let currentIdx = 0;
+
+        const updateSlides = (newIdx) => {
+            slides[currentIdx].classList.remove('active');
+            currentIdx = (newIdx + slides.length) % slides.length;
+            slides[currentIdx].classList.add('active');
+        };
+
+        nextBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            updateSlides(currentIdx + 1);
         });
+
+        prevBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            updateSlides(currentIdx - 1);
+        });
+    });
+
+    // 2. Advanced Scroll Reveal
+    const revealExpertise = () => {
+        const section = document.querySelector('#expertise-portal');
+        const sectionPos = section.getBoundingClientRect().top;
+        const screenPos = window.innerHeight / 1.2;
+
+        if (sectionPos < screenPos) {
+            section.classList.add('active');
+        }
+    };
+
+    window.addEventListener('scroll', revealExpertise);
+});
 
         // Teaching Card Toggle with View More/Less logic
         function toggleTeachingCard(card) {
@@ -1215,6 +1680,166 @@ document.addEventListener('DOMContentLoaded', () => {
             currentIndex = (currentIndex - 1 + images.length) % images.length;
             showImage(currentIndex);
         });
+    });
+});
+
+//current phd scholars slider
+let scholarIndex = 0;
+
+function moveScholar(direction) {
+    const track = document.getElementById('scholarTrack');
+    const cards = track.children;
+    const totalScholars = cards.length;
+    
+    // Determine how many cards are visible based on screen width
+    let visibleCards = 1;
+    if (window.innerWidth >= 1024) visibleCards = 4;
+    else if (window.innerWidth >= 640) visibleCards = 2;
+
+    const maxIndex = totalScholars - visibleCards;
+
+    // Update index
+    scholarIndex += direction;
+
+    // Boundary constraints
+    if (scholarIndex < 0) scholarIndex = 0;
+    if (scholarIndex > maxIndex) scholarIndex = maxIndex;
+
+    // Calculate percentage to slide
+    // In a 4-card view, each card is 25% width
+    const slideAmount = scholarIndex * (100 / visibleCards);
+    track.style.transform = `translateX(-${slideAmount}%)`;
+
+    // Update button states (hide if at start or end)
+    document.getElementById('scholarPrev').disabled = (scholarIndex === 0);
+    document.getElementById('scholarNext').disabled = (scholarIndex >= maxIndex);
+}
+
+// Initialize arrow states on load
+window.addEventListener('load', () => moveScholar(0));
+// Reset position on resize to prevent layout breaking
+window.addEventListener('resize', () => {
+    scholarIndex = 0;
+    moveScholar(0);
+});
+// past phd scholars slider
+const sliderStates = {
+    'assocTrack': 0,
+    'scholarTrack': 0 // if you use the same function for other sliders
+};
+
+function moveScholarSlider(direction, trackId) {
+    const track = document.getElementById(trackId);
+    const cards = track.children;
+    const total = cards.length;
+    
+    // Determine responsive visibility
+    let visible = 1;
+    if (window.innerWidth >= 1024) visible = 4;
+    else if (window.innerWidth >= 640) visible = 2;
+
+    const maxIndex = total - visible;
+
+    // Update the specific state
+    sliderStates[trackId] += direction;
+
+    // Bound checks
+    if (sliderStates[trackId] < 0) sliderStates[trackId] = 0;
+    if (sliderStates[trackId] > maxIndex) sliderStates[trackId] = maxIndex;
+
+    // Slide the track
+    const movePercentage = sliderStates[trackId] * (100 / visible);
+    track.style.transform = `translateX(-${movePercentage}%)`;
+
+    // Handle button visibility for this specific slider
+    const parent = track.closest('.group');
+    const prevBtn = parent.querySelector('button[id*="Prev"]');
+    const nextBtn = parent.querySelector('button[id*="Next"]');
+    
+    prevBtn.disabled = (sliderStates[trackId] === 0);
+    nextBtn.disabled = (sliderStates[trackId] >= maxIndex);
+}
+
+// Optional: Reset on resize to prevent alignment issues
+window.addEventListener('resize', () => {
+    Object.keys(sliderStates).forEach(id => {
+        sliderStates[id] = 0;
+        moveScholarSlider(0, id);
+    });
+});
+
+// Initialize on load
+document.addEventListener('DOMContentLoaded', () => {
+    moveScholarSlider(0, 'assocTrack');
+});
+//m.tech scholars slider
+// Initialize state for each slider ID
+/**
+ * Global Slider Controller
+ * Tracks the current index of every slider on the page using its ID
+ */
+const labSliderPositions = {
+    'scholarTrack': 0, // PhD Section
+    'assocTrack': 0,   // Research Associates Section
+    'mtechTrack': 0,   // M.Tech Section
+    'labSlider': 0     // Main Lab Infrastructure Slider
+};
+
+function moveScholarSlider(direction, trackId) {
+    const track = document.getElementById(trackId);
+    if (!track) return;
+
+    const cards = track.children;
+    const totalCards = cards.length;
+    
+    // Determine visibility based on Tailwind's responsive breakpoints
+    let visibleCount = 1;
+    if (window.innerWidth >= 1024) {
+        visibleCount = 4; // 4 cards for lg screens
+    } else if (window.innerWidth >= 640) {
+        visibleCount = 2; // 2 cards for sm/md screens
+    }
+
+    // Main Lab slider specifically usually shows only 1 card, 
+    // we handle that by checking the trackId
+    if (trackId === 'labSlider') visibleCount = 1;
+
+    const maxIndex = totalCards - visibleCount;
+
+    // Update index in the global tracker
+    labSliderPositions[trackId] += direction;
+
+    // Keep index within valid range
+    if (labSliderPositions[trackId] < 0) {
+        labSliderPositions[trackId] = 0;
+    }
+    if (labSliderPositions[trackId] > maxIndex) {
+        labSliderPositions[trackId] = maxIndex;
+    }
+
+    // Calculate displacement percentage
+    const movePercentage = labSliderPositions[trackId] * (100 / visibleCount);
+    track.style.transform = `translateX(-${movePercentage}%)`;
+
+    // Handle Button Visibility/States
+    const container = track.closest('.group');
+    const prevBtn = container.querySelector('button[id*="Prev"]');
+    const nextBtn = container.querySelector('button[id*="Next"]');
+    
+    if (prevBtn) prevBtn.disabled = (labSliderPositions[trackId] === 0);
+    if (nextBtn) nextBtn.disabled = (labSliderPositions[trackId] >= maxIndex);
+}
+
+// Ensure all sliders are correctly aligned on initial load
+window.addEventListener('load', () => {
+    Object.keys(labSliderPositions).forEach(id => moveScholarSlider(0, id));
+});
+
+// Reset sliders on screen resize to prevent alignment glitches
+window.addEventListener('resize', () => {
+    Object.keys(labSliderPositions).forEach(id => {
+        labSliderPositions[id] = 0; 
+        moveScholarSlider(0, id);
     });
 });
     </script>
