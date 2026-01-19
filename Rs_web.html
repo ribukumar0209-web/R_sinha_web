@@ -206,14 +206,31 @@ nav {
 }
         /* --- INTEGRATED HERO-ABOUT SECTION --- */
     .hero-profile {
-        position: relative;
-        min-height: 100vh;
-        width: 100%;
-        display: flex;
-        align-items: center;
-        background: url('slider3.jpeg') no-repeat center center/cover;
-        overflow: hidden;
+    position: relative;
+    /* Use min-height to ensure it fills the screen, but can grow if content is long */
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    
+    /* RESPONSIVE SETTINGS */
+    background-image: url('slider3.jpeg');
+    background-repeat: no-repeat;
+    background-position: center; /* Keeps the subject of the photo centered */
+    background-size: cover;     /* Scales image to fill container without stretching */
+    background-attachment: scroll; /* Change to 'fixed' for a parallax effect on desktop */
+    
+    overflow: hidden;
+}
+
+/* Mobile-Specific Tweaks */
+@media (max-width: 768px) {
+    .hero-profile {
+        /* On tall mobile screens, 'center top' often looks better for profiles */
+        background-position: center top; 
+        min-height: 80vh; /* Optional: reduce height slightly for mobile utility */
     }
+}
 
     /* Dark gradient overlay to make text pop on the left */
     .hero-profile::before {
