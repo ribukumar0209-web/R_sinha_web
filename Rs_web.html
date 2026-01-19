@@ -1486,49 +1486,49 @@ button[onclick^="moveAwards"] {
             <h2 class="text-4xl font-black text-slate-900 mb-4">Awards & Honours</h2>
         </div>
 
-        <div class="relative px-12"> 
+        <div class="relative px-4 md:px-16">
             <button type="button" id="btnAwardLeft" onclick="moveAwards(-1)" 
         class="absolute -left-4 md:-left-12 top-1/2 -translate-y-1/2 z-10 bg-white border border-slate-200 h-11 w-11 rounded-full flex items-center justify-center text-slate-400 hover:text-[#c5a059] hover:shadow-xl transition-all shadow-sm disabled:opacity-0">
         <i class="fas fa-chevron-left"></i>
     </button>
     
-    <div class="overflow-hidden">
+    <div class="overflow-hidden relative z-10">
                 <div id="awardsTrack" class="flex transition-transform duration-500 ease-out">
                     
-                    <div class="min-w-[25%] px-2">
+                    <div class="min-w-full md:min-w-[50%] lg:min-w-[25%] px-3">
                         <div class="card award-card h-full m-0"><i class="fas fa-user-tie"></i><h4>Fellow, Indian Academy of Sciences</h4><p>Bangalore (2021)</p></div>
                     </div>
-                    <div class="min-w-[25%] px-2">
+                    <div class="min-w-full md:min-w-[50%] lg:min-w-[25%] px-3">
                         <div class="card award-card h-full m-0"><i class="fas fa-user-tie"></i><h4>Fellowship</h4><p>National Academy of Sciences, Allahabad (2016)</p></div>
                     </div>
-                    <div class="min-w-[25%] px-2">
+                    <div class="min-w-full md:min-w-[50%] lg:min-w-[25%] px-3">
                         <div class="card award-card h-full m-0"><i class="fas fa-users"></i><h4>Lalit Mohan Kapoor Chair</h4><p>IIT Kanpur (2018-present)</p></div>
                     </div>
-                    <div class="min-w-[25%] px-2">
+                    <div class="min-w-full md:min-w-[50%] lg:min-w-[25%] px-3">
                         <div class="card award-card h-full m-0"><i class="fas fa-users"></i><h4>Pandit Girish Ranjan and Sushma Rani Pathak Chair</h4><p>IIT Kanpur (2014-16)</p></div>
                     </div>
-                    <div class="min-w-[25%] px-2">
+                    <div class="min-w-full md:min-w-[50%] lg:min-w-[25%] px-3">
                         <div class="card award-card h-full m-0"><i class="fas fa-user-tie"></i><h4>COFUND Senior Research Fellowship</h4><p>Durham University (2014)</p></div>
                     </div>
-                    <div class="min-w-[25%] px-2">
+                    <div class="min-w-full md:min-w-[50%] lg:min-w-[25%] px-3">
                         <div class="card award-card h-full m-0"><i class="fas fa-award"></i><h4>S.S. Merh Award</h4><p>Geological Society of India (2006)</p></div>
                     </div>
-                    <div class="min-w-[25%] px-2">
+                    <div class="min-w-full md:min-w-[50%] lg:min-w-[25%] px-3">
                         <div class="card award-card h-full m-0"><i class="fas fa-award"></i><h4>National Mineral Award</h4><p>Govt. of India (2002)</p></div>
                     </div>
-                    <div class="min-w-[25%] px-2">
+                    <div class="min-w-full md:min-w-[50%] lg:min-w-[25%] px-3">
                         <div class="card award-card h-full m-0"><i class="fas fa-user-tie"></i><h4>Alexander von Humboldt Fellowship</h4><p>Germany (2000)</p></div>
                     </div>
-                    <div class="min-w-[25%] px-2">
+                    <div class="min-w-full md:min-w-[50%] lg:min-w-[25%] px-3">
                         <div class="card award-card h-full m-0"><i class="fas fa-award"></i><h4>Career Award for Young Teachers</h4><p>AICTE (1998)</p></div>
                     </div>
-                    <div class="min-w-[25%] px-2">
+                    <div class="min-w-full md:min-w-[50%] lg:min-w-[25%] px-3">
                         <div class="card award-card h-full m-0"><i class="fas fa-award"></i><h4>Lundgren & Cambridge Philosophical Research Award</h4><p>Cambridge University, UK (1992)</p></div>
                     </div>
-                    <div class="min-w-[25%] px-2">
+                    <div class="min-w-full md:min-w-[50%] lg:min-w-[25%] px-3">
                         <div class="card award-card h-full m-0"><i class="fas fa-award"></i><h4>Nehru Scholarship (Doctoral)</h4><p>Cambridge University (1989)</p></div>
                     </div>
-                    <div class="min-w-[25%] px-2">
+                    <div class="min-w-full md:min-w-[50%] lg:min-w-[25%] px-3">
                         <div class="card award-card h-full m-0"><i class="fas fa-award"></i><h4>University Gold Medal</h4><p>M.Tech (1987)</p></div>
                     </div>
                 </div>
@@ -1904,6 +1904,12 @@ window.addEventListener('resize', () => {
 //awards slider
 window.currentAwardIndex = 0;
 
+window.getVisibleCards = function() {
+    if (window.innerWidth >= 1024) return 4; // Desktop
+    if (window.innerWidth >= 768) return 2;  // Tablet
+    return 1;                                // Mobile
+};
+
 window.moveAwards = function(direction) {
     const track = document.getElementById('awardsTrack');
     const btnLeft = document.getElementById('btnAwardLeft');
@@ -1912,36 +1918,36 @@ window.moveAwards = function(direction) {
     if (!track) return;
 
     const totalCards = track.children.length;
-    const visibleCards = 4; // CHANGED FROM 5 TO 4
+    const visibleCards = window.getVisibleCards();
     const maxIndex = totalCards - visibleCards;
 
-    // Calculate position
+    // Calculate new position
     let newIndex = window.currentAwardIndex + direction;
     
-    // Boundary protection
-    if (newIndex >= 0 && newIndex <= maxIndex) {
-        window.currentAwardIndex = newIndex;
-        // Move by 25% for each index step
-        const moveAmount = window.currentAwardIndex * 25; 
-        track.style.transform = `translateX(-${moveAmount}%)`;
-    }
+    // Clamp within bounds
+    if (newIndex < 0) newIndex = 0;
+    if (newIndex > maxIndex) newIndex = maxIndex;
+    
+    window.currentAwardIndex = newIndex;
 
-    // Button removal logic
-    if (window.currentAwardIndex === 0) {
-        btnLeft.classList.add('hidden');
-    } else {
-        btnLeft.classList.remove('hidden');
-    }
+    // Move track based on current width percentage
+    const moveAmount = window.currentAwardIndex * (100 / visibleCards);
+    track.style.transform = `translateX(-${moveAmount}%)`;
 
-    if (window.currentAwardIndex === maxIndex) {
-        btnRight.classList.add('hidden');
-    } else {
-        btnRight.classList.remove('hidden');
+    // Button Visibility (Only show if buttons are not hidden by CSS)
+    if (btnLeft && btnRight) {
+        btnLeft.style.display = (window.currentAwardIndex === 0) ? 'none' : 'flex';
+        btnRight.style.display = (window.currentAwardIndex === maxIndex) ? 'none' : 'flex';
     }
 };
 
-// Run on load to hide the left button initially
-document.addEventListener('DOMContentLoaded', () => moveAwards(0));
+// Reset index on window resize to prevent layout breaking
+window.addEventListener('resize', () => {
+    window.currentAwardIndex = 0;
+    window.moveAwards(0);
+});
+
+document.addEventListener('DOMContentLoaded', () => window.moveAwards(0));
     </script>
 </body>
 </html>
