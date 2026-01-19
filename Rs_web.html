@@ -535,7 +535,6 @@ nav {
     transition: var(--transition);
 }
 .award-card:hover {
-    transform: translateY(-10px);
     box-shadow: 0 15px 35px rgba(0,0,0,0.08);
     border-color: var(--accent);
 }
@@ -742,6 +741,21 @@ nav {
     background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
 }
 
+/* Ensure buttons are physically on top and clickable */
+button[onclick^="moveAwards"] {
+    cursor: pointer !important;
+    pointer-events: all !important;
+}
+
+/* Ensure the track doesn't accidentally cover the side gutters */
+.overflow-hidden {
+    pointer-events: none; /* Allows clicks to pass through to the track... */
+}
+
+#awardsTrack {
+    pointer-events: auto; /* ...but makes the cards themselves interactive again */
+}
+
     </style>
 </head>
 <body>
@@ -802,89 +816,6 @@ nav {
 
         <div class="adv-header">
             <span class="section-tag">Research & Skills</span>
-            <h2 class="adv-title">Technical Expertise</h2>
-        </div>
-
-        <div class="adv-grid">
-            <div class="adv-card skill-style">
-                <div class="adv-slider" data-slider>
-                    <button class="adv-nav prev"><i class="fas fa-chevron-left"></i></button>
-                    <div class="adv-slides">
-                        <img src="https://tse4.mm.bing.net/th/id/OIP.P7LBOZiCkGIMyudn3lFHxgHaEM?rs=1&pid=ImgDetMain&o=7&rm=3" class="active">
-                        <img src="https://tse4.mm.bing.net/th/id/OIP.1S73mpILGuD6Wtk66TzKFQHaC5?rs=1&pid=ImgDetMain&o=7&rm=3">
-                    </div>
-                    <button class="adv-nav next"><i class="fas fa-chevron-right"></i></button>
-                </div>
-                <div class="adv-content">
-                    <h3>Remote Sensing & GIS</h3>
-                    <p>Spatial data interpretation and geospatial modeling.</p>
-                </div>
-            </div>
-
-            <div class="adv-card skill-style">
-                <div class="adv-slider" data-slider>
-                    <button class="adv-nav prev"><i class="fas fa-chevron-left"></i></button>
-                    <div class="adv-slides">
-                        <img src="https://powersuk.com/wp-content/uploads/2022/08/AdobeStock_218870939-scaled.jpeg" >
-                        <img src="https://www.technology-innovators.com/wp-content/uploads/2023/05/Drone-based-3D-Mapping-and-Surveying-Revolutionizing-Geospatial-Data-Collection-min.jpg" class="active">
-                    </div>
-                    <button class="adv-nav next"><i class="fas fa-chevron-right"></i></button>
-                </div>
-                <div class="adv-content">
-                    <h3>Drone-based Imaging</h3>
-                    <p>UAV LiDAR data acquisition and 3D mapping.</p>
-                </div>
-            </div>
-
-            <div class="adv-card skill-style">
-                <div class="adv-slider" data-slider>
-                    <button class="adv-nav prev"><i class="fas fa-chevron-left"></i></button>
-                    <div class="adv-slides">
-                        <img src="https://tse4.mm.bing.net/th/id/OIP.GUeET2gO77xxmfEg0lmfbgHaE8?rs=1&pid=ImgDetMain&o=7&rm=3" class="active">
-                        <img src="https://tse3.mm.bing.net/th/id/OIP.geN_XTbVIGa6ZK3aE2chvwHaED?rs=1&pid=ImgDetMain&o=7&rm=3">
-                    </div>
-                    <button class="adv-nav next"><i class="fas fa-chevron-right"></i></button>
-                </div>
-                <div class="adv-content">
-                    <h3>Hydrological modeling</h3>
-                    <p>Simulating complex rainfall–runoff processes.</p>
-                </div>
-            </div>
-
-            <div class="adv-card skill-style">
-                <div class="adv-slider" data-slider>
-                    <button class="adv-nav prev"><i class="fas fa-chevron-left"></i></button>
-                    <div class="adv-slides">
-                        <img src="https://thumbs.dreamstime.com/b/captivating-d-geological-cross-section-model-offers-detailed-visualization-earth-s-rock-formations-stratigraphy-355554046.jpg" class="active">
-                        <img src="https://tse1.mm.bing.net/th/id/OIP.xgn8SpWYbeWHwoFn1H3AvAAAAA?rs=1&pid=ImgDetMain&o=7&rm=3">
-                    </div>
-                    <button class="adv-nav next"><i class="fas fa-chevron-right"></i></button>
-                </div>
-                <div class="adv-content">
-                    <h3>Stratigraphic Analysis</h3>
-                    <p>Detailed interpretation of drill cores and sediment sequences.</p>
-                </div>
-            </div>
-
-            <div class="adv-card skill-style">
-                <div class="adv-slider" data-slider>
-                    <button class="adv-nav prev"><i class="fas fa-chevron-left"></i></button>
-                    <div class="adv-slides">
-                        <img src="https://www.sismoelettrica.it/wp-content/uploads/elementor/thumbs/Geoelettrica-1-ppv2iifioy9g5g859pi1slyff2j97odfezv8exr8mo.jpeg" class="active">
-                        <img src="https://www.sismoelettrica.it/wp-content/uploads/elementor/thumbs/Geoelettrica-2-ppv2i59s19rfmwr9ejt9tp9z3oc47wx6p6qfp2ar1s.jpeg">
-                    </div>
-                    <button class="adv-nav next"><i class="fas fa-chevron-right"></i></button>
-                </div>
-                <div class="adv-content">
-                    <h3>Geoelectrical surveys</h3>
-                    <p>Subsurface resistivity mapping and soil analysis.</p>
-                </div>
-            </div>
-        </div>
-        
-        <hr class="adv-divider">
-        
-        <div class="adv-header">
             <h2 class="adv-title">Research Interests</h2>
         </div>
 
@@ -968,6 +899,90 @@ nav {
                 </div>
             </div>
         </div>
+
+        <hr class="adv-divider">
+
+        <div class="adv-header">
+            <h2 class="adv-title">Technical Expertise</h2>
+        </div>
+
+        <div class="adv-grid">
+            <div class="adv-card skill-style">
+                <div class="adv-slider" data-slider>
+                    <button class="adv-nav prev"><i class="fas fa-chevron-left"></i></button>
+                    <div class="adv-slides">
+                        <img src="https://tse4.mm.bing.net/th/id/OIP.P7LBOZiCkGIMyudn3lFHxgHaEM?rs=1&pid=ImgDetMain&o=7&rm=3" class="active">
+                        <img src="https://tse4.mm.bing.net/th/id/OIP.1S73mpILGuD6Wtk66TzKFQHaC5?rs=1&pid=ImgDetMain&o=7&rm=3">
+                    </div>
+                    <button class="adv-nav next"><i class="fas fa-chevron-right"></i></button>
+                </div>
+                <div class="adv-content">
+                    <h3>Remote Sensing & GIS</h3>
+                    <p>Spatial data interpretation and geospatial modeling.</p>
+                </div>
+            </div>
+
+            <div class="adv-card skill-style">
+                <div class="adv-slider" data-slider>
+                    <button class="adv-nav prev"><i class="fas fa-chevron-left"></i></button>
+                    <div class="adv-slides">
+                        <img src="https://powersuk.com/wp-content/uploads/2022/08/AdobeStock_218870939-scaled.jpeg" >
+                        <img src="https://www.technology-innovators.com/wp-content/uploads/2023/05/Drone-based-3D-Mapping-and-Surveying-Revolutionizing-Geospatial-Data-Collection-min.jpg" class="active">
+                    </div>
+                    <button class="adv-nav next"><i class="fas fa-chevron-right"></i></button>
+                </div>
+                <div class="adv-content">
+                    <h3>Drone-based Imaging</h3>
+                    <p>UAV LiDAR data acquisition and 3D mapping.</p>
+                </div>
+            </div>
+
+            <div class="adv-card skill-style">
+                <div class="adv-slider" data-slider>
+                    <button class="adv-nav prev"><i class="fas fa-chevron-left"></i></button>
+                    <div class="adv-slides">
+                        <img src="https://tse4.mm.bing.net/th/id/OIP.GUeET2gO77xxmfEg0lmfbgHaE8?rs=1&pid=ImgDetMain&o=7&rm=3" class="active">
+                        <img src="https://tse3.mm.bing.net/th/id/OIP.geN_XTbVIGa6ZK3aE2chvwHaED?rs=1&pid=ImgDetMain&o=7&rm=3">
+                    </div>
+                    <button class="adv-nav next"><i class="fas fa-chevron-right"></i></button>
+                </div>
+                <div class="adv-content">
+                    <h3>Hydrological modeling</h3>
+                    <p>Simulating complex rainfall–runoff processes.</p>
+                </div>
+            </div>
+
+            <div class="adv-card skill-style">
+                <div class="adv-slider" data-slider>
+                    <button class="adv-nav prev"><i class="fas fa-chevron-left"></i></button>
+                    <div class="adv-slides">
+                        <img src="https://thumbs.dreamstime.com/b/captivating-d-geological-cross-section-model-offers-detailed-visualization-earth-s-rock-formations-stratigraphy-355554046.jpg" class="active">
+                        <img src="https://tse1.mm.bing.net/th/id/OIP.xgn8SpWYbeWHwoFn1H3AvAAAAA?rs=1&pid=ImgDetMain&o=7&rm=3">
+                    </div>
+                    <button class="adv-nav next"><i class="fas fa-chevron-right"></i></button>
+                </div>
+                <div class="adv-content">
+                    <h3>Stratigraphic Analysis</h3>
+                    <p>Detailed interpretation of drill cores and sediment sequences.</p>
+                </div>
+            </div>
+
+            <div class="adv-card skill-style">
+                <div class="adv-slider" data-slider>
+                    <button class="adv-nav prev"><i class="fas fa-chevron-left"></i></button>
+                    <div class="adv-slides">
+                        <img src="https://www.sismoelettrica.it/wp-content/uploads/elementor/thumbs/Geoelettrica-1-ppv2iifioy9g5g859pi1slyff2j97odfezv8exr8mo.jpeg" class="active">
+                        <img src="https://www.sismoelettrica.it/wp-content/uploads/elementor/thumbs/Geoelettrica-2-ppv2i59s19rfmwr9ejt9tp9z3oc47wx6p6qfp2ar1s.jpeg">
+                    </div>
+                    <button class="adv-nav next"><i class="fas fa-chevron-right"></i></button>
+                </div>
+                <div class="adv-content">
+                    <h3>Geoelectrical surveys</h3>
+                    <p>Subsurface resistivity mapping and soil analysis.</p>
+                </div>
+            </div>
+        </div>
+        
 
         <div class="adv-cta">
             <a href="research.html" class="action-btn">Publications</a>
@@ -1464,25 +1479,67 @@ nav {
         </div>
     </section>
 
-    <section id="honours" class="scroll-animate section-padding">
-    <div class="container">
-        <div class="centered">
+    <section id="honours" class="scroll-animate section-padding bg-slate-50">
+    <div class="container relative">
+        <div class="centered mb-12">
             <span class="section-tag">Recognition</span>
             <h2 class="text-4xl font-black text-slate-900 mb-4">Awards & Honours</h2>
         </div>
-        <div class="grid-layout awards-grid">
-            <div class="card award-card"><i class="fas fa-user-tie"></i><h4>Fellow, Indian Academy of Sciences</h4><p>Bangalore (2021)</p></div>
-            <div class="card award-card"><i class="fas fa-user-tie"></i><h4>Fellowship</h4><p>National Academy of Sciences, Allahabad (2016)</p></div>
-            <div class="card award-card"><i class="fas fa-users"></i><h4>Lalit Mohan Kapoor Chair</h4><p>IIT Kanpur (2018-present)</p></div>
-            <div class="card award-card"><i class="fas fa-users"></i><h4>Pandit Girish Ranjan and Sushma Rani Pathak Chair</h4><p>IIT Kanpur (2014-16)</p></div>
-            <div class="card award-card"><i class="fas fa-user-tie"></i><h4>COFUND Senior Research Fellowship</h4><p>Durham University (2014)</p></div>
-            <div class="card award-card"><i class="fas fa-award"></i><h4>S.S. Merh Award</h4><p>Geological Society of India (2006)</p></div>
-            <div class="card award-card"><i class="fas fa-award"></i><h4>National Mineral Award</h4><p>Govt. of India (2002)</p></div>
-            <div class="card award-card"><i class="fas fa-user-tie"></i><h4>Alexander von Humboldt Fellowship</h4><p>Germany (2000)</p></div>
-            <div class="card award-card"><i class="fas fa-trophy"></i><h4>Career Award for Young Teachers</h4><p>AICTE (1998)</p></div>
-            <div class="card award-card"><i class="fas fa-award"></i><h4>Lundgren & Cambridge Philosophical Research Award</h4><p>Cambridge University, UK (1992)</p></div>
-            <div class="card award-card"><i class="fas fa-certificate"></i><h4>Nehru Scholarship (Doctoral)</h4><p>Cambridge University (1989)</p></div>
-            <div class="card award-card"><i class="fas fa-medal"></i><h4>University Gold Medal</h4><p>M.Tech (1987)</p></div>
+
+        <div class="relative px-12"> 
+            <button type="button" id="btnAwardLeft" onclick="moveAwards(-1)" 
+        class="absolute -left-4 md:-left-12 top-1/2 -translate-y-1/2 z-10 bg-white border border-slate-200 h-11 w-11 rounded-full flex items-center justify-center text-slate-400 hover:text-[#c5a059] hover:shadow-xl transition-all shadow-sm disabled:opacity-0">
+        <i class="fas fa-chevron-left"></i>
+    </button>
+    
+    <div class="overflow-hidden">
+                <div id="awardsTrack" class="flex transition-transform duration-500 ease-out">
+                    
+                    <div class="min-w-[25%] px-2">
+                        <div class="card award-card h-full m-0"><i class="fas fa-user-tie"></i><h4>Fellow, Indian Academy of Sciences</h4><p>Bangalore (2021)</p></div>
+                    </div>
+                    <div class="min-w-[25%] px-2">
+                        <div class="card award-card h-full m-0"><i class="fas fa-user-tie"></i><h4>Fellowship</h4><p>National Academy of Sciences, Allahabad (2016)</p></div>
+                    </div>
+                    <div class="min-w-[25%] px-2">
+                        <div class="card award-card h-full m-0"><i class="fas fa-users"></i><h4>Lalit Mohan Kapoor Chair</h4><p>IIT Kanpur (2018-present)</p></div>
+                    </div>
+                    <div class="min-w-[25%] px-2">
+                        <div class="card award-card h-full m-0"><i class="fas fa-users"></i><h4>Pandit Girish Ranjan and Sushma Rani Pathak Chair</h4><p>IIT Kanpur (2014-16)</p></div>
+                    </div>
+                    <div class="min-w-[25%] px-2">
+                        <div class="card award-card h-full m-0"><i class="fas fa-user-tie"></i><h4>COFUND Senior Research Fellowship</h4><p>Durham University (2014)</p></div>
+                    </div>
+                    <div class="min-w-[25%] px-2">
+                        <div class="card award-card h-full m-0"><i class="fas fa-award"></i><h4>S.S. Merh Award</h4><p>Geological Society of India (2006)</p></div>
+                    </div>
+                    <div class="min-w-[25%] px-2">
+                        <div class="card award-card h-full m-0"><i class="fas fa-award"></i><h4>National Mineral Award</h4><p>Govt. of India (2002)</p></div>
+                    </div>
+                    <div class="min-w-[25%] px-2">
+                        <div class="card award-card h-full m-0"><i class="fas fa-user-tie"></i><h4>Alexander von Humboldt Fellowship</h4><p>Germany (2000)</p></div>
+                    </div>
+                    <div class="min-w-[25%] px-2">
+                        <div class="card award-card h-full m-0"><i class="fas fa-award"></i><h4>Career Award for Young Teachers</h4><p>AICTE (1998)</p></div>
+                    </div>
+                    <div class="min-w-[25%] px-2">
+                        <div class="card award-card h-full m-0"><i class="fas fa-award"></i><h4>Lundgren & Cambridge Philosophical Research Award</h4><p>Cambridge University, UK (1992)</p></div>
+                    </div>
+                    <div class="min-w-[25%] px-2">
+                        <div class="card award-card h-full m-0"><i class="fas fa-award"></i><h4>Nehru Scholarship (Doctoral)</h4><p>Cambridge University (1989)</p></div>
+                    </div>
+                    <div class="min-w-[25%] px-2">
+                        <div class="card award-card h-full m-0"><i class="fas fa-award"></i><h4>University Gold Medal</h4><p>M.Tech (1987)</p></div>
+                    </div>
+                </div>
+            </div>
+
+    <button type="button" id="btnAwardright" onclick="moveAwards(1)" 
+        class="absolute -right-4 md:-right-12 top-1/2 -translate-y-1/2 z-10 bg-white border border-slate-200 h-11 w-11 rounded-full flex items-center justify-center text-slate-400 hover:text-[#c5a059] hover:shadow-xl transition-all shadow-sm disabled:opacity-0">
+        <i class="fas fa-chevron-right"></i>
+    </button>
+
+            
         </div>
     </div>
 </section>
@@ -1547,7 +1604,7 @@ nav {
     </section>
 
     <footer>
-        <div class="logo">Prof. Rajiv <span>Sinha</span></div>
+        <div class="logo">Rajiv <span>Sinha</span></div>
         <div class="footer-socials">
             <a href="https://scholar.google.com/citations?user=VkRcwwEAAAAJ&hl=en&oi=ao" title="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
                 <a href="https://www.linkedin.com/in/rajiv-sinha-a87a68b2/" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
@@ -1842,6 +1899,49 @@ window.addEventListener('resize', () => {
         moveScholarSlider(0, id);
     });
 });
+
+
+//awards slider
+window.currentAwardIndex = 0;
+
+window.moveAwards = function(direction) {
+    const track = document.getElementById('awardsTrack');
+    const btnLeft = document.getElementById('btnAwardLeft');
+    const btnRight = document.getElementById('btnAwardRight');
+    
+    if (!track) return;
+
+    const totalCards = track.children.length;
+    const visibleCards = 4; // CHANGED FROM 5 TO 4
+    const maxIndex = totalCards - visibleCards;
+
+    // Calculate position
+    let newIndex = window.currentAwardIndex + direction;
+    
+    // Boundary protection
+    if (newIndex >= 0 && newIndex <= maxIndex) {
+        window.currentAwardIndex = newIndex;
+        // Move by 25% for each index step
+        const moveAmount = window.currentAwardIndex * 25; 
+        track.style.transform = `translateX(-${moveAmount}%)`;
+    }
+
+    // Button removal logic
+    if (window.currentAwardIndex === 0) {
+        btnLeft.classList.add('hidden');
+    } else {
+        btnLeft.classList.remove('hidden');
+    }
+
+    if (window.currentAwardIndex === maxIndex) {
+        btnRight.classList.add('hidden');
+    } else {
+        btnRight.classList.remove('hidden');
+    }
+};
+
+// Run on load to hide the left button initially
+document.addEventListener('DOMContentLoaded', () => moveAwards(0));
     </script>
 </body>
 </html>
