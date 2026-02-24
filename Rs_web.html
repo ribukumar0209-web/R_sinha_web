@@ -1039,7 +1039,7 @@ button[onclick^="moveAwards"] {
 
 
     <section id="teaching" class="reveal">
-        <div class="centered"><span class="section-tag">Teaching & Mentorship</span><h2 class="text-4xl font-black text-slate-900 mb-4">Courses</h2></div>
+        <div class="centered"><span class="section-tag">Teaching & Mentorship</span><h2 class="text-4xl font-black text-slate-900 mb-4">Teaching</h2></div>
         <div class="grid-3-col">
             <div class="teaching-card" onclick="toggleTeachingCard(this)">
                 <h4 class="text-2xl font-black text-slate-500 mb-4">ES313: Earth System Processes</h4>
@@ -1147,7 +1147,7 @@ button[onclick^="moveAwards"] {
                 <div class="min-w-full sm:min-w-[50%] lg:min-w-[25%] p-3">
                     <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200 flex flex-col items-center text-center h-full hover:border-[#c5a059] hover:shadow-md transition-all">
                         <div class="w-20 h-20 bg-[#f0e5d0] text-[#c5a059] rounded-full flex items-center justify-center text-2xl font-bold mb-4">MA</div>
-                        <h4 class="font-bold text-slate-900">Moumika Akuria</h4>
+                        <h4 class="font-bold text-slate-900">Moumita Akuria</h4>
                         <p class="text-[10px] text-slate-400 mt-2 uppercase tracking-widest">Connectivity</p>
                         <p class="text-[11px] text-slate-500 mt-3 leading-relaxed">Anthropogenic impacts on hydrological connectivity.</p>
                     </div>
@@ -1244,15 +1244,6 @@ button[onclick^="moveAwards"] {
                         <h4 class="font-bold text-slate-900">Aqib Ansari</h4>
                         <p class="text-[10px] text-slate-400 mt-2 uppercase tracking-widest">River Health</p>
                         <p class="text-[11px] text-slate-500 mt-3 leading-relaxed">Health Assessment of Ganga-Ramganga using Flow Cytometry.</p>
-                    </div>
-                </div>
-
-                <div class="min-w-full sm:min-w-[50%] lg:min-w-[25%] p-3">
-                    <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200 flex flex-col items-center text-center h-full hover:border-[#c5a059] hover:shadow-md transition-all">
-                        <div class="w-20 h-20 bg-[#f0e5d0] text-[#c5a059] rounded-full flex items-center justify-center text-2xl font-bold mb-4">AK</div>
-                        <h4 class="font-bold text-slate-900">Abid Khan</h4>
-                        <p class="text-[10px] text-slate-400 mt-2 uppercase tracking-widest">Groundwater</p>
-                        <p class="text-[11px] text-slate-500 mt-3 leading-relaxed">Groundwater modelling in urban settings.</p>
                     </div>
                 </div>
 
@@ -1494,63 +1485,64 @@ button[onclick^="moveAwards"] {
             <h2 class="text-4xl font-black text-slate-900 mb-4">Awards & Honours</h2>
         </div>
 
-        <div class="relative px-4 md:px-16">
-            <button type="button" id="btnAwardLeft" onclick="moveAwards(-1)" 
+        <div class="relative px-4 md:px-0">
+            <!--<button type="button" id="btnAwardLeft" onclick="moveAwards(-1)" 
         class="absolute -left-4 md:-left-12 top-1/2 -translate-y-1/2 z-10 bg-white border border-slate-200 h-11 w-11 rounded-full flex items-center justify-center text-slate-400 hover:text-[#c5a059] hover:shadow-xl transition-all shadow-sm disabled:opacity-0">
         <i class="fas fa-chevron-left"></i>
-    </button>
-    
-    <div class="overflow-hidden relative z-10">
-                <div id="awardsTrack" class="flex transition-transform duration-500 ease-out">
+    </button>-->
+            <div class="relative z-10">
+                <div id="awardsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
                     
-                    <div class="min-w-full md:min-w-[50%] lg:min-w-[25%] px-3">
+                    <div class="px-0">
+                        <div class="card award-card h-full m-0"><i class="fas fa-user-tie"></i><h4>Fellow, Indian National Science Academy</h4><p>INSA (2026)</p></div>
+                    </div>
+                    <div class="px-0">
                         <div class="card award-card h-full m-0"><i class="fas fa-user-tie"></i><h4>Fellow, Indian Academy of Sciences</h4><p>Bangalore (2021)</p></div>
                     </div>
-                    <div class="min-w-full md:min-w-[50%] lg:min-w-[25%] px-3">
+                    <div class="px-0">
                         <div class="card award-card h-full m-0"><i class="fas fa-user-tie"></i><h4>Fellowship</h4><p>National Academy of Sciences, Allahabad (2016)</p></div>
                     </div>
-                    <div class="min-w-full md:min-w-[50%] lg:min-w-[25%] px-3">
+                    <div class="px-0">
                         <div class="card award-card h-full m-0"><i class="fas fa-users"></i><h4>Lalit Mohan Kapoor Chair</h4><p>IIT Kanpur (2018-present)</p></div>
                     </div>
-                    <div class="min-w-full md:min-w-[50%] lg:min-w-[25%] px-3">
+                    <div class="px-0">
                         <div class="card award-card h-full m-0"><i class="fas fa-users"></i><h4>Pandit Girish Ranjan and Sushma Rani Pathak Chair</h4><p>IIT Kanpur (2014-16)</p></div>
                     </div>
-                    <div class="min-w-full md:min-w-[50%] lg:min-w-[25%] px-3">
+                    <div class="px-0">
                         <div class="card award-card h-full m-0"><i class="fas fa-user-tie"></i><h4>COFUND Senior Research Fellowship</h4><p>Durham University (2014)</p></div>
                     </div>
-                    <div class="min-w-full md:min-w-[50%] lg:min-w-[25%] px-3">
+                    <div class="px-0">
                         <div class="card award-card h-full m-0"><i class="fas fa-award"></i><h4>S.S. Merh Award</h4><p>Geological Society of India (2006)</p></div>
                     </div>
-                    <div class="min-w-full md:min-w-[50%] lg:min-w-[25%] px-3">
+                    <div class="px-0">
                         <div class="card award-card h-full m-0"><i class="fas fa-award"></i><h4>National Mineral Award</h4><p>Govt. of India (2002)</p></div>
                     </div>
-                    <div class="min-w-full md:min-w-[50%] lg:min-w-[25%] px-3">
+                    <div class="px-0">
                         <div class="card award-card h-full m-0"><i class="fas fa-user-tie"></i><h4>Alexander von Humboldt Fellowship</h4><p>Germany (2000)</p></div>
                     </div>
-                    <div class="min-w-full md:min-w-[50%] lg:min-w-[25%] px-3">
+                    <div class="px-0">
                         <div class="card award-card h-full m-0"><i class="fas fa-award"></i><h4>Career Award for Young Teachers</h4><p>AICTE (1998)</p></div>
                     </div>
-                    <div class="min-w-full md:min-w-[50%] lg:min-w-[25%] px-3">
+                    <div class="px-0">
                         <div class="card award-card h-full m-0"><i class="fas fa-award"></i><h4>Lundgren & Cambridge Philosophical Research Award</h4><p>Cambridge University, UK (1992)</p></div>
                     </div>
-                    <div class="min-w-full md:min-w-[50%] lg:min-w-[25%] px-3">
+                    <div class="px-0">
                         <div class="card award-card h-full m-0"><i class="fas fa-award"></i><h4>Nehru Scholarship (Doctoral)</h4><p>Cambridge University (1989)</p></div>
                     </div>
-                    <div class="min-w-full md:min-w-[50%] lg:min-w-[25%] px-3">
+                    <div class="px-0">
                         <div class="card award-card h-full m-0"><i class="fas fa-award"></i><h4>University Gold Medal</h4><p>M.Tech (1987)</p></div>
                     </div>
                 </div>
             </div>
-
-    <button type="button" id="btnAwardright" onclick="moveAwards(1)" 
+        <!--<button type="button" id="btnAwardright" onclick="moveAwards(1)" 
         class="absolute -right-4 md:-right-12 top-1/2 -translate-y-1/2 z-10 bg-white border border-slate-200 h-11 w-11 rounded-full flex items-center justify-center text-slate-400 hover:text-[#c5a059] hover:shadow-xl transition-all shadow-sm disabled:opacity-0">
         <i class="fas fa-chevron-right"></i>
-    </button>
+    </button>-->
 
-            
-        </div>
+    </div>
     </div>
 </section>
+
 
 <section id="affiliations" class="scroll-animate section-padding alt-bg">
     <div class="container">
@@ -1910,7 +1902,7 @@ window.addEventListener('resize', () => {
 
 
 //awards slider
-window.currentAwardIndex = 0;
+/*window.currentAwardIndex = 0;
 
 window.getVisibleCards = function() {
     if (window.innerWidth >= 1024) return 4; // Desktop
@@ -1947,7 +1939,7 @@ window.moveAwards = function(direction) {
         btnLeft.style.display = (window.currentAwardIndex === 0) ? 'none' : 'flex';
         btnRight.style.display = (window.currentAwardIndex === maxIndex) ? 'none' : 'flex';
     }
-};
+};*/
 
 // Reset index on window resize to prevent layout breaking
 window.addEventListener('resize', () => {
