@@ -34,6 +34,7 @@ header {
     top: 0;
     z-index: 3000;
     border-bottom: 2px solid var(--accent);
+    display: None;
 }
 
 nav {
@@ -324,143 +325,7 @@ nav {
         .hero-profile::before { background: rgba(0, 12, 24, 0.85); }
     }
 
-/* Unique prefix 'res-' to prevent CSS conflicts */
-.res-light-theme {
-    background-color: #ffffff;
-    padding: 100px 5%;
-    color: #333;
-    font-family: 'Plus Jakarta Sans', sans-serif;
-}
 
-.res-container {
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.res-header {
-    text-align: center;
-    margin-bottom: 80px;
-}
-
-.res-tag {
-    color: #b3a369; /* Academic Gold */
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    font-size: 0.85rem;
-    font-weight: 800;
-}
-
-.res-title {
-    font-size: 2.5rem;
-    color: rgba(0, 12, 24, 0.85); /* Your Primary Blue */
-    margin: 15px 0;
-    font-weight: 700;
-}
-
-.res-accent-line {
-    width: 60px;
-    height: 3px;
-    background: #b3a369;
-    margin: 0 auto 25px;
-}
-
-.res-subtitle {
-    color: #666;
-    max-width: 700px;
-    margin: 0 auto;
-    font-size: 1.1rem;
-    line-height: 1.6;
-}
-
-/* 3-in-a-row Force Grid */
-.res-grid-3 {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-}
-
-.res-node {
-    background: #fdfdfd;
-    border: 1px solid #eeeeee;
-    border-radius: 8px;
-    overflow: hidden;
-    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-    display: flex;
-    flex-direction: column;
-}
-
-.res-node:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 15px 40px rgba(0,0,0,0.08);
-    border-color: #b3a369;
-}
-
-.res-media {
-    height: 200px;
-    overflow: hidden;
-}
-
-.res-media img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.6s ease;
-}
-
-.res-node:hover .res-media img {
-    transform: scale(1.08);
-}
-
-.res-content {
-    padding: 25px;
-    text-align: center;
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.res-content h3 {
-    font-size: 1.2rem;
-    color: rgba(0, 12, 24, 0.85);
-    margin-bottom: 12px;
-}
-
-.res-node-text {
-    font-size: 0.9rem;
-    color: #777;
-    margin-bottom: 25px;
-}
-
-/* View More Button Styling */
-.res-action-btn {
-    display: inline-block;
-    padding: 12px 25px;
-    background-color: #b3a369; /* Gold */
-    color: white;
-    text-decoration: none;
-    border-radius: 4px;
-    font-weight: 600;
-    font-size: 0.85rem;
-    transition: all 0.3s ease;
-    border: 2px solid #b3a369;
-    align-self: center;
-}
-
-.res-action-btn:hover {
-    background-color: transparent;
-    color: #b3a369;
-}
-
-/* Responsive Scaling */
-@media (max-width: 1024px) {
-    .res-grid-3 { grid-template-columns: repeat(2, 1fr); }
-}
-
-@media (max-width: 650px) {
-    .res-grid-3 { grid-template-columns: 1fr; }
-    .res-title { font-size: 2rem; }
-}
         /* --- SECTION COMMONS --- */
         section { padding: 100px 10%; position: relative; }
         .centered { text-align: center; max-width: 900px; margin: 0 auto; }
@@ -542,7 +407,7 @@ nav {
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
 }
 
-/* --- THEME 1: AWARDS (Clean Cards) --- */
+/* --- THEME 1: AWARDS --- */
 .award-card {
     background: var(--bg-light);
     padding: 30px 20px;
@@ -559,7 +424,7 @@ nav {
 .award-card h4 { font-size: 1rem; color: var(--text-dark); margin-bottom: 8px; }
 .award-card p { font-size: 0.85rem; color: var(--text-muted); }
 
-/* --- THEME 2: AFFILIATIONS (Pill Badges) --- */
+/* --- THEME 2: AFFILIATIONS --- */
 .alt-bg { background: var(--bg-alt); }
 .affiliation-grid { grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); }
 .aff-item {
@@ -773,12 +638,192 @@ button[onclick^="moveAwards"] {
     pointer-events: auto; /* ...but makes the cards themselves interactive again */
 }
 
+/* --- VERTICAL SIDE NAVIGATION --- */
+.v-nav-wrapper {
+    position: fixed; 
+    right: 40px !important; 
+    left: auto !important;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 99999; 
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; 
+    gap: 15px;
+    padding-right: 10px; 
+    /* ERROR FIX: Allows mouse to click buttons BEHIND this container */
+    pointer-events: none; 
+}
+
+.v-nav-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    width: fit-content; 
+    /* ERROR FIX: Re-enables clicking for the actual icon/label */
+    pointer-events: auto; 
+}
+
+.v-nav-icon {
+    width: 50px;
+    height: 50px;
+    background: rgba(0, 12, 24, 0.85);
+    color: #c5a059;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    box-shadow: -2px 2px 8px rgba(0,0,0,0.2);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.v-nav-label {
+    background: rgba(0, 12, 24, 0.85);
+    color: #c5a059;
+    padding: 8px 15px;
+    border-radius: 20px;
+    margin-right: 10px;
+    font-size: 0.85rem;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(20px);
+    transition: all 0.3s ease;
+}
+
+/* Hover Effects */
+.v-nav-link:hover .v-nav-label {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+    background-color: #000c18;
+}
+
+.v-nav-link:hover .v-nav-icon {
+    transform: scale(1.1);
+    color: #fff;
+}
+
+/*buttons in home page*/
+/* --- ENHANCED HOMEPAGE ACTION BUTTONS --- */
+
+.hp-action-container {
+    display: flex;
+    gap: 20px;
+    margin-top: 35px;
+    position: relative;
+    z-index: 10;
+}
+
+.hp-btn {
+    padding: 14px 30px;
+    border-radius: 4px; /* Slightly sharper for a more academic/professional feel */
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 1.2px; /* Professional tracking */
+    text-transform: uppercase;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 20 !important;
+    pointer-events: auto !important;
+    cursor: pointer !important;
+}
+
+/* Primary Button: Gold Background */
+.hp-btn-primary {
+    background-color: #c5a059;
+    color: rgba(0, 12, 24, 0.85);
+    border: 2px solid #c5a059;
+    box-shadow: 0 4px 15px rgba(197, 160, 89, 0.2);
+}
+
+/* Secondary Button: Outlined Gold */
+.hp-btn-secondary {
+    background-color: transparent;
+    color: #c5a059;
+    border: 2px solid rgba(197, 160, 89, 0.6);
+}
+
+/* --- HOVER STATES --- */
+
+.hp-btn-primary:hover {
+    background-color: transparent;
+    color: #c5a059;
+    border-color: #c5a059;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(197, 160, 89, 0.3);
+}
+
+.hp-btn-secondary:hover {
+    background-color: #c5a059;
+    color: rgba(0, 12, 24, 0.85);
+    border-color: #c5a059;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(197, 160, 89, 0.3);
+}
+
+/* Active State for feedback when clicked */
+.hp-btn:active {
+    transform: translateY(-1px);
+    filter: brightness(0.9);
+}
+
+/* --- MOBILE RESPONSIVENESS --- */
+@media (max-width: 768px) {
+    .hp-action-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .hp-btn {
+        width: 100%;
+        max-width: 260px;
+    }
+}
+
+
     </style>
 </head>
 <body>
 
+<nav class="v-nav-wrapper">
+    <a href="#hero" class="v-nav-link">
+        <span class="v-nav-label">Home</span>
+        <div class="v-nav-icon"><i class="fas fa-home"></i></div>
+    </a>
+    <a href="#expertise-portal" class="v-nav-link">
+        <span class="v-nav-label">Research</span>
+        <div class="v-nav-icon"><i class="fas fa-cogs"></i></div>
+    </a>
+    <a href="#resume" class="v-nav-link">
+        <span class="v-nav-label">Experience</span>
+        <div class="v-nav-icon"><i class="fas fa-graduation-cap"></i></div>
+    </a>
+    <a href="#teaching" class="v-nav-link">
+        <span class="v-nav-label">Teaching</span>
+        <div class="v-nav-icon"><i class="fas fa-book-reader"></i></div>
+    </a>
+    <a href="#team" class="v-nav-link">
+        <span class="v-nav-label">Student</span>
+        <div class="v-nav-icon"><i class="fas fa-users"></i></div>
+    </a>
+    <a href="#honours" class="v-nav-link">
+        <span class="v-nav-label">Awards & Honours</span>
+        <div class="v-nav-icon"><i class="fas fa-award"></i></div>
+    </a>
+    <a href="#contact" class="v-nav-link">
+        <span class="v-nav-label">Contact</span>
+        <div class="v-nav-icon"><i class="fa fa-envelope"></i></div>
+    </a>
+</nav>
+
+
     <header>
-    <nav>
         <div class="logo">Rajiv <span>Sinha</span></div>
         
         <div class="menu-toggle" id="mobile-menu">
@@ -797,7 +842,6 @@ button[onclick^="moveAwards"] {
             <li><a href="#honours">Award</a></li>
             <li><a href="#contact" class="nav-contact-btn-more">Contact</a></li>
         </ul>
-    </nav>
 </header>
 
     <section id="hero"class="hero-profile">
@@ -815,13 +859,12 @@ button[onclick^="moveAwards"] {
                 <a href="https://www.linkedin.com/in/rajiv-sinha-a87a68b2/" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
                 <a href="mailto:rsinha@iitk.ac.in" title="Email"><i class="fas fa-envelope"></i></a>
             </div>
+            <div class="hp-action-container">
+               <a href="lab_page/HB_new.html" class="hp-btn hp-btn-primary">Research Labs</a>
+               <a href="research.html" class="hp-btn hp-btn-secondary">Publications</a>
+            </div>
 
-            <!-- <div class="stats-bar">
-                <div class="stat-item"><h3>30+</h3><p>Years of Impact</p></div>
-                <div class="stat-item"><h3>400+</h3><p>Publications</p></div>
-                <div class="stat-item"><h3>32+</h3><p>Students Supervised</p></div>
-                <div class="stat-item"><h3>12+</h3><p>National Policies</p></div>
-            </div>-->
+        
         </div>
         
         <div class="profile-visual"></div>
@@ -1128,73 +1171,91 @@ button[onclick^="moveAwards"] {
                 
                 <div class="min-w-full sm:min-w-[50%] lg:min-w-[25%] p-3">
                     <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200 flex flex-col items-center text-center h-full hover:border-[#c5a059] hover:shadow-md transition-all">
-                        <div class="w-20 h-20 bg-[#f0e5d0] text-[#c5a059] rounded-full flex items-center justify-center text-2xl font-bold mb-4">SS</div>
+                        <img src="Current_phd_students/Shobhit Singh.JPG" 
+                        alt="Dummy profile" 
+                        class="w-25 h-25 rounded-full object-cover mb-4" />
                         <h4 class="font-bold text-slate-900">Shobhit Singh</h4>
                         <p class="text-[10px] text-slate-400 mt-2 uppercase tracking-widest">Hydro-Geomorphic</p>
-                        <p class="text-[11px] text-slate-500 mt-3 leading-relaxed">Flood risk assessment of the Ghaghra River system.</p>
+                        <p class="js-bio-text text-[11px] text-slate-500 mt-3 leading-relaxed">My research focuses on hydrogeomorphology and flood hazard assessment, using remote sensing and geospatial analysis to understand river dynamics and flood processes. I work with satellite data, particularly SAR, and drone-based technologies to map flood inundation, study sediment dynamics, and analyse river morphodynamics for improved disaster risk management and environmental planning.</p>
                     </div>
                 </div>
 
                 <div class="min-w-full sm:min-w-[50%] lg:min-w-[25%] p-3">
                     <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200 flex flex-col items-center text-center h-full hover:border-[#c5a059] hover:shadow-md transition-all">
-                        <div class="w-20 h-20 bg-[#f0e5d0] text-[#c5a059] rounded-full flex items-center justify-center text-2xl font-bold mb-4">AS</div>
+                        <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" 
+                        alt="Dummy profile" 
+                        class="w-25 h-25 rounded-full object-cover mb-4" />
                         <h4 class="font-bold text-slate-900">Abhishek Sinha</h4>
                         <p class="text-[10px] text-slate-400 mt-2 uppercase tracking-widest">Wetland Health</p>
-                        <p class="text-[11px] text-slate-500 mt-3 leading-relaxed">Assessment of hydrologic connectivity in Ganga wetlands.</p>
+                        <p class="js-bio-text text-[11px] text-slate-500 mt-3 leading-relaxed">Assessment of hydrologic connectivity in Ganga wetlands.</p>
                     </div>
                 </div>
 
                 <div class="min-w-full sm:min-w-[50%] lg:min-w-[25%] p-3">
                     <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200 flex flex-col items-center text-center h-full hover:border-[#c5a059] hover:shadow-md transition-all">
-                        <div class="w-20 h-20 bg-[#f0e5d0] text-[#c5a059] rounded-full flex items-center justify-center text-2xl font-bold mb-4">MA</div>
+                        <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" 
+                        alt="Dummy profile" 
+                        class="w-25 h-25 rounded-full object-cover mb-4" />
                         <h4 class="font-bold text-slate-900">Moumita Akuria</h4>
                         <p class="text-[10px] text-slate-400 mt-2 uppercase tracking-widest">Connectivity</p>
-                        <p class="text-[11px] text-slate-500 mt-3 leading-relaxed">Anthropogenic impacts on hydrological connectivity.</p>
+                        <p class="js-bio-text text-[11px] text-slate-500 mt-3 leading-relaxed">Anthropogenic impacts on hydrological connectivity.</p>
                     </div>
                 </div>
 
                 <div class="min-w-full sm:min-w-[50%] lg:min-w-[25%] p-3">
                     <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200 flex flex-col items-center text-center h-full hover:border-[#c5a059] hover:shadow-md transition-all">
-                        <div class="w-20 h-20 bg-[#f0e5d0] text-[#c5a059] rounded-full flex items-center justify-center text-2xl font-bold mb-4">AY</div>
+                        <img src="Current_phd_students\Ankit yadav.jpg" 
+                        alt="Dummy profile" 
+                        class="w-25 h-25 rounded-full object-cover mb-4" />
                         <h4 class="font-bold text-slate-900">Ankit Yadav</h4>
                         <p class="text-[10px] text-slate-400 mt-2 uppercase tracking-widest">Sediment dynamics</p>
-                        <p class="text-[11px] text-slate-500 mt-3 leading-relaxed">Sediment dynamics and Cascading Hazards.</p>
+                        <p class="js-bio-text text-[11px] text-slate-500 mt-3 leading-relaxed">I am a Research Scholar in Earth Sciences at the Indian Institute of Technology Kanpur (IIT Kanpur), working on sediment dynamics, geomorphic processes, and cascading natural hazards in the Himalayan mountain systems. My doctoral research focuses on developing an integrated geospatial and process-based framework to quantify sediment flux, erosion dynamics, and multi-hazard interactions, including landslides, debris flows, and floods in the Alaknanda Basin, Garhwal Himalaya.
+
+                        My work combines UAV-based remote sensing, LiDAR analysis, terrain morphometry, field investigations, and numerical hazard modeling using GIS, Python, R, SAR and Google Earth Engine to support hazard risk assessment and disaster risk reduction.</p>
                     </div>
                 </div>
 
                 <div class="min-w-full sm:min-w-[50%] lg:min-w-[25%] p-3">
                     <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200 flex flex-col items-center text-center h-full hover:border-[#c5a059] hover:shadow-md transition-all">
-                        <div class="w-20 h-20 bg-[#f0e5d0] text-[#c5a059] rounded-full flex items-center justify-center text-2xl font-bold mb-4">SS</div>
+                        <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" 
+                        alt="Dummy profile" 
+                        class="w-25 h-25 rounded-full object-cover mb-4" />
                         <h4 class="font-bold text-slate-900">Sarita Sahoo</h4>
                         <p class="text-[10px] text-slate-400 mt-2 uppercase tracking-widest">Hyperspectral Remote Sensing</p>
-                        <p class="text-[11px] text-slate-500 mt-3 leading-relaxed">Shoreline Dynamics and implication on chilika wetland's stability.</p>
+                        <p class="js-bio-text text-[11px] text-slate-500 mt-3 leading-relaxed">Shoreline Dynamics and implication on chilika wetland's stability.</p>
                     </div>
                 </div>
 
                 <div class="min-w-full sm:min-w-[50%] lg:min-w-[25%] p-3">
                     <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200 flex flex-col items-center text-center h-full hover:border-[#c5a059] hover:shadow-md transition-all">
-                        <div class="w-20 h-20 bg-[#f0e5d0] text-[#c5a059] rounded-full flex items-center justify-center text-2xl font-bold mb-4">AV</div>
+                        <img src="Current_phd_students/Ajusree VK.jpg" 
+                        alt="Dummy profile" 
+                        class="w-25 h-25 rounded-full object-cover mb-4" />
                         <h4 class="font-bold text-slate-900">Ajusree VK</h4>
                         <p class="text-[10px] text-slate-400 mt-2 uppercase tracking-widest">Hydrology and Remote Sensing</p>
-                        <p class="text-[11px] text-slate-500 mt-3 leading-relaxed">Hydrology and Remote Sensing.</p>
+                        <p class="js-bio-text text-[11px] text-slate-500 mt-3 leading-relaxed">I'm working on restoration and management strategies of Loktak wetland system using remote sensing datasets</p>
                     </div>
                 </div>
 
                 <div class="min-w-full sm:min-w-[50%] lg:min-w-[25%] p-3">
                     <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200 flex flex-col items-center text-center h-full hover:border-[#c5a059] hover:shadow-md transition-all">
-                        <div class="w-20 h-20 bg-[#f0e5d0] text-[#c5a059] rounded-full flex items-center justify-center text-2xl font-bold mb-4">AR</div>
+                        <img src="Current_phd_students/Atmika Ray.jpg" 
+                        alt="Dummy profile" 
+                        class="w-25 h-25 rounded-full object-cover mb-4" />
                         <h4 class="font-bold text-slate-900">Atmika Ray</h4>
                         <p class="text-[10px] text-slate-400 mt-2 uppercase tracking-widest">River Sciences</p>
-                        <p class="text-[11px] text-slate-500 mt-3 leading-relaxed">Spatial temporal dynamics of riverine islands.</p>
+                        <p class="js-bio-text text-[11px] text-slate-500 mt-3 leading-relaxed">Fluvial geomorphology.</p>
                     </div>
                 </div>
 
                 <div class="min-w-full sm:min-w-[50%] lg:min-w-[25%] p-3">
                     <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200 flex flex-col items-center text-center h-full hover:border-[#c5a059] hover:shadow-md transition-all">
-                        <div class="w-20 h-20 bg-[#f0e5d0] text-[#c5a059] rounded-full flex items-center justify-center text-2xl font-bold mb-4">SK</div>
+                        <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" 
+                        alt="Dummy profile" 
+                        class="w-25 h-25 rounded-full object-cover mb-4" />
                         <h4 class="font-bold text-slate-900">Shefali Kuril</h4>
                         <p class="text-[10px] text-slate-400 mt-2 uppercase tracking-widest">Agricultural Monitoring</p>
-                        <p class="text-[11px] text-slate-500 mt-3 leading-relaxed">Thermal abd Multi-spectral imaging in agriculture-dominated CZO in Ganga basin.</p>
+                        <p class="js-bio-text text-[11px] text-slate-500 mt-3 leading-relaxed">Thermal abd Multi-spectral imaging in agriculture-dominated CZO in Ganga basin.</p>
                     </div>
                 </div>
 
@@ -1222,163 +1283,199 @@ button[onclick^="moveAwards"] {
 
                 <div class="min-w-full sm:min-w-[50%] lg:min-w-[25%] p-3">
                     <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200 flex flex-col items-center text-center h-full hover:border-[#c5a059] hover:shadow-md transition-all">
-                        <div class="w-20 h-20 bg-[#f0e5d0] text-[#c5a059] rounded-full flex items-center justify-center text-2xl font-bold mb-4">SD</div>
+                        <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" 
+                        alt="Dummy profile" 
+                        class="w-25 h-25 rounded-full object-cover mb-4" />
                         <h4 class="font-bold text-slate-900">Saroj Kumar Dash</h4>
                         <p class="text-[10px] text-slate-400 mt-2 uppercase tracking-widest">CZO Modeling</p>
-                        <p class="text-[11px] text-slate-500 mt-3 leading-relaxed">Estimating soil moisture & crop water stress in Ganga CZO.</p>
+                        <p class="js-bio-text text-[11px] text-slate-500 mt-3 leading-relaxed">Estimating soil moisture & crop water stress in Ganga CZO.</p>
                     </div>
                 </div>
 
                 <div class="min-w-full sm:min-w-[50%] lg:min-w-[25%] p-3">
                     <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200 flex flex-col items-center text-center h-full hover:border-[#c5a059] hover:shadow-md transition-all">
-                        <div class="w-20 h-20 bg-[#f0e5d0] text-[#c5a059] rounded-full flex items-center justify-center text-2xl font-bold mb-4">SB</div>
+                        <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" 
+                        alt="Dummy profile" 
+                        class="w-25 h-25 rounded-full object-cover mb-4" />
                         <h4 class="font-bold text-slate-900">Sohini Bhattacharya</h4>
                         <p class="text-[10px] text-slate-400 mt-2 uppercase tracking-widest">Sediment Flux</p>
-                        <p class="text-[11px] text-slate-500 mt-3 leading-relaxed">Understanding soil variability in the Anthropocene (U. Potsdam joint).</p>
+                        <p class="js-bio-text text-[11px] text-slate-500 mt-3 leading-relaxed">Understanding soil variability in the Anthropocene (U. Potsdam joint).</p>
                     </div>
                 </div>
 
                 <div class="min-w-full sm:min-w-[50%] lg:min-w-[25%] p-3">
                     <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200 flex flex-col items-center text-center h-full hover:border-[#c5a059] hover:shadow-md transition-all">
-                        <div class="w-20 h-20 bg-[#f0e5d0] text-[#c5a059] rounded-full flex items-center justify-center text-2xl font-bold mb-4">AA</div>
+                        <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" 
+                        alt="Dummy profile" 
+                        class="w-25 h-25 rounded-full object-cover mb-4" />
                         <h4 class="font-bold text-slate-900">Aqib Ansari</h4>
                         <p class="text-[10px] text-slate-400 mt-2 uppercase tracking-widest">River Health</p>
-                        <p class="text-[11px] text-slate-500 mt-3 leading-relaxed">Health Assessment of Ganga-Ramganga using Flow Cytometry.</p>
+                        <p class="js-bio-text text-[11px] text-slate-500 mt-3 leading-relaxed">Health Assessment of Ganga-Ramganga using Flow Cytometry.</p>
                     </div>
                 </div>
 
                 <div class="min-w-full sm:min-w-[50%] lg:min-w-[25%] p-3">
                     <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200 flex flex-col items-center text-center h-full hover:border-[#c5a059] hover:shadow-md transition-all">
-                        <div class="w-20 h-20 bg-[#f0e5d0] text-[#c5a059] rounded-full flex items-center justify-center text-2xl font-bold mb-4">KM</div>
+                        <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" 
+                        alt="Dummy profile" 
+                        class="w-25 h-25 rounded-full object-cover mb-4" />
                         <h4 class="font-bold text-slate-900">Kanchan Mishra</h4>
                         <p class="text-[10px] text-slate-400 mt-2 uppercase tracking-widest">Sedimentology</p>
-                        <p class="text-[11px] text-slate-500 mt-3 leading-relaxed">Sediment dynamics and sediment connectivity in the Kosi basin: implications for river hazards.</p>
+                        <p class="js-bio-text text-[11px] text-slate-500 mt-3 leading-relaxed">Sediment dynamics and sediment connectivity in the Kosi basin: implications for river hazards.</p>
                     </div>
                 </div>
 
                 <div class="min-w-full sm:min-w-[50%] lg:min-w-[25%] p-3">
                     <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200 flex flex-col items-center text-center h-full hover:border-[#c5a059] hover:shadow-md transition-all">
-                        <div class="w-20 h-20 bg-[#f0e5d0] text-[#c5a059] rounded-full flex items-center justify-center text-2xl font-bold mb-4">AS</div>
+                        <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" 
+                        alt="Dummy profile" 
+                        class="w-25 h-25 rounded-full object-cover mb-4" />
                         <h4 class="font-bold text-slate-900">Ajit Singh</h4>
                         <p class="text-[10px] text-slate-400 mt-2 uppercase tracking-widest">Sedimentology</p>
-                        <p class="text-[11px] text-slate-500 mt-3 leading-relaxed">Sub-surface stratigraphy and sedimentology of the Ghaggar plains: linkage of landscape evolution and cultural heritage.</p>
+                        <p class="js-bio-text text-[11px] text-slate-500 mt-3 leading-relaxed">Sub-surface stratigraphy and sedimentology of the Ghaggar plains: linkage of landscape evolution and cultural heritage.</p>
                     </div>
                 </div>
 
                 <div class="min-w-full sm:min-w-[50%] lg:min-w-[25%] p-3">
                     <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200 flex flex-col items-center text-center h-full hover:border-[#c5a059] hover:shadow-md transition-all">
-                        <div class="w-20 h-20 bg-[#f0e5d0] text-[#c5a059] rounded-full flex items-center justify-center text-2xl font-bold mb-4">DS</div>
+                        <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" 
+                        alt="Dummy profile" 
+                        class="w-25 h-25 rounded-full object-cover mb-4" />
                         <h4 class="font-bold text-slate-900">Dipro Sarkar</h4>
                         <p class="text-[10px] text-slate-400 mt-2 uppercase tracking-widest">Terrain Monitoring</p>
-                        <p class="text-[11px] text-slate-500 mt-3 leading-relaxed">Terrain mapping and water quality monitoring from airborne platforms. Integrating UAV Technology with community-based tools for Monitoring Water Quality of the Ganga River.</p>
+                        <p class="js-bio-text text-[11px] text-slate-500 mt-3 leading-relaxed">Terrain mapping and water quality monitoring from airborne platforms. Integrating UAV Technology with community-based tools for Monitoring Water Quality of the Ganga River.</p>
                     </div>
                 </div>
 
                 <div class="min-w-full sm:min-w-[50%] lg:min-w-[25%] p-3">
                     <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200 flex flex-col items-center text-center h-full hover:border-[#c5a059] hover:shadow-md transition-all">
-                        <div class="w-20 h-20 bg-[#f0e5d0] text-[#c5a059] rounded-full flex items-center justify-center text-2xl font-bold mb-4">PM</div>
+                        <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" 
+                        alt="Dummy profile" 
+                        class="w-25 h-25 rounded-full object-cover mb-4" />
                         <h4 class="font-bold text-slate-900">Pavani Mishra</h4>
                         <p class="text-[10px] text-slate-400 mt-2 uppercase tracking-widest">Deposition Analysis</p>
-                        <p class="text-[11px] text-slate-500 mt-3 leading-relaxed">High resolution paleoclimatic reconstruction and depositional environments of paleolake sediments in the Ganga plains.</p>
+                        <p class="js-bio-text text-[11px] text-slate-500 mt-3 leading-relaxed">High resolution paleoclimatic reconstruction and depositional environments of paleolake sediments in the Ganga plains.</p>
                     </div>
                 </div>
 
                 <div class="min-w-full sm:min-w-[50%] lg:min-w-[25%] p-3">
                     <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200 flex flex-col items-center text-center h-full hover:border-[#c5a059] hover:shadow-md transition-all">
-                        <div class="w-20 h-20 bg-[#f0e5d0] text-[#c5a059] rounded-full flex items-center justify-center text-2xl font-bold mb-4">IK</div>
+                        <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" 
+                        alt="Dummy profile" 
+                        class="w-25 h-25 rounded-full object-cover mb-4" />
                         <h4 class="font-bold text-slate-900">Imran Khan</h4>
                         <p class="text-[10px] text-slate-400 mt-2 uppercase tracking-widest">Drainage Analysis</p>
-                        <p class="text-[11px] text-slate-500 mt-3 leading-relaxed">Drainage reorganisation and sub-surface stratigraphy of the paleo-Yamuna River in Haryana Plains, NW India and its linkage to Harappan Civilization.</p>
+                        <p class="js-bio-text text-[11px] text-slate-500 mt-3 leading-relaxed">Drainage reorganisation and sub-surface stratigraphy of the paleo-Yamuna River in Haryana Plains, NW India and its linkage to Harappan Civilization.</p>
                     </div>
                 </div>
 
                 <div class="min-w-full sm:min-w-[50%] lg:min-w-[25%] p-3">
                     <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200 flex flex-col items-center text-center h-full hover:border-[#c5a059] hover:shadow-md transition-all">
-                        <div class="w-20 h-20 bg-[#f0e5d0] text-[#c5a059] rounded-full flex items-center justify-center text-2xl font-bold mb-4">SS</div>
+                        <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" 
+                        alt="Dummy profile" 
+                        class="w-25 h-25 rounded-full object-cover mb-4" />
                         <h4 class="font-bold text-slate-900">Somil Swrankar</h4>
                         <p class="text-[10px] text-slate-400 mt-2 uppercase tracking-widest">Sedimentology</p>
-                        <p class="text-[11px] text-slate-500 mt-3 leading-relaxed">Soil erosion and sediment flux estimation from landscape evolution models.</p>
+                        <p class="js-bio-text text-[11px] text-slate-500 mt-3 leading-relaxed">Soil erosion and sediment flux estimation from landscape evolution models.</p>
                     </div>
                 </div>
 
                 <div class="min-w-full sm:min-w-[50%] lg:min-w-[25%] p-3">
                     <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200 flex flex-col items-center text-center h-full hover:border-[#c5a059] hover:shadow-md transition-all">
-                        <div class="w-20 h-20 bg-[#f0e5d0] text-[#c5a059] rounded-full flex items-center justify-center text-2xl font-bold mb-4">MN</div>
+                        <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" 
+                        alt="Dummy profile" 
+                        class="w-25 h-25 rounded-full object-cover mb-4" />
                         <h4 class="font-bold text-slate-900">Manudeo Narayan Singh</h4>
                         <p class="text-[10px] text-slate-400 mt-2 uppercase tracking-widest">Wetlands</p>
-                        <p class="text-[11px] text-slate-500 mt-3 leading-relaxed">Wetland dynamics and hydrological connectivity in a tropical floodplain setting, Kaabar Tal, North Bihar, India.</p>
+                        <p class="js-bio-text text-[11px] text-slate-500 mt-3 leading-relaxed">Wetland dynamics and hydrological connectivity in a tropical floodplain setting, Kaabar Tal, North Bihar, India.</p>
                     </div>
                 </div>
 
                 <div class="min-w-full sm:min-w-[50%] lg:min-w-[25%] p-3">
                     <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200 flex flex-col items-center text-center h-full hover:border-[#c5a059] hover:shadow-md transition-all">
-                        <div class="w-20 h-20 bg-[#f0e5d0] text-[#c5a059] rounded-full flex items-center justify-center text-2xl font-bold mb-4">HM</div>
+                        <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" 
+                        alt="Dummy profile" 
+                        class="w-25 h-25 rounded-full object-cover mb-4" />
                         <h4 class="font-bold text-slate-900">Haridas Mohanta</h4>
                         <p class="text-[10px] text-slate-400 mt-2 uppercase tracking-widest">Geomorphology</p>
-                        <p class="text-[11px] text-slate-500 mt-3 leading-relaxed">Geomorphic diversity, connectivity and river health assessment of the Ganga River and their application for river management.</p>
+                        <p class="js-bio-text text-[11px] text-slate-500 mt-3 leading-relaxed">Geomorphic diversity, connectivity and river health assessment of the Ganga River and their application for river management.</p>
                     </div>
                 </div>
 
                 <div class="min-w-full sm:min-w-[50%] lg:min-w-[25%] p-3">
                     <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200 flex flex-col items-center text-center h-full hover:border-[#c5a059] hover:shadow-md transition-all">
-                        <div class="w-20 h-20 bg-[#f0e5d0] text-[#c5a059] rounded-full flex items-center justify-center text-2xl font-bold mb-4">SK</div>
+                        <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" 
+                        alt="Dummy profile" 
+                        class="w-25 h-25 rounded-full object-cover mb-4" />
                         <h4 class="font-bold text-slate-900">Suneel Kumar Joshi</h4>
                         <p class="text-[10px] text-slate-400 mt-2 uppercase tracking-widest">Groundwater Dynamics</p>
-                        <p class="text-[11px] text-slate-500 mt-3 leading-relaxed">Deciphering groundwater dynamics in the Ghaggar basin in northwest India using historical water level data and isotopic techniques.</p>
+                        <p class="js-bio-text text-[11px] text-slate-500 mt-3 leading-relaxed">Deciphering groundwater dynamics in the Ghaggar basin in northwest India using historical water level data and isotopic techniques.</p>
                     </div>
                 </div>
 
                 <div class="min-w-full sm:min-w-[50%] lg:min-w-[25%] p-3">
                     <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200 flex flex-col items-center text-center h-full hover:border-[#c5a059] hover:shadow-md transition-all">
-                        <div class="w-20 h-20 bg-[#f0e5d0] text-[#c5a059] rounded-full flex items-center justify-center text-2xl font-bold mb-4">GK</div>
+                        <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" 
+                        alt="Dummy profile" 
+                        class="w-25 h-25 rounded-full object-cover mb-4" />
                         <h4 class="font-bold text-slate-900">Gaurav Kumar</h4>
                         <p class="text-[10px] text-slate-400 mt-2 uppercase tracking-widest">Morphology</p>
-                        <p class="text-[11px] text-slate-500 mt-3 leading-relaxed">Morphology of alluvia rivers (jointly with Francois Metivier and Olivier Devauchelle, IPG Paris).</p>
+                        <p class="js-bio-text text-[11px] text-slate-500 mt-3 leading-relaxed">Morphology of alluvia rivers (jointly with Francois Metivier and Olivier Devauchelle, IPG Paris).</p>
                     </div>
                 </div>
 
                 <div class="min-w-full sm:min-w-[50%] lg:min-w-[25%] p-3">
                     <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200 flex flex-col items-center text-center h-full hover:border-[#c5a059] hover:shadow-md transition-all">
-                        <div class="w-20 h-20 bg-[#f0e5d0] text-[#c5a059] rounded-full flex items-center justify-center text-2xl font-bold mb-4">SS</div>
+                        <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" 
+                        alt="Dummy profile" 
+                        class="w-25 h-25 rounded-full object-cover mb-4" />
                         <h4 class="font-bold text-slate-900">Swati Sinha</h4>
                         <p class="text-[10px] text-slate-400 mt-2 uppercase tracking-widest">Climate</p>
-                        <p class="text-[11px] text-slate-500 mt-3 leading-relaxed">Tectonic and climatic controls on landscape evolution in the Dehradun-Nahan salient-recess in the frontal Himalaya.</p>
+                        <p class="js-bio-text text-[11px] text-slate-500 mt-3 leading-relaxed">Tectonic and climatic controls on landscape evolution in the Dehradun-Nahan salient-recess in the frontal Himalaya.</p>
                     </div>
                 </div>
 
                 <div class="min-w-full sm:min-w-[50%] lg:min-w-[25%] p-3">
                     <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200 flex flex-col items-center text-center h-full hover:border-[#c5a059] hover:shadow-md transition-all">
-                        <div class="w-20 h-20 bg-[#f0e5d0] text-[#c5a059] rounded-full flex items-center justify-center text-2xl font-bold mb-4">SK</div>
+                        <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" 
+                        alt="Dummy profile" 
+                        class="w-25 h-25 rounded-full object-cover mb-4" />
                         <h4 class="font-bold text-slate-900">S. K. Lahiri</h4>
                         <p class="text-[10px] text-slate-400 mt-2 uppercase tracking-widest">Morphology</p>
-                        <p class="text-[11px] text-slate-500 mt-3 leading-relaxed">Basin evolution, morpho-tectonics and fluvial processes in the Brahmaputra river system, Assam.</p>
+                        <p class="js-bio-text text-[11px] text-slate-500 mt-3 leading-relaxed">Basin evolution, morpho-tectonics and fluvial processes in the Brahmaputra river system, Assam.</p>
                     </div>
                 </div>
 
                 <div class="min-w-full sm:min-w-[50%] lg:min-w-[25%] p-3">
                     <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200 flex flex-col items-center text-center h-full hover:border-[#c5a059] hover:shadow-md transition-all">
-                        <div class="w-20 h-20 bg-[#f0e5d0] text-[#c5a059] rounded-full flex items-center justify-center text-2xl font-bold mb-4">AS</div>
+                        <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" 
+                        alt="Dummy profile" 
+                        class="w-25 h-25 rounded-full object-cover mb-4" />
                         <h4 class="font-bold text-slate-900">Ananda Sankar Dasgupta</h4>
                         <p class="text-[10px] text-slate-400 mt-2 uppercase tracking-widest">Geomorphology</p>
-                        <p class="text-[11px] text-slate-500 mt-3 leading-relaxed">Valley and interfluve geomorphology and stratigraphy of the southern Ganga plains: implications for Late Quaternary landscape evolution.</p>
+                        <p class="js-bio-text text-[11px] text-slate-500 mt-3 leading-relaxed">Valley and interfluve geomorphology and stratigraphy of the southern Ganga plains: implications for Late Quaternary landscape evolution.</p>
                     </div>
                 </div>
 
                 <div class="min-w-full sm:min-w-[50%] lg:min-w-[25%] p-3">
                     <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200 flex flex-col items-center text-center h-full hover:border-[#c5a059] hover:shadow-md transition-all">
-                        <div class="w-20 h-20 bg-[#f0e5d0] text-[#c5a059] rounded-full flex items-center justify-center text-2xl font-bold mb-4">NG</div>
+                        <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" 
+                        alt="Dummy profile" 
+                        class="w-25 h-25 rounded-full object-cover mb-4" />
                         <h4 class="font-bold text-slate-900">Noni Gopal Roy</h4>
                         <p class="text-[10px] text-slate-400 mt-2 uppercase tracking-widest">Morphology</p>
-                        <p class="text-[11px] text-slate-500 mt-3 leading-relaxed">Morphodynamics and Late Quaternary Valley- interfluve Stratigraphy of the Western Ganga Plains: Rythmic Sequences and Monsoonal Forcing.</p>
+                        <p class="js-bio-text text-[11px] text-slate-500 mt-3 leading-relaxed">Morphodynamics and Late Quaternary Valley- interfluve Stratigraphy of the Western Ganga Plains: Rythmic Sequences and Monsoonal Forcing.</p>
                     </div>
                 </div>
 
                 <div class="min-w-full sm:min-w-[50%] lg:min-w-[25%] p-3">
                     <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200 flex flex-col items-center text-center h-full hover:border-[#c5a059] hover:shadow-md transition-all">
-                        <div class="w-20 h-20 bg-[#f0e5d0] text-[#c5a059] rounded-full flex items-center justify-center text-2xl font-bold mb-4">VJ</div>
+                        <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" 
+                        alt="Dummy profile" 
+                        class="w-25 h-25 rounded-full object-cover mb-4" />
                         <h4 class="font-bold text-slate-900">Vikrant Jain</h4>
                         <p class="text-[10px] text-slate-400 mt-2 uppercase tracking-widest">Geomorpholgy</p>
-                        <p class="text-[11px] text-slate-500 mt-3 leading-relaxed">Fluvio-Geomorphological analysis of Baghmati river system, North Bihar with special reference to fluvial hazard.</p>
+                        <p class="js-bio-text text-[11px] text-slate-500 mt-3 leading-relaxed">Fluvio-Geomorphological analysis of Baghmati river system, North Bihar with special reference to fluvial hazard.</p>
                     </div>
                 </div>
 
@@ -1408,64 +1505,78 @@ button[onclick^="moveAwards"] {
                 
                 <div class="min-w-full sm:min-w-[50%] lg:min-w-[25%] p-3">
                     <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200 flex flex-col items-center text-center h-full card-hover hover:border-[#c5a059] transition-all">
-                        <div class="w-20 h-20 bg-[#f0e5d0] text-[#c5a059] rounded-full flex items-center justify-center text-2xl font-bold mb-4">AT</div>
+                        <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" 
+                        alt="Dummy profile" 
+                        class="w-25 h-25 rounded-full object-cover mb-4" />
                         <h4 class="font-bold text-slate-900">Aayush Tiwari</h4>
                         <p class="text-[10px] text-slate-400 mt-2 uppercase tracking-widest">Morphology</p>
-                        <p class="text-[11px] text-slate-500 mt-3 leading-relaxed">Morphological study of the smooth impact melt deposits on the Moon's far side.</p>
+                        <p class="js-bio-text text-[11px] text-slate-500 mt-3 leading-relaxed">Morphological study of the smooth impact melt deposits on the Moon's far side.</p>
                     </div>
                 </div>
 
                 <div class="min-w-full sm:min-w-[50%] lg:min-w-[25%] p-3">
                     <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200 flex flex-col items-center text-center h-full card-hover hover:border-[#c5a059] transition-all">
-                        <div class="w-20 h-20 bg-[#f0e5d0] text-[#c5a059] rounded-full flex items-center justify-center text-2xl font-bold mb-4">AY</div>
+                        <img src="Current_phd_students/Ankit yadav.jpg" 
+                        alt="Dummy profile" 
+                        class="w-25 h-25 rounded-full object-cover mb-4" />
                         <h4 class="font-bold text-slate-900">Ankit Yadav</h4>
                         <p class="text-[10px] text-slate-400 mt-2 uppercase tracking-widest">Active Remote sensing</p>
-                        <p class="text-[11px] text-slate-500 mt-3 leading-relaxed">Active Remote sensing.</p>
+                        <p class="js-bio-text text-[11px] text-slate-500 mt-3 leading-relaxed">Active Remote sensing.</p>
                     </div>
                 </div>
 
                 <div class="min-w-full sm:min-w-[50%] lg:min-w-[25%] p-3">
                     <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200 flex flex-col items-center text-center h-full card-hover hover:border-[#c5a059] transition-all">
-                        <div class="w-20 h-20 bg-[#f0e5d0] text-[#c5a059] rounded-full flex items-center justify-center text-2xl font-bold mb-4">SK</div>
+                        <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" 
+                        alt="Dummy profile" 
+                        class="w-25 h-25 rounded-full object-cover mb-4" />
                         <h4 class="font-bold text-slate-900">Shefali Kuril</h4>
                         <p class="text-[10px] text-slate-400 mt-2 uppercase tracking-widest">Agriculture</p>
-                        <p class="text-[11px] text-slate-500 mt-3 leading-relaxed">Agricultural Monitoring, CZO, Ganga Basin.</p>
+                        <p class="js-bio-text text-[11px] text-slate-500 mt-3 leading-relaxed">Agricultural Monitoring, CZO, Ganga Basin.</p>
                     </div>
                 </div>
 
                 <div class="min-w-full sm:min-w-[50%] lg:min-w-[25%] p-3">
                     <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200 flex flex-col items-center text-center h-full card-hover hover:border-[#c5a059] transition-all">
-                        <div class="w-20 h-20 bg-[#f0e5d0] text-[#c5a059] rounded-full flex items-center justify-center text-2xl font-bold mb-4">NK</div>
+                        <img src="M.tech_students/Niharika Kote.jpeg" 
+                        alt="Dummy profile" 
+                        class="w-25 h-25 rounded-full object-cover mb-4" />
                         <h4 class="font-bold text-slate-900">Niharika Kote</h4>
                         <p class="text-[10px] text-slate-400 mt-2 uppercase tracking-widest">CZO Modeling</p>
-                        <p class="text-[11px] text-slate-500 mt-3 leading-relaxed">Estimating soil moisture & crop water stress in Ganga CZO.</p>
+                        <p class="js-bio-text text-[11px] text-slate-500 mt-3 leading-relaxed">My research focuses on understanding sediment dynamics and sediment connectivity in the Bhagirathi basin. I am broadly interested in applying geomorphological principles to analyze soil erosion processes and their role in landscape evolution.</p>
                     </div>
                 </div>
 
                 <div class="min-w-full sm:min-w-[50%] lg:min-w-[25%] p-3">
                     <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200 flex flex-col items-center text-center h-full card-hover hover:border-[#c5a059] transition-all">
-                        <div class="w-20 h-20 bg-[#f0e5d0] text-[#c5a059] rounded-full flex items-center justify-center text-2xl font-bold mb-4">SS</div>
+                        <img src="Current_phd_students/Shobhit Singh.JPG" 
+                        alt="Dummy profile" 
+                        class="w-25 h-25 rounded-full object-cover mb-4" />
                         <h4 class="font-bold text-slate-900">Shobhit Singh</h4>
                         <p class="text-[10px] text-slate-400 mt-2 uppercase tracking-widest">Hydro-Geomorphic</p>
-                        <p class="text-[11px] text-slate-500 mt-3 leading-relaxed">Flood risk assessment of the Ghaghra River system.</p>
+                        <p class="js-bio-text text-[11px] text-slate-500 mt-3 leading-relaxed">Flood risk assessment of the Ghaghra River system.</p>
                     </div>
                 </div>
 
                 <div class="min-w-full sm:min-w-[50%] lg:min-w-[25%] p-3">
                     <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200 flex flex-col items-center text-center h-full card-hover hover:border-[#c5a059] transition-all">
-                        <div class="w-20 h-20 bg-[#f0e5d0] text-[#c5a059] rounded-full flex items-center justify-center text-2xl font-bold mb-4">SB</div>
+                        <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" 
+                        alt="Dummy profile" 
+                        class="w-25 h-25 rounded-full object-cover mb-4" />
                         <h4 class="font-bold text-slate-900">Sambit Behera</h4>
                         <p class="text-[10px] text-slate-400 mt-2 uppercase tracking-widest">Agriculture</p>
-                        <p class="text-[11px] text-slate-500 mt-3 leading-relaxed">Understanding soil moisture – temperature interaction in an Agriculture dominated CZO in the Ganga Basin, India</p>
+                        <p class="js-bio-text text-[11px] text-slate-500 mt-3 leading-relaxed">Understanding soil moisture – temperature interaction in an Agriculture dominated CZO in the Ganga Basin, India</p>
                     </div>
                 </div>
 
                 <div class="min-w-full sm:min-w-[50%] lg:min-w-[25%] p-3">
                     <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200 flex flex-col items-center text-center h-full card-hover hover:border-[#c5a059] transition-all">
-                        <div class="w-20 h-20 bg-[#f0e5d0] text-[#c5a059] rounded-full flex items-center justify-center text-2xl font-bold mb-4">SB</div>
+                        <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" 
+                        alt="Dummy profile" 
+                        class="w-25 h-25 rounded-full object-cover mb-4" />
                         <h4 class="font-bold text-slate-900">Unnati Patel</h4>
                         <p class="text-[10px] text-slate-400 mt-2 uppercase tracking-widest">Geomorphology</p>
-                        <p class="text-[11px] text-slate-500 mt-3 leading-relaxed">Assessment of geomorphic connectivity under changing LULC scenarios and its implications for management of a coastal wetland, Chilika Lagoon, Odisha, India.</p>
+                        <p class="js-bio-text text-[11px] text-slate-500 mt-3 leading-relaxed">Assessment of geomorphic connectivity under changing LULC scenarios and its implications for management of a coastal wetland, Chilika Lagoon, Odisha, India.</p>
                     </div>
                 </div>
 
@@ -1948,6 +2059,62 @@ window.addEventListener('resize', () => {
 });
 
 document.addEventListener('DOMContentLoaded', () => window.moveAwards(0));
+
+// student text compression
+document.addEventListener("DOMContentLoaded", function () {
+    const wordLimit = 30;
+    const bios = document.querySelectorAll('.js-bio-text');
+
+    bios.forEach((p, index) => {
+        const fullText = p.innerText.trim();
+        const words = fullText.split(/\s+/);
+
+        if (words.length > wordLimit) {
+            const shortenedText = words.slice(0, wordLimit).join(" ") + "...";
+            
+            // 1. Assign unique IDs to the spans so the button can find them easily
+            const shortId = `short-${index}`;
+            const fullId = `full-${index}`;
+            
+            p.innerHTML = `
+                <span id="${shortId}">${shortenedText}</span>
+                <span id="${fullId}" style="display: none;">${fullText}</span>
+            `;
+
+            // 2. Create the button
+            const btn = document.createElement("button");
+            btn.type = "button";
+            btn.innerText = "View More";
+            
+            // 3. Styling - Added z-index and pointer-events to force play
+            btn.className = "text-[11px] text-[#c5a059] font-bold mt-2 hover:underline block mx-auto relative z-[9999] pointer-events-auto cursor-pointer";
+
+            // 4. THE FIX: Inline click handler (Harder for carousels to block)
+            btn.onclick = function(e) {
+                // Stop carousel from sliding when clicking button
+                if(e) e.stopPropagation(); 
+                
+                const shortSpan = document.getElementById(shortId);
+                const fullSpan = document.getElementById(fullId);
+
+                if (fullSpan.style.display === "none") {
+                    fullSpan.style.display = "inline";
+                    shortSpan.style.display = "none";
+                    btn.innerText = "View Less";
+                } else {
+                    fullSpan.style.display = "none";
+                    shortSpan.style.display = "inline";
+                    btn.innerText = "View More";
+                }
+            };
+
+            p.after(btn);
+        }
+    });
+});
+
+
+
     </script>
 </body>
 </html>
