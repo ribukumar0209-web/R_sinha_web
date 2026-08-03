@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="top-navbar">
+    <!-- Mobile Toggle -->
+    <button class="menu-toggle" aria-label="Toggle Navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+   <!-- Navigation -->
+    <ul class="nav-menu show">
+        <li><a href="Rs_web.html#hero" class="nav-link"><i class="fas fa-home"></i><span>Home</span></a></li>
+        <li><a href="resume.html" class="nav-link"><i class="fas fa-briefcase"></i><span>Experience</span></a></li>
+        <li><a href="research_expertise.html" class="nav-link"><i class="fas fa-flask"></i><span>Expertise</span></a></li>        
+        <li><a href="teaching.html" class="nav-link active"><i class="fas fa-chalkboard-teacher"></i><span>Teaching</span></a></li>
+        <li><a href="lab_page/HB_new.html" class="nav-link" target="_blank"><i class="fas fa-microscope"></i><span>Labs</span></a></li>
+        <li><a href="research.html" class="nav-link"><i class="fas fa-book"></i><span>Publications</span></a></li>
+        <li><a href="students.html" class="nav-link"><i class="fas fa-user-graduate"></i><span>Students</span></a></li>
+        <li><a href="awards.html" class="nav-link"><i class="fas fa-award"></i><span>Awards</span></a></li>
+        <li><a href="Rs_web.html#contact" class="nav-link"><i class="fas fa-envelope"></i><span>Contact</span></a></li>
+    </ul>
+</nav>
+    <section id="teaching" class="text-center pt-15 md:pt-25 lg:pt-20 mb-10" >
+        <div class="centered"><h2 class="text-5xl font-black text-[#c5a059] mb-4">Teaching & Mentorship</h2></div>
+        <div class="grid-3-col">
+            <div class="teaching-card" onclick="toggleTeachingCard(this)">
+                <h4 class="text-2xl font-black text-slate-500 mb-4">ES313: Earth System Processes</h4>
+                <p>Earth system is characterized by an interaction of atmosphere, lithosphere, hydrosphere and biosphere. Each of these sub-systems have a distinct set of processes and feedbacks the understanding of which form the main emphasis of this course. Some of the important topics include hydrological cycle, surface and ground water systems, tectonic processes and landform evolution under different geomorphic settings.</p>
+                <div class="expand-content">
+                    <p>Earth System processes, geomorphic systems, Threshold and equilibrium; scale in geomorphology, key concepts in geomorphology, hydrologic cycle. Exogenetic and endogenetic processes, climatic vs. geomorphic processes, soil and weathering system. Drainage basins and river systems, river morphology and hydrology, fluvial erosion, transport and sedimentation, fluvial depositional landforms, geomorphometric concepts and drainage basin morphometry; Groundwater in hydrological cycle, water table, groundwater flow and storage; porosity and permeability, aquifers, chemistry of groundwater. Atmospheric composition and mixing, atmospheric circulation, greenhouse effect. Coastal environment, waves, tides and currents, description and classification of coasts, shoreline development, coastal erosion and resulting topographic features, coastal deposition and landforms. Earth’s physiography and landscape evolution; Landforms and tectonics of plate margins and plate interiors; Tectonic uplifts and denudation – rates and controlling factors, Sea level change – evidence, mechanism and effects; coupled tectonic-surface process models.</p>
+                    <div class="teaching-img-grid">
+                        <img src="https://home.iitk.ac.in/~rsinha/img/Earthsystemprocess_teaching.jpg">
+                    </div>
+                </div>
+                <button class="view-more-toggle">View More</button>
+            </div>
+            <div class="teaching-card" onclick="toggleTeachingCard(this)">
+                <h4 class="text-2xl font-black text-slate-500 mb-4">ES653: Applied Sedimentology and Basin Analysis</h4>
+                <p>This course deals with sedimentary basins in different environments ranging from continental to marine. Sedimentary basins are important reservoirs of water and hydrocarbons and they evolve through long-term geological processes. A thorough understanding of sedimentary basins and sedimentology could be very rewarding for resource exploration.</p>
+                <div class="expand-content">
+                    <p>Introduction to Applied Sedimentology; Clastic sediment as a chemical and physical breakdown product; Carbonate, Silicates, Iron-rich and Evaporite sediments; Physical properties of particles, porosity and permeability; Types of fluid motion and sediment in fluid and fluid flow; Bedforms and sedimentary structures in flows and under waves; Deposits of sediment gravity flows; Sediment to rock - the Subsurface Environment; Allochthonous Sediments; Autochthonous Sediments; Sedimentary Basins- Basin-forming mechanisms; Basins due to lithospheric stretching; Basins due to flexure; Sedimentary basins: classification, evolution, metallogeny, and petroleum system; Major external controls on sedimentation; Continental sedimentary environments; Marine sedimentary environment; Basin fills and stratigraphy; Subsidence and Thermal history.</p>
+                    <div class="teaching-img-grid">
+                        <img src="https://home.iitk.ac.in/~rsinha/img/sedimentology_teaching.jpg">
+                    </div>
+                </div>
+                <button class="view-more-toggle">View More</button>
+            </div>
+            <div class="teaching-card" onclick="toggleTeachingCard(this)">
+                <h4 class="text-2xl font-black text-slate-500 mb-4">ES415:Remote Sensing and GIS for Georesource Evaluation</h4>
+                <p>This course focuses on remote sensing and GIS techniques for various earth science related applications. Basic principles of remote sensing and GIS techniques is covered and application studies are discussed using examples and case studies from India and other parts of the world.</p>
+                <div class="expand-content">
+                    <p>Remote sensing platforms – satellite-based and airborne sensors; Basic principles of image interpretation; Spectra of earth’s surface material; Interpretation of regional geological and geomorphological features; Lithological and structural mapping, mapping of landforms and interpretation; Basic principles of Geographic Information System (GIS) and its application; Analytical Hierarchy Process (AHP) technique and its integration into GIS. River basin management – drainage mapping, channel movement and morphological changes; river erosion studies; Identification of groundwater potential zones; criteria for identification, integration of controlling factors into GIS; Lake and wetland studies using remote sensing; Water quality mapping; water quality parameters, indices of water quality monitoring; Vegetation Mapping and forestry applications; Application in glaciology and snow hydrology; Coastal zone mapping and other related applications; Natural hazards – floods, landslides, earthquakes; causative factors, choice of data and use of remote sensing technique for mapping and prediction; Mineral resources evaluation with particular reference to digital remote sensing; Application of thermal infrared data for mapping surface moisture and rock types and environmental studies.</p>
+                    <div class="teaching-img-grid">
+                        <img src="https://home.iitk.ac.in/~rsinha/img/remotesen2_teaching.jpg">
+                    </div>
+                </div>
+                <button class="view-more-toggle">View More</button>
+            </div>
+            <div class="teaching-card" onclick="toggleTeachingCard(this)">
+                <h4 class="text-2xl font-black text-slate-500 mb-4">Global Climatic Change</h4>
+                <p>This course focuses on the science of climate change and its impacts on oceans, rivers, and cryosphere. The course covers the forcing functions of climate change operating at various spatio-temporal scales and geopolitics of climate change.</p>
+                <div class="expand-content">
+                    <p>Introduction, geologic time, time scale of climate change, earth systems; Climate system and interactions, climate forcings, Earth’s radiation budget, factors controlling heat receipt, climate system response, climate feedbacks; Earth’s radiation budget, water in climate system; Climate forcings, feedbacks and climate sensitivity; Energy-climate Nexus; Carbon cycle and climate change; Archives and proxies; Historical-scale climate change; Future climate change, projections of emission scenarios; Orbital scale climate change, Eccentricity, tilt and precession; Climate change impacts on Oceans, Cryosphere, rivers and water resources; Orbital scale changes in CO2 and CH4, carbon cycle and exchanges, carbon reservoirs, ocean pumping hypothesis; Stable isotopes and orbital response; Deglacial and millennial scale climate change, glacial maximum, deglacial sea level rise and melt water pulses, Younger Drayas, Tropical monsoon maximum, millennial scale oscillations, Heinrich events, Solar variability, CH4 changes, monsoonal reconstruction, teleconnections, Indian case studies; CCS, Climate policy, protocols and summits.</p>
+                    <div class="teaching-img-grid">
+                        <img src="https://home.iitk.ac.in/~rsinha/img/remotesen2_teaching.jpg">
+                    </div>
+                </div>
+                <button class="view-more-toggle">View More</button>
+            </div>
+            <div class="teaching-card" onclick="toggleTeachingCard(this)">
+                <h4 class="text-2xl font-black text-slate-500 mb-4">ES645: River Science</h4>
+                <p>This course deals with the science of rivers particularly on the geomorphic processes in river systems and their relationship with river ecology. The course will aim to develop awareness about rivers and their sustainable management through process-based understanding.</p>
+                <div class="expand-content">
+                    <p>Integrated Multi-Disciplinary Approach in river science; River Science in Indian Context; Geomorphic Analysis of River Systems - Key Concepts in River Geomorphology, Catchment Scale Controls on River Morphology, Catchment Hydrology, Sediment Movement and Deposition in River System, Channel Geometry, Floodplain Forms and Processes, River Diversity and River Evolution, Human Impacts on River Systems; River Ecosystem Synthesis - Introduction to hydrogeomorphic patches, functional process zones, hierarchical patch dynamics and biocomplexity, river as a continuum, longitudinal, lateral, temporal, vertical dimensions; Hierarchical patch dynamics in riverine landscapes; hydrogeomorphic character of a riverine ecosystem.; Ecological Implications of RES Biocomplexity Concepts; River Health and River Futures - Human impacts on river systems including climate change impacts; river hazards and their causes, Environmental Flow (e-flow) – definition, data requirement, different approaches for e-flow estimation; Integrated approach to river management, River health and river futures.</p>
+                    <div class="teaching-img-grid">
+                        <img src="https://home.iitk.ac.in/~rsinha/img/riverscience_teaching.jpg">
+                    </div>
+                </div>
+                <button class="view-more-toggle">View More</button>
+            </div>
+        </div>
+    </section>
+    <script src="script.js"></script>
+</body>
+</html>

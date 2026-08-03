@@ -7,6 +7,11 @@
 
 <script src="https://cdn.tailwindcss.com"></script>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="style.css">
 
 <style>
 body { font-family: 'Inter', sans-serif; }
@@ -16,21 +21,40 @@ body { font-family: 'Inter', sans-serif; }
 </head>
 
 <body class="bg-slate-900 text-white">
-
-<section class="pt-20 pb-10 text-center">
-  <h1 class="text-5xl font-black italic mb-3">Research and Publications</h1>
-  <p class="text-slate-400 max-w-4xl mx-auto">
+<nav class="top-navbar">
+    <!-- Mobile Toggle -->
+    <button class="menu-toggle" aria-label="Toggle Navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+   <!-- Navigation -->
+    <ul class="nav-menu show">
+        <li><a href="Rs_web.html#hero" class="nav-link"><i class="fas fa-home"></i><span>Home</span></a></li>
+        <li><a href="resume.html" class="nav-link" active><i class="fas fa-briefcase"></i><span>Experience</span></a></li>
+        <li><a href="research_expertise.html" class="nav-link"><i class="fas fa-flask"></i><span>Expertise</span></a></li>        
+        <li><a href="teaching.html" class="nav-link"><i class="fas fa-chalkboard-teacher"></i><span>Teaching</span></a></li>
+        <li><a href="lab_page/HB_new.html" class="nav-link" target="_blank"><i class="fas fa-microscope"></i></i><span>Research Labs</span></a></li>
+        <li><a href="research.html" class="nav-link active"><i class="fas fa-book"></i><span>Publications</span></a></li>
+        <li><a href="students.html" class="nav-link"><i class="fas fa-user-graduate"></i><span>Students</span></a></li>
+        <li><a href="awards.html" class="nav-link"><i class="fas fa-award"></i><span>Awards</span></a></li>
+        <li><a href="Rs_web.html#contact" class="nav-link"><i class="fas fa-envelope"></i><span>Contact</span></a></li>
+    </ul>
+</nav>
+<section class="pt-36 md:pt-40 lg:pt-44 pb-0 px-6 text-center">
+  <h2 class="text-5xl font-black text-[#c5a059] mb-2 mb-4 leading-tight">Research and Publications</h2>
+  <p class="text-slate-400 text-base md:text-lg max-w-4xl mx-auto leading-relaxed">
     Peer reviewed journal articles, and Research Papers
   </p>
 </section>
 
-<section class="pb-32">
-<div class="max-w-7xl mx-auto px-6 space-y-14">
+<section class="-mt-10 md:-mt-14 pb-20 md:pb-28 px-4 md:px-6">
+<div class="max-w-7xl mx-auto space-y-14">
 
 <!-- ================= 2026 ================= -->
 <div>
-  <h2 class="text-3xl font-bold border-b border-white/10 pb-2 mb-4">2026</h2>
-  <ol class="space-y-3 text-slate-300 list-decimal pl-6">
+  <h2 class="text-2xl md:text-3xl font-bold text-[#c5a059] border-b border-white/10 pb-2 mb-5">2026</h2>
+  <ol class="space-y-4 text-slate-300 text-sm md:text-base leading-8 list-decimal pl-5 md:pl-7">
     <li class="pub">
       Dash, S.K. and Sinha, R. (2026). 
       <i>Integrating UAV thermal imagery and in-situ data for high-resolution crop water stress–soil moisture dynamics over India’s agricultural hotspot.</i> 
@@ -52,8 +76,8 @@ body { font-family: 'Inter', sans-serif; }
 
 <!-- ================= 2025 ================= -->
 <div class="mt-8">
-  <h2 class="text-3xl font-bold border-b border-white/10 pb-2 mb-4">2025</h2>
-  <ol class="space-y-3 text-slate-300 list-decimal pl-6">
+  <h2 class="text-2xl md:text-3xl font-bold text-[#c5a059] border-b border-white/10 pb-2 mb-5">2025</h2>
+  <ol class="space-y-4 text-slate-300 text-sm md:text-base leading-8 list-decimal pl-5 md:pl-7">
     <li class="pub">
       Singh, S., Swarnkar, S. and Sinha, R. (2025). 
       <i>Assessment of erosion and flood risk in an ungauged Himalayan catchment integrating sediment connectivity and stream power index.</i> 
@@ -88,8 +112,8 @@ body { font-family: 'Inter', sans-serif; }
 
 <!-- ================= 2024 ================= -->
 <div>
-  <h2 class="text-3xl font-bold border-b border-white/10 pb-2 mb-4">2024</h2>
-  <ol class="space-y-3 text-slate-300 list-decimal pl-6">
+  <h2 class="text-2xl md:text-3xl font-bold text-[#c5a059] border-b border-white/10 pb-2 mb-5">2024</h2>
+  <ol class="space-y-4 text-slate-300 text-sm md:text-base leading-8 list-decimal pl-5 md:pl-7">
     <li class="pub">
       Ansari, A., Sen, I.S. and Sinha, R. (2024). 
       <i>Trends of water composition and discharge in the Ramganga River, Ganga Basin over the last 40 years signal enhanced nitrate flux.</i> 
@@ -145,8 +169,8 @@ body { font-family: 'Inter', sans-serif; }
 
 <!-- ================= 2023 ================= -->
 <div>
-  <h2 class="text-3xl font-bold border-b border-white/10 pb-2 mb-4">2023</h2>
-  <ol class="space-y-3 text-slate-300 list-decimal pl-6">
+  <h2 class="text-2xl md:text-3xl font-bold text-[#c5a059] border-b border-white/10 pb-2 mb-5">2023</h2>
+  <ol class="space-y-4 text-slate-300 text-sm md:text-base leading-8 list-decimal pl-5 md:pl-7">
 
     <li class="pub">
       Sinha, R., Mishra, K., & Tandon, S.K. (2023). 
@@ -209,8 +233,8 @@ body { font-family: 'Inter', sans-serif; }
 
 <!-- ================= 2022 ================= -->
 <div>
-  <h2 class="text-3xl font-bold border-b border-white/10 pb-2 mb-4">2022</h2>
-  <ol class="space-y-3 text-slate-300 list-decimal pl-6">
+  <h2 class="text-2xl md:text-3xl font-bold text-[#c5a059] border-b border-white/10 pb-2 mb-5">2022</h2>
+  <ol class="space-y-4 text-slate-300 text-sm md:text-base leading-8 list-decimal pl-5 md:pl-7">
 
     <li class="pub">
       Tandon, S.K., & Sinha, R. (2022). 
@@ -287,8 +311,8 @@ body { font-family: 'Inter', sans-serif; }
 
 <!-- ================= 2021 ================= -->
 <div>
-  <h2 class="text-3xl font-bold border-b border-white/10 pb-2 mb-4">2021</h2>
-  <ol class="space-y-3 text-slate-300 list-decimal pl-6">
+  <h2 class="text-2xl md:text-3xl font-bold text-[#c5a059] border-b border-white/10 pb-2 mb-5">2021</h2>
+  <ol class="space-y-4 text-slate-300 text-sm md:text-base leading-8 list-decimal pl-5 md:pl-7">
 
     <li class="pub">
       Swarnkar, S., Mujumdar, P., & Sinha, R. (2021). 
@@ -370,8 +394,8 @@ body { font-family: 'Inter', sans-serif; }
 
 <!-- ================= 2020 ================= -->
 <div>
-  <h2 class="text-3xl font-bold border-b border-white/10 pb-2 mb-4">2020</h2>
-  <ol class="space-y-3 text-slate-300 list-decimal pl-6">
+  <h2 class="text-2xl md:text-3xl font-bold text-[#c5a059] border-b border-white/10 pb-2 mb-5">2020</h2>
+  <ol class="space-y-4 text-slate-300 text-sm md:text-base leading-8 list-decimal pl-5 md:pl-7">
 
     <li class="pub">
       Fontana, A., Hergert, J., Toonen, W., Sinha, R. (2020). 
@@ -419,8 +443,8 @@ body { font-family: 'Inter', sans-serif; }
 
 <!-- ================= 2019 ================= -->
 <div>
-  <h2 class="text-3xl font-bold border-b border-white/10 pb-2 mb-4">2019</h2>
-  <ol class="space-y-3 text-slate-300 list-decimal pl-6">
+  <h2 class="text-2xl md:text-3xl font-bold text-[#c5a059] border-b border-white/10 pb-2 mb-5">2019</h2>
+  <ol class="space-y-4 text-slate-300 text-sm md:text-base leading-8 list-decimal pl-5 md:pl-7">
 
     <li class="pub">
       Wout M van Dijk, Alexander L Densmore, Christopher R Jackson, Jonathan D Mackay, Suneel K Joshi, Rajiv Sinha, Shashank Shekhar, Sanjeev Gupta (2019). 
@@ -490,8 +514,8 @@ body { font-family: 'Inter', sans-serif; }
 
 <!-- ================= 2018 ================= -->
 <div>
-  <h2 class="text-3xl font-bold border-b border-white/10 pb-2 mb-4">2018</h2>
-  <ol class="space-y-3 text-slate-300 list-decimal pl-6">
+  <h2 class="text-2xl md:text-3xl font-bold text-[#c5a059] border-b border-white/10 pb-2 mb-5">2018</h2>
+  <ol class="space-y-4 text-slate-300 text-sm md:text-base leading-8 list-decimal pl-5 md:pl-7">
 
     <li class="pub">
       Guillaume Morin, Jérôme Lavé, Christian France-Lanord, Thomas Rigaudier, Ananta Prasad Gajurel, Rajiv Sinha (2018)
@@ -566,8 +590,8 @@ body { font-family: 'Inter', sans-serif; }
 
 <!-- ================= 2017 ================= -->
 <div>
-  <h2 class="text-3xl font-bold border-b border-white/10 pb-2 mb-4">2017</h2>
-  <ol class="space-y-3 text-slate-300 list-decimal pl-6">
+  <h2 class="text-2xl md:text-3xl font-bold text-[#c5a059] border-b border-white/10 pb-2 mb-5">2017</h2>
+  <ol class="space-y-4 text-slate-300 text-sm md:text-base leading-8 list-decimal pl-5 md:pl-7">
 
     <li class="pub">
       Singh, Ajit, Kristina J. Thomsen, Rajiv Sinha, Jan-Pieter Buylaert, Andrew Carter, Darren F. Mark, Philippa J. Mason, Alexander L. Densmore, Andrew S. Murray, Mayank Jain, Debajyoti Paul and Sanjeev Gupta (2017). 
@@ -615,8 +639,8 @@ body { font-family: 'Inter', sans-serif; }
 
 <!-- ================= 2016 ================= -->
 <div>
-  <h2 class="text-3xl font-bold border-b border-white/10 pb-2 mb-4">2016</h2>
-  <ol class="space-y-3 text-slate-300 list-decimal pl-6">
+  <h2 class="text-2xl md:text-3xl font-bold text-[#c5a059] border-b border-white/10 pb-2 mb-5">2016</h2>
+  <ol class="space-y-4 text-slate-300 text-sm md:text-base leading-8 list-decimal pl-5 md:pl-7">
 
     <li class="pub">
       Roy, N.G., & Sinha, R. (2016). 
@@ -681,8 +705,8 @@ body { font-family: 'Inter', sans-serif; }
 
 <!-- ================= 2015 ================= -->
 <div>
-  <h2 class="text-3xl font-bold border-b border-white/10 pb-2 mb-4">2015</h2>
-  <ol class="space-y-3 text-slate-300 list-decimal pl-6">
+  <h2 class="text-2xl md:text-3xl font-bold text-[#c5a059] border-b border-white/10 pb-2 mb-5">2015</h2>
+  <ol class="space-y-4 text-slate-300 text-sm md:text-base leading-8 list-decimal pl-5 md:pl-7">
 
     <li class="pub">
       Whitehead, P.G., Sarkar, S., Jin, L., Futter, M.N., Caesar, J., Barbour, E., Butterfield, D., Sinha, R., Nicholls, R., Hutton, C., & Leckie, H.D. (2015). 
@@ -733,8 +757,8 @@ body { font-family: 'Inter', sans-serif; }
 
 <!-- ================= 2014 ================= -->
 <div>
-  <h2 class="text-3xl font-bold border-b border-white/10 pb-2 mb-4">2014</h2>
-  <ol class="space-y-3 text-slate-300 list-decimal pl-6">
+  <h2 class="text-2xl md:text-3xl font-bold text-[#c5a059] border-b border-white/10 pb-2 mb-5">2014</h2>
+  <ol class="space-y-4 text-slate-300 text-sm md:text-base leading-8 list-decimal pl-5 md:pl-7">
 
     <li class="pub">
       Sinha, R., Kale, V.S., & Chakraborty, T. (2014). 
@@ -808,8 +832,8 @@ body { font-family: 'Inter', sans-serif; }
 
 <!-- ================= 2013 ================= -->
 <div>
-  <h2 class="text-3xl font-bold border-b border-white/10 pb-2 mb-4">2013</h2>
-  <ol class="space-y-3 text-slate-300 list-decimal pl-6">
+  <h2 class="text-2xl md:text-3xl font-bold text-[#c5a059] border-b border-white/10 pb-2 mb-5">2013</h2>
+  <ol class="space-y-4 text-slate-300 text-sm md:text-base leading-8 list-decimal pl-5 md:pl-7">
 
     <li class="pub">
       Sinha, R., Yadav, G.S., Gupta, S., Singh, A., & Lahiri, S.K. (2013). 
@@ -842,8 +866,8 @@ body { font-family: 'Inter', sans-serif; }
 
 <!-- ================= 2012 ================= -->
 <div>
-  <h2 class="text-3xl font-bold border-b border-white/10 pb-2 mb-4">2012</h2>
-  <ol class="space-y-3 text-slate-300 list-decimal pl-6">
+  <h2 class="text-2xl md:text-3xl font-bold text-[#c5a059] border-b border-white/10 pb-2 mb-5">2012</h2>
+  <ol class="space-y-4 text-slate-300 text-sm md:text-base leading-8 list-decimal pl-5 md:pl-7">
 
     <li class="pub">
       Sinha, R., Jain, V., Tandon, S.K., & Chakraborty, T. (2012). 
@@ -906,8 +930,8 @@ body { font-family: 'Inter', sans-serif; }
 
 <!-- ================= 2011 ================= -->
 <div>
-  <h2 class="text-3xl font-bold border-b border-white/10 pb-2 mb-4">2011</h2>
-  <ol class="space-y-3 text-slate-300 list-decimal pl-6">
+  <h2 class="text-2xl md:text-3xl font-bold text-[#c5a059] border-b border-white/10 pb-2 mb-5">2011</h2>
+  <ol class="space-y-4 text-slate-300 text-sm md:text-base leading-8 list-decimal pl-5 md:pl-7">
 
     <li class="pub">
       Roy, N.G., Sinha, R., & Gibling, M.R. (2011). 
@@ -963,8 +987,8 @@ body { font-family: 'Inter', sans-serif; }
 
 <!-- ================= 2010 ================= -->
 <div>
-  <h2 class="text-3xl font-bold border-b border-white/10 pb-2 mb-4">2010</h2>
-  <ol class="space-y-3 text-slate-300 list-decimal pl-6">
+  <h2 class="text-2xl md:text-3xl font-bold text-[#c5a059] border-b border-white/10 pb-2 mb-5">2010</h2>
+  <ol class="space-y-4 text-slate-300 text-sm md:text-base leading-8 list-decimal pl-5 md:pl-7">
 
     <li class="pub">
       Sinha, R. (2010). 
@@ -1003,8 +1027,8 @@ body { font-family: 'Inter', sans-serif; }
 
 <!-- ================= 2009 ================= -->
 <div>
-  <h2 class="text-3xl font-bold border-b border-white/10 pb-2 mb-4">2009</h2>
-  <ol class="space-y-3 text-slate-300 list-decimal pl-6">
+  <h2 class="text-2xl md:text-3xl font-bold text-[#c5a059] border-b border-white/10 pb-2 mb-5">2009</h2>
+  <ol class="space-y-4 text-slate-300 text-sm md:text-base leading-8 list-decimal pl-5 md:pl-7">
 
     <li class="pub">
       Sinha, R. (2009). 
@@ -1042,8 +1066,8 @@ body { font-family: 'Inter', sans-serif; }
 
 <!-- ================= 2008 ================= -->
 <div>
-  <h2 class="text-3xl font-bold border-b border-white/10 pb-2 mb-4">2008</h2>
-  <ol class="space-y-3 text-slate-300 list-decimal pl-6">
+  <h2 class="text-2xl md:text-3xl font-bold text-[#c5a059] border-b border-white/10 pb-2 mb-5">2008</h2>
+  <ol class="space-y-4 text-slate-300 text-sm md:text-base leading-8 list-decimal pl-5 md:pl-7">
 
     <li class="pub">
       Singh, R.N., Petrie, C.A., French, C.A.I., Goudie, A.S., Gupta, S., Tewari, R., Singh, A.K., Sinha, R., Srivastava, R., Yadav, S., & Singh, V.K. (2008). 
@@ -1100,8 +1124,8 @@ body { font-family: 'Inter', sans-serif; }
 
 <!-- ================= 2007 ================= -->
 <div>
-  <h2 class="text-3xl font-bold border-b border-white/10 pb-2 mb-4">2007</h2>
-  <ol class="space-y-3 text-slate-300 list-decimal pl-6">
+  <h2 class="text-2xl md:text-3xl font-bold text-[#c5a059] border-b border-white/10 pb-2 mb-5">2007</h2>
+  <ol class="space-y-4 text-slate-300 text-sm md:text-base leading-8 list-decimal pl-5 md:pl-7">
 
     <li class="pub">
       Tandon, S.K. & Sinha, R. (2007). 
@@ -1151,8 +1175,8 @@ body { font-family: 'Inter', sans-serif; }
 
 <!-- ================= 2006 ================= -->
 <div>
-  <h2 class="text-3xl font-bold border-b border-white/10 pb-2 mb-4">2006</h2>
-  <ol class="space-y-3 text-slate-300 list-decimal pl-6">
+  <h2 class="text-2xl md:text-3xl font-bold text-[#c5a059] border-b border-white/10 pb-2 mb-5">2006</h2>
+  <ol class="space-y-4 text-slate-300 text-sm md:text-base leading-8 list-decimal pl-5 md:pl-7">
 
     <li class="pub">
       Sinha, R., Tandon, S.K., Sanyal, P., Gibling, M.R., Stuben, D., Berner, Z., & Ghazanfari, P. (2006). 
@@ -1185,8 +1209,8 @@ body { font-family: 'Inter', sans-serif; }
 
 <!-- ================= 2005 ================= -->
 <div>
-  <h2 class="text-3xl font-bold border-b border-white/10 pb-2 mb-4">2005</h2>
-  <ol class="space-y-3 text-slate-300 list-decimal pl-6">
+  <h2 class="text-2xl md:text-3xl font-bold text-[#c5a059] border-b border-white/10 pb-2 mb-5">2005</h2>
+  <ol class="space-y-4 text-slate-300 text-sm md:text-base leading-8 list-decimal pl-5 md:pl-7">
 
     <li class="pub">
       Sinha, R. (2005). 
@@ -1261,8 +1285,8 @@ body { font-family: 'Inter', sans-serif; }
 
 <!-- ================= 2004 ================= -->
 <div>
-  <h2 class="text-3xl font-bold border-b border-white/10 pb-2 mb-4">2004</h2>
-  <ol class="space-y-3 text-slate-300 list-decimal pl-6">
+  <h2 class="text-2xl md:text-3xl font-bold text-[#c5a059] border-b border-white/10 pb-2 mb-5">2004</h2>
+  <ol class="space-y-4 text-slate-300 text-sm md:text-base leading-8 list-decimal pl-5 md:pl-7">
 
     <li class="pub">
       Sinha, R., Stueben, D. & Berner, Z. (2004). 
@@ -1288,8 +1312,8 @@ body { font-family: 'Inter', sans-serif; }
 
 <!-- ================= 2003 ================= -->
 <div>
-  <h2 class="text-3xl font-bold border-b border-white/10 pb-2 mb-4">2003</h2>
-  <ol class="space-y-3 text-slate-300 list-decimal pl-6">
+  <h2 class="text-2xl md:text-3xl font-bold text-[#c5a059] border-b border-white/10 pb-2 mb-5">2003</h2>
+  <ol class="space-y-4 text-slate-300 text-sm md:text-base leading-8 list-decimal pl-5 md:pl-7">
 
     <li class="pub">
       Sinha, R. & Smykatz-Kloss, W. (2003). 
@@ -1345,8 +1369,8 @@ body { font-family: 'Inter', sans-serif; }
 
 <!-- ================= 2002 ================= -->
 <div>
-  <h2 class="text-3xl font-bold border-b border-white/10 pb-2 mb-4">2002</h2>
-  <ol class="space-y-3 text-slate-300 list-decimal pl-6">
+  <h2 class="text-2xl md:text-3xl font-bold text-[#c5a059] border-b border-white/10 pb-2 mb-5">2002</h2>
+  <ol class="space-y-4 text-slate-300 text-sm md:text-base leading-8 list-decimal pl-5 md:pl-7">
 
     <li class="pub">
       Sinha, R., Madhur Khanna, V. Jain & S.K. Tandon (2002). 
@@ -1378,8 +1402,8 @@ body { font-family: 'Inter', sans-serif; }
 
 <!-- ================= 1999 – 2001 ================= -->
 <div>
-  <h2 class="text-3xl font-bold border-b border-white/10 pb-2 mb-4">1999 – 2001</h2>
-  <ol class="space-y-3 text-slate-300 list-decimal pl-6">
+  <h2 class="text-2xl md:text-3xl font-bold text-[#c5a059] border-b border-white/10 pb-2 mb-5">1999 – 2001</h2>
+  <ol class="space-y-4 text-slate-300 text-sm md:text-base leading-8 list-decimal pl-5 md:pl-7">
 
     <li class="pub">
       Roy, P.D., Sinha, R. & W. Smykatz-Kloss (2001). 
@@ -1449,8 +1473,8 @@ body { font-family: 'Inter', sans-serif; }
 
 <!-- ================= OLDER YEARS ================= -->
 <div>
-  <h2 class="text-3xl font-bold border-b border-white/10 pb-2 mb-4">1993 – 1998</h2>
-  <ol class="space-y-3 text-slate-300 list-decimal pl-6">
+  <h2 class="text-2xl md:text-3xl font-bold text-[#c5a059] border-b border-white/10 pb-2 mb-5">1993 – 1998</h2>
+  <ol class="space-y-4 text-slate-300 text-sm md:text-base leading-8 list-decimal pl-5 md:pl-7">
 
     <li class="pub">
       Sinha, R. (1998). 
@@ -1522,6 +1546,6 @@ body { font-family: 'Inter', sans-serif; }
 <footer class="border-t border-white/10 py-4 text-center text-xs text-slate-400">
 © Publications | Academic Use
 </footer>
-
+<script src="script.js"></script>
 </body>
 </html>
