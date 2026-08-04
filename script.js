@@ -1,78 +1,64 @@
-       // Hero Slider
+// Hero Slider
  const slides=document.querySelectorAll(".slide");
-
 if(slides.length){
-
     let cur=0;
-
     setInterval(()=>{
-
         slides[cur].classList.remove("active");
-
         cur=(cur+1)%slides.length;
-
         slides[cur].classList.add("active");
-
     },5000);
-
 }
         
-       document.addEventListener('DOMContentLoaded', () => {
-    // 1. Unified Slider Logic
-    const sliders = document.querySelectorAll('[data-slider]');
-    
-    sliders.forEach(slider => {
-        const slides = slider.querySelectorAll('.adv-slides img');
-        const nextBtn = slider.querySelector('.next');
-        const prevBtn = slider.querySelector('.prev');
-        let currentIdx = 0;
-
-        const updateSlides = (newIdx) => {
-            slides[currentIdx].classList.remove('active');
-            currentIdx = (newIdx + slides.length) % slides.length;
-            slides[currentIdx].classList.add('active');
-        };
-
-        nextBtn.addEventListener('click', (e) => {
-            e.preventDefault();
-            updateSlides(currentIdx + 1);
-        });
-
-        prevBtn.addEventListener('click', (e) => {
-            e.preventDefault();
-            updateSlides(currentIdx - 1);
-        });
-    });
-
-    // 2. Advanced Scroll Reveal
-    const revealExpertise = () => {
-        const section = document.querySelector('#expertise-portal');
-        const sectionPos = section.getBoundingClientRect().top;
-        const screenPos = window.innerHeight / 1.2;
-
-        if (sectionPos < screenPos) {
-            section.classList.add('active');
-        }
+document.addEventListener('DOMContentLoaded', () => {
+// 1. Unified Slider Logic
+const sliders = document.querySelectorAll('[data-slider]');   
+sliders.forEach(slider => {
+    const slides = slider.querySelectorAll('.adv-slides img');
+    const nextBtn = slider.querySelector('.next');
+    const prevBtn = slider.querySelector('.prev');
+    let currentIdx = 0;
+    const updateSlides = (newIdx) => {
+        slides[currentIdx].classList.remove('active');
+        currentIdx = (newIdx + slides.length) % slides.length;
+        slides[currentIdx].classList.add('active');
     };
-
-    window.addEventListener('scroll', revealExpertise);
+    nextBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        updateSlides(currentIdx + 1);
+    });
+    prevBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        updateSlides(currentIdx - 1);
+    });
 });
 
-        // Teaching Card Toggle with View More/Less logic
-        function toggleTeachingCard(card) {
-            card.classList.toggle('expanded');
-            const btn = card.querySelector('.view-more-toggle');
-            if(card.classList.contains('expanded')) {
-                btn.textContent = 'View Less';
-            } else {
-                btn.textContent = 'View More';
-            }
-        }
+// 2. Advanced Scroll Reveal
+const revealExpertise = () => {
+    const section = document.querySelector('#expertise-portal');
+    const sectionPos = section.getBoundingClientRect().top;
+    const screenPos = window.innerHeight / 1.2;
+    if (sectionPos < screenPos) {
+        section.classList.add('active');
+    }
+};
+window.addEventListener('scroll', revealExpertise);
+});
+
+         // Teaching Card Toggle with View More/Less logic
+         function toggleTeachingCard(card) {
+             card.classList.toggle('expanded');
+             const btn = card.querySelector('.view-more-toggle');
+             if(card.classList.contains('expanded')) {
+                 btn.textContent = 'View Less';
+             } else {
+                 btn.textContent = 'View More';
+             }
+         }
 
 
-        // Scroll Reveal
-        const obs = new IntersectionObserver((es) => { es.forEach(e => { if(e.isIntersecting) e.target.classList.add('active'); }); }, { threshold: 0.1 });
-        document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+         // Scroll Reveal
+         const obs = new IntersectionObserver((es) => { es.forEach(e => { if(e.isIntersecting) e.target.classList.add('active'); }); }, { threshold: 0.1 });
+         document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 
     const observerOptions = { threshold: 0.15 };
 const observer = new IntersectionObserver((entries) => {
@@ -343,266 +329,159 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 document.addEventListener("DOMContentLoaded", function () {
-
-    /*=========================================
-        NAVBAR ELEMENTS
-    =========================================*/
-
+/* NAVBAR ELEMENTS */
     const navbar = document.querySelector(".top-navbar");
     const menu = document.querySelector(".nav-menu");
     const toggle = document.querySelector(".menu-toggle");
     const navLinks = document.querySelectorAll(".nav-link");
-
-    /*=========================================
-        MOBILE MENU
-    =========================================*/
-
+/* MOBILE MENU */
     if (toggle && menu) {
-
         toggle.addEventListener("click", function (e) {
-
             e.stopPropagation();
-
             menu.classList.toggle("show");
             toggle.classList.toggle("active");
-
         });
-
         // Close after clicking a menu item
         navLinks.forEach(link => {
-
             link.addEventListener("click", function () {
-
                 menu.classList.remove("show");
                 toggle.classList.remove("active");
-
             });
-
         });
 
         // Close when clicking outside
         document.addEventListener("click", function (e) {
-
             if (!navbar.contains(e.target)) {
-
                 menu.classList.remove("show");
                 toggle.classList.remove("active");
-
             }
-
         });
 
         // Prevent closing when clicking inside menu
         menu.addEventListener("click", function (e) {
-
             e.stopPropagation();
-
         });
-
         // Close menu when screen becomes large
         window.addEventListener("resize", function () {
-
             if (window.innerWidth > 992) {
-
                 menu.classList.remove("show");
                 toggle.classList.remove("active");
-
             }
-
         });
-
     }
 
-    /*=========================================
-        ACTIVE PAGE HIGHLIGHT
-    =========================================*/
-
+/* ACTIVE PAGE HIGHLIGHT*/
     let currentPage = window.location.pathname.split("/").pop();
-
     if (currentPage === "" || currentPage === "/") {
         currentPage = "Rs_web.html";
     }
-
     currentPage = currentPage.toLowerCase();
-
     const currentHash = window.location.hash.toLowerCase();
-
     navLinks.forEach(link => {
-
         link.classList.remove("active");
-
         let href = link.getAttribute("href");
-
         if (!href) return;
-
         href = href.toLowerCase();
-
         const page = href.split("#")[0];
         const hash = href.includes("#")
             ? "#" + href.split("#")[1]
             : "";
-
-        /*-----------------------
-            HOME PAGE
-        -----------------------*/
-
+/* HOME PAGE*/
         if (
             currentPage === "rs_web.html" ||
             currentPage === "index.html" ||
             currentPage === ""
         ) {
-
             if (currentHash === "#contact") {
-
                 if (hash === "#contact") {
-
                     link.classList.add("active");
-
                 }
-
             }
-
             else {
-
                 if (
                     page === "rs_web.html" ||
                     page === "index.html" ||
                     page === ""
                 ) {
-
                     link.classList.add("active");
-
                 }
-
             }
-
         }
-
-        /*-----------------------
-            OTHER PAGES
-        -----------------------*/
-
+/* OTHER PAGES */
         else {
-
             if (page === currentPage) {
-
                 link.classList.add("active");
-
             }
-
         }
-
     });
-
     /*=========================================
         SMOOTH NAVBAR SHADOW ON SCROLL
     =========================================*/
-
     window.addEventListener("scroll", function () {
-
         if (!navbar) return;
-
         if (window.scrollY > 40) {
-
             navbar.classList.add("navbar-scrolled");
-
         } else {
-
             navbar.classList.remove("navbar-scrolled");
-
         }
-
     });
-
 });
-
 
 /*=========================================
     ACTIVE NAVIGATION (HOME PAGE)
 =========================================*/
 
 const navLinks = document.querySelectorAll(".nav-link");
-
 const heroSection = document.querySelector("#hero");
 const contactSection = document.querySelector("#contact");
-
 // Remove active class from every link
 function clearActiveLinks() {
     navLinks.forEach(link => link.classList.remove("active"));
 }
-
 // Highlight link by href
 function activateLink(target) {
     clearActiveLinks();
-
     const activeLink = document.querySelector(
         `.nav-link[href="Rs_web.html${target}"]`
     );
-
     if (activeLink) {
         activeLink.classList.add("active");
     }
 }
-
 /*---------------------------------------
     CLICK EVENTS
 ---------------------------------------*/
-
 navLinks.forEach(link => {
-
     link.addEventListener("click", function () {
-
         const href = this.getAttribute("href");
-
         if (href === "Rs_web.html#hero") {
-
             activateLink("#hero");
-
         }
-
         else if (href === "Rs_web.html#contact") {
-
             activateLink("#contact");
-
         }
-
     });
-
 });
-
 
 /*---------------------------------------
     SCROLL EVENTS
 ---------------------------------------*/
 
 if (heroSection && contactSection) {
-
     const observer = new IntersectionObserver((entries) => {
-
         entries.forEach(entry => {
-
             if (entry.isIntersecting) {
-
                 if (entry.target.id === "hero") {
-
                     activateLink("#hero");
-
                 }
-
                 if (entry.target.id === "contact") {
-
                     activateLink("#contact");
-
                 }
-
             }
-
         });
-
     }, {
         threshold: 0.45
     });
-
     observer.observe(heroSection);
     observer.observe(contactSection);
 }

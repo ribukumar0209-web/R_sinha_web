@@ -16,9 +16,21 @@
             --dark: #0f172a;
         }
 
-        body { 
-            font-family: 'Plus Jakarta Sans', sans-serif; 
-            scroll-behavior: smooth;
+        html{
+            scroll-behavior:smooth;
+            overflow-x:hidden;
+        }
+
+        body{
+            font-family:'Plus Jakarta Sans',sans-serif;
+            overflow-x:hidden;
+            width:100%;
+        }
+
+        img{
+            max-width:100%;
+            height:auto;
+            display:block;
         }
 
         .glass-nav {
@@ -132,10 +144,11 @@
 }
 
 /* MOBILE FIX: On phones, sometimes 'center top' works better than 'center center' */
-@media (max-width: 768px) {
-    .bg-slide {
-        background-position: center 20%; 
-    }
+@media(max-width:768px){
+.bg-slide{
+background-position:center;
+background-size:cover;
+}
 }
     /* Hide scrollbars for the ticker window while in manual mode */
 #tickerWindow::-webkit-scrollbar {
@@ -156,11 +169,11 @@
 /* Single Layer Background Wrapper */
 .know-hero-wrapper {
     position: relative;
-    min-height: 90vh;
+    min-height:100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 20px;
+    padding: 90px 20px 80px;
     /* Apply your image directly here */
     background: url('your-image.jpg') no-repeat center center;
     background-size: cover;
@@ -168,7 +181,10 @@
 
 /* Container is now completely invisible/transparent */
 .know-hero-content {
-    max-width: 1000px;
+    width:100%;
+    max-width:1200px;
+    margin:auto;
+    padding:0 15px;
     text-align: center;
     background: none; /* Removed the box */
     backdrop-filter: none; /* Removed the blur */
@@ -176,7 +192,9 @@
 
 /* Main Title with Multi-layered Shadow for Visibility */
 .know-main-title {
-    font-size: clamp(3.5rem, 12vw, 9rem);
+    font-size:clamp(2.3rem,8vw,7rem);
+    line-height:.9;
+    word-break:break-word;
     font-weight: 900;
     color: white;
     line-height: 0.85;
@@ -199,7 +217,7 @@
 }
 
 .know-subtitle {
-    font-size: clamp(1.5rem, 5vw, 3.5rem);
+    font-size:clamp(1.1rem,3vw,2.8rem);
     font-weight: 700;
     color: white;
     letter-spacing: 0.25em;
@@ -209,7 +227,8 @@
 }
 
 .know-description {
-    font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+    font-size:clamp(.95rem,2vw,1.4rem);
+    padding:0 10px;
     color: white;
     line-height: 1.5;
     font-weight: 500;
@@ -231,63 +250,279 @@
 .know-header-group {
     margin-bottom: 2.5rem;
 }
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    overflow-x:hidden;
+}
+
+#navbar{
+
+    transition:.35s;
+
+}
+
+#mobileMenu{
+
+    transition:.35s ease;
+
+}
+
+#mobileMenu a{
+
+    font-size:15px;
+    font-weight:700;
+    letter-spacing:1px;
+    text-transform:uppercase;
+
+}
+
+#mobileMenu a:hover{
+
+    background:#eff6ff;
+
+}
+
+section{
+
+padding:
+
+80px 20px;
+
+}
+
+@media(min-width:768px){
+
+section{
+
+padding:
+
+100px 6%;
+
+}
+
+}
+
+@media(min-width:1200px){
+
+section{
+
+padding:
+
+120px 8%;
+
+}
+
+}
+
+h2{
+
+font-size:clamp(2rem,5vw,3.5rem);
+
+}
+
+h1,h2,h3,h4,p{
+
+overflow-wrap:break-word;
+
+word-wrap:break-word;
+
+}
+
+/* ===============================
+   RESPONSIVE DESIGN
+=================================*/
+
+@media (max-width:1200px){
+
+    .know-hero-content{
+        max-width:900px;
+    }
+
+}
+
+@media (max-width:992px){
+
+    .know-hero-wrapper{
+        min-height:auto;
+        padding:120px 20px 80px;
+    }
+
+    .know-header-group{
+        margin-bottom:30px;
+    }
+
+}
+
+@media (max-width:768px){
+
+    .know-main-title{
+        font-size:clamp(2rem,11vw,4rem);
+    }
+
+    .know-subtitle{
+        font-size:1.2rem;
+        letter-spacing:.15em;
+    }
+
+    .know-description{
+        font-size:1rem;
+    }
+
+    .bg-slide{
+
+        background-size: contain;
+
+        background-repeat:no-repeat;
+
+        background-position:center center;
+
+        background-color:#000;
+
+    }
+}
+
+@media (max-width:768px){
+
+.know-hero-wrapper{
+
+padding-top:100px;
+
+padding-bottom:80px;
+
+min-height:auto;
+
+}
+
+.know-header-group{
+
+margin-bottom:20px;
+
+}
+
+.know-main-title{
+
+font-size:2.6rem;
+
+line-height:.9;
+
+}
+
+.know-subtitle{
+
+font-size:1.15rem;
+
+letter-spacing:.18em;
+
+}
+
+.know-description{
+
+font-size:1rem;
+
+padding:0 10px;
+
+}
+
+}
+
+@media (max-width:576px){
+
+    .know-main-title{
+        font-size:2.2rem;
+    }
+
+    .know-subtitle{
+        font-size:1rem;
+    }
+
+    .know-description{
+        font-size:.95rem;
+    }
+
+    .know-header-group{
+        margin-bottom:20px;
+    }
+
+}
     </style>
 </head>
 <body class="bg-slate-50 text-slate-900 overflow-x-hidden">
 
-    <!-- Navigation -->
-    <nav id="navbar" class="fixed top-0 w-full h-15 z-50 bg-white/90 backdrop-blur-xl ">
-    <div class="w-full px-6 md:px-12 py-5 flex justify-between items-center">
-        
-        <div class="flex items-center gap-4">
-    <div class="logo-container">
-        <img src="ESRD_icon.png" alt="ESRD Logo" class="h-14 md:h-15 w-50 object-contain drop-shadow-sm">
-    </div >
-    <div class="text-40 font-extrabold text-slate-900 leading-none uppercase tracking-tight h-[80px] flex items-center m-0 p-0">Earth Surface &<br>River Dynamics<br>
-  Lab
-</div>
- 
-</div>
-
-        <div class="hidden lg:flex items-center space-x-10 text-[14px] font-bold uppercase tracking-widest text-slate-700">
-            <a href="#hero-mesh" class="hover:text-blue-800 transition-colors">Home</a>
-            <a href="#projects" class="hover:text-blue-800 transition-colors">Projects</a>
-            <a href="#laboratories" class="hover:text-blue-800 transition-colors">Laboratories</a>
-            <a href="#publications" class="hover:text-blue-800 transition-colors">Publications</a>
-            <a href="#contact" class="bg-blue-800 text-white px-6 py-2.5 rounded-xl hover:bg-blue-700 transition shadow-lg shadow-blue-200/50">Contact</a>
+<nav id="navbar" class="fixed top-0 left-0 w-full z-50 bg-white/90 backdrop-blur-xl shadow-md">
+<div class="max-w-[1800px] mx-auto">
+<div class="flex items-center justify-between px-4 sm:px-6 md:px-8 lg:px-12 py-3">
+    <!-- LEFT -->
+    <div class="flex items-center gap-3 flex-shrink-0">
+        <img src="ESRD_icon.png"
+             class="h-10 sm:h-12 md:h-14 lg:h-16 w-auto object-contain">
+        <div class="leading-tight">
+            <h2
+            class="font-extrabold uppercase tracking-tight
+            text-sm sm:text-base md:text-lg lg:text-xl
+            text-slate-900">
+                Earth Surface &
+                <br>
+                River Dynamics Lab
+            </h2>
         </div>
-
-        <div class="flex items-center border-l pl-6 border-gray-100">
-            <img src="IIT_Kanpur_Logo.png" alt="IIT Kanpur Logo" 
-                 class="h-20 w-auto object-contain">
-        </div>
-
     </div>
+    <!-- Desktop Menu -->
+    <div
+    class="hidden lg:flex items-center gap-8
+    text-[13px] xl:text-[14px]
+    font-bold uppercase tracking-widest
+    text-slate-700">
+        <a href="#hero-mesh" class="hover:text-blue-700">Home</a>
+        <a href="#projects" class="hover:text-blue-700">Projects</a>
+        <a href="#laboratories" class="hover:text-blue-700">Laboratories</a>
+        <a href="#publications" class="hover:text-blue-700">Publications</a>
+        <a href="#contact"
+        class="bg-blue-800 text-white
+        px-5 py-2 rounded-xl
+        hover:bg-blue-700">
+            Contact
+        </a>
+    </div>
+    <!-- RIGHT -->
+    <div class="flex items-center gap-4">
+        <img src="IIT_Kanpur_Logo.png"
+             class="h-12 sm:h-14 md:h-16 lg:h-20 w-auto object-contain">
+        <!-- Hamburger -->
+        <button id="menuBtn"
+        class="lg:hidden text-3xl text-slate-800">
+            <i class="fas fa-bars"></i>
+        </button>
+    </div>
+</div>
+</div>
+<!-- Mobile Menu -->
+<div id="mobileMenu"
+class="hidden lg:hidden bg-white border-t">
+<a href="#hero-mesh" class="block px-6 py-4">Home</a>
+<a href="#projects" class="block px-6 py-4">Projects</a>
+<a href="#laboratories" class="block px-6 py-4">Laboratories</a>
+<a href="#publications" class="block px-6 py-4">Publications</a>
+<a href="#contact"
+class="block px-6 py-4 font-bold text-blue-700">
+Contact
+</a>
+</div>
 </nav>
 
 <!-- Hero Section -->
 
-<header id="hero-mesh" class="relative min-h-screen flex items-center justify-center overflow-hidden bg-black">
-    
-    <div class="absolute inset-0 z-0 overflow-hidden">
-    
-    <div id="hero-background-engine" class="absolute inset-0 w-full h-full">
-        </div>
-
+<header id="hero-mesh" class="relative min-h-screen flex items-center justify-center overflow-hidden bg-black px-4 sm:px-6 lg:px-10">  
+    <div class="absolute inset-0 z-0 overflow-hidden">  
+    <div id="hero-background-engine" class="absolute inset-0 w-full h-full"></div>
     <div class="absolute inset-0 bg-black/40 z-10"></div>
 </div>
-
-    <div class="relative z-20 w-full px-6 md:px-12 lg:px-20">
-        <div class="max-w-5xl mx-auto flex flex-col items-center text-center space-y-12">
-            
-            <div class="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-white/10 text-white text-[10px] font-black uppercase tracking-[0.4em] border border-white/20 backdrop-blur-xl">
-                <span class="relative flex h-2 w-2">
-                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
-                    <span class="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
-                </span>
-                Excellence in Earth Observation since 1992
-            </div>
-            
+    <div class="relative z-20 w-full px-5 sm:px-8 md:px-10 lg:px-16 xl:px-20">
+        <div class="max-w-5xl mx-auto flex flex-col items-center text-center space-y-6 md:space-y-8 lg:space-y-12">          
+            <div class="mb-6 sm:mb-8 flex justify-center">          
             <div class="know-hero-wrapper">
     <div class="know-hero-content">
         <div class="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-white/10 text-white text-[10px] font-black uppercase tracking-[0.4em] border border-white/20 backdrop-blur-xl">
@@ -304,66 +539,63 @@
             <h2 class="know-subtitle">
                 IIT&nbsp;Kanpur
             </h2>
-        </div>
-        
-        <p class="know-description">
+        </div>        
+        <p class="know-description max-w-3xl mx-auto px-3 sm:px-6">
             Earth Surface and River Dynamics Lab, Bridging the gap between 
             <span class="know-highlight">Fluvial Geomorphology</span> 
             and Digital Innovation by leveraging high resolution spatial data to decode complex Environmental dynamics.
         </p>
-        <div class="flex flex-wrap justify-center items-center gap-4 w-full">
-                <div class="flex items-center gap-2 bg-black/30 backdrop-blur-md px-5 py-3 rounded-2xl border border-white/10 hover:border-brown-500 transition-all cursor-default group">
+        <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:flex lg:flex-wrap justify-center gap-3 w-full max-w-5xl mx-auto">
+                <div class="flex items-center gap-2 bg-black/30 backdrop-blur-md w-full lg:w-auto justify-center px-3 sm:px-4 lg:px-5 py-2 sm:py-3 rounded-2xl border border-white/10 hover:border-brown-500 transition-all cursor-default group">
                     <i class="fas fa-satellite text-brown-400 group-hover:scale-110 transition-transform"></i>
-                    <span class="text-white text-[11px] font-black uppercase tracking-widest whitespace-nowrap">Remote Sensing</span>
+                    <span class="text-white text-[9px] sm:text-[10px] lg:text-[11px] font-black uppercase tracking-widest whitespace-nowrap">Remote Sensing</span>
                 </div>
-                <div class="flex items-center gap-2 bg-black/30 backdrop-blur-md px-5 py-3 rounded-2xl border border-white/10 hover:border-emerald-500 transition-all cursor-default group">
+                <div class="flex items-center gap-2 bg-black/30 backdrop-blur-md w-full lg:w-auto justify-center px-3 sm:px-4 lg:px-5 py-2 sm:py-3 rounded-2xl border border-white/10 hover:border-emerald-500 transition-all cursor-default group">
                     <i class="fas fa-layer-group text-emerald-400 group-hover:scale-110 transition-transform"></i>
-                    <span class="text-white text-[11px] font-black uppercase tracking-widest whitespace-nowrap">UAV LiDAR</span>
+                    <span class="text-white text-[9px] sm:text-[10px] lg:text-[11px] font-black uppercase tracking-widest whitespace-nowrap">UAV LiDAR</span>
                 </div>
-                <div class="flex items-center gap-2 bg-black/30 backdrop-blur-md px-5 py-3 rounded-2xl border border-white/10 hover:border-amber-500 transition-all cursor-default group">
+                <div class="flex items-center gap-2 bg-black/30 backdrop-blur-md w-full lg:w-auto justify-center px-3 sm:px-4 lg:px-5 py-2 sm:py-3 rounded-2xl border border-white/10 hover:border-amber-500 transition-all cursor-default group">
                     <i class="fas fa-vial text-amber-400 group-hover:scale-110 transition-transform"></i>
-                    <span class="text-white text-[11px] font-black uppercase tracking-widest whitespace-nowrap">Sedimentology</span>
+                    <span class="text-white text-[9px] sm:text-[10px] lg:text-[11px] font-black uppercase tracking-widest whitespace-nowrap">Sedimentology</span>
                 </div>
-                <div class="flex items-center gap-2 bg-black/30 backdrop-blur-md px-5 py-3 rounded-2xl border border-white/10 hover:border-blue-500 transition-all cursor-default group">
+                <div class="flex items-center gap-2 bg-black/30 backdrop-blur-md w-full lg:w-auto justify-center px-3 sm:px-4 lg:px-5 py-2 sm:py-3 rounded-2xl border border-white/10 hover:border-blue-500 transition-all cursor-default group">
                     <i class="fas fa-droplet text-blue-400 group-hover:scale-110 transition-transform"></i>
-                    <span class="text-white text-[11px] font-black uppercase tracking-widest whitespace-nowrap">Hydrology</span>
+                    <span class="text-white text-[9px] sm:text-[10px] lg:text-[11px] font-black uppercase tracking-widest whitespace-nowrap">Hydrology</span>
                 </div>
 
-                <div class="flex items-center gap-2 bg-black/30 backdrop-blur-md px-5 py-3 rounded-2xl border border-white/10 hover:border-purple-500 transition-all cursor-default group">
+                <div class="flex items-center gap-2 bg-black/30 backdrop-blur-md w-full lg:w-auto justify-center px-3 sm:px-4 lg:px-5 py-2 sm:py-3 rounded-2xl border border-white/10 hover:border-purple-500 transition-all cursor-default group">
                     <i class="fas fa-chart-line text-purple-400 group-hover:scale-110 transition-transform"></i>
-                    <span class="text-white text-[11px] font-black uppercase tracking-widest whitespace-nowrap">Critical Zone obserbatory</span>
+                    <span class="text-white text-[9px] sm:text-[10px] lg:text-[11px] font-black uppercase tracking-widest whitespace-nowrap">Critical Zone obserbatory</span>
                 </div>
             </div>
-
             <div class="flex flex-wrap justify-center gap-8 pt-8">
-                <a href="#laboratories" class="px-12 py-5 bg-blue-600 text-white rounded-full font-black text-sm uppercase tracking-widest hover:bg-blue-500 transition-all shadow-xl">
+                <a href="#laboratories" class="px-7 sm:px-10 lg:px-12 py-3 sm:py-4 lg:py-5 text-xs sm:text-sm bg-blue-600 text-white rounded-full font-black text-sm uppercase tracking-widest hover:bg-blue-500 transition-all shadow-xl">
                     Explore Facilities
                 </a>
             </div>
-    </div>
-    
+    </div>    
 </div>          
         </div>
     </div>
 </header>
 
     <!-- Lab Statistics -->
-    <div class="max-w-7xl mx-auto px-6 -mt-20 relative z-30">
-    <div class="bg-white p-10 rounded-[40px] shadow-2xl border border-slate-100 grid grid-cols-2 md:grid-cols-4 gap-8">
+    <div class="max-w-5xl mx-auto px-5 sm:px-8 relative z-30 -translate-y-10 sm:-translate-y-14 lg:-translate-y-16">
+    <div class="bg-white p-4 sm:p-5 lg:p-7 rounded-3xl lg:rounded-[40px] shadow-2xl border border-slate-100 grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
         <div class="text-center md:border-r border-slate-100">
-            <span class="text-5xl font-black text-blue-900 block mb-2">400+</span>
+            <span class="text-2xl sm:text-3xl lg:text-5xl font-black text-blue-900 block mb-2">400+</span>
             <span class="text-xs font-bold text-slate-400 uppercase tracking-widest">Scientific Papers</span>
         </div>
         <div class="text-center md:border-r border-slate-100">
-            <span class="text-5xl font-black text-blue-900 block mb-2">32+</span>
+            <span class="text-2xl sm:text-3xl lg:text-5xl font-black text-blue-900 block mb-2">32+</span>
             <span class="text-xs font-bold text-slate-400 uppercase tracking-widest">Students Supervised</span>
         </div>
         <div class="text-center md:border-r border-slate-100">
-            <span class="text-5xl font-black text-blue-900 block mb-2">12+</span>
+            <span class="text-2xl sm:text-3xl lg:text-5xl font-black text-blue-900 block mb-2">12+</span>
             <span class="text-xs font-bold text-slate-400 uppercase tracking-widest">National Policies</span>
         </div>
         <div class="text-center">
-            <span class="text-5xl font-black text-blue-900 block mb-2">30+</span>
+            <span class="text-2xl sm:text-3xl lg:text-5xl font-black text-blue-900 block mb-2">30+</span>
             <span class="text-xs font-bold text-slate-400 uppercase tracking-widest">Years of Impact</span>
         </div>
     </div>
@@ -371,19 +603,14 @@
 
 <!-- about PI -->
 <section id="about-pi" class="py-24 bg-white relative overflow-hidden">
-
-    <div class="max-w-[1536px] mx-auto px-6 lg:px-16 relative z-10">
-        
+    <div class="max-w-[1536px] mx-auto px-6 lg:px-16 relative z-10">        
         <div class="flex items-center gap-4 mb-10">
             <span class="w-10 h-px bg-blue-600"></span>
             <h3 class="text-2xl font-black text-slate-800 uppercase tracking-widest">Led By</h3>
         </div>
-
-        <div class="grid lg:grid-cols-12 gap-0 bg-slate-50 rounded-[60px] overflow-hidden shadow-[0_32px_64px_-15px_rgba(0,0,0,0.1)] border border-slate-100">
-            
+        <div class="grid lg:grid-cols-12 gap-0 bg-slate-50 rounded-[60px] overflow-hidden shadow-[0_32px_64px_-15px_rgba(0,0,0,0.1)] border border-slate-100">            
             <div class="lg:col-span-5 relative bg-slate-900 p-10 lg:p-14 flex flex-col justify-between group">
-                <div class="absolute -top-24 -left-24 w-64 h-64 bg-blue-600/20 blur-[100px] rounded-full group-hover:bg-blue-600/30 transition-all"></div>
-                
+                <div class="absolute -top-24 -left-24 w-64 h-64 bg-blue-600/20 blur-[100px] rounded-full group-hover:bg-blue-600/30 transition-all"></div>               
                 <div class="relative z-10">
                     <div class="flex flex-col gap-8">
                         <div class="flex items-center gap-6">
@@ -398,17 +625,18 @@
                                 </div> -->
                             </div>
                             <div>
-                                <h2 class="text-3xl font-black text-white italic tracking-tight">Prof. Rajiv Sinha</h2>
+                                <h2 class="font-black text-white italic tracking-tight text-[clamp(1.4rem,5vw,2rem)] leading-tight">
+                                Prof. Rajiv Sinha
+                               </h2>
+                                
                                 <p class="text-slate-400 text-xs mt-1">PhD, University of Cambridge <br> Professor, IIT Kanpur</p>
                             </div>
                         </div>
-
                         <div class="text-slate-300 text-base leading-relaxed border-l-2 border-blue-500/50 pl-6 py-2">
                             "Integrating high-resolution Earth Observation with deep time stratigraphic records to decode the complex evolution of Earth’s landscapes, from the pulse of Himalayan rivers to the critical dynamics of modern soil and water systems."
                         </div>
                     </div>
                 </div>
-
                 <div class="relative z-10 flex gap-4 mt-12">
                     <a href="https://scholar.google.com/citations?user=VkRcwwEAAAAJ" target="_blank" class="w-12 h-12 rounded-2xl bg-white/10 flex items-center justify-center text-white hover:bg-blue-600 transition-all">
                         <i class="fas fa-graduation-cap"></i>
@@ -421,7 +649,6 @@
                     </a>
                 </div>
             </div>
-
             <div class="lg:col-span-7 p-10 lg:p-16 flex flex-col justify-center space-y-10 bg-white">
                 <div>
                     <h4 class="text-slate-900 text-3xl font-black leading-tight mb-6">
@@ -437,7 +664,6 @@
                         </p>
                     </div>
                 </div>
-
                 <div class="flex flex-wrap gap-2">
                     <span class="px-3 py-1.5 bg-slate-100 text-slate-700 rounded-lg text-[10px] font-bold uppercase tracking-wider border border-slate-200">Fluvial Geomorphology</span>
                     <span class="px-3 py-1.5 bg-slate-100 text-slate-700 rounded-lg text-[10px] font-bold uppercase tracking-wider border border-slate-200">Remote Sensing</span>
@@ -452,7 +678,6 @@
 
         </div> </div>
 </section>
-
 
     <!-- projects Section -->
     <section id="projects" class="py-32 bg-slate-900 relative overflow-hidden">
@@ -1308,7 +1533,12 @@
         <div class="grid lg:grid-cols-12 gap-12 mb-20">
             
             <div class="lg:col-span-3">
-                <div class="bg-blue-600 text-white px-3 py-1 rounded inline-block font-black text-2xl tracking-tighter mb-6">ESRD</div>
+                <div class="inline-flex w-[120px] h-[52px] mb-6 items-center justify-center">
+                    <img
+                        src="ESRD_icon.png"
+                        alt="ESRD Logo"
+                        class="w-full h-full object-contain">
+                </div>
                 <h4 class="text-xl font-bold mb-4 italic tracking-tight uppercase text-blue-100">
                     Earth Surface and River Dynamics Lab
                 </h4>
@@ -1595,7 +1825,15 @@ let lastScrollY = window.scrollY;
 
     lastScrollY = currentScrollY;
   });
-    
+
+const btn=document.getElementById("menuBtn");
+const menu=document.getElementById("mobileMenu");
+
+btn.addEventListener("click",()=>{
+
+menu.classList.toggle("hidden");
+
+});
 </script>
 </body>
 </html>
