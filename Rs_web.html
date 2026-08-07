@@ -59,28 +59,74 @@
         </ul>
 </header>
 
-    <section id="hero"class="hero-profile">
-    <div class="profile-container">
-        <div class="profile-details reveal">
+
+
+<section id="hero" class="hero-profile">
+
+    <div class="contour-layer" aria-hidden="true">
+        <svg viewBox="0 0 1600 900" preserveAspectRatio="none">
+            <path d="M-50,120 C220,60 400,150 650,90 C880,40 980,120 1650,70" fill="none" stroke="#c5a059" stroke-width="1"/>
+            <path d="M-50,170 C240,110 430,200 690,140 C900,90 1000,170 1650,120" fill="none" stroke="#c5a059" stroke-width="1"/>
+            <path d="M-50,620 C220,560 400,660 650,600 C880,550 980,630 1650,580" fill="none" stroke="#c5a059" stroke-width="1"/>
+            <path d="M-50,670 C240,610 430,710 690,650 C900,600 1000,680 1650,630" fill="none" stroke="#c5a059" stroke-width="1"/>
+            <path d="M-50,720 C260,660 460,760 730,700 C920,650 1020,730 1650,680" fill="none" stroke="#c5a059" stroke-width="1"/>
+        </svg>
+    </div>
+
+    
+
+    <div class="hero-main">
+
+        <div class="profile-details reveal" data-reveal>
+
             <h2>Rajiv Sinha</h2>
-            <div class="designation-badge">Professor | Dept. of Earth Sciences, IIT Kanpur</div>
-            
+            <div class="geo-tag">Professor . Department of Earth Sciences · IIT Kanpur</div>
+
             <p class="modern-p">
-                Integrating high-resolution Earth Observation with deep time stratigraphic records to decode the complex evolution of Earth’s landscapes, from the pulse of Himalayan rivers to the critical dynamics of modern soil and water systems.
+                Integrating high-resolution Earth Observation with deep time stratigraphic records to decode the complex evolution of Earth's landscapes, from the pulse of Himalayan rivers to the critical dynamics of modern soil and water systems.
             </p>
-            
+
+            <div class="stats-bar">
+                <div class="stat-item"><h3 data-count="30" data-suffix="+">0</h3><p>Years of Experience</p></div>
+                <div class="stat-item"><h3 data-count="150" data-suffix="+">0</h3><p>Publications</p></div>
+                <div class="stat-item"><h3 data-count="25" data-suffix="">0</h3><p>Research Scholars</p></div>
+            </div>
+
             <div class="social-icons-bar">
-                <a href="https://scholar.google.com/citations?user=VkRcwwEAAAAJ&hl=en&oi=ao" title="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
-                <a href="https://www.linkedin.com/in/rajiv-sinha-a87a68b2/" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://scholar.google.com/citations?user=VkRcwwEAAAAJ&hl=en&oi=ao" title="Google Scholar" target="_blank" rel="noopener"><i class="fas fa-graduation-cap"></i></a>
+                <a href="https://www.linkedin.com/in/rajiv-sinha-a87a68b2/" title="LinkedIn" target="_blank" rel="noopener"><i class="fab fa-linkedin-in"></i></a>
                 <a href="mailto:rsinha@iitk.ac.in" title="Email"><i class="fas fa-envelope"></i></a>
             </div>
-            
-
-        
         </div>
-        
-        <div class="profile-visual"></div>
+
+        <div class="profile-visual reveal" data-reveal>
+            <div class="image-panel">
+                <img src="slider3.jpeg"
+                     alt="Prof. Rajiv Sinha"
+                     class="profile-image">
+                <div class="image-shine"></div>
+                <div class="image-glow"></div>
+                <div class="focus-frame"></div>
+            </div>
+        </div>
     </div>
+
+    <div class="ticker" aria-hidden="true">
+        <div class="track">
+            <span>
+                <span><i class="fas fa-globe"></i>Earth Surface dynamics</span>
+                <span><i class="fas fa-water"></i>River science</span>
+                <span><i class="fas fa-layer-group"></i>Fluvial sedimentology</span>
+                <span><i class="fas fa-droplet"></i>Groundwater structure and dynamics</span>
+                <span><i class="fas fa-earth-asia"></i>Palaeoclimatic reconstructions</span>
+                <span><i class="fas fa-cloud-rain"></i>Hydrological modeling</span>               
+                <span><i class="fas fa-helicopter"></i>Drone-based Imaging</span>
+                <span><i class="fas fa-satellite"></i>Remote Sensing & GIS</span>
+            </span>
+            
+        </div>
+    </div>
+
 </section>
 
 <section id="contact" class="reveal" >
@@ -103,5 +149,6 @@
 </footer>
 
 <script src="script.js"></script>
+<script src="scripted.js"></script>
 </body>
 </html>
