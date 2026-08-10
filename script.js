@@ -328,162 +328,860 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
+
 document.addEventListener("DOMContentLoaded", function () {
-/* NAVBAR ELEMENTS */
+
+    /* =========================================================
+       NAVBAR ELEMENTS
+    ========================================================= */
+
     const navbar = document.querySelector(".top-navbar");
     const menu = document.querySelector(".nav-menu");
-    const toggle = document.querySelector(".menu-toggle");
-    const navLinks = document.querySelectorAll(".nav-link");
-/* MOBILE MENU */
-    if (toggle && menu) {
-        toggle.addEventListener("click", function (e) {
-            e.stopPropagation();
-            menu.classList.toggle("show");
-            toggle.classList.toggle("active");
+    const menuToggle = document.querySelector(".menu-toggle");
+
+    const dropdowns = document.querySelectorAll(".nav-dropdown");
+    const dropdownToggles =
+        document.querySelectorAll(".publication-toggle");
+
+    const dropdownItems =
+        document.querySelectorAll(".dropdown-item");
+
+    const allNavLinks =
+        document.querySelectorAll(".nav-link");
+
+
+    /* =========================================================
+       MOBILE MENU
+    ========================================================= */
+
+    if (menuToggle && menu) {
+
+        menuToggle.addEventListener("click", function (event) {
+
+            event.preventDefault();
+            event.stopPropagation();
+
+            const isOpen =
+                menu.classList.toggle("show");
+
+            menuToggle.classList.toggle(
+                "active",
+                isOpen
+            );
+
+            menuToggle.setAttribute(
+                "aria-expanded",
+                isOpen ? "true" : "false"
+            );
+
         });
-        // Close after clicking a menu item
-        navLinks.forEach(link => {
+
+    }
+
+
+    /* =========================================================
+       CLOSE ALL DROPDOWNS
+    ========================================================= */
+
+    function closeAllDropdowns(except = null) {
+
+        dropdowns.forEach(function (dropdown) {
+
+            if (dropdown === except) {
+                return;
+            }
+
+            dropdown.classList.remove("open");
+
+            const button =
+                dropdown.querySelector(".publication-toggle");
+
+            if (button) {
+
+                button.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+
+            }
+
+        });
+
+    }
+
+
+    /* =========================================================
+       CLOSE MOBILE MENU
+    ========================================================= */
+
+    function closeMobileMenu() {
+
+        if (menu) {
+            menu.classList.remove("show");
+        }
+
+        if (menuToggle) {
+
+            menuToggle.classList.remove("active");
+
+            menuToggle.setAttribute(
+                "aria-expanded",
+                "false"
+            );
+
+        }
+
+    }
+
+
+    /* =========================================================
+       DROPDOWN TOGGLE
+       Works for ALL THREE dropdowns
+    ========================================================= */
+
+    dropdownToggles.forEach(function (button) {
+
+        button.addEventListener("click", function (event) {
+
+            event.preventDefault();
+            event.stopPropagation();
+
+            const dropdown =
+                button.closest(".nav-dropdown");
+
+            if (!dropdown) {
+                return;
+            }
+
+            const isOpen =
+                dropdown.classList.contains("open");
+
+
+            /* ---------------------------------------------
+               Close every other dropdown
+            --------------------------------------------- */
+
+            closeAllDropdowns(dropdown);
+
+
+            /* ---------------------------------------------
+               Toggle current dropdown
+            --------------------------------------------- */
+
+            if (isOpen) {
+
+                dropdown.classList.remove("open");
+
+                button.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+
+            } else {
+
+                dropdown.classList.add("open");
+
+                button.setAttribute(
+                    "aria-expanded",
+                    "true"
+                );
+
+            }
+
+        });
+
+    });
+
+
+    /* =========================================================
+       DROPDOWN ITEM CLICK
+    ========================================================= */
+
+    dropdownItems.forEach(function (item) {
+
+        item.addEventListener("click", function () {
+
+            /* Close dropdowns */
+
+            closeAllDropdowns();
+
+            /* Close mobile navigation */
+
+            closeMobileMenu();
+
+        });
+
+    });
+
+
+    /* =========================================================
+       NORMAL NAVIGATION LINKS
+    ========================================================= */
+
+    document
+        .querySelectorAll(
+            ".nav-menu > li > a.nav-link"
+        )
+        .forEach(function (link) {
+
             link.addEventListener("click", function () {
-                menu.classList.remove("show");
-                toggle.classList.remove("active");
+
+                /* Close all dropdowns */
+
+                closeAllDropdowns();
+
+                /* Close mobile menu */
+
+                closeMobileMenu();
+
             });
+
         });
 
-        // Close when clicking outside
-        document.addEventListener("click", function (e) {
-            if (!navbar.contains(e.target)) {
-                menu.classList.remove("show");
-                toggle.classList.remove("active");
-            }
-        });
 
-        // Prevent closing when clicking inside menu
-        menu.addEventListener("click", function (e) {
-            e.stopPropagation();
-        });
-        // Close menu when screen becomes large
-        window.addEventListener("resize", function () {
-            if (window.innerWidth > 992) {
-                menu.classList.remove("show");
-                toggle.classList.remove("active");
-            }
-        });
-    }
+    /* =========================================================
+       CLICK OUTSIDE NAVBAR
+    ========================================================= */
 
-/* ACTIVE PAGE HIGHLIGHT*/
-    let currentPage = window.location.pathname.split("/").pop();
-    if (currentPage === "" || currentPage === "/") {
-        currentPage = "Rs_web.html";
-    }
-    currentPage = currentPage.toLowerCase();
-    const currentHash = window.location.hash.toLowerCase();
-    navLinks.forEach(link => {
-        link.classList.remove("active");
-        let href = link.getAttribute("href");
-        if (!href) return;
-        href = href.toLowerCase();
-        const page = href.split("#")[0];
-        const hash = href.includes("#")
-            ? "#" + href.split("#")[1]
-            : "";
-/* HOME PAGE*/
+    document.addEventListener("click", function (event) {
+
+        if (!navbar) {
+            return;
+        }
+
+        if (!navbar.contains(event.target)) {
+
+            closeAllDropdowns();
+
+            closeMobileMenu();
+
+        }
+
+    });
+
+
+    /* =========================================================
+       ESCAPE KEY
+       Close dropdown/menu
+    ========================================================= */
+
+    document.addEventListener("keydown", function (event) {
+
+        if (event.key === "Escape") {
+
+            closeAllDropdowns();
+
+            closeMobileMenu();
+
+        }
+
+    });
+
+
+    /* =========================================================
+       RESIZE HANDLER
+    ========================================================= */
+
+    window.addEventListener("resize", function () {
+
+        /*
+         * When switching to desktop,
+         * reset the mobile menu.
+         */
+
+        if (window.innerWidth > 992) {
+
+            closeMobileMenu();
+
+        }
+
+    });
+
+
+    /* =========================================================
+       ACTIVE PAGE DETECTION
+    ========================================================= */
+
+    function getCurrentPage() {
+
+        let page =
+            window.location.pathname
+                .split("/")
+                .pop()
+                .toLowerCase();
+
         if (
-            currentPage === "rs_web.html" ||
-            currentPage === "index.html" ||
-            currentPage === ""
+            page === "" ||
+            page === "index.html"
         ) {
-            if (currentHash === "#contact") {
-                if (hash === "#contact") {
-                    link.classList.add("active");
-                }
-            }
-            else {
-                if (
-                    page === "rs_web.html" ||
-                    page === "index.html" ||
-                    page === ""
-                ) {
-                    link.classList.add("active");
-                }
-            }
-        }
-/* OTHER PAGES */
-        else {
-            if (page === currentPage) {
-                link.classList.add("active");
-            }
-        }
-    });
-    /*=========================================
-        SMOOTH NAVBAR SHADOW ON SCROLL
-    =========================================*/
-    window.addEventListener("scroll", function () {
-        if (!navbar) return;
-        if (window.scrollY > 40) {
-            navbar.classList.add("navbar-scrolled");
-        } else {
-            navbar.classList.remove("navbar-scrolled");
-        }
-    });
-});
 
-/*=========================================
-    ACTIVE NAVIGATION (HOME PAGE)
-=========================================*/
+            page = "rs_web.html";
 
-const navLinks = document.querySelectorAll(".nav-link");
-const heroSection = document.querySelector("#hero");
-const contactSection = document.querySelector("#contact");
-// Remove active class from every link
-function clearActiveLinks() {
-    navLinks.forEach(link => link.classList.remove("active"));
-}
-// Highlight link by href
-function activateLink(target) {
-    clearActiveLinks();
-    const activeLink = document.querySelector(
-        `.nav-link[href="Rs_web.html${target}"]`
-    );
-    if (activeLink) {
-        activeLink.classList.add("active");
+        }
+
+        return page;
+
     }
-}
-/*---------------------------------------
-    CLICK EVENTS
----------------------------------------*/
-navLinks.forEach(link => {
-    link.addEventListener("click", function () {
-        const href = this.getAttribute("href");
-        if (href === "Rs_web.html#hero") {
-            activateLink("#hero");
+
+
+    /* =========================================================
+       PAGE GROUPS
+    ========================================================= */
+
+    const careerPages = [
+
+        "resume.html",
+        "services.html"
+
+    ];
+
+
+    const researchPages = [
+
+        "research_expertise.html",
+        "research.html",
+        "peer_review_books.html",
+        "citations.html",
+        "conferences.html",
+        "invited_lectures.html"
+
+    ];
+
+
+    const teachingPages = [
+
+        "teaching.html",
+        "outreach.html",
+        "thesis.html"
+
+    ];
+
+
+    /* =========================================================
+       REMOVE ACTIVE CLASSES
+    ========================================================= */
+
+    function clearActiveLinks() {
+
+        document
+            .querySelectorAll(".nav-link")
+            .forEach(function (link) {
+
+                link.classList.remove("active");
+
+            });
+
+    }
+
+
+    /* =========================================================
+       FIND DROPDOWN TOGGLE
+    ========================================================= */
+
+    function getDropdownToggle(dropdown) {
+
+        if (!dropdown) {
+            return null;
         }
-        else if (href === "Rs_web.html#contact") {
-            activateLink("#contact");
+
+        return dropdown.querySelector(
+            ".publication-toggle"
+        );
+
+    }
+
+
+    /* =========================================================
+       FIND DROPDOWN BY PAGE
+    ========================================================= */
+
+    function activateDropdownByPages(page) {
+
+        let targetPages = null;
+
+        if (careerPages.includes(page)) {
+
+            targetPages = careerPages;
+
         }
+
+        else if (researchPages.includes(page)) {
+
+            targetPages = researchPages;
+
+        }
+
+        else if (teachingPages.includes(page)) {
+
+            targetPages = teachingPages;
+
+        }
+
+
+        if (!targetPages) {
+            return;
+        }
+
+
+        dropdowns.forEach(function (dropdown) {
+
+            const items =
+                dropdown.querySelectorAll(
+                    ".dropdown-item"
+                );
+
+            items.forEach(function (item) {
+
+                const href =
+                    item.getAttribute("href");
+
+                if (!href) {
+                    return;
+                }
+
+                const itemPage =
+                    href
+                        .split("#")[0]
+                        .split("/")
+                        .pop()
+                        .toLowerCase();
+
+
+                if (itemPage === page) {
+
+                    /*
+                     * Highlight the actual
+                     * dropdown page.
+                     */
+
+                    item.classList.add("active");
+
+                    /*
+                     * Highlight the parent
+                     * dropdown button.
+                     */
+
+                    const parentToggle =
+                        getDropdownToggle(dropdown);
+
+                    if (parentToggle) {
+
+                        parentToggle.classList.add(
+                            "active"
+                        );
+
+                    }
+
+                }
+
+            });
+
+        });
+
+    }
+
+
+    /* =========================================================
+       NORMAL TOP LEVEL PAGE ACTIVE STATE
+    ========================================================= */
+
+    function activateTopLevelPage(page) {
+
+        document
+            .querySelectorAll(
+                ".nav-menu > li > a.nav-link"
+            )
+            .forEach(function (link) {
+
+                const href =
+                    link.getAttribute("href");
+
+                if (!href) {
+                    return;
+                }
+
+
+                const linkPage =
+                    href
+                        .split("#")[0]
+                        .split("/")
+                        .pop()
+                        .toLowerCase();
+
+                const linkHash =
+                    href.includes("#")
+                        ? "#" +
+                          href
+                              .split("#")[1]
+                              .toLowerCase()
+                        : "";
+
+
+                /*
+                 * Only activate normal
+                 * page links here.
+                 */
+
+                if (
+                    linkPage === page &&
+                    !linkHash
+                ) {
+
+                    link.classList.add(
+                        "active"
+                    );
+
+                }
+
+            });
+
+    }
+
+
+    /* =========================================================
+       HOME PAGE ACTIVE STATE
+    ========================================================= */
+
+    function activateHomeSection(target) {
+
+        clearActiveLinks();
+
+        const homeLink =
+            document.querySelector(
+                `.nav-link[href="Rs_web.html${target}"]`
+            );
+
+        if (homeLink) {
+
+            homeLink.classList.add(
+                "active"
+            );
+
+        }
+
+    }
+
+
+    /* =========================================================
+       INITIAL ACTIVE PAGE
+    ========================================================= */
+
+    function setInitialActivePage() {
+
+        clearActiveLinks();
+
+        /*
+         * Remove active state from dropdown
+         * items first.
+         */
+
+        document
+            .querySelectorAll(".dropdown-item")
+            .forEach(function (item) {
+
+                item.classList.remove(
+                    "active"
+                );
+
+            });
+
+
+        const currentPage =
+            getCurrentPage();
+
+        const currentHash =
+            window.location.hash.toLowerCase();
+
+
+        /* ---------------------------------------------
+           HOME PAGE
+        --------------------------------------------- */
+
+        if (
+            currentPage === "rs_web.html"
+        ) {
+
+            if (
+                currentHash === "#contact"
+            ) {
+
+                activateHomeSection(
+                    "#contact"
+                );
+
+            }
+
+            else {
+
+                activateHomeSection(
+                    "#hero"
+                );
+
+            }
+
+            return;
+
+        }
+
+
+        /* ---------------------------------------------
+           NORMAL TOP LEVEL PAGE
+        --------------------------------------------- */
+
+        activateTopLevelPage(
+            currentPage
+        );
+
+
+        /* ---------------------------------------------
+           DROPDOWN PAGE
+        --------------------------------------------- */
+
+        activateDropdownByPages(
+            currentPage
+        );
+
+    }
+
+
+    setInitialActivePage();
+
+
+    /* =========================================================
+       NORMAL NAVIGATION CLICK
+    ========================================================= */
+
+    allNavLinks.forEach(function (link) {
+
+        link.addEventListener(
+            "click",
+            function () {
+
+                /*
+                 * Do not interfere with
+                 * dropdown buttons.
+                 */
+
+                if (
+                    link.classList.contains(
+                        "publication-toggle"
+                    )
+                ) {
+
+                    return;
+
+                }
+
+            }
+        );
+
     });
+
+
+    /* =========================================================
+       HOME PAGE CLICK EVENTS
+    ========================================================= */
+
+    const heroSection =
+        document.querySelector("#hero");
+
+    const contactSection =
+        document.querySelector("#contact");
+
+
+    const homeHeroLink =
+        document.querySelector(
+            '.nav-link[href="Rs_web.html#hero"]'
+        );
+
+
+    const homeContactLink =
+        document.querySelector(
+            '.nav-link[href="Rs_web.html#contact"]'
+        );
+
+
+    if (homeHeroLink) {
+
+        homeHeroLink.addEventListener(
+            "click",
+            function () {
+
+                activateHomeSection(
+                    "#hero"
+                );
+
+            }
+        );
+
+    }
+
+
+    if (homeContactLink) {
+
+        homeContactLink.addEventListener(
+            "click",
+            function () {
+
+                activateHomeSection(
+                    "#contact"
+                );
+
+            }
+        );
+
+    }
+
+
+    /* =========================================================
+       HOME PAGE SCROLL OBSERVER
+    ========================================================= */
+
+    if (
+        heroSection &&
+        contactSection
+    ) {
+
+        const observer =
+            new IntersectionObserver(
+                function (entries) {
+
+                    entries.forEach(
+                        function (entry) {
+
+                            if (
+                                !entry.isIntersecting
+                            ) {
+
+                                return;
+
+                            }
+
+
+                            if (
+                                entry.target.id ===
+                                "hero"
+                            ) {
+
+                                activateHomeSection(
+                                    "#hero"
+                                );
+
+                            }
+
+
+                            if (
+                                entry.target.id ===
+                                "contact"
+                            ) {
+
+                                activateHomeSection(
+                                    "#contact"
+                                );
+
+                            }
+
+                        }
+                    );
+
+                },
+                {
+                    threshold: 0.45
+                }
+            );
+
+
+        observer.observe(
+            heroSection
+        );
+
+        observer.observe(
+            contactSection
+        );
+
+    }
+
+
+    /* =========================================================
+       NAVBAR SCROLL EFFECT
+    ========================================================= */
+
+    window.addEventListener(
+        "scroll",
+        function () {
+
+            if (!navbar) {
+                return;
+            }
+
+
+            if (
+                window.scrollY > 40
+            ) {
+
+                navbar.classList.add(
+                    "navbar-scrolled"
+                );
+
+            }
+
+            else {
+
+                navbar.classList.remove(
+                    "navbar-scrolled"
+                );
+
+            }
+
+        }
+    );
+
+
+    /* =========================================================
+       KEYBOARD ACCESSIBILITY
+    ========================================================= */
+
+    dropdownToggles.forEach(function (button) {
+
+        button.addEventListener(
+            "keydown",
+            function (event) {
+
+                /*
+                 * Enter or Space
+                 */
+
+                if (
+                    event.key === "Enter" ||
+                    event.key === " "
+                ) {
+
+                    event.preventDefault();
+
+                    button.click();
+
+                }
+
+
+                /*
+                 * Escape
+                 */
+
+                if (
+                    event.key === "Escape"
+                ) {
+
+                    closeAllDropdowns();
+
+                }
+
+            }
+        );
+
+    });
+
+
 });
 
-/*---------------------------------------
-    SCROLL EVENTS
----------------------------------------*/
-
-if (heroSection && contactSection) {
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                if (entry.target.id === "hero") {
-                    activateLink("#hero");
-                }
-                if (entry.target.id === "contact") {
-                    activateLink("#contact");
-                }
-            }
-        });
-    }, {
-        threshold: 0.45
-    });
-    observer.observe(heroSection);
-    observer.observe(contactSection);
-}
 
 

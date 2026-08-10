@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Synergistic Activities &amp; Professional Services — Rajiv Sinha</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="nav.css">
+
+
+<style>
+:root{
+    --primary:      #000c18;
+    --primary-2:    #071a2c;
+    --accent:       #c5a059;
+    --accent-dim:   rgba(197,160,89,0.28);
+    --signal:       #5eead4;
+    --text-main:    #1a1c1e;
+    --text-light:   #5d666d;
+    --bg-alt:       #f8fafc;
+    --text-hi:      #f4f1ea;
+    --text-muted:   #94a4b5;
+    --transition:   all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    --mx: 50%; --my: 50%;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Inter', sans-serif; color: var(--text-main); background: #fff; line-height: 1.8; overflow-x: hidden; }
+
+.font-display{ font-family:'Playfair Display', serif; }
+.font-heading{ font-family:'Plus Jakarta Sans', sans-serif; }
+.font-mono-ish{ font-family:'Inter', sans-serif; letter-spacing:0.08em; }
+
+/* ---- reveal on scroll ---- */
+.reveal{ opacity:0; transform:translateY(22px); transition:opacity .8s cubic-bezier(.16,1,.3,1), transform .8s cubic-bezier(.16,1,.3,1); }
+.reveal.is-visible{ opacity:1; transform:translateY(0); }
+
+/* ---- header ambient texture (very quiet, brass hairline contours on navy) ---- */
+.band-texture{
+    position:absolute; inset:0; opacity:.18; pointer-events:none;
+}
+
+/* ---- timeline ---- */
+.timeline{ position:relative; }
+.timeline-rail{
+    position:absolute; left:0; top:6px; bottom:6px; width:2px;
+    background:linear-gradient(180deg, var(--accent-dim), rgba(148,164,181,0.18) 85%, transparent);
+}
+.timeline-item{ position:relative; padding-left:2.75rem; }
+.time-dot{
+    position:absolute; left:-5px; top:6px; width:12px; height:12px; border-radius:50%;
+    border:2px solid #fff; box-shadow:0 0 0 1px var(--accent-dim);
+    background:var(--accent);
+}
+.timeline-item[data-status="current"] .timeline-dot{
+    background:var(--signal); box-shadow:0 0 0 1px rgba(94,234,212,0.4), 0 0 10px rgba(94,234,212,0.5);
+}
+
+/* ---- filter pills ---- */
+.filter-btn{
+    font-family:'Inter',sans-serif; font-size:.8rem; letter-spacing:.04em; font-weight:600;
+    padding:.55rem 1.3rem; border-radius:999px; border:1px solid var(--accent-dim);
+    color:var(--text-light); background:#fff; transition:var(--transition); cursor:pointer;
+}
+.filter-btn:hover{ border-color:var(--accent); color:var(--text-main); }
+.filter-btn.is-active{ background:var(--primary); border-color:var(--primary); color:var(--text-hi); }
+
+/* ---- role card ---- */
+.role-card{ transition:transform .35s cubic-bezier(.16,1,.3,1), box-shadow .35s ease; }
+.role-card:hover{ transform:translateX(4px); }
+
+.status-chip{
+    font-family:'Inter',sans-serif; font-size:.65rem; font-weight:700; letter-spacing:.08em;
+    padding:.28rem .65rem; border-radius:999px; text-transform:uppercase;
+}
+.status-chip.current{ background:rgba(94,234,212,0.14); color:#0f766e; }
+.status-chip.date{ background:rgba(197,160,89,0.1); color:#8a6d3b; }
+
+@media (prefers-reduced-motion: reduce){
+    .reveal{ transition:none; opacity:1; transform:none; }
+}
+</style>
+</head>
+<body class="bg-white">
+<nav class="top-navbar">
+    <!-- Mobile Toggle -->
+    <button class="menu-toggle"
+            aria-label="Toggle Navigation"
+            aria-expanded="false"
+            type="button">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+    <!-- Navigation -->
+    <ul class="nav-menu">
+        <li><a href="Rs_web.html#hero" class="nav-link"><i class="fas fa-home"></i><span>Home</span></a></li>
+        <li class="nav-dropdown">
+            <button class="nav-link publication-toggle"
+                    type="button"
+                    aria-expanded="false"
+                    aria-haspopup="true">
+                <i class="fas fa-user-tie"></i>
+                <span>Career Profile</span>
+                <i class="fas fa-chevron-down dropdown-arrow"></i>
+            </button>
+            <!-- Dropdown -->
+            <div class="publication-dropdown">
+                <a href="resume.html" class="dropdown-item">
+                    <i class="fas fa-user-tie"></i>
+                    <span>Education & Experience</span>
+                </a>
+                <a href="services.html" class="dropdown-item">
+                    <i class="fas fa-briefcase"></i>
+                    <span>Professional Experience</span>
+                </a>
+            </div>
+        </li>
+        <li class="nav-dropdown">
+            <button class="nav-link publication-toggle"
+                    type="button"
+                    aria-expanded="false"
+                    aria-haspopup="true">
+                <i class="fas fa-chart-line"></i>
+                <span>Research & Scholarly Activities</span>
+                <i class="fas fa-chevron-down dropdown-arrow"></i>
+            </button>
+            <!-- Dropdown -->
+            <div class="publication-dropdown">
+                <a href="research_expertise.html" class="dropdown-item">
+                    <i class="fas fa-flask"></i>
+                    <span>Skills & Expertise</span>
+                </a>
+                <a href="research.html" class="dropdown-item">
+                    <i class="fas fa-book-open"></i>
+                    <span>Research & Publications</span>
+                </a>
+                <a href="Peer_review_books.html" class="dropdown-item">
+                    <i class="fas fa-pen-to-square"></i>
+                    <span>Reviewed Writings</span>
+                </a>
+                <a href="Citations.html" class="dropdown-item">
+                    <i class="fas fa-chart-column"></i>
+                    <span>Citation Impacts</span>
+                </a>
+                <a href="conferences.html" class="dropdown-item">
+                    <i class="fas fa-users"></i>
+                    <span>Conferences</span>
+                </a>
+                <a href="invited_lectures.html" class="dropdown-item">
+                    <i class="fas fa-microphone-lines"></i>
+                    <span>Lectures</span>
+                </a>
+            </div>
+        </li>
+        <li class="nav-dropdown">
+            <button class="nav-link publication-toggle"
+                    type="button"
+                    aria-expanded="false"
+                    aria-haspopup="true">
+                <i class="fas fa-chalkboard-teacher"></i>
+                <span>Teaching & Mentorship</span>
+                <i class="fas fa-chevron-down dropdown-arrow"></i>
+            </button>
+            <!-- Dropdown -->
+            <div class="publication-dropdown">
+                <a href="teaching.html" class="dropdown-item">
+                    <i class="fas fa-book-open"></i>
+                    <span>Courses</span>
+                </a>
+                <a href="outreach.html" class="dropdown-item">
+                    <i class="fas fa-globe"></i>
+                    <span>Outreach Activities</span>
+                </a>
+                <a href="Thesis.html" class="dropdown-item">
+                    <i class="fas fa-file-pen"></i>
+                    <span>Thesis Mentored</span>
+                </a>
+            </div>
+        </li>
+        <li><a href="lab_page/HB_new.html" class="nav-link"target="_blank"><i class="fas fa-microscope"></i><span>Labs</span></a></li>
+        <li><a href="grants.html" class="nav-link"><i class="fas fa-user-graduate"></i><span>Research Grants</span></a></li>
+        <li><a href="students.html" class="nav-link"><i class="fas fa-user-graduate"></i><span>Students</span></a></li>
+        <li><a href="awards.html" class="nav-link"><i class="fas fa-award"></i><span>Awards</span></a></li>
+        <li><a href="Rs_web.html#contact" class="nav-link"><i class="fas fa-envelope"></i><span>Contact</span></a></li>
+    </ul>
+</nav>
+<section class="relative overflow-hidden pt-8 pb-1 md:pt-10 md:pb-2 " style="background:var(--primary);">
+    <div class="band-texture">
+        <svg viewBox="0 0 1600 500" preserveAspectRatio="none" class="w-full h-full">
+            <path d="M-50,120 C220,60 400,150 650,90 C880,40 980,120 1650,70" fill="none" stroke="#c5a059" stroke-width="1"/>
+            <path d="M-50,220 C240,160 430,250 690,190 C900,140 1000,220 1650,170" fill="none" stroke="#c5a059" stroke-width="1"/>
+            <path d="M-50,340 C260,280 460,380 730,320 C920,270 1020,350 1650,300" fill="none" stroke="#5eead4" stroke-width="1"/>
+        </svg>
+    </div>
+    <div class="relative z-10 max-w-5xl mx-auto px-6 md:px-20 py-30 md:py-28 text-center">
+        <h1 class="reveal font-display italic md:not-italic mt-6 text-3xl sm:text-4xl md:text-6xl font-bold leading-tight"
+            style="color:var(--text-hi);">
+            Synergistic Activities &amp;<br class="hidden sm:block"> <span style="color:var(--accent);">Professional Services</span>
+        </h1>
+        <p class="reveal mt-6 max-w-2xl mx-auto text-sm md:text-base" style="color:var(--text-muted);">
+            Advisory, evaluation, and governance contributions across national missions, government
+            committees, and international scientific bodies — spanning geo-hazards, river science,
+            water policy, and Earth system research.
+        </p>
+
+        <div class="reveal mt-10 mb-4 grid grid-cols-3 gap-4 md:gap-16 max-w-lg mx-auto">
+            <div>
+                <div class="font-display text-3xl md:text-4xl font-bold" style="color:var(--accent);" data-count="24">0</div>
+                <div class="font-mono-ish text-[0.65rem] md:text-xs uppercase mt-2" style="color:var(--text-muted);">Advisory&nbsp;Roles</div>
+            </div>
+            <div>
+                <div class="font-display text-3xl md:text-4xl font-bold" style="color:var(--signal);" data-count="6">0</div>
+                <div class="font-mono-ish text-[0.65rem] md:text-xs uppercase mt-2" style="color:var(--text-muted);">Currently&nbsp;Serving</div>
+            </div>
+            <div>
+                <div class="font-display text-3xl md:text-4xl font-bold" style="color:var(--accent);">2013</div>
+                <div class="font-mono-ish text-[0.65rem] md:text-xs uppercase mt-2" style="color:var(--text-muted);">Serving&nbsp;Since</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================
+     TIMELINE BODY — light, dense, scannable
+     ============================================================ -->
+<main class="max-w-4xl mx-auto px-6 md:px-10 py-16 md:py-24">
+
+    <!-- filters -->
+    <div class="reveal flex flex-wrap justify-center gap-3 mb-14" id="filters">
+        <button class="filter-btn is-active" data-filter="all">All Roles</button>
+        <button class="filter-btn" data-filter="current">Currently Serving</button>
+        <button class="filter-btn" data-filter="past">Concluded</button>
+    </div>
+
+    <div class="timeline pl-2">
+        <div class="timeline-rail"></div>
+
+        <div class="space-y-10" id="timeline-list">
+            <!-- items injected below -->
+
+            <div class="timeline-item reveal" data-status="current">
+                <span class="timeline-dot"></span>
+                <div class="role-card">
+                    <div class="flex flex-wrap items-center gap-2 mb-2">
+                        <span class="status-chip date">2025 – Present</span>
+                        <span class="status-chip current">Active</span>
+                    </div>
+                    <h3 class="font-heading font-semibold text-base md:text-lg" style="color:var(--primary);">Domain Expert</h3>
+                    <p class="text-sm md:text-[0.95rem] mt-1" style="color:var(--text-light);">CSIR Mission Mode Project on "Assessment and Mitigation of Geo-hazard in the Himalaya"</p>
+                </div>
+            </div>
+
+            <div class="timeline-item reveal" data-status="past">
+                <span class="timeline-dot"></span>
+                <div class="role-card">
+                    <div class="flex flex-wrap items-center gap-2 mb-2"><span class="status-chip date">June 2020 – 2024</span></div>
+                    <h3 class="font-heading font-semibold text-base md:text-lg" style="color:var(--primary);">Expert Member</h3>
+                    <p class="text-sm md:text-[0.95rem] mt-1" style="color:var(--text-light);">Program Advisory Committee on Earth and Atmospheric Sciences, SERB, Govt. of India</p>
+                </div>
+            </div>
+
+            <div class="timeline-item reveal" data-status="past">
+                <span class="timeline-dot"></span>
+                <div class="role-card">
+                    <div class="flex flex-wrap items-center gap-2 mb-2"><span class="status-chip date">2022 – 2025</span></div>
+                    <h3 class="font-heading font-semibold text-base md:text-lg" style="color:var(--primary);">Expert Member</h3>
+                    <p class="text-sm md:text-[0.95rem] mt-1" style="color:var(--text-light);">Review Committee on Indian IODP Activities, NCPOR, Goa</p>
+                </div>
+            </div>
+
+            <div class="timeline-item reveal" data-status="current">
+                <span class="timeline-dot"></span>
+                <div class="role-card">
+                    <div class="flex flex-wrap items-center gap-2 mb-2">
+                        <span class="status-chip date">2022 – Present</span>
+                        <span class="status-chip current">Active</span>
+                    </div>
+                    <h3 class="font-heading font-semibold text-base md:text-lg" style="color:var(--primary);">Expert Member</h3>
+                    <p class="text-sm md:text-[0.95rem] mt-1" style="color:var(--text-light);">National Wetlands Committee, Ministry of Environment and Forests, Govt. of India</p>
+                </div>
+            </div>
+
+            <div class="timeline-item reveal" data-status="current">
+                <span class="timeline-dot"></span>
+                <div class="role-card">
+                    <div class="flex flex-wrap items-center gap-2 mb-2">
+                        <span class="status-chip date">2024 – Present</span>
+                        <span class="status-chip current">Active</span>
+                    </div>
+                    <h3 class="font-heading font-semibold text-base md:text-lg" style="color:var(--primary);">Member</h3>
+                    <p class="text-sm md:text-[0.95rem] mt-1" style="color:var(--text-light);">Advisory Committee, Department of Earth and Climate Science, IISER Tirupati</p>
+                </div>
+            </div>
+
+            <div class="timeline-item reveal" data-status="past">
+                <span class="timeline-dot"></span>
+                <div class="role-card">
+                    <div class="flex flex-wrap items-center gap-2 mb-2"><span class="status-chip date">2023</span></div>
+                    <h3 class="font-heading font-semibold text-base md:text-lg" style="color:var(--primary);">Member</h3>
+                    <p class="text-sm md:text-[0.95rem] mt-1" style="color:var(--text-light);">Evaluation Committee for SOR4D Projects, Swiss National Science Foundation</p>
+                </div>
+            </div>
+
+            <div class="timeline-item reveal" data-status="past">
+                <span class="timeline-dot"></span>
+                <div class="role-card">
+                    <div class="flex flex-wrap items-center gap-2 mb-2"><span class="status-chip date">2023</span></div>
+                    <h3 class="font-heading font-semibold text-base md:text-lg" style="color:var(--primary);">Independent Expert Consultant</h3>
+                    <p class="text-sm md:text-[0.95rem] mt-1" style="color:var(--text-light);">Project Peer Reviewer, Science Fund of the Republic of Serbia</p>
+                </div>
+            </div>
+
+            <div class="timeline-item reveal" data-status="current">
+                <span class="timeline-dot"></span>
+                <div class="role-card">
+                    <div class="flex flex-wrap items-center gap-2 mb-2">
+                        <span class="status-chip date">2022 – Present</span>
+                        <span class="status-chip current">Active</span>
+                    </div>
+                    <h3 class="font-heading font-semibold text-base md:text-lg" style="color:var(--primary);">Chairman</h3>
+                    <p class="text-sm md:text-[0.95rem] mt-1" style="color:var(--text-light);">Expert Advisory Committee, Loktak Development Authority, Manipur</p>
+                </div>
+            </div>
+
+            <div class="timeline-item reveal" data-status="current">
+                <span class="timeline-dot"></span>
+                <div class="role-card">
+                    <div class="flex flex-wrap items-center gap-2 mb-2">
+                        <span class="status-chip date">2017 – Present</span>
+                        <span class="status-chip current">Active</span>
+                    </div>
+                    <h3 class="font-heading font-semibold text-base md:text-lg" style="color:var(--primary);">Expert Member — Groundwater</h3>
+                    <p class="text-sm md:text-[0.95rem] mt-1" style="color:var(--text-light);">UP Water Resource Development and Management Authority</p>
+                </div>
+            </div>
+
+            <div class="timeline-item reveal" data-status="past">
+                <span class="timeline-dot"></span>
+                <div class="role-card">
+                    <div class="flex flex-wrap items-center gap-2 mb-2"><span class="status-chip date">2020 – 2022</span></div>
+                    <h3 class="font-heading font-semibold text-base md:text-lg" style="color:var(--primary);">Member</h3>
+                    <p class="text-sm md:text-[0.95rem] mt-1" style="color:var(--text-light);">Research Advisory Committee, National Center for Earth Science Studies, Thiruvananthapuram, Ministry of Earth Sciences, Govt. of India</p>
+                </div>
+            </div>
+
+            <div class="timeline-item reveal" data-status="past">
+                <span class="timeline-dot"></span>
+                <div class="role-card">
+                    <div class="flex flex-wrap items-center gap-2 mb-2"><span class="status-chip date">2016 – 2022</span></div>
+                    <h3 class="font-heading font-semibold text-base md:text-lg" style="color:var(--primary);">Expert Member</h3>
+                    <p class="text-sm md:text-[0.95rem] mt-1" style="color:var(--text-light);">Program Advisory Committee (International Collaboration), Earth, Atmospheric, Marine and Environmental Sciences, DST, Govt. of India</p>
+                </div>
+            </div>
+
+            <div class="timeline-item reveal" data-status="past">
+                <span class="timeline-dot"></span>
+                <div class="role-card">
+                    <div class="flex flex-wrap items-center gap-2 mb-2"><span class="status-chip date">Aug 2019 – 2021</span></div>
+                    <h3 class="font-heading font-semibold text-base md:text-lg" style="color:var(--primary);">Expert Member</h3>
+                    <p class="text-sm md:text-[0.95rem] mt-1" style="color:var(--text-light);">Task Force Committee on Empowerment and Equity Opportunities for Excellence in Science (EMEQ), DST, Govt. of India</p>
+                </div>
+            </div>
+
+            <div class="timeline-item reveal" data-status="past">
+                <span class="timeline-dot"></span>
+                <div class="role-card">
+                    <div class="flex flex-wrap items-center gap-2 mb-2"><span class="status-chip date">2020</span></div>
+                    <h3 class="font-heading font-semibold text-base md:text-lg" style="color:var(--primary);">Member</h3>
+                    <p class="text-sm md:text-[0.95rem] mt-1" style="color:var(--text-light);">Expert Committee on Sand Mining in Haridwar, Uttarakhand, National Mission for Clean Ganga, MOWR, RD&amp;RR, Govt. of India</p>
+                </div>
+            </div>
+
+            <div class="timeline-item reveal" data-status="current">
+                <span class="timeline-dot"></span>
+                <div class="role-card">
+                    <div class="flex flex-wrap items-center gap-2 mb-2">
+                        <span class="status-chip date">2017 – Present</span>
+                        <span class="status-chip current">Active</span>
+                    </div>
+                    <h3 class="font-heading font-semibold text-base md:text-lg" style="color:var(--primary);">Member</h3>
+                    <p class="text-sm md:text-[0.95rem] mt-1" style="color:var(--text-light);">Monitoring Committee, NMCG–WII Project "Biodiversity Conservation and Ganga Rejuvenation"</p>
+                </div>
+            </div>
+
+            <div class="timeline-item reveal" data-status="past">
+                <span class="timeline-dot"></span>
+                <div class="role-card">
+                    <div class="flex flex-wrap items-center gap-2 mb-2"><span class="status-chip date">2018 – 2021</span></div>
+                    <h3 class="font-heading font-semibold text-base md:text-lg" style="color:var(--primary);">Member</h3>
+                    <p class="text-sm md:text-[0.95rem] mt-1" style="color:var(--text-light);">Expert Committee for Earth &amp; Atmospheric Sciences, Early Career Research Award, SERB</p>
+                </div>
+            </div>
+
+            <div class="timeline-item reveal" data-status="past">
+                <span class="timeline-dot"></span>
+                <div class="role-card">
+                    <div class="flex flex-wrap items-center gap-2 mb-2"><span class="status-chip date">2013 – 2016</span></div>
+                    <h3 class="font-heading font-semibold text-base md:text-lg" style="color:var(--primary);">Member</h3>
+                    <p class="text-sm md:text-[0.95rem] mt-1" style="color:var(--text-light);">Board of Governors, National Institute of Technology, Patna</p>
+                </div>
+            </div>
+
+            <div class="timeline-item reveal" data-status="past">
+                <span class="timeline-dot"></span>
+                <div class="role-card">
+                    <div class="flex flex-wrap items-center gap-2 mb-2"><span class="status-chip date">Dec 2016 – 2020</span></div>
+                    <h3 class="font-heading font-semibold text-base md:text-lg" style="color:var(--primary);">Member</h3>
+                    <p class="text-sm md:text-[0.95rem] mt-1" style="color:var(--text-light);">Expert Group for Preparation of Flood Hazard Atlas, NDMA, Govt. of India</p>
+                </div>
+            </div>
+
+            <div class="timeline-item reveal" data-status="past">
+                <span class="timeline-dot"></span>
+                <div class="role-card">
+                    <div class="flex flex-wrap items-center gap-2 mb-2"><span class="status-chip date">Aug 2016 – 2019</span></div>
+                    <h3 class="font-heading font-semibold text-base md:text-lg" style="color:var(--primary);">Member</h3>
+                    <p class="text-sm md:text-[0.95rem] mt-1" style="color:var(--text-light);">Review Committee on Indian IODP Activities, NCPOR, Goa</p>
+                </div>
+            </div>
+
+            <div class="timeline-item reveal" data-status="past">
+                <span class="timeline-dot"></span>
+                <div class="role-card">
+                    <div class="flex flex-wrap items-center gap-2 mb-2"><span class="status-chip date">2016 – 2017</span></div>
+                    <h3 class="font-heading font-semibold text-base md:text-lg" style="color:var(--primary);">Member</h3>
+                    <p class="text-sm md:text-[0.95rem] mt-1" style="color:var(--text-light);">Advisory Committee to Develop the Post-graduate Programme on Water Science and Policy, Shiv Nadar University, Noida</p>
+                </div>
+            </div>
+
+            <div class="timeline-item reveal" data-status="past">
+                <span class="timeline-dot"></span>
+                <div class="role-card">
+                    <div class="flex flex-wrap items-center gap-2 mb-2"><span class="status-chip date">Sept 2016 – Mar 2017</span></div>
+                    <h3 class="font-heading font-semibold text-base md:text-lg" style="color:var(--primary);">Member</h3>
+                    <p class="text-sm md:text-[0.95rem] mt-1" style="color:var(--text-light);">Committee for Suggesting Measures for Revival of River Bhagirathi, Ministry of Water Resources, River Development and Ganga Rejuvenation, Govt. of India</p>
+                </div>
+            </div>
+
+            <div class="timeline-item reveal" data-status="past">
+                <span class="timeline-dot"></span>
+                <div class="role-card">
+                    <div class="flex flex-wrap items-center gap-2 mb-2"><span class="status-chip date">Mar 2016 – Jan 2017</span></div>
+                    <h3 class="font-heading font-semibold text-base md:text-lg" style="color:var(--primary);">Member</h3>
+                    <p class="text-sm md:text-[0.95rem] mt-1" style="color:var(--text-light);">Expert Committee to Review Available Information on Palaeochannels, Ministry of Water Resources, River Development and Ganga Rejuvenation, Govt. of India</p>
+                </div>
+            </div>
+
+            <div class="timeline-item reveal" data-status="past">
+                <span class="timeline-dot"></span>
+                <div class="role-card">
+                    <div class="flex flex-wrap items-center gap-2 mb-2"><span class="status-chip date">June 2015 – 2017</span></div>
+                    <h3 class="font-heading font-semibold text-base md:text-lg" style="color:var(--primary);">Member</h3>
+                    <p class="text-sm md:text-[0.95rem] mt-1" style="color:var(--text-light);">Advisory Committee on Floods and Drought, BSDMA, Patna</p>
+                </div>
+            </div>
+
+            <div class="timeline-item reveal" data-status="past">
+                <span class="timeline-dot"></span>
+                <div class="role-card">
+                    <div class="flex flex-wrap items-center gap-2 mb-2"><span class="status-chip date">2017</span></div>
+                    <h3 class="font-heading font-semibold text-base md:text-lg" style="color:var(--primary);">Expert Member</h3>
+                    <p class="text-sm md:text-[0.95rem] mt-1" style="color:var(--text-light);">Centre for River Studies, Aryabhatt Knowledge University, Patna</p>
+                </div>
+            </div>
+
+            <div class="timeline-item reveal" data-status="past">
+                <span class="timeline-dot"></span>
+                <div class="role-card">
+                    <div class="flex flex-wrap items-center gap-2 mb-2"><span class="status-chip date">2017 – 2018</span></div>
+                    <h3 class="font-heading font-semibold text-base md:text-lg" style="color:var(--primary);">Member</h3>
+                    <p class="text-sm md:text-[0.95rem] mt-1" style="color:var(--text-light);">Expert Committee on Palaeochannel, Ministry of Water Resources, RD &amp; GR, Govt. of India</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <p class="reveal text-center text-xs mt-14" style="color:var(--text-muted);" id="empty-msg" hidden>
+        No roles in this category.
+    </p>
+</main>
+
+<script>
+(function(){
+    "use strict";
+
+    /* ---- staggered reveal on scroll ---- */
+    var revealEls = document.querySelectorAll('.reveal');
+    if ('IntersectionObserver' in window) {
+        var io = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    io.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.08 });
+        revealEls.forEach(function (el, i) {
+            el.style.transitionDelay = Math.min(i, 8) * 40 + 'ms';
+            io.observe(el);
+        });
+    } else {
+        revealEls.forEach(function (el) { el.classList.add('is-visible'); });
+    }
+
+    /* ---- header stat counters ---- */
+    document.querySelectorAll('[data-count]').forEach(function (el) {
+        var target = parseInt(el.getAttribute('data-count'), 10) || 0;
+        var start = null, duration = 1300;
+        function step(ts) {
+            if (!start) start = ts;
+            var progress = Math.min((ts - start) / duration, 1);
+            var eased = 1 - Math.pow(1 - progress, 3);
+            el.textContent = Math.round(eased * target);
+            if (progress < 1) requestAnimationFrame(step);
+        }
+        requestAnimationFrame(step);
+    });
+
+    /* ---- filter tabs ---- */
+    var filterBtns = document.querySelectorAll('.filter-btn');
+    var items = document.querySelectorAll('.timeline-item');
+    var emptyMsg = document.getElementById('empty-msg');
+
+    filterBtns.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+            filterBtns.forEach(function (b) { b.classList.remove('is-active'); });
+            btn.classList.add('is-active');
+            var filter = btn.getAttribute('data-filter');
+            var visibleCount = 0;
+            items.forEach(function (item) {
+                var status = item.getAttribute('data-status');
+                var show = (filter === 'all') || (status === filter);
+                if (show) {
+                    item.style.display = '';
+                    visibleCount++;
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+            emptyMsg.hidden = visibleCount !== 0;
+        });
+    });
+})();
+</script>
+<script src="script.js"></script>
+</body>
+</html>

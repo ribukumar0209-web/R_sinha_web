@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Publications — Rajiv Sinha</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="nav.css">
+
+<style>
+:root{
+    --primary:      #000c18;
+    --primary-2:    #071a2c;
+    --accent:       #c5a059;
+    --accent-dim:   rgba(197,160,89,0.28);
+    --signal:       #5eead4;
+    --text-hi:      #f4f1ea;
+    --text-muted:   #94a4b5;
+    --transition:   all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+*{ box-sizing:border-box; margin:0; padding:0; }
+html{ scroll-behavior:smooth; }
+body{ font-family:'Inter',sans-serif; background:var(--primary); color:var(--text-hi); line-height:1.75; overflow-x:hidden; }
+
+.font-display{ font-family:'Fraunces',serif; }
+.font-mono{ font-family:'JetBrains Mono',monospace; }
+
+.reveal{ opacity:0; transform:translateY(18px); transition:opacity .7s cubic-bezier(.16,1,.3,1), transform .7s cubic-bezier(.16,1,.3,1); }
+.reveal.is-visible{ opacity:1; transform:translateY(0); }
+
+.texture{ position:absolute; inset:0; opacity:.16; pointer-events:none; }
+
+.numeral{
+    font-family:'JetBrains Mono',monospace; font-size:0.85rem; font-weight:600;
+    color:var(--accent); opacity:.7; letter-spacing:.05em; width:2.4rem; flex-shrink:0; padding-top:.3rem;
+}
+
+.citation-row{ border-bottom:1px solid rgba(197,160,89,0.12); transition:var(--transition); }
+.citation-row:hover{ background:rgba(197,160,89,0.03); }
+.citation-row:last-child{ border-bottom:none; }
+
+.doi-link{
+    display:inline-flex; align-items:center; gap:5px;
+    font-family:'JetBrains Mono',monospace; font-size:.68rem; font-weight:600; letter-spacing:.04em;
+    color:var(--signal); border:1px solid rgba(94,234,212,0.3); background:rgba(94,234,212,0.06);
+    padding:3px 9px; border-radius:999px; text-decoration:none; transition:var(--transition);
+}
+.doi-link:hover{ background:rgba(94,234,212,0.16); border-color:var(--signal); }
+
+#search-input::placeholder{ color:var(--text-muted); }
+#search-input:focus{ outline:none; border-color:var(--accent); box-shadow:0 0 0 3px rgba(197,160,89,0.12); }
+
+/* tabs */
+.tab-btn{
+    font-family:'Inter',sans-serif; font-size:.8rem; letter-spacing:.03em; font-weight:600;
+    padding:.6rem 1.2rem; border-radius:999px; border:1px solid var(--accent-dim);
+    color:var(--text-muted); background:transparent; transition:var(--transition); cursor:pointer;
+    white-space:nowrap;
+}
+.tab-btn:hover{ border-color:var(--accent); color:var(--text-hi); }
+.tab-btn.is-active{ background:var(--accent); border-color:var(--accent); color:var(--primary); }
+
+.tab-panel{ display:none; }
+.tab-panel.is-active{ display:block; }
+
+@media (prefers-reduced-motion: reduce){ .reveal{ transition:none; opacity:1; transform:none; } }
+</style>
+</head>
+<body>
+<nav class="top-navbar">
+    <!-- Mobile Toggle -->
+    <button class="menu-toggle"
+            aria-label="Toggle Navigation"
+            aria-expanded="false"
+            type="button">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+    <!-- Navigation -->
+    <ul class="nav-menu">
+        <li><a href="Rs_web.html#hero" class="nav-link"><i class="fas fa-home"></i><span>Home</span></a></li>
+        <li class="nav-dropdown">
+            <button class="nav-link publication-toggle"
+                    type="button"
+                    aria-expanded="false"
+                    aria-haspopup="true">
+                <i class="fas fa-user-tie"></i>
+                <span>Career Profile</span>
+                <i class="fas fa-chevron-down dropdown-arrow"></i>
+            </button>
+            <!-- Dropdown -->
+            <div class="publication-dropdown">
+                <a href="resume.html" class="dropdown-item">
+                    <i class="fas fa-user-tie"></i>
+                    <span>Education & Experience</span>
+                </a>
+                <a href="services.html" class="dropdown-item">
+                    <i class="fas fa-briefcase"></i>
+                    <span>Professional Experience</span>
+                </a>
+            </div>
+        </li>
+        <li class="nav-dropdown">
+            <button class="nav-link publication-toggle"
+                    type="button"
+                    aria-expanded="false"
+                    aria-haspopup="true">
+                <i class="fas fa-chart-line"></i>
+                <span>Research & Scholarly Activities</span>
+                <i class="fas fa-chevron-down dropdown-arrow"></i>
+            </button>
+            <!-- Dropdown -->
+            <div class="publication-dropdown">
+                <a href="research_expertise.html" class="dropdown-item">
+                    <i class="fas fa-flask"></i>
+                    <span>Skills & Expertise</span>
+                </a>
+                <a href="research.html" class="dropdown-item">
+                    <i class="fas fa-book-open"></i>
+                    <span>Research & Publications</span>
+                </a>
+                <a href="Peer_review_books.html" class="dropdown-item">
+                    <i class="fas fa-pen-to-square"></i>
+                    <span>Reviewed Writings</span>
+                </a>
+                <a href="Citations.html" class="dropdown-item">
+                    <i class="fas fa-chart-column"></i>
+                    <span>Citation Impacts</span>
+                </a>
+                <a href="conferences.html" class="dropdown-item">
+                    <i class="fas fa-users"></i>
+                    <span>Conferences</span>
+                </a>
+                <a href="invited_lectures.html" class="dropdown-item">
+                    <i class="fas fa-microphone-lines"></i>
+                    <span>Lectures</span>
+                </a>
+            </div>
+        </li>
+        <li class="nav-dropdown">
+            <button class="nav-link publication-toggle"
+                    type="button"
+                    aria-expanded="false"
+                    aria-haspopup="true">
+                <i class="fas fa-chalkboard-teacher"></i>
+                <span>Teaching & Mentorship</span>
+                <i class="fas fa-chevron-down dropdown-arrow"></i>
+            </button>
+            <!-- Dropdown -->
+            <div class="publication-dropdown">
+                <a href="teaching.html" class="dropdown-item">
+                    <i class="fas fa-book-open"></i>
+                    <span>Courses</span>
+                </a>
+                <a href="outreach.html" class="dropdown-item">
+                    <i class="fas fa-globe"></i>
+                    <span>Outreach Activities</span>
+                </a>
+                <a href="Thesis.html" class="dropdown-item">
+                    <i class="fas fa-file-pen"></i>
+                    <span>Thesis Mentored</span>
+                </a>
+            </div>
+        </li>
+        <li><a href="lab_page/HB_new.html" class="nav-link"target="_blank"><i class="fas fa-microscope"></i><span>Labs</span></a></li>
+        <li><a href="grants.html" class="nav-link"><i class="fas fa-user-graduate"></i><span>Research Grants</span></a></li>
+        <li><a href="students.html" class="nav-link"><i class="fas fa-user-graduate"></i><span>Students</span></a></li>
+        <li><a href="awards.html" class="nav-link"><i class="fas fa-award"></i><span>Awards</span></a></li>
+        <li><a href="Rs_web.html#contact" class="nav-link"><i class="fas fa-envelope"></i><span>Contact</span></a></li>
+    </ul>
+</nav>
+
+<!-- ============================================================
+     HEADER
+     ============================================================ -->
+<section class="relative overflow-hidden" style="background:radial-gradient(ellipse 60% 60% at 85% 0%, rgba(197,160,89,0.10), transparent 60%), var(--primary);">
+    <div class="texture">
+    </div>
+    <div class="relative z-10 max-w-5xl mx-auto px-6 md:px-10 pt-20 pb-0 md:pt-24 md:pb-2 text-center">
+        
+        <h1 class="reveal is-visible font-display mt-6 text-3xl sm:text-4xl md:text-6xl font-semibold leading-tight" style="color:var(--text-hi);">
+            Peer Reviewed Writings
+        </h1>
+        <p class="reveal is-visible mt-6 max-w-xl mx-auto text-sm md:text-base pb-0" style="color:var(--text-muted);">
+            Book chapters, edited volumes, and public-facing writing on Himalayan geohazards,
+            megafans, large river systems, and Quaternary landscape evolution — spanning
+            Springer, Elsevier, Cambridge, Wiley and other international presses.
+        </p>
+    </div>
+</section>
+
+<!-- ============================================================
+     TABS + SEARCH + LISTS
+     ============================================================ -->
+<main class="max-w-3xl mx-auto px-6 md:px-10 pt-0 pb-14 md:pb-20">
+
+    <div class="reveal flex flex-wrap justify-center gap-3 mb-8" id="tabs">
+        <button class="tab-btn is-active" data-tab="chapters">Book Chapters <span class="opacity-70">(25)</span></button>
+        <button class="tab-btn" data-tab="books">Books &amp; Edited Volumes <span class="opacity-70">(12)</span></button>
+        <button class="tab-btn" data-tab="popular">Popular Writings <span class="opacity-70">(12)</span></button>
+    </div>
+
+    <div class="reveal flex flex-col sm:flex-row sm:items-center gap-3 mb-10">
+        <div class="relative flex-1">
+            <i class="fas fa-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-sm" style="color:var(--text-muted);"></i>
+            <input id="search-input" type="text" placeholder="Search this list by author, title, or publisher…"
+                   class="w-full pl-11 pr-4 py-3 rounded-lg text-sm font-medium"
+                   style="background:var(--primary-2); border:1px solid var(--accent-dim); color:var(--text-hi);">
+        </div>
+        <span id="count-label" class="font-mono text-xs whitespace-nowrap" style="color:var(--text-muted);">Showing 25 of 25</span>
+    </div>
+
+    <!-- ===================== PANEL: BOOK CHAPTERS ===================== -->
+    <section class="tab-panel is-active" data-tab-panel="chapters">
+    <ul class="citation-list">
+
+        <li class="citation-row reveal" data-search="sinha akuria mishra sarkar 2025 river sand mining developing geohazard himalaya springer ghosh">
+            <div class="flex gap-4 md:gap-6 py-6">
+                <span class="numeral">01</span>
+                <div class="flex-1 min-w-0">
+                    <p class="text-sm md:text-base" style="color:var(--text-hi);">Sinha, R., Moumita Akuria, Kanchan Mishra and Dipro Sarkar <span class="font-mono" style="color:var(--accent);">(2025)</span>. <em>River sand mining: a developing geohazard in the Himalaya.</em></p>
+                    <p class="text-xs md:text-sm mt-1.5" style="color:var(--text-muted);">In: Sandipan Ghosh (editor), <em>The Himalaya Dilemma: Navigating Risk, Vulnerability, and Resilience in Geohazard-Prone Regions.</em> Springer. <a class="doi-link ml-1 mt-1" href="https://doi.org/10.1007/978-3-031-95083-4_22" target="_blank" rel="noopener">DOI <i class="fas fa-arrow-up-right-from-square text-[9px]"></i></a></p>
+                </div>
+            </div>
+        </li>
+
+        <li class="citation-row reveal" data-search="sinha 2025 geomorphological evidences anthropocene deltaic landscapes elsevier elias">
+            <div class="flex gap-4 md:gap-6 py-6">
+                <span class="numeral">02</span>
+                <div class="flex-1 min-w-0">
+                    <p class="text-sm md:text-base" style="color:var(--text-hi);">Sinha, R. <span class="font-mono" style="color:var(--accent);">(2025)</span>. <em>Geomorphological evidences of the Anthropocene: Deltaic landscapes.</em></p>
+                    <p class="text-xs md:text-sm mt-1.5" style="color:var(--text-muted);">In: <em>Encyclopaedia of the Anthropocene,</em> Scott Elias (Editor). Elsevier.</p>
+                </div>
+            </div>
+        </li>
+
+        <li class="citation-row reveal" data-search="sinha 2025 geomorphological evidences anthropocene riverine landscapes elsevier elias isbn">
+            <div class="flex gap-4 md:gap-6 py-6">
+                <span class="numeral">03</span>
+                <div class="flex-1 min-w-0">
+                    <p class="text-sm md:text-base" style="color:var(--text-hi);">Sinha, R. <span class="font-mono" style="color:var(--accent);">(2025)</span>. <em>Geomorphological evidences of the Anthropocene: Riverine landscapes.</em></p>
+                    <p class="text-xs md:text-sm mt-1.5" style="color:var(--text-muted);">In: <em>Encyclopaedia of the Anthropocene,</em> Scott Elias (Editor). Elsevier, 1–18. ISBN 9780124095489. <a class="doi-link ml-1 mt-1" href="https://doi.org/10.1016/B978-0-443-14082-2.00074-0" target="_blank" rel="noopener">DOI <i class="fas fa-arrow-up-right-from-square text-[9px]"></i></a></p>
+                </div>
+            </div>
+        </li>
+
+        <li class="citation-row reveal" data-search="sinha mishra tandon 2023 megafans indo-gangetic plains review decades research cambridge wilkinson gunnel">
+            <div class="flex gap-4 md:gap-6 py-6">
+                <span class="numeral">04</span>
+                <div class="flex-1 min-w-0">
+                    <p class="text-sm md:text-base" style="color:var(--text-hi);">Sinha, R., Mishra, K. and Tandon, S.K. <span class="font-mono" style="color:var(--accent);">(2023)</span>. <em>Megafans of the Indo-Gangetic plains: a review of decades of research.</em></p>
+                    <p class="text-xs md:text-sm mt-1.5" style="color:var(--text-muted);">In: Wilkinson, J. and Gunnel, Yanni (eds), <em>Fluvial Megafans on Earth and Mars.</em> Cambridge University Press, 184–201. <a class="doi-link ml-1 mt-1" href="https://doi.org/10.1017/9781108525923" target="_blank" rel="noopener">DOI <i class="fas fa-arrow-up-right-from-square text-[9px]"></i></a></p>
+                </div>
+            </div>
+        </li>
+
+        <li class="citation-row reveal" data-search="sinha gaurav mishra gupta 2023 kosi megafan morphology dynamics sedimentology cambridge wilkinson gunnel">
+            <div class="flex gap-4 md:gap-6 py-6">
+                <span class="numeral">05</span>
+                <div class="flex-1 min-w-0">
+                    <p class="text-sm md:text-base" style="color:var(--text-hi);">Sinha, R., Kumar Gaurav, Mishra, K. and Gupta, S. <span class="font-mono" style="color:var(--accent);">(2023)</span>. <em>The Kosi Megafan: morphology, dynamics and sedimentology.</em></p>
+                    <p class="text-xs md:text-sm mt-1.5" style="color:var(--text-muted);">In: Wilkinson, J. and Gunnel, Yanni (eds), <em>Fluvial Megafans on Earth and Mars.</em> Cambridge University Press, 202–218. <a class="doi-link ml-1 mt-1" href="https://doi.org/10.1017/9781108525923" target="_blank" rel="noopener">DOI <i class="fas fa-arrow-up-right-from-square text-[9px]"></i></a></p>
+                </div>
+            </div>
+        </li>
+
+        <li class="citation-row reveal" data-search="tandon sinha 2022 geology large river systems second edition wiley gupta">
+            <div class="flex gap-4 md:gap-6 py-6">
+                <span class="numeral">06</span>
+                <div class="flex-1 min-w-0">
+                    <p class="text-sm md:text-base" style="color:var(--text-hi);">Tandon, S.K. and Sinha, R. <span class="font-mono" style="color:var(--accent);">(2022)</span>. <em>Geology of large river systems.</em> Second Edition.</p>
+                    <p class="text-xs md:text-sm mt-1.5" style="color:var(--text-muted);">In: <em>Large Rivers,</em> Avijit Gupta (ed.). John Wiley and Sons, UK, 7–41.</p>
+                </div>
+            </div>
+        </li>
+
+        <li class="citation-row reveal" data-search="sinha 2022 human impacts megafans deltas elsevier academic press shroder treatise geomorphology">
+            <div class="flex gap-4 md:gap-6 py-6">
+                <span class="numeral">07</span>
+                <div class="flex-1 min-w-0">
+                    <p class="text-sm md:text-base" style="color:var(--text-hi);">Sinha, R. <span class="font-mono" style="color:var(--accent);">(2022)</span>. <em>Human impacts on megafans and deltas.</em></p>
+                    <p class="text-xs md:text-sm mt-1.5" style="color:var(--text-muted);">In: Shroder, J.J.F. (Ed.), <em>Treatise on Geomorphology,</em> vol. 9. Elsevier, Academic Press, 214–239. <a class="doi-link ml-1 mt-1" href="https://doi.org/10.1016/B978-0-12-818234-5.00025-0" target="_blank" rel="noopener">DOI <i class="fas fa-arrow-up-right-from-square text-[9px]"></i></a></p>
+                </div>
+            </div>
+        </li>
+
+        <li class="citation-row reveal" data-search="latrubesse sinha 2022 human impacts sediment morphodynamics large tropical rivers elsevier treatise geomorphology">
+            <div class="flex gap-4 md:gap-6 py-6">
+                <span class="numeral">08</span>
+                <div class="flex-1 min-w-0">
+                    <p class="text-sm md:text-base" style="color:var(--text-hi);">Latrubesse, E.M. and Sinha, R. <span class="font-mono" style="color:var(--accent);">(2022)</span>. <em>Human impacts on sediment and morphodynamics of large tropical rivers.</em></p>
+                    <p class="text-xs md:text-sm mt-1.5" style="color:var(--text-muted);">In: Shroder, J.J.F. (Ed.), <em>Treatise on Geomorphology,</em> vol. 9. Elsevier, Academic Press, 187–213. <a class="doi-link ml-1 mt-1" href="https://doi.org/10.1016/B978-0-12-818234-5.00160-7" target="_blank" rel="noopener">DOI <i class="fas fa-arrow-up-right-from-square text-[9px]"></i></a></p>
+                </div>
+            </div>
+        </li>
+
+        <li class="citation-row reveal" data-search="singh manudeo sinha 2022 climate change impact catchment linkage connectivity springer mondal maiti beckedahl nones">
+            <div class="flex gap-4 md:gap-6 py-6">
+                <span class="numeral">09</span>
+                <div class="flex-1 min-w-0">
+                    <p class="text-sm md:text-base" style="color:var(--text-hi);">Singh, Manudeo and Sinha, R. <span class="font-mono" style="color:var(--accent);">(2022)</span>. <em>Climate change and impact on catchment linkage and connectivity.</em></p>
+                    <p class="text-xs md:text-sm mt-1.5" style="color:var(--text-muted);">In: Mondal, S., Maiti, R., Beckedahl and Nones, M. (Eds), <em>Applied Geomorphology and Contemporary Issues.</em> Springer, 167–178.</p>
+                </div>
+            </div>
+        </li>
+
+        <li class="citation-row reveal" data-search="bowes sinha joshi read 2021 river water quality monitoring centre ecology hydrology wallingford">
+            <div class="flex gap-4 md:gap-6 py-6">
+                <span class="numeral">10</span>
+                <div class="flex-1 min-w-0">
+                    <p class="text-sm md:text-base" style="color:var(--text-hi);">Bowes, Mike, Rajiv Sinha, Himanshu Joshi, and Dan Read <span class="font-mono" style="color:var(--accent);">(2021)</span>. <em>River water quality monitoring.</em></p>
+                    <p class="text-xs md:text-sm mt-1.5" style="color:var(--text-muted);">Centre of Ecology and Hydrology, Wallingford, UK.</p>
+                </div>
+            </div>
+        </li>
+
+        <li class="citation-row reveal" data-search="sinha singh ajit khan imran 2020 contemporaneity saraswati river harappan civilization asiatic society acharyya ghosh kar">
+            <div class="flex gap-4 md:gap-6 py-6">
+                <span class="numeral">11</span>
+                <div class="flex-1 min-w-0">
+                    <p class="text-sm md:text-base" style="color:var(--text-hi);">Sinha, R., Singh, Ajit and Khan, Imran <span class="font-mono" style="color:var(--accent);">(2020)</span>. <em>On the contemporaneity of the Saraswati River and the Harappan civilization in NW India: constraints from subsurface chrono-stratigraphy and sedimentology.</em></p>
+                    <p class="text-xs md:text-sm mt-1.5" style="color:var(--text-muted);">In: Acharyya, S.K., Ghosh, Kunal and Kar, Amal (Eds), <em>Saraswati: the River par Excellence.</em> The Asiatic Society, 117–134. ISBN 9788194692331.</p>
+                </div>
+            </div>
+        </li>
+
+        <li class="citation-row reveal" data-search="khanolkar tandon sinha 2020 late quaternary evolution morphostratigraphic ganga plains springer gupta geodynamics indian plate">
+            <div class="flex gap-4 md:gap-6 py-6">
+                <span class="numeral">12</span>
+                <div class="flex-1 min-w-0">
+                    <p class="text-sm md:text-base" style="color:var(--text-hi);">Khanolkar, S., Tandon, S.K. and Sinha, R. <span class="font-mono" style="color:var(--accent);">(2020)</span>. <em>Late Quaternary evolution and morphostratigraphic development of the Ganga Plains.</em></p>
+                    <p class="text-xs md:text-sm mt-1.5" style="color:var(--text-muted);">In: Gupta, N. and Tandon, S.K. (Eds), <em>Geodynamics of the Indian Plate.</em> Springer, 467–497. ISBN 978-3-030-15989-4. <a class="doi-link ml-1 mt-1" href="https://doi.org/10.1007/978-3-030-15989-4_13" target="_blank" rel="noopener">DOI <i class="fas fa-arrow-up-right-from-square text-[9px]"></i></a></p>
+                </div>
+            </div>
+        </li>
+
+        <li class="citation-row reveal" data-search="sinha chandrasekaran awasthi 2020 geomorphology land use land cover sedimentary environments chilika lake basin springer finlayson rastogi mishra pattnaik">
+            <div class="flex gap-4 md:gap-6 py-6">
+                <span class="numeral">13</span>
+                <div class="flex-1 min-w-0">
+                    <p class="text-sm md:text-base" style="color:var(--text-hi);">Sinha, R., Chandrasekaran, R. and Awasthi, N. <span class="font-mono" style="color:var(--accent);">(2020)</span>. <em>Geomorphology, land use/land cover and sedimentary environments of the Chilika Lake basin.</em></p>
+                    <p class="text-xs md:text-sm mt-1.5" style="color:var(--text-muted);">In: Finlayson, C. Max, Rastogi, Gurdeep, Mishra, Deepak R. and Pattnaik, Ajit K. (Eds), <em>Ecology, Conservation and Restoration of Chilika Lagoon, India.</em> Springer, 231–250. ISBN 978-3-030-33424-6.</p>
+                </div>
+            </div>
+        </li>
+
+        <li class="citation-row reveal" data-search="sinha jain gaurav 2019 geomorphic changes sediment dynamics rivers causes consequences insa mujumdar tiwari water futures india">
+            <div class="flex gap-4 md:gap-6 py-6">
+                <span class="numeral">14</span>
+                <div class="flex-1 min-w-0">
+                    <p class="text-sm md:text-base" style="color:var(--text-hi);">Sinha, R., Jain, V. and Gaurav, K. <span class="font-mono" style="color:var(--accent);">(2019)</span>. <em>Geomorphic changes and sediment dynamics in rivers: causes and consequences.</em></p>
+                    <p class="text-xs md:text-sm mt-1.5" style="color:var(--text-muted);">In: <em>Water Futures of India: Status of Science and Technology,</em> Eds. P.P. Mujumdar and V.M. Tiwari. Indian National Science Academy, New Delhi, 401–450.</p>
+                </div>
+            </div>
+        </li>
+
+        <li class="citation-row reveal" data-search="tandon sinha 2018 ganga river summary view large river system indian sub-continent springer singh indian rivers">
+            <div class="flex gap-4 md:gap-6 py-6">
+                <span class="numeral">15</span>
+                <div class="flex-1 min-w-0">
+                    <p class="text-sm md:text-base" style="color:var(--text-hi);">Tandon, S.K. and Sinha, R. <span class="font-mono" style="color:var(--accent);">(2018)</span>. <em>The Ganga River: a summary view of a large river system of the Indian sub-continent.</em></p>
+                    <p class="text-xs md:text-sm mt-1.5" style="color:var(--text-muted);">In: Singh, D.S. (ed.), <em>The Indian Rivers.</em> Springer, 61–73.</p>
+                </div>
+            </div>
+        </li>
+
+        <li class="citation-row reveal" data-search="shekhar kumar sinha gupta densmore rai singh van dijk joshi mason kumar 2018 efficient conjunctive use surface groundwater non-glacial rivers">
+            <div class="flex gap-4 md:gap-6 py-6">
+                <span class="numeral">16</span>
+                <div class="flex-1 min-w-0">
+                    <p class="text-sm md:text-base" style="color:var(--text-hi);">Shekhar, Shashank, Suman Kumar, Rajiv Sinha, Sanjeev Gupta, Alexander Densmore, SP Rai, Manoranjan Kumar, Ajit Singh, Wout Van Dijk, Sunil Joshi, Philipa Mason, Dewashish Kumar <span class="font-mono" style="color:var(--accent);">(2018)</span>. <em>Efficient conjunctive use of surface and groundwater can prevent seasonal death of non-glacial linked rivers in groundwater stressed areas.</em></p>
+                    <p class="text-xs md:text-sm mt-1.5" style="color:var(--text-muted);"><em>Clean and Sustainable Groundwater in India,</em> 117–124.</p>
+                </div>
+            </div>
+        </li>
+
+        <li class="citation-row reveal" data-search="sinha 2014 kosi megafan best-known himalayan megafan springer kale landscapes landforms india">
+            <div class="flex gap-4 md:gap-6 py-6">
+                <span class="numeral">17</span>
+                <div class="flex-1 min-w-0">
+                    <p class="text-sm md:text-base" style="color:var(--text-hi);">Sinha, R. <span class="font-mono" style="color:var(--accent);">(2014)</span>. <em>The Kosi Megafan: the best-known Himalayan megafan.</em></p>
+                    <p class="text-xs md:text-sm mt-1.5" style="color:var(--text-muted);">In: Kale, V.S. (editor), <em>Landscapes and Landforms of India.</em> Springer, 151–156.</p>
+                </div>
+            </div>
+        </li>
+
+        <li class="citation-row reveal" data-search="sinha 2014 sambhar lake largest saline lake northwestern india springer kale landscapes landforms">
+            <div class="flex gap-4 md:gap-6 py-6">
+                <span class="numeral">18</span>
+                <div class="flex-1 min-w-0">
+                    <p class="text-sm md:text-base" style="color:var(--text-hi);">Sinha, R. <span class="font-mono" style="color:var(--accent);">(2014)</span>. <em>The Sambhar Lake: the largest saline lake in northwestern India.</em></p>
+                    <p class="text-xs md:text-sm mt-1.5" style="color:var(--text-muted);">In: Kale, V.S. (editor), <em>Landscapes and Landforms of India.</em> Springer, 239–244.</p>
+                </div>
+            </div>
+        </li>
+
+        <li class="citation-row reveal" data-search="sinha tandon 2014 indus ganga brahmaputra plains alluvial landscape springer kale landscapes landforms">
+            <div class="flex gap-4 md:gap-6 py-6">
+                <span class="numeral">19</span>
+                <div class="flex-1 min-w-0">
+                    <p class="text-sm md:text-base" style="color:var(--text-hi);">Sinha, R. and Tandon, S.K. <span class="font-mono" style="color:var(--accent);">(2014)</span>. <em>Indus-Ganga-Brahmaputra plains: the alluvial landscape.</em></p>
+                    <p class="text-xs md:text-sm mt-1.5" style="color:var(--text-muted);">In: Kale, V.S. (editor), <em>Landscapes and Landforms of India.</em> Springer, 53–63.</p>
+                </div>
+            </div>
+        </li>
+
+        <li class="citation-row reveal" data-search="sinha jain tandon 2012 river systems river science india major drivers challenges springer earth systems hazards">
+            <div class="flex gap-4 md:gap-6 py-6">
+                <span class="numeral">20</span>
+                <div class="flex-1 min-w-0">
+                    <p class="text-sm md:text-base" style="color:var(--text-hi);">Sinha, R., Jain, V. and Tandon, S.K. <span class="font-mono" style="color:var(--accent);">(2012)</span>. <em>River systems and river science in India: major drivers and challenges.</em></p>
+                    <p class="text-xs md:text-sm mt-1.5" style="color:var(--text-muted);">In: R. Sinha, R. Rasik (Eds), <em>Earth Systems and Hazards.</em> Springer-Verlag, Berlin and Heidelberg, 68–90.</p>
+                </div>
+            </div>
+        </li>
+
+        <li class="citation-row reveal" data-search="sinha 2008 river response climate change why where how ane books srivastava roy bio nano geo sciences">
+            <div class="flex gap-4 md:gap-6 py-6">
+                <span class="numeral">21</span>
+                <div class="flex-1 min-w-0">
+                    <p class="text-sm md:text-base" style="color:var(--text-hi);">Sinha, R. <span class="font-mono" style="color:var(--accent);">(2008)</span>. <em>River response to climate change: why, where and how?</em></p>
+                    <p class="text-xs md:text-sm mt-1.5" style="color:var(--text-muted);">In: <em>Bio-Nano-Geo Sciences, The Future Challenge</em> (Editors: Alok Srivastava and Ipsita Roy). Ane Books Pvt. Ltd., New Delhi, 133–140.</p>
+                </div>
+            </div>
+        </li>
+
+        <li class="citation-row reveal" data-search="tandon sinha 2007 geology large river systems wiley gupta">
+            <div class="flex gap-4 md:gap-6 py-6">
+                <span class="numeral">22</span>
+                <div class="flex-1 min-w-0">
+                    <p class="text-sm md:text-base" style="color:var(--text-hi);">Tandon, S.K. and Sinha, R. <span class="font-mono" style="color:var(--accent);">(2007)</span>. <em>Geology of large river systems.</em></p>
+                    <p class="text-xs md:text-sm mt-1.5" style="color:var(--text-muted);">In: <em>Large Rivers,</em> Avijit Gupta (ed.). John Wiley and Sons, UK, 7–28.</p>
+                </div>
+            </div>
+        </li>
+
+        <li class="citation-row reveal" data-search="sinha jain 2002 quaternary geomorphology upper middle ganga plains review manisha publications tandon thakur">
+            <div class="flex gap-4 md:gap-6 py-6">
+                <span class="numeral">23</span>
+                <div class="flex-1 min-w-0">
+                    <p class="text-sm md:text-base" style="color:var(--text-hi);">Sinha, R. and Jain, V. <span class="font-mono" style="color:var(--accent);">(2002)</span>. <em>Quaternary geomorphology of the Upper and Middle Ganga Plains: a review.</em></p>
+                    <p class="text-xs md:text-sm mt-1.5" style="color:var(--text-muted);">In: S.K. Tandon and B. Thakur (Eds), <em>Recent Advances in Geomorphology, Quaternary Geology and Environmental Geosciences: Indian Case Studies.</em> Manisha Publications, New Delhi, 117–142.</p>
+                </div>
+            </div>
+        </li>
+
+        <li class="citation-row reveal" data-search="sinha kumar seethapathi 1996 utility remote sensing techniques landslide investigations appraisal kluwer singh water resources planning management">
+            <div class="flex gap-4 md:gap-6 py-6">
+                <span class="numeral">24</span>
+                <div class="flex-1 min-w-0">
+                    <p class="text-sm md:text-base" style="color:var(--text-hi);">Sinha, R., Kumar, A. and Seethapathi, P.V. <span class="font-mono" style="color:var(--accent);">(1996)</span>. <em>Utility of remote sensing techniques in landslide investigations: an appraisal.</em></p>
+                    <p class="text-xs md:text-sm mt-1.5" style="color:var(--text-muted);">In: V.P. Singh and B. Kumar (eds), <em>Water Resources Planning and Management.</em> Kluwer Academic Publishers, Netherlands, 303–308.</p>
+                </div>
+            </div>
+        </li>
+
+        <li class="citation-row reveal" data-search="sinha 1996 paleohydrology quaternary river systems north bihar india kluwer singh surface water hydrology">
+            <div class="flex gap-4 md:gap-6 py-6">
+                <span class="numeral">25</span>
+                <div class="flex-1 min-w-0">
+                    <p class="text-sm md:text-base" style="color:var(--text-hi);">Sinha, R. <span class="font-mono" style="color:var(--accent);">(1996)</span>. <em>Paleohydrology of Quaternary river systems of north Bihar, India.</em></p>
+                    <p class="text-xs md:text-sm mt-1.5" style="color:var(--text-muted);">In: V.P. Singh and B. Kumar (eds), <em>Surface Water Hydrology.</em> Kluwer Academic Publishers, Netherlands, 29–41.</p>
+                </div>
+            </div>
+        </li>
+
+    </ul>
+    </section>
+
+    <!-- ===================== PANEL: BOOKS & EDITED VOLUMES ===================== -->
+    <section class="tab-panel" data-tab-panel="books">
+    <ul class="citation-list">
+
+        <li class="citation-row reveal" data-search="sinha 2021 geomorphic diversity indian sub-continent progress updates wiley earth surface processes landforms">
+            <div class="flex gap-4 md:gap-6 py-6">
+                <span class="numeral">01</span>
+                <div class="flex-1 min-w-0">
+                    <p class="text-sm md:text-base" style="color:var(--text-hi);">Sinha, R. <span class="font-mono" style="color:var(--accent);">(2021)</span>. <em>Geomorphic diversity of the Indian sub-continent: Progress and Updates.</em></p>
+                    <p class="text-xs md:text-sm mt-1.5" style="color:var(--text-muted);">Special issue of <em>Earth Surface Processes and Landforms</em> (Wiley).</p>
+                </div>
+            </div>
+        </li>
+
+        <li class="citation-row reveal" data-search="sinha kale chakraborty 2014 tropical rivers indian subcontinent southeast asia landscape evolution morphodynamics hazards elsevier geomorphology">
+            <div class="flex gap-4 md:gap-6 py-6">
+                <span class="numeral">02</span>
+                <div class="flex-1 min-w-0">
+                    <p class="text-sm md:text-base" style="color:var(--text-hi);">Sinha, R., Vishwas Kale and Tapan Chakraborty <span class="font-mono" style="color:var(--accent);">(2014)</span>. <em>Tropical Rivers of the Indian subcontinent and Southeast Asia: Landscape evolution, morphodynamics and hazards.</em></p>
+                    <p class="text-xs md:text-sm mt-1.5" style="color:var(--text-muted);">Special issue of <em>Geomorphology</em> (Elsevier).</p>
+                </div>
+            </div>
+        </li>
+
+        <li class="citation-row reveal" data-search="sinha ravindra 2012 earth system processes disaster management springer-verlag editors">
+            <div class="flex gap-4 md:gap-6 py-6">
+                <span class="numeral">03</span>
+                <div class="flex-1 min-w-0">
+                    <p class="text-sm md:text-base" style="color:var(--text-hi);">Sinha, R. and Ravindra, R. (Editors) <span class="font-mono" style="color:var(--accent);">(2012)</span>. <em>Earth System Processes and Disaster Management.</em></p>
+                    <p class="text-xs md:text-sm mt-1.5" style="color:var(--text-muted);">Springer-Verlag, 244p.</p>
+                </div>
+            </div>
+        </li>
+
+        <li class="citation-row reveal" data-search="sinha latrubesse nanson 2012 quaternary fluvial systems tropics sub-tropics elsevier palaeogeography palaeoclimatology palaeoecology">
+            <div class="flex gap-4 md:gap-6 py-6">
+                <span class="numeral">04</span>
+                <div class="flex-1 min-w-0">
+                    <p class="text-sm md:text-base" style="color:var(--text-hi);">Sinha, R., Latrubesse, E.M. and Nanson, G. <span class="font-mono" style="color:var(--accent);">(2012)</span>. <em>Quaternary Fluvial Systems of Tropics and sub-tropics.</em></p>
+                    <p class="text-xs md:text-sm mt-1.5" style="color:var(--text-muted);">Special issue of <em>Palaeogeography, Palaeoclimatology, Palaeoecology,</em> Elsevier.</p>
+                </div>
+            </div>
+        </li>
+
+        <li class="citation-row reveal" data-search="sinha tandon gibling 2010 shallow sub-surface stratigraphy ganga basin himalayan foreland present status future perspectives elsevier quaternary international">
+            <div class="flex gap-4 md:gap-6 py-6">
+                <span class="numeral">05</span>
+                <div class="flex-1 min-w-0">
+                    <p class="text-sm md:text-base" style="color:var(--text-hi);">Sinha, R., S.K. Tandon and Gibling, M.R. <span class="font-mono" style="color:var(--accent);">(2010)</span>. <em>Shallow sub-surface stratigraphy of the Ganga basin, Himalayan Foreland: present status and future perspectives.</em></p>
+                    <p class="text-xs md:text-sm mt-1.5" style="color:var(--text-muted);">Special Issue of <em>Quaternary International</em> (v.227), Elsevier.</p>
+                </div>
+            </div>
+        </li>
+
+        <li class="citation-row reveal" data-search="sinha friend catto 2007 quaternary fluvial systems india elsevier editors special volume">
+            <div class="flex gap-4 md:gap-6 py-6">
+                <span class="numeral">06</span>
+                <div class="flex-1 min-w-0">
+                    <p class="text-sm md:text-base" style="color:var(--text-hi);">Sinha, R., Friend, P.F. and Catto, Norman (Editors) <span class="font-mono" style="color:var(--accent);">(2007)</span>. <em>Quaternary Fluvial Systems of India.</em></p>
+                    <p class="text-xs md:text-sm mt-1.5" style="color:var(--text-muted);">Special volume of <em>Quaternary International</em> (v. 159, Jan. 2007), Elsevier.</p>
+                </div>
+            </div>
+        </li>
+
+        <li class="citation-row reveal" data-search="dayal sinha 2005 geoenvironmental design practice flyash disposal utilization allied publishers isbn">
+            <div class="flex gap-4 md:gap-6 py-6">
+                <span class="numeral">07</span>
+                <div class="flex-1 min-w-0">
+                    <p class="text-sm md:text-base" style="color:var(--text-hi);">Dayal, U. &amp; Sinha, R. <span class="font-mono" style="color:var(--accent);">(2005)</span>. <em>Geoenvironmental Design Practice for Flyash Disposal and Utilization.</em></p>
+                    <p class="text-xs md:text-sm mt-1.5" style="color:var(--text-muted);">Allied Publishers, 540pp. ISBN 81-7764-843-8.</p>
+                </div>
+            </div>
+        </li>
+
+        <li class="citation-row reveal" data-search="latrubesse stevaux sinha 2005 tropical rivers elsevier geomorphology special issue">
+            <div class="flex gap-4 md:gap-6 py-6">
+                <span class="numeral">08</span>
+                <div class="flex-1 min-w-0">
+                    <p class="text-sm md:text-base" style="color:var(--text-hi);">Latrubesse, E., Stevaux, Jose, and Sinha, R. <span class="font-mono" style="color:var(--accent);">(2005)</span>. <em>Tropical Rivers.</em></p>
+                    <p class="text-xs md:text-sm mt-1.5" style="color:var(--text-muted);">Special Issue of <em>Geomorphology</em> (v. 70/3-4), Elsevier.</p>
+                </div>
+            </div>
+        </li>
+
+        <li class="citation-row reveal" data-search="sinha tandon 2003 global correlation late cenozoic fluvial deposits focus india current science indian academy science bangalore">
+            <div class="flex gap-4 md:gap-6 py-6">
+                <span class="numeral">09</span>
+                <div class="flex-1 min-w-0">
+                    <p class="text-sm md:text-base" style="color:var(--text-hi);">Sinha, R. &amp; Tandon, S.K. (Eds) <span class="font-mono" style="color:var(--accent);">(2003)</span>. <em>Global Correlation of Late Cenozoic Fluvial Deposits: focus on India.</em></p>
+                    <p class="text-xs md:text-sm mt-1.5" style="color:var(--text-muted);">Special Issue of <em>Current Science,</em> v. 84(8), Indian Academy of Science, Bangalore.</p>
+                </div>
+            </div>
+        </li>
+
+        <li class="citation-row reveal" data-search="dayal sinha 2000 manual design demonstration monitoring ash dykes flyash mission dst government india">
+            <div class="flex gap-4 md:gap-6 py-6">
+                <span class="numeral">10</span>
+                <div class="flex-1 min-w-0">
+                    <p class="text-sm md:text-base" style="color:var(--text-hi);">Dayal, U. &amp; Sinha, R. <span class="font-mono" style="color:var(--accent);">(2000)</span>. <em>Manual on Design, Demonstration and Monitoring of Ash Dykes.</em></p>
+                    <p class="text-xs md:text-sm mt-1.5" style="color:var(--text-muted);">Flyash Mission, Department of Science and Technology, Government of India, New Delhi.</p>
+                </div>
+            </div>
+        </li>
+
+        <li class="citation-row reveal" data-search="dayal sinha 2000 manual utilization pulverised coal ash structural fill flyash mission dst government india">
+            <div class="flex gap-4 md:gap-6 py-6">
+                <span class="numeral">11</span>
+                <div class="flex-1 min-w-0">
+                    <p class="text-sm md:text-base" style="color:var(--text-hi);">Dayal, U. &amp; Sinha, R. <span class="font-mono" style="color:var(--accent);">(2000)</span>. <em>Manual on Utilization of Pulverised Coal Ash as Structural Fill.</em></p>
+                    <p class="text-xs md:text-sm mt-1.5" style="color:var(--text-muted);">Flyash Mission, Department of Science and Technology, Government of India, New Delhi.</p>
+                </div>
+            </div>
+        </li>
+
+        <li class="citation-row reveal" data-search="dayal sinha kumar 1999 flyash disposal deposition beyond 2000 narosa publishing house editors">
+            <div class="flex gap-4 md:gap-6 py-6">
+                <span class="numeral">12</span>
+                <div class="flex-1 min-w-0">
+                    <p class="text-sm md:text-base" style="color:var(--text-hi);">Dayal, U., Sinha, R. &amp; Kumar, V. (Eds.) <span class="font-mono" style="color:var(--accent);">(1999)</span>. <em>Flyash Disposal and Deposition: Beyond 2000 A.D.</em></p>
+                    <p class="text-xs md:text-sm mt-1.5" style="color:var(--text-muted);">Narosa Publishing House, New Delhi, 241pp.</p>
+                </div>
+            </div>
+        </li>
+
+    </ul>
+    </section>
+
+    <!-- ===================== PANEL: POPULAR WRITINGS ===================== -->
+    <section class="tab-panel" data-tab-panel="popular">
+    <ul class="citation-list">
+
+        <li class="citation-row reveal" data-search="sinha jain 2024 hydrology anthropocene indian context current science editorial">
+            <div class="flex gap-4 md:gap-6 py-6">
+                <span class="numeral">01</span>
+                <div class="flex-1 min-w-0">
+                    <p class="text-sm md:text-base" style="color:var(--text-hi);">Sinha, R. and Jain, S.K. <span class="font-mono" style="color:var(--accent);">(2024)</span>. <em>Hydrology in the Anthropocene: the Indian context.</em></p>
+                    <p class="text-xs md:text-sm mt-1.5" style="color:var(--text-muted);"><em>Current Science</em> (Editorial), 127(3), 263–264.</p>
+                </div>
+            </div>
+        </li>
+
+        <li class="citation-row reveal" data-search="sinha 2021 sediment management koshi basin lessons learnt challenges ahead policy brief icimod kathmandu">
+            <div class="flex gap-4 md:gap-6 py-6">
+                <span class="numeral">02</span>
+                <div class="flex-1 min-w-0">
+                    <p class="text-sm md:text-base" style="color:var(--text-hi);">Sinha, R. <span class="font-mono" style="color:var(--accent);">(2021)</span>. <em>Sediment management in the Koshi basin: Lessons learnt and challenges ahead.</em></p>
+                    <p class="text-xs md:text-sm mt-1.5" style="color:var(--text-muted);">Policy Brief, ICIMOD, Kathmandu, 1–10.</p>
+                </div>
+            </div>
+        </li>
+
+        <li class="citation-row reveal" data-search="sinha joshi kumar 2019 aftershocks green revolution northwest india geography and you">
+            <div class="flex gap-4 md:gap-6 py-6">
+                <span class="numeral">03</span>
+                <div class="flex-1 min-w-0">
+                    <p class="text-sm md:text-base" style="color:var(--text-hi);">Sinha, R., Joshi, S.K. and Kumar, S. <span class="font-mono" style="color:var(--accent);">(2019)</span>. <em>Aftershocks of the green revolution in northwest India.</em></p>
+                    <p class="text-xs md:text-sm mt-1.5" style="color:var(--text-muted);"><em>Geography and You,</em> v.19, Issue 24, No.135, 13–19.</p>
+                </div>
+            </div>
+        </li>
+
+        <li class="citation-row reveal" data-search="sinha 2019 drones efficient technological solutions societal benefits india medium post">
+            <div class="flex gap-4 md:gap-6 py-6">
+                <span class="numeral">04</span>
+                <div class="flex-1 min-w-0">
+                    <p class="text-sm md:text-base" style="color:var(--text-hi);">Sinha, R. <span class="font-mono" style="color:var(--accent);">(2019)</span>. <em>Can drones provide efficient technological solutions for societal benefits in India?</em></p>
+                    <p class="text-xs md:text-sm mt-1.5" style="color:var(--text-muted);">Medium Post, 16 April 2019.</p>
+                </div>
+            </div>
+        </li>
+
+        <li class="citation-row reveal" data-search="sinha 2019 drone regulations india simplified medium post">
+            <div class="flex gap-4 md:gap-6 py-6">
+                <span class="numeral">05</span>
+                <div class="flex-1 min-w-0">
+                    <p class="text-sm md:text-base" style="color:var(--text-hi);">Sinha, R. <span class="font-mono" style="color:var(--accent);">(2019)</span>. <em>Drone regulations in India simplified.</em></p>
+                    <p class="text-xs md:text-sm mt-1.5" style="color:var(--text-muted);">Medium Post, 26 March 2019.</p>
+                </div>
+            </div>
+        </li>
+
+        <li class="citation-row reveal" data-search="sinha 2018 drones planning rural infrastructure innovative approach">
+            <div class="flex gap-4 md:gap-6 py-6">
+                <span class="numeral">06</span>
+                <div class="flex-1 min-w-0">
+                    <p class="text-sm md:text-base" style="color:var(--text-hi);">Sinha, R. <span class="font-mono" style="color:var(--accent);">(2018)</span>. <em>Drones for planning rural infrastructure: an innovative approach.</em></p>
+                    <p class="text-xs md:text-sm mt-1.5" style="color:var(--text-muted);">21 May 2018.</p>
+                </div>
+            </div>
+        </li>
+
+        <li class="citation-row reveal" data-search="sinha 2018 kerala floods riverine perspective geography and you">
+            <div class="flex gap-4 md:gap-6 py-6">
+                <span class="numeral">07</span>
+                <div class="flex-1 min-w-0">
+                    <p class="text-sm md:text-base" style="color:var(--text-hi);">Sinha, R. <span class="font-mono" style="color:var(--accent);">(2018)</span>. <em>Kerala floods: a riverine perspective.</em></p>
+                    <p class="text-xs md:text-sm mt-1.5" style="color:var(--text-muted);"><em>Geography and You,</em> September 2018, 10–15.</p>
+                </div>
+            </div>
+        </li>
+
+        <li class="citation-row reveal" data-search="sinha 2018 sediment management himalayan rivers challenge river managers current science editorial">
+            <div class="flex gap-4 md:gap-6 py-6">
+                <span class="numeral">08</span>
+                <div class="flex-1 min-w-0">
+                    <p class="text-sm md:text-base" style="color:var(--text-hi);">Sinha, R. <span class="font-mono" style="color:var(--accent);">(2018)</span>. <em>Sediment management of the Himalayan rivers: a challenge for river managers.</em></p>
+                    <p class="text-xs md:text-sm mt-1.5" style="color:var(--text-muted);"><em>Current Science</em> (Editorial), 115(3), 367–368.</p>
+                </div>
+            </div>
+        </li>
+
+        <li class="citation-row reveal" data-search="sinha 2013 alaknanda disaster result river space incursion geography and you">
+            <div class="flex gap-4 md:gap-6 py-6">
+                <span class="numeral">09</span>
+                <div class="flex-1 min-w-0">
+                    <p class="text-sm md:text-base" style="color:var(--text-hi);">Sinha, R. <span class="font-mono" style="color:var(--accent);">(2013)</span>. <em>The Alaknanda disaster: a result of 'river space' incursion.</em></p>
+                    <p class="text-xs md:text-sm mt-1.5" style="color:var(--text-muted);"><em>Geography and You,</em> August 2013, 8–9.</p>
+                </div>
+            </div>
+        </li>
+
+        <li class="citation-row reveal" data-search="sinha 2013 floods climate change perspective geography and you">
+            <div class="flex gap-4 md:gap-6 py-6">
+                <span class="numeral">10</span>
+                <div class="flex-1 min-w-0">
+                    <p class="text-sm md:text-base" style="color:var(--text-hi);">Sinha, R. <span class="font-mono" style="color:var(--accent);">(2013)</span>. <em>Floods: a climate change perspective.</em></p>
+                    <p class="text-xs md:text-sm mt-1.5" style="color:var(--text-muted);"><em>Geography and You,</em> Vol. 13(76), 11–14.</p>
+                </div>
+            </div>
+        </li>
+
+        <li class="citation-row reveal" data-search="raymahashay sinha 2012 flood disasters management indian scenario bihar state disaster management authority ministry earth sciences">
+            <div class="flex gap-4 md:gap-6 py-6">
+                <span class="numeral">11</span>
+                <div class="flex-1 min-w-0">
+                    <p class="text-sm md:text-base" style="color:var(--text-hi);">Raymahashay, B.C. and Sinha, R. <span class="font-mono" style="color:var(--accent);">(2012)</span>. <em>Flood Disasters and Management: Indian Scenario.</em> <span style="color:var(--text-muted);">(Popular book)</span></p>
+                    <p class="text-xs md:text-sm mt-1.5" style="color:var(--text-muted);">Bihar State Disaster Management Authority, Patna and Ministry of Earth Sciences, New Delhi, 44p.</p>
+                </div>
+            </div>
+        </li>
+
+        <li class="citation-row reveal" data-search="sinha 2010 river runs through it public service review international development">
+            <div class="flex gap-4 md:gap-6 py-6">
+                <span class="numeral">12</span>
+                <div class="flex-1 min-w-0">
+                    <p class="text-sm md:text-base" style="color:var(--text-hi);">Sinha, R. <span class="font-mono" style="color:var(--accent);">(2010)</span>. <em>A river runs through it.</em></p>
+                    <p class="text-xs md:text-sm mt-1.5" style="color:var(--text-muted);"><em>Public Service Review: International Development,</em> issue 17, 20–22.</p>
+                </div>
+            </div>
+        </li>
+
+    </ul>
+    </section>
+
+    <p id="empty-msg" class="text-center text-sm mt-10" style="color:var(--text-muted);" hidden>
+        No entries match "<span id="empty-query"></span>."
+    </p>
+</main>
+
+<script>
+(function(){
+    "use strict";
+
+    /* ---- staggered reveal on scroll ---- */
+    var io;
+    function observeReveal(scope){
+        var els = scope.querySelectorAll('.reveal:not(.is-visible)');
+        if (!('IntersectionObserver' in window)) { els.forEach(function(el){ el.classList.add('is-visible'); }); return; }
+        if (!io) {
+            io = new IntersectionObserver(function (entries) {
+                entries.forEach(function (entry) {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        io.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.05 });
+        }
+        els.forEach(function (el) { io.observe(el); });
+    }
+    observeReveal(document);
+
+    /* ---- tabs ---- */
+    var tabBtns = document.querySelectorAll('.tab-btn');
+    var panels = document.querySelectorAll('.tab-panel');
+    var input = document.getElementById('search-input');
+    var countLabel = document.getElementById('count-label');
+    var emptyMsg = document.getElementById('empty-msg');
+    var emptyQuery = document.getElementById('empty-query');
+
+    function activePanel(){
+        return document.querySelector('.tab-panel.is-active');
+    }
+    function refreshCount(){
+        var panel = activePanel();
+        var items = panel.querySelectorAll('.citation-row');
+        var visible = 0;
+        items.forEach(function (item) { if (item.style.display !== 'none') visible++; });
+        countLabel.textContent = 'Showing ' + visible + ' of ' + items.length;
+        emptyMsg.hidden = visible !== 0;
+    }
+
+    tabBtns.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+            tabBtns.forEach(function (b) { b.classList.remove('is-active'); });
+            btn.classList.add('is-active');
+            var target = btn.getAttribute('data-tab');
+            panels.forEach(function (p) {
+                p.classList.toggle('is-active', p.getAttribute('data-tab-panel') === target);
+            });
+            input.value = '';
+            activePanel().querySelectorAll('.citation-row').forEach(function (item) { item.style.display = ''; });
+            observeReveal(activePanel());
+            refreshCount();
+        });
+    });
+
+    /* ---- live search, scoped to the active tab ---- */
+    input.addEventListener('input', function () {
+        var q = input.value.trim().toLowerCase();
+        var panel = activePanel();
+        var items = panel.querySelectorAll('.citation-row');
+        var visible = 0;
+        items.forEach(function (item) {
+            var match = !q || item.getAttribute('data-search').indexOf(q) !== -1;
+            item.style.display = match ? '' : 'none';
+            if (match) visible++;
+        });
+        countLabel.textContent = 'Showing ' + visible + ' of ' + items.length;
+        emptyMsg.hidden = visible !== 0;
+        emptyQuery.textContent = input.value.trim();
+    });
+
+    refreshCount();
+})();
+</script>
+<script src="script.js"></script>
+</body>
+</html>

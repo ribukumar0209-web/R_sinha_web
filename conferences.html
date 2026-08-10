@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Conference Record — Rajiv Sinha</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="nav.css">
+
+<style>
+:root{
+    --primary:      #000c18;
+    --primary-2:    #0a1d31;
+    --accent:       #c5a059;
+    --accent-dim:   rgba(197,160,89,0.28);
+    --signal:       #5eead4;
+    --text-hi:      #f4f1ea;
+    --text-muted:   #94a4b5;
+    --transition:   all .35s cubic-bezier(.16,1,.3,1);
+}
+*{ box-sizing:border-box; margin:0; padding:0; }
+html{ scroll-behavior:smooth; }
+body{ font-family:'Inter',sans-serif; background:var(--primary); color:var(--text-hi); line-height:1.6; overflow-x:hidden; }
+
+.font-display{ font-family:'Fraunces',serif; }
+.font-mono{ font-family:'JetBrains Mono',monospace; }
+
+.reveal{ opacity:0; transform:translateY(16px); transition:opacity .6s cubic-bezier(.16,1,.3,1), transform .6s cubic-bezier(.16,1,.3,1); }
+.reveal.is-visible{ opacity:1; transform:translateY(0); }
+
+.texture{ position:absolute; inset:0; opacity:.14; pointer-events:none; }
+
+.section-label{
+    font-family:'JetBrains Mono',monospace; font-size:.72rem; letter-spacing:.1em; text-transform:uppercase;
+    color:var(--accent); display:flex; align-items:center; gap:12px; margin-bottom:22px;
+}
+.section-label::after{ content:''; flex:1; height:1px; background:var(--accent-dim); }
+
+/* ---- ticket stub card ---- */
+.ticket{
+    position:relative; display:grid; grid-template-columns:56px 1px 1fr; gap:14px;
+    background:var(--primary-2); border:1px dashed var(--accent-dim); border-radius:12px;
+    padding:16px 18px; transition:var(--transition);
+}
+.ticket:hover{ border-color:var(--accent); transform:translateY(-2px); box-shadow:0 12px 26px -14px rgba(0,0,0,0.5); }
+.ticket::before, .ticket::after{
+    content:''; position:absolute; top:50%; width:16px; height:16px; border-radius:50%;
+    background:var(--primary); transform:translateY(-50%); z-index:2;
+}
+.ticket::before{ left:-8px; }
+.ticket::after{ right:-8px; }
+
+.ticket .num{ font-family:'Fraunces',serif; font-weight:700; font-size:1.6rem; color:var(--accent); line-height:1; align-self:start; }
+.ticket .divider{ background:repeating-linear-gradient(180deg, var(--accent-dim) 0 6px, transparent 6px 12px); }
+.ticket .body{ min-width:0; }
+
+.type-icon{
+    display:inline-flex; align-items:center; gap:6px;
+    font-family:'JetBrains Mono',monospace; font-size:.6rem; font-weight:700; letter-spacing:.06em; text-transform:uppercase;
+    margin-bottom:8px;
+}
+.type-icon.full{ color:var(--accent); }
+.type-icon.presented{ color:var(--signal); }
+
+.ticket .title{ font-size:.88rem; color:var(--text-hi); }
+.ticket .venue{ font-size:.76rem; color:var(--text-muted); margin-top:6px; }
+.ticket .loc{
+    display:inline-block; margin-top:8px; font-family:'JetBrains Mono',monospace; font-size:.62rem;
+    color:var(--accent); background:rgba(197,160,89,0.08); border:1px solid var(--accent-dim);
+    padding:2px 9px; border-radius:999px;
+}
+
+#search-input::placeholder{ color:var(--text-muted); }
+#search-input:focus{ outline:none; border-color:var(--accent); box-shadow:0 0 0 3px rgba(197,160,89,0.12); }
+
+@media (prefers-reduced-motion: reduce){ .reveal{ transition:none; opacity:1; transform:none; } }
+</style>
+<nav class="top-navbar">
+    <!-- Mobile Toggle -->
+    <button class="menu-toggle"
+            aria-label="Toggle Navigation"
+            aria-expanded="false"
+            type="button">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+    <!-- Navigation -->
+    <ul class="nav-menu">
+        <li><a href="Rs_web.html#hero" class="nav-link"><i class="fas fa-home"></i><span>Home</span></a></li>
+        <li class="nav-dropdown">
+            <button class="nav-link publication-toggle"
+                    type="button"
+                    aria-expanded="false"
+                    aria-haspopup="true">
+                <i class="fas fa-user-tie"></i>
+                <span>Career Profile</span>
+                <i class="fas fa-chevron-down dropdown-arrow"></i>
+            </button>
+            <!-- Dropdown -->
+            <div class="publication-dropdown">
+                <a href="resume.html" class="dropdown-item">
+                    <i class="fas fa-user-tie"></i>
+                    <span>Education & Experience</span>
+                </a>
+                <a href="services.html" class="dropdown-item">
+                    <i class="fas fa-briefcase"></i>
+                    <span>Professional Experience</span>
+                </a>
+            </div>
+        </li>
+        <li class="nav-dropdown">
+            <button class="nav-link publication-toggle"
+                    type="button"
+                    aria-expanded="false"
+                    aria-haspopup="true">
+                <i class="fas fa-chart-line"></i>
+                <span>Research & Scholarly Activities</span>
+                <i class="fas fa-chevron-down dropdown-arrow"></i>
+            </button>
+            <!-- Dropdown -->
+            <div class="publication-dropdown">
+                <a href="research_expertise.html" class="dropdown-item">
+                    <i class="fas fa-flask"></i>
+                    <span>Skills & Expertise</span>
+                </a>
+                <a href="research.html" class="dropdown-item">
+                    <i class="fas fa-book-open"></i>
+                    <span>Research & Publications</span>
+                </a>
+                <a href="Peer_review_books.html" class="dropdown-item">
+                    <i class="fas fa-pen-to-square"></i>
+                    <span>Reviewed Writings</span>
+                </a>
+                <a href="Citations.html" class="dropdown-item">
+                    <i class="fas fa-chart-column"></i>
+                    <span>Citation Impacts</span>
+                </a>
+                <a href="conferences.html" class="dropdown-item">
+                    <i class="fas fa-users"></i>
+                    <span>Conferences</span>
+                </a>
+                <a href="invited_lectures.html" class="dropdown-item">
+                    <i class="fas fa-microphone-lines"></i>
+                    <span>Lectures</span>
+                </a>
+            </div>
+        </li>
+        <li class="nav-dropdown">
+            <button class="nav-link publication-toggle"
+                    type="button"
+                    aria-expanded="false"
+                    aria-haspopup="true">
+                <i class="fas fa-chalkboard-teacher"></i>
+                <span>Teaching & Mentorship</span>
+                <i class="fas fa-chevron-down dropdown-arrow"></i>
+            </button>
+            <!-- Dropdown -->
+            <div class="publication-dropdown">
+                <a href="teaching.html" class="dropdown-item">
+                    <i class="fas fa-book-open"></i>
+                    <span>Courses</span>
+                </a>
+                <a href="outreach.html" class="dropdown-item">
+                    <i class="fas fa-globe"></i>
+                    <span>Outreach Activities</span>
+                </a>
+                <a href="Thesis.html" class="dropdown-item">
+                    <i class="fas fa-file-pen"></i>
+                    <span>Thesis Mentored</span>
+                </a>
+            </div>
+        </li>
+        <li><a href="lab_page/HB_new.html" class="nav-link"target="_blank"><i class="fas fa-microscope"></i><span>Labs</span></a></li>
+        <li><a href="grants.html" class="nav-link"><i class="fas fa-user-graduate"></i><span>Research Grants</span></a></li>
+        <li><a href="students.html" class="nav-link"><i class="fas fa-user-graduate"></i><span>Students</span></a></li>
+        <li><a href="awards.html" class="nav-link"><i class="fas fa-award"></i><span>Awards</span></a></li>
+        <li><a href="Rs_web.html#contact" class="nav-link"><i class="fas fa-envelope"></i><span>Contact</span></a></li>
+    </ul>
+</nav>
+<!-- ============================================================
+     HEADER
+     ============================================================ -->
+<section class="relative overflow-hidden" style="background:radial-gradient(ellipse 60% 60% at 85% 0%, rgba(197,160,89,0.1), transparent 60%), var(--primary);">
+    <div class="relative z-10 max-w-5xl mx-auto px-6 md:px-10 pt-28 md:pt-36 pb-8 md:pb-12 text-center">
+        <h1 class="reveal is-visible font-display mt-6 text-3xl sm:text-4xl md:text-6xl font-semibold leading-tight" style="color:var(--text-hi);">
+            Conference <span style="color:var(--accent);">Papers</span>
+        </h1>
+        <p class="reveal is-visible mt-5 max-w-xl mx-auto text-sm md:text-base" style="color:var(--text-muted);">
+            10 full papers and 39 conference presentations, showcasing a broad spectrum of research spanning Earth sciences, environmental processes, and geospatial applications.
+        </p>
+
+        <div class="reveal is-visible mt-10 grid grid-cols-3 gap-4 md:gap-16 max-w-lg mx-auto">
+            <div>
+                <div class="font-display text-3xl md:text-4xl font-bold" style="color:var(--accent);">49</div>
+                <div class="font-mono text-[0.6rem] md:text-xs uppercase mt-2" style="color:var(--text-muted);">Papers</div>
+            </div>
+            <div>
+                <div class="font-display text-3xl md:text-4xl font-bold" style="color:var(--signal);">1989–2005</div>
+                <div class="font-mono text-[0.6rem] md:text-xs uppercase mt-2" style="color:var(--text-muted);">Span</div>
+            </div>
+            <div>
+                <div class="font-display text-3xl md:text-4xl font-bold" style="color:var(--accent);">14</div>
+                <div class="font-mono text-[0.6rem] md:text-xs uppercase mt-2" style="color:var(--text-muted);">Countries</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================
+     PROGRAM
+     ============================================================ -->
+<main class="max-w-5xl mx-auto px-5 md:px-10 pt-2 pb-12 md:pt-4 md:pb-16">
+
+    <div class="reveal relative mb-14">
+        <i class="fas fa-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-sm" style="color:var(--text-muted);"></i>
+        <input id="search-input" type="text" placeholder="Search by title, conference, or location…"
+               class="w-full pl-11 pr-4 py-3 rounded-lg text-sm font-medium"
+               style="background:var(--primary-2); border:1px solid var(--accent-dim); color:var(--text-hi);">
+        <span id="count-label" class="block mt-3 font-mono text-xs" style="color:var(--text-muted);"></span>
+    </div>
+
+    <section class="mb-16" id="section-full">
+        <div class="reveal section-label"><i class="fas fa-file-lines"></i>&nbsp; Full Papers in Conferences</div>
+        <div class="grid sm:grid-cols-2 gap-4" id="grid-full"></div>
+    </section>
+
+    <section id="section-presented">
+        <div class="reveal section-label"><i class="fas fa-comment-dots"></i>&nbsp; Papers Presented in Conferences</div>
+        <div class="grid sm:grid-cols-2 gap-4" id="grid-presented"></div>
+    </section>
+
+    <p id="empty-msg" class="text-center text-sm mt-10" style="color:var(--text-muted);" hidden>
+        No papers match "<span id="empty-query"></span>."
+    </p>
+</main>
+
+<script>
+var PAPERS = [
+{type:"full",t:"Sinha, R. and Tiwari, R.S. (1989). Prospecting groundwater in Pushkar Lake region through Remote Sensing \u2013 a case study.",v:"Int. workshop on Appropriate Methodologies for Development and Management of Groundwater Resources in Developing Countries, NGRI",loc:"Hyderabad, India"},
+{type:"full",t:"Sinha, R., Kumar, D., Singh, A. and Dayal, U. (1996). Residual sediment discharge control in ash disposal ponds.",v:"National Workshop on Ash Ponds and Ash Disposal Systems, IIT Delhi",loc:"Delhi, India"},
+{type:"full",t:"Sinha, R. & Dayal, U. (1997). Effluent management in ash disposal ponds.",v:"13th International Conference on Solid Waste Disposal Management & Technology",loc:"Philadelphia, USA"},
+{type:"full",t:"Sinha, R. & Dayal, U. (1997). Design & Monitoring of ash dykes.",v:"National seminar on Management of Ash Ponds, IIT Madras",loc:"Chennai, India"},
+{type:"full",t:"Dayal, U., Shukla, S. and Sinha, R. (1999). Geotechnical Investigations for ash dykes.",v:"National Conference on Flyash Disposal and Deposition: Beyond 2000 AD, IIT Kanpur",loc:"Kanpur, India"},
+{type:"full",t:"Dayal, U., and Sinha, R. (1999). Techno-economic Feasibility Study of Ash Dyke Raising.",v:"National Conference on Flyash Disposal and Deposition: Beyond 2000 AD, IIT Kanpur",loc:"Kanpur, India"},
+{type:"full",t:"Sinha, R., Mohapatra, A., Mittal, S. and Dayal, U. (1999). Geoenvironmental study of ash ponds \u2013 an integrated approach using geochemistry and mathematical modelling.",v:"National Conference on Flyash Disposal and Deposition: Beyond 2000 AD, IIT Kanpur",loc:"Kanpur, India"},
+{type:"full",t:"Jain, V. and Sinha, R. (2001). Monitoring fluvial hazards from space: A case study from North Bihar plains, India.",v:"Int. Conf. on Remote Sensing and Geographic Information System (ICORG)",loc:"Hyderabad, India"},
+{type:"full",t:"Kumar, V. and Sinha, R. (2001). Monitoring environmental change around a thermal power plant using post-classification technique.",v:"Int. Conf. on Remote Sensing and Geographic Information System (ICORG)",loc:"Hyderabad, India"},
+{type:"full",t:"Sinha, R. and Jain, V. (2004). Aggradation-degradation in Gangetic river systems: a process-response framework.",v:"Proc. Silting in Rivers, Central Water Commission",loc:"New Delhi, India"},
+
+{type:"presented",t:"Friend, P.F. and Sinha, R. (1990). Alluvial sedimentation of the Kosi-Gandak intercone plains of northern Bihar, India (abs.).",v:"13th International Sedimentological Congress",loc:"Nottingham, England"},
+{type:"presented",t:"Sinha, R. (1990). Modern river sedimentation in the Gandak-Kosi Interfluve, north Bihar, India (abs.).",v:"British Sedimentological Research Group (BSRG) annual meeting",loc:"Reading, England"},
+{type:"presented",t:"Sinha, R. (1991). Fan and Interfan rivers of India: a comparison (abs.).",v:"BSRG annual meeting",loc:"Edinburgh, Scotland"},
+{type:"presented",t:"Sinha, R. (1995). Episodic sedimentation and variable pedogenesis in north Bihar plains, India.",v:"XI Convention of Indian Association of Sedimentologists",loc:"Roorkee, India"},
+{type:"presented",t:"Sinha, R. (1995). Holocene soil micromorphology of north Bihar alluvial plains, eastern India.",v:"XII Convention of Indian Association of Sedimentologists",loc:"Goa, India"},
+{type:"presented",t:"Sinha, R., Panda, S.K. (1997). Sediment-water interaction in a hypersaline lacustrine environment, Sambhar Lake, Rajasthan.",v:"National Seminar & XIV Convention of Indian Association of Sedimentologists, University of Madras",loc:"Chennai, India"},
+{type:"presented",t:"Sinha, R. & Jain, V. (1997). Overbank flows and floodplain sedimentation, north Bihar plains, eastern India.",v:"National Seminar & XIV Convention of Indian Association of Sedimentologists, University of Madras",loc:"Chennai, India"},
+{type:"presented",t:"Sinha, R. & Friend, P.F. (1997). Recognition of post-depositional alteration in the overbank sediments, north Bihar plains, India.",v:"6th International Conference on Fluvial Sedimentology",loc:"Cape Town, South Africa"},
+{type:"presented",t:"Sinha, R. & Raymahashay, B.C. (1999). Geomorphic and geochemical history of the Sambhar lake, Rajasthan, Western India inferred through remote sensing and sedimentology.",v:"XV INQUA Congress",loc:"Durban, South Africa"},
+{type:"presented",t:"Sinha, R., Sastry, V.N., & Rajagopalan, G. (2000). Holocene Paleoclimatic interpretations from shallow sediment cores from a freshwater lake in eastern Antarctica.",v:"Sediment 2000, European Association of Sedimentologists",loc:"Leoben, Austria"},
+{type:"presented",t:"Sharma, Chhaya, M.S. Chauhan, S.K. Bera, R. Sinha and D.K. Upreti (2000). Early Holocene sedimentological and palynological studies from lake Priyadarshini, eastern Antarctica.",v:"10th International Palynological Congress",loc:"Nanjing, China"},
+{type:"presented",t:"Sinha, R. (2000). Quaternary sedimentation in the Himalayan foreland basin: Implications for interpretation of ancient sequences.",v:"Inaugural meeting of IGCP 449: Global Correlation of Cenozoic Fluvial Sequences (held April 2001)",loc:"Prague, Czech Republic"},
+{type:"presented",t:"Sinha, R., Gibling, M.R., Jain, V. & Tandon, S.K. (2001). Floodplain processes and sedimentation in a hyperavulsive anabranching river system in the Himalayan foreland basin, India.",v:"International Conference on Fluvial Sedimentology",loc:"Nebraska, USA"},
+{type:"presented",t:"Jain, V. & Sinha, R. (2001). Response of neotectonics on the anabranching Baghmati river system, Himalayan foreland basin, eastern India.",v:"International Conference on Fluvial Sedimentology",loc:"Nebraska, USA"},
+{type:"presented",t:"Roy, P.D., R. Sinha & W. Smykatz-Kloss (2001). Mineralogy and geochemistry of the duricrust from the hypersaline Sambhar Lake, Thar Desert, India.",v:"21st International Association of Sedimentologists (IAS) meeting",loc:"Davos, Switzerland"},
+{type:"presented",t:"Jain, V. & Sinha, R. (2001). Baghmati river system in alluvial plains of north Bihar, eastern India: an example of hyperavulsive anabranching river in an interfan setting.",v:"Second meeting of IGCP 449: Global Correlation of Cenozoic Fluvial Sequences",loc:"Kanpur, India"},
+{type:"presented",t:"Sinha, R., S.K. Tandon, Manasvi Kumar, Vikrant Jain, P. Ghazanfari, J.K. Tripathi, & M. Prasad Babu (2001). Quaternary fluvial sequence from Ganga-Yamuna plains: some preliminary results.",v:"Second meeting of IGCP 449: Global Correlation of Cenozoic Fluvial Sequences",loc:"Kanpur, India"},
+{type:"presented",t:"Sinha, R. (2002). Quaternary geomorphology and erosional history of the Garhwal Himalaya, India: a remote sensing and GIS approach.",v:"International Conference on Quaternary Climate, Tectonics and Environment of the Himalaya",loc:"Nainital, India"},
+{type:"presented",t:"Jain, Vikrant and Sinha, R. (2002). Hydrological controls on the geomorphological variability of Ganga plains and their implications to climate change.",v:"5th International Meeting on Global Continental Paleohydrology",loc:"Pune, India"},
+{type:"presented",t:"Sinha, R., Smykatz-Kloss, W., St\u00fcben, D., and Berner, Z. (2002). Paleohydrology and paleolimnology of the Sambhar Lake playa, Thar desert, India: inferred from evaporite mineralogy and geochemistry.",v:"5th International Meeting on Global Continental Paleohydrology",loc:"Pune, India"},
+{type:"presented",t:"Sinha, R., Jain, V., Gibling, M.R. & Tandon, S.K. (2003). Geomorphic evolution and stratigraphic development of the Quaternary alluvial plains of the Gangetic rivers, India.",v:"3rd Latin American Congress of Sedimentology",loc:"Bel\u00e9m, Par\u00e1, Brazil"},
+{type:"presented",t:"Sinha, R., Smykatz-Kloss, W., Stueben, D., and Berner, Z. (2003). Quaternary palaeoclimatic reconstruction from mineralogy and geochemistry of the Sambhar lake playa sediments, Thar desert, India.",v:"XVI INQUA Congress",loc:"Reno, USA"},
+{type:"presented",t:"Gibling, M.R., Tandon, S.K., Sinha, R., and Jain, M. (2003). Interfluves of the southern Ganga plains, India: attached and detached floodplains in the late Quaternary.",v:"XVI INQUA Congress",loc:"Reno, USA"},
+{type:"presented",t:"Jain, V. & Sinha, R. (2003). Hydrological Variability and Landscape Evolution in an alluvial river system: An example from the Ganga plains, India.",v:"XVI INQUA Congress",loc:"Reno, USA"},
+{type:"presented",t:"Gibling, M.R., Sinha, R. and Tandon, S.K. (2003). River incision and valley formation in northern and western India.",v:"AAPG Annual Meeting",loc:"Salt Lake City, USA"},
+{type:"presented",t:"Gibling, M.R., Tandon, S.K., Sinha, R. and Jain, M. (2004). Sequence Stratigraphy of the Southern Gangetic Plains, India: Quaternary Alluvial Sequences Created by Climate Change and Tectonism.",v:"AAPG Annual Meeting",loc:"Dallas, USA"},
+{type:"presented",t:"Dasgupta, A.S., Sinha, R., Tandon, S.K. & Gibling, M.R. (2004). Quaternary stratigraphy and sedimentology of the Ganga-Yamuna interfluve, Himalayan foreland basin, India.",v:"AAPG Annual Meeting",loc:"Dallas, USA"},
+{type:"presented",t:"Gibling, M.R., Tandon, S.K., Sinha, R. and Jain, M. (2004). Alluvial sequence stratigraphy: Quaternary sequences created by climate change and tectonism in the southern Gangetic Plains, India.",v:"International Geological Congress",loc:"Florence, Italy"},
+{type:"presented",t:"Sinha, R. (2004). Geomorphic diversity, stratigraphic development and fluvial response to monsoonal fluctuations: examples from the Gangetic basin, Himalayan foreland, India.",v:"IGCP End of the Project Meeting",loc:"Malaga, Spain"},
+{type:"presented",t:"Bapalu, G.V. and Sinha, R. (2005). Flood Hazard mapping of Kosi River Basin, North Bihar, India using GIS.",v:"MapIndia",loc:"India"},
+{type:"presented",t:"Gibling, M.R., Tandon, S.K., Sinha, R. and Jain, M. (2005). The Ganga River of the Himalayan Foreland Basin, India: Controls on Quaternary architecture in a big-river system.",v:"Geological Association of Canada annual meeting",loc:"Halifax, Canada"},
+{type:"presented",t:"Kettanah, Y.A., M.R. Gibling and Sinha, R. (2005). Large rivers from the Indian Craton: A major sediment contribution to the Himalayan Foreland Basin.",v:"Geological Association of Canada annual meeting",loc:"Halifax, Canada"},
+{type:"presented",t:"Kettanah, Y.A., M.R. Gibling and Sinha, R. (2005). Provenance of Quaternary sands from the Ganga River system and its tributaries, Himalayan Foreland Basin, India.",v:"Geological Association of Canada annual meeting",loc:"Halifax, Canada"},
+{type:"presented",t:"Sinha, R., Tandon, S.K., Gibling, M.R., Bhattacharjee, P.S., and Dasgupta, A.S. (2005). Late Quaternary alluvial stratigraphy of the Ganga basin.",v:"Asia Oceania Geosciences Society (AOGS) 2nd Annual Meeting",loc:"Singapore"},
+{type:"presented",t:"Tandon, S.K., M.R. Gibling, R. Sinha, V. Singh, P. Ghazanfari, A.S. Dasgupta, M. Jain and V. Jain (2005). Incision of alluvial rivers in the Ganga plains, India: interplay of climate, tectonics and glacioeustasy.",v:"AOGS 2nd Annual Meeting",loc:"Singapore"},
+{type:"presented",t:"Roy, N.G. and Sinha, R. (2005). Confluence dynamics in the alluvial Ganga valley, India.",v:"8th International Fluvial Sedimentology Conference",loc:"Delft, Netherlands"},
+{type:"presented",t:"Sinha, R., P.S. Bhattacharjee, S. Sangode, M.R. Gibling and S.K. Tandon (2005). Valley and interfluve floodplains of the Ganga river, India: climatic fluctuations and landscape evolution.",v:"8th International Fluvial Sedimentology Conference",loc:"Delft, Netherlands"},
+{type:"presented",t:"Tandon, S.K., M.R. Gibling, R. Sinha, V. Singh, P. Ghazanfari, A. Dasgupta, M. Jain and V. Jain (2005). Alluvial valleys of the Ganga plains, India: causes and timing of incision.",v:"8th International Fluvial Sedimentology Conference",loc:"Delft, Netherlands"},
+{type:"presented",t:"Gibling, M.R., S.K. Tandon, R. Sinha, and M. Jain (2005). Climatic controls on quaternary architecture of the southern Ganga plains, India.",v:"8th International Fluvial Sedimentology Conference",loc:"Delft, Netherlands"}
+];
+
+(function(){
+    "use strict";
+
+    var gridFull = document.getElementById('grid-full');
+    var gridPresented = document.getElementById('grid-presented');
+    var searchInput = document.getElementById('search-input');
+    var countLabel = document.getElementById('count-label');
+    var emptyMsg = document.getElementById('empty-msg');
+    var emptyQuery = document.getElementById('empty-query');
+    var sectionFull = document.getElementById('section-full');
+    var sectionPresented = document.getElementById('section-presented');
+
+    function ticketHtml(p, num){
+        var icon = p.type === 'full'
+            ? '<span class="type-icon full"><i class="fas fa-file-lines"></i> Full Paper</span>'
+            : '<span class="type-icon presented"><i class="fas fa-comment-dots"></i> Presented</span>';
+        return '<div class="ticket reveal is-visible">' +
+            '<div class="num">' + String(num).padStart(2,'0') + '</div>' +
+            '<div class="divider"></div>' +
+            '<div class="body">' +
+                icon +
+                '<p class="title">' + p.t + '</p>' +
+                '<p class="venue">' + p.v + '</p>' +
+                '<span class="loc"><i class="fas fa-location-dot"></i>&nbsp; ' + p.loc + '</span>' +
+            '</div>' +
+        '</div>';
+    }
+
+    function renderAll(){
+        var full = PAPERS.filter(function(p){ return p.type === 'full'; });
+        var presented = PAPERS.filter(function(p){ return p.type === 'presented'; });
+        gridFull.innerHTML = full.map(function(p,i){ return ticketHtml(p, i+1); }).join('');
+        gridPresented.innerHTML = presented.map(function(p,i){ return ticketHtml(p, i+1); }).join('');
+        sectionFull.style.display = '';
+        sectionPresented.style.display = '';
+        countLabel.textContent = '';
+        emptyMsg.hidden = true;
+    }
+    renderAll();
+
+    searchInput.addEventListener('input', function(){
+        var q = searchInput.value.trim().toLowerCase();
+        if (!q) { renderAll(); return; }
+
+        function match(p){
+            return p.t.toLowerCase().indexOf(q) !== -1 || p.v.toLowerCase().indexOf(q) !== -1 || p.loc.toLowerCase().indexOf(q) !== -1;
+        }
+        var full = PAPERS.filter(function(p){ return p.type === 'full' && match(p); });
+        var presented = PAPERS.filter(function(p){ return p.type === 'presented' && match(p); });
+
+        gridFull.innerHTML = full.map(function(p,i){ return ticketHtml(p, i+1); }).join('');
+        gridPresented.innerHTML = presented.map(function(p,i){ return ticketHtml(p, i+1); }).join('');
+
+        sectionFull.style.display = full.length ? '' : 'none';
+        sectionPresented.style.display = presented.length ? '' : 'none';
+
+        var total = full.length + presented.length;
+        countLabel.textContent = 'Showing ' + total + ' of ' + PAPERS.length;
+        emptyMsg.hidden = total !== 0;
+        emptyQuery.textContent = searchInput.value.trim();
+    });
+})();
+</script>
+<script src="script.js"></script>
+</body>
+</html>

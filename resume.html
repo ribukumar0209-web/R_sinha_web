@@ -9,24 +9,107 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="nav.css">
 </head>
 <body>
-
 <nav class="top-navbar">
     <!-- Mobile Toggle -->
-    <button class="menu-toggle" aria-label="Toggle Navigation">
+    <button class="menu-toggle"
+            aria-label="Toggle Navigation"
+            aria-expanded="false"
+            type="button">
         <span></span>
         <span></span>
         <span></span>
     </button>
-   <!-- Navigation -->
-    <ul class="nav-menu show">
+    <!-- Navigation -->
+    <ul class="nav-menu">
         <li><a href="Rs_web.html#hero" class="nav-link"><i class="fas fa-home"></i><span>Home</span></a></li>
-        <li><a href="resume.html" class="nav-link active" active><i class="fas fa-briefcase"></i><span>Experience</span></a></li>
-        <li><a href="research_expertise.html" class="nav-link"><i class="fas fa-flask"></i><span>Expertise</span></a></li>        
-        <li><a href="teaching.html" class="nav-link"><i class="fas fa-chalkboard-teacher"></i><span>Teaching</span></a></li>
-        <li><a href="lab_page/HB_new.html" class="nav-link" target="_blank"><i class="fas fa-microscope"></i></i><span>Labs</span></a></li>
-        <li><a href="research.html" class="nav-link"><i class="fas fa-book"></i><span>Publications</span></a></li>
+        <li class="nav-dropdown">
+            <button class="nav-link publication-toggle"
+                    type="button"
+                    aria-expanded="false"
+                    aria-haspopup="true">
+                <i class="fas fa-user-tie"></i>
+                <span>Career Profile</span>
+                <i class="fas fa-chevron-down dropdown-arrow"></i>
+            </button>
+            <!-- Dropdown -->
+            <div class="publication-dropdown">
+                <a href="resume.html" class="dropdown-item">
+                    <i class="fas fa-user-tie"></i>
+                    <span>Education & Experience</span>
+                </a>
+                <a href="services.html" class="dropdown-item">
+                    <i class="fas fa-briefcase"></i>
+                    <span>Professional Experience</span>
+                </a>
+            </div>
+        </li>
+        <li class="nav-dropdown">
+            <button class="nav-link publication-toggle"
+                    type="button"
+                    aria-expanded="false"
+                    aria-haspopup="true">
+                <i class="fas fa-chart-line"></i>
+                <span>Research & Scholarly Activities</span>
+                <i class="fas fa-chevron-down dropdown-arrow"></i>
+            </button>
+            <!-- Dropdown -->
+            <div class="publication-dropdown">
+                <a href="research_expertise.html" class="dropdown-item">
+                    <i class="fas fa-flask"></i>
+                    <span>Skills & Expertise</span>
+                </a>
+                <a href="research.html" class="dropdown-item">
+                    <i class="fas fa-book-open"></i>
+                    <span>Research & Publications</span>
+                </a>
+                <a href="Peer_review_books.html" class="dropdown-item">
+                    <i class="fas fa-pen-to-square"></i>
+                    <span>Reviewed Writings</span>
+                </a>
+                <a href="Citations.html" class="dropdown-item">
+                    <i class="fas fa-chart-column"></i>
+                    <span>Citation Impacts</span>
+                </a>
+                <a href="conferences.html" class="dropdown-item">
+                    <i class="fas fa-users"></i>
+                    <span>Conferences</span>
+                </a>
+                <a href="invited_lectures.html" class="dropdown-item">
+                    <i class="fas fa-microphone-lines"></i>
+                    <span>Lectures</span>
+                </a>
+            </div>
+        </li>
+        <li class="nav-dropdown">
+            <button class="nav-link publication-toggle"
+                    type="button"
+                    aria-expanded="false"
+                    aria-haspopup="true">
+                <i class="fas fa-chalkboard-teacher"></i>
+                <span>Teaching & Mentorship</span>
+                <i class="fas fa-chevron-down dropdown-arrow"></i>
+            </button>
+            <!-- Dropdown -->
+            <div class="publication-dropdown">
+                <a href="teaching.html" class="dropdown-item">
+                    <i class="fas fa-book-open"></i>
+                    <span>Courses</span>
+                </a>
+                <a href="outreach.html" class="dropdown-item">
+                    <i class="fas fa-globe"></i>
+                    <span>Outreach Activities</span>
+                </a>
+                <a href="Thesis.html" class="dropdown-item">
+                    <i class="fas fa-file-pen"></i>
+                    <span>Thesis Mentored</span>
+                </a>
+            </div>
+        </li>
+        <li><a href="lab_page/HB_new.html" class="nav-link"target="_blank"><i class="fas fa-microscope"></i><span>Labs</span></a></li>
+        <li><a href="grants.html" class="nav-link"><i class="fas fa-user-graduate"></i><span>Research Grants</span></a></li>
         <li><a href="students.html" class="nav-link"><i class="fas fa-user-graduate"></i><span>Students</span></a></li>
         <li><a href="awards.html" class="nav-link"><i class="fas fa-award"></i><span>Awards</span></a></li>
         <li><a href="Rs_web.html#contact" class="nav-link"><i class="fas fa-envelope"></i><span>Contact</span></a></li>
@@ -36,22 +119,7 @@
 
         <div>
 
-            <h2 class="text-5xl font-black text-[#c5a059] mb-4">Experience</h2>
-            <div class="timeline-item"><h4>HAG Professor, Department of Earth Sciences</h4><p>IIT Kanpur (Aug. 2014 - Present)</p></div>
-            <div class="timeline-item"><h4>Professor, Department of Earth Sciences</h4><p>IIT Kanpur (April 2014 - July 2014)</p></div>
-            <div class="timeline-item"><h4>Professor, Department of Civil Engineering</h4><p>IIT Kanpur (Dec. 2005 - April 2014)</p></div>
-            <div class="timeline-item"><h4>AssociateProfessor, Department of Civil Engineering</h4><p>IIT Kanpur (Oct. 2001 - Dec. 2005)</p></div>
-            <div class="timeline-item"><h4>Assistant Professor, Department of Civil Engineering</h4><p>IIT Kanpur (Dec. 1995 - Sept. 2001)</p></div>
-            <div class="timeline-item"><h4>Lecturer, Department of Civil Engineering</h4><p>IIT Kanpur (June 1994 - Nov. 1995)</p></div>
-            <div class="timeline-item"><h4>Scientist</h4><p>National Institute of Hydrology, Roorkee (April 1993 - June 1994)</p></div>
-
-
-
-        </div>
-
-        <div>
-
-            <h2 class="text-5xl font-black text-[#c5a059] mb-4">Education</h2>
+            <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-4xl xl:text-5xl font-black text-[#c5a059] mb-4">Educational Milestones</h2>
             <div class="timeline-item"><h4>Post Doctoral Research (Late Quaternary history and paleoclimatic reconstruction in Thar desert through lacustrine sequences in western Rajasthan, India)</h4><p>University of Karlsruhe, Germany (Nov. 2000 - Nov.2001 & May - July 2002)</p></div>
             <div class="timeline-item"><h4>Doctor of Philosophy (Fluvial geomorphology and Sedimentology)</h4><p>University of Cambridge, UK (1989 - 1992)</p></div>
             <div class="timeline-item"><h4>Master of Technology (Applied Geology)</h4><p>University of Roorkee, India (1984 - 1987)</p></div>
@@ -60,6 +128,39 @@
             <div class="timeline-item"><h4>Secondary School, (Science)</h4><p>Bihar Secondary Exam. Board, India  (1979 - 1981)</p></div>
 
         </div>
+
+        <div>
+            <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-4xl xl:text-5xl font-black text-[#c5a059] mb-4">Professional Experience</h2>
+            <div class="timeline-item"><h4>HAG Professor, Department of Earth Sciences</h4><p>IIT Kanpur (Aug. 2014 - Present)</p></div>
+            <div class="timeline-item"><h4>Professor, Department of Earth Sciences</h4><p>IIT Kanpur (April 2014 - July 2014)</p></div>
+            <div class="timeline-item"><h4>Professor, Department of Civil Engineering</h4><p>IIT Kanpur (Dec. 2005 - April 2014)</p></div>
+            <div class="timeline-item"><h4>AssociateProfessor, Department of Civil Engineering</h4><p>IIT Kanpur (Oct. 2001 - Dec. 2005)</p></div>
+            <div class="timeline-item"><h4>Assistant Professor, Department of Civil Engineering</h4><p>IIT Kanpur (Dec. 1995 - Sept. 2001)</p></div>
+            <div class="timeline-item"><h4>Lecturer, Department of Civil Engineering</h4><p>IIT Kanpur (June 1994 - Nov. 1995)</p></div>
+            <div class="timeline-item"><h4>Scientist</h4><p>National Institute of Hydrology, Roorkee (April 1993 - June 1994)</p></div>
+        </div>
+        
+        <div>
+
+            <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-4xl xl:text-5xl font-black text-[#c5a059] mb-4">Administrative Experience</h2>
+            <div class="timeline-item"><h4>Founder Head, Department of Earth Sciences</h4><p>IIT Kanpur (Feb. 2014-Feb. 2017)</p></div>
+            <div class="timeline-item"><h4>Chairman, Senate Post-Graduate Committee</h4><p>IIT Kanpur (Oct. 2011-Sept. 2012)</p></div>
+            <div class="timeline-item"><h4>DPGC Convener, Department of Civil Engineering</h4><p>IIT Kanpur (Sept. 2011-Aug. 2012)</p></div>
+            <div class="timeline-item"><h4>Chairman, Student’s Placement Committee</h4><p>IIT Kanpur (Aug. 2006-Nov. 2007)</p></div>
+            <div class="timeline-item"><h4>DPGC Convener, Department of Civil Engineering</h4><p>IIT Kanpur (Oct. 2006-Sept. 2007)</p></div>
+            <div class="timeline-item"><h4>Prof. in-charge, Geosciences Lab, Civil Engg. Dept.</h4><p>IIT Kanpur (May 2004-2010)</p></div>
+            <div class="timeline-item"><h4>Member, Senate Library Committee</h4><p>IIT Kanpur (Oct. 2003-Sept. 2005)</p></div>
+            <div class="timeline-item"><h4>Prof. in-charge, Geosciences Lab, Civil Engg. Dept.</h4><p>IIT Kanpur (May 2004-2010)</p></div>
+            <div class="timeline-item"><h4>Member, Senate Library Committee</h4><p>IIT Kanpur (Oct. 2003-Sept. 2005)</p></div>
+            <div class="timeline-item"><h4>Chairman, Senate Library Committee</h4><p>IIT Kanpur (Oct. 2002-Sept. 2003)</p></div>
+            <div class="timeline-item"><h4>Computer Coordinator (CE) and Member CCCC</h4><p>IIT Kanpur (June 1999-Nov. 2000)</p></div>
+            <div class="timeline-item"><h4>Member, DPGC, Department of Civil Engineering</h4><p>IIT Kanpur (August 1996-July 1997)</p></div>
+            <div class="timeline-item"><h4>Member, DUGC, Department of Civil Engineering</h4><p>IIT Kanpur (Aug. 1994-July 1996)</p></div>
+            <div class="timeline-item"><h4>Warden, Hall V</h4><p>IIT Kanpur (March 1994 - March 1995)</p></div>
+
+        </div>
+
+        
 
     </section> 
     <script src="script.js"></script>

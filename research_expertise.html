@@ -10,25 +10,108 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="nav.css">
 </head>
 
 <body>
-
 <nav class="top-navbar">
     <!-- Mobile Toggle -->
-    <button class="menu-toggle" aria-label="Toggle Navigation">
+    <button class="menu-toggle"
+            aria-label="Toggle Navigation"
+            aria-expanded="false"
+            type="button">
         <span></span>
         <span></span>
         <span></span>
     </button>
-   <!-- Navigation -->
-    <ul class="nav-menu show">
+    <!-- Navigation -->
+    <ul class="nav-menu">
         <li><a href="Rs_web.html#hero" class="nav-link"><i class="fas fa-home"></i><span>Home</span></a></li>
-        <li><a href="resume.html" class="nav-link"><i class="fas fa-briefcase"></i><span>Experience</span></a></li>
-        <li><a href="research_expertise.html" class="nav-link  active"><i class="fas fa-flask"></i><span>Expertise</span></a></li>        
-        <li><a href="teaching.html" class="nav-link"><i class="fas fa-chalkboard-teacher"></i><span>Teaching</span></a></li>
-        <li><a href="lab_page/HB_new.html" class="nav-link" target="_blank"><i class="fas fa-microscope"></i><span>Labs</span></a></li>
-        <li><a href="research.html" class="nav-link"><i class="fas fa-book"></i><span>Publications</span></a></li>
+        <li class="nav-dropdown">
+            <button class="nav-link publication-toggle"
+                    type="button"
+                    aria-expanded="false"
+                    aria-haspopup="true">
+                <i class="fas fa-user-tie"></i>
+                <span>Career Profile</span>
+                <i class="fas fa-chevron-down dropdown-arrow"></i>
+            </button>
+            <!-- Dropdown -->
+            <div class="publication-dropdown">
+                <a href="resume.html" class="dropdown-item">
+                    <i class="fas fa-user-tie"></i>
+                    <span>Education & Experience</span>
+                </a>
+                <a href="services.html" class="dropdown-item">
+                    <i class="fas fa-briefcase"></i>
+                    <span>Professional Experience</span>
+                </a>
+            </div>
+        </li>
+        <li class="nav-dropdown">
+            <button class="nav-link publication-toggle"
+                    type="button"
+                    aria-expanded="false"
+                    aria-haspopup="true">
+                <i class="fas fa-chart-line"></i>
+                <span>Research & Scholarly Activities</span>
+                <i class="fas fa-chevron-down dropdown-arrow"></i>
+            </button>
+            <!-- Dropdown -->
+            <div class="publication-dropdown">
+                <a href="research_expertise.html" class="dropdown-item">
+                    <i class="fas fa-flask"></i>
+                    <span>Skills & Expertise</span>
+                </a>
+                <a href="research.html" class="dropdown-item">
+                    <i class="fas fa-book-open"></i>
+                    <span>Research & Publications</span>
+                </a>
+                <a href="Peer_review_books.html" class="dropdown-item">
+                    <i class="fas fa-pen-to-square"></i>
+                    <span>Reviewed Writings</span>
+                </a>
+                <a href="Citations.html" class="dropdown-item">
+                    <i class="fas fa-chart-column"></i>
+                    <span>Citation Impacts</span>
+                </a>
+                <a href="conferences.html" class="dropdown-item">
+                    <i class="fas fa-users"></i>
+                    <span>Conferences</span>
+                </a>
+                <a href="invited_lectures.html" class="dropdown-item">
+                    <i class="fas fa-microphone-lines"></i>
+                    <span>Lectures</span>
+                </a>
+            </div>
+        </li>
+        <li class="nav-dropdown">
+            <button class="nav-link publication-toggle"
+                    type="button"
+                    aria-expanded="false"
+                    aria-haspopup="true">
+                <i class="fas fa-chalkboard-teacher"></i>
+                <span>Teaching & Mentorship</span>
+                <i class="fas fa-chevron-down dropdown-arrow"></i>
+            </button>
+            <!-- Dropdown -->
+            <div class="publication-dropdown">
+                <a href="teaching.html" class="dropdown-item">
+                    <i class="fas fa-book-open"></i>
+                    <span>Courses</span>
+                </a>
+                <a href="outreach.html" class="dropdown-item">
+                    <i class="fas fa-globe"></i>
+                    <span>Outreach Activities</span>
+                </a>
+                <a href="Thesis.html" class="dropdown-item">
+                    <i class="fas fa-file-pen"></i>
+                    <span>Thesis Mentored</span>
+                </a>
+            </div>
+        </li>
+        <li><a href="lab_page/HB_new.html" class="nav-link"target="_blank"><i class="fas fa-microscope"></i><span>Labs</span></a></li>
+        <li><a href="grants.html" class="nav-link"><i class="fas fa-user-graduate"></i><span>Research Grants</span></a></li>
         <li><a href="students.html" class="nav-link"><i class="fas fa-user-graduate"></i><span>Students</span></a></li>
         <li><a href="awards.html" class="nav-link"><i class="fas fa-award"></i><span>Awards</span></a></li>
         <li><a href="Rs_web.html#contact" class="nav-link"><i class="fas fa-envelope"></i><span>Contact</span></a></li>
@@ -89,8 +172,7 @@
                     </div>
                     <div class="adv-content">
                         <h3>River science</h3>
-                        <p>River dynamics, flood risk assessment, sediment dynamics, river response to climate change,
-                            rivers and ancient civilization.</p>
+                        <p>River dynamics, Geomorphic diversity, Environmental flows and River health, Floodplain lakes/wetlands and their restoration, critical zones in river basins. </p>
                         <div class="card-action">
                     <a href="research_expertise.html" class="card-link">
                     <i class="fa-solid fa-arrow-up-right-from-square"></i>
@@ -137,8 +219,8 @@
                         <button class="adv-nav next"><i class="fas fa-chevron-right"></i></button>
                     </div>
                     <div class="adv-content">
-                        <h3>Groundwater structure and dynamics</h3>
-                        <p>Historical time series analysis, Aquifer stratigraphy.</p>
+                        <h3>Geohazards</h3>
+                        <p>Flood risk assessment and management, landslides and flash floods.</p>
                     <div class="card-action">
                     <a href="research_expertise.html" class="card-link">
                     <i class="fa-solid fa-arrow-up-right-from-square"></i>
@@ -159,8 +241,8 @@
                         <button class="adv-nav next"><i class="fas fa-chevron-right"></i></button>
                     </div>
                     <div class="adv-content">
-                        <h3>Palaeoclimatic reconstructions</h3>
-                        <p>High resolution Holocene paleoclimatic reconstruction using a multi-proxy approach.</p>
+                        <h3>Quaternary Geology</h3>
+                        <p>Paleoclimatic reconstruction from fluvial and lacustrine records; long term  sedimentation history in Himalayan foreland basin using drill cores.</p>
                     <div class="card-action">
                     <a href="research_expertise.html" class="card-link">
                     <i class="fa-solid fa-arrow-up-right-from-square"></i>

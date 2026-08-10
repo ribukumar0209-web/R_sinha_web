@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Invited Lectures — Rajiv Sinha</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="nav.css">
+
+<style>
+:root{
+    --primary:      #000c18;
+    --primary-2:    #0a1d31;
+    --accent:       #c5a059;
+    --accent-dim:   rgba(197,160,89,0.28);
+    --signal:       #5eead4;
+    --signal-dim:   rgba(94,234,212,0.28);
+    --text-hi:      #f4f1ea;
+    --text-muted:   #94a4b5;
+    --transition:   all .35s cubic-bezier(.16,1,.3,1);
+}
+*{ box-sizing:border-box; margin:0; padding:0; }
+html{ scroll-behavior:smooth; }
+body{ font-family:'Inter',sans-serif; background:var(--primary); color:var(--text-hi); line-height:1.6; overflow-x:hidden; }
+
+.font-display{ font-family:'Fraunces',serif; }
+.font-mono{ font-family:'JetBrains Mono',monospace; }
+
+.reveal{ opacity:0; transform:translateY(16px); transition:opacity .6s cubic-bezier(.16,1,.3,1), transform .6s cubic-bezier(.16,1,.3,1); }
+.reveal.is-visible{ opacity:1; transform:translateY(0); }
+
+.texture{ position:absolute; inset:0; opacity:.14; pointer-events:none; }
+
+.panel-head{
+    display:flex; align-items:baseline; justify-content:space-between; gap:10px;
+    padding-bottom:14px; margin-bottom:6px; border-bottom:2px solid;
+}
+.panel-head.india{ border-color:var(--accent); }
+.panel-head.abroad{ border-color:var(--signal); }
+.panel-head h2{ font-family:'Fraunces',serif; font-size:1.5rem; font-weight:600; }
+.panel-head.india h2{ color:var(--accent); }
+.panel-head.abroad h2{ color:var(--signal); }
+.panel-head .n{ font-family:'JetBrains Mono',monospace; font-size:.7rem; color:var(--text-muted); }
+
+.lec-row{ padding:16px 4px; border-bottom:1px solid rgba(148,164,181,0.1); transition:var(--transition); }
+.lec-row:hover{ background:rgba(197,160,89,0.03); }
+.lec-row:last-child{ border-bottom:none; }
+.lec-top{ display:flex; align-items:center; gap:8px; flex-wrap:wrap; margin-bottom:6px; }
+.lec-year{ font-family:'JetBrains Mono',monospace; font-size:.72rem; font-weight:700; }
+.panel-india .lec-year{ color:var(--accent); }
+.panel-abroad .lec-year{ color:var(--signal); }
+.lec-badge{
+    font-family:'JetBrains Mono',monospace; font-size:.58rem; font-weight:700; letter-spacing:.05em; text-transform:uppercase;
+    padding:2px 8px; border-radius:999px; border:1px solid;
+}
+.panel-india .lec-badge{ color:var(--accent); border-color:var(--accent-dim); background:rgba(197,160,89,0.06); }
+.panel-abroad .lec-badge{ color:var(--signal); border-color:var(--signal-dim); background:rgba(94,234,212,0.06); }
+.lec-title{ font-size:.88rem; color:var(--text-hi); }
+.lec-venue{ font-size:.78rem; color:var(--text-muted); margin-top:4px; }
+
+#search-input::placeholder{ color:var(--text-muted); }
+#search-input:focus{ outline:none; border-color:var(--accent); box-shadow:0 0 0 3px rgba(197,160,89,0.12); }
+
+@media (prefers-reduced-motion: reduce){ .reveal{ transition:none; opacity:1; transform:none; } }
+</style>
+</head>
+<body>
+<nav class="top-navbar">
+    <!-- Mobile Toggle -->
+    <button class="menu-toggle"
+            aria-label="Toggle Navigation"
+            aria-expanded="false"
+            type="button">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+    <!-- Navigation -->
+    <ul class="nav-menu">
+        <li><a href="Rs_web.html#hero" class="nav-link"><i class="fas fa-home"></i><span>Home</span></a></li>
+        <li class="nav-dropdown">
+            <button class="nav-link publication-toggle"
+                    type="button"
+                    aria-expanded="false"
+                    aria-haspopup="true">
+                <i class="fas fa-user-tie"></i>
+                <span>Career Profile</span>
+                <i class="fas fa-chevron-down dropdown-arrow"></i>
+            </button>
+            <!-- Dropdown -->
+            <div class="publication-dropdown">
+                <a href="resume.html" class="dropdown-item">
+                    <i class="fas fa-user-tie"></i>
+                    <span>Education & Experience</span>
+                </a>
+                <a href="services.html" class="dropdown-item">
+                    <i class="fas fa-briefcase"></i>
+                    <span>Professional Experience</span>
+                </a>
+            </div>
+        </li>
+        <li class="nav-dropdown">
+            <button class="nav-link publication-toggle"
+                    type="button"
+                    aria-expanded="false"
+                    aria-haspopup="true">
+                <i class="fas fa-chart-line"></i>
+                <span>Research & Scholarly Activities</span>
+                <i class="fas fa-chevron-down dropdown-arrow"></i>
+            </button>
+            <!-- Dropdown -->
+            <div class="publication-dropdown">
+                <a href="research_expertise.html" class="dropdown-item">
+                    <i class="fas fa-flask"></i>
+                    <span>Skills & Expertise</span>
+                </a>
+                <a href="research.html" class="dropdown-item">
+                    <i class="fas fa-book-open"></i>
+                    <span>Research & Publications</span>
+                </a>
+                <a href="Peer_review_books.html" class="dropdown-item">
+                    <i class="fas fa-pen-to-square"></i>
+                    <span>Reviewed Writings</span>
+                </a>
+                <a href="Citations.html" class="dropdown-item">
+                    <i class="fas fa-chart-column"></i>
+                    <span>Citation Impacts</span>
+                </a>
+                <a href="conferences.html" class="dropdown-item">
+                    <i class="fas fa-users"></i>
+                    <span>Conferences</span>
+                </a>
+                <a href="invited_lectures.html" class="dropdown-item">
+                    <i class="fas fa-microphone-lines"></i>
+                    <span>Lectures</span>
+                </a>
+            </div>
+        </li>
+        <li class="nav-dropdown">
+            <button class="nav-link publication-toggle"
+                    type="button"
+                    aria-expanded="false"
+                    aria-haspopup="true">
+                <i class="fas fa-chalkboard-teacher"></i>
+                <span>Teaching & Mentorship</span>
+                <i class="fas fa-chevron-down dropdown-arrow"></i>
+            </button>
+            <!-- Dropdown -->
+            <div class="publication-dropdown">
+                <a href="teaching.html" class="dropdown-item">
+                    <i class="fas fa-book-open"></i>
+                    <span>Courses</span>
+                </a>
+                <a href="outreach.html" class="dropdown-item">
+                    <i class="fas fa-globe"></i>
+                    <span>Outreach Activities</span>
+                </a>
+                <a href="Thesis.html" class="dropdown-item">
+                    <i class="fas fa-file-pen"></i>
+                    <span>Thesis Mentored</span>
+                </a>
+            </div>
+        </li>
+        <li><a href="lab_page/HB_new.html" class="nav-link"target="_blank"><i class="fas fa-microscope"></i><span>Labs</span></a></li>
+        <li><a href="grants.html" class="nav-link"><i class="fas fa-user-graduate"></i><span>Research Grants</span></a></li>
+        <li><a href="students.html" class="nav-link"><i class="fas fa-user-graduate"></i><span>Students</span></a></li>
+        <li><a href="awards.html" class="nav-link"><i class="fas fa-award"></i><span>Awards</span></a></li>
+        <li><a href="Rs_web.html#contact" class="nav-link"><i class="fas fa-envelope"></i><span>Contact</span></a></li>
+    </ul>
+</nav>
+<!-- ============================================================
+     HEADER
+     ============================================================ -->
+<section class="relative overflow-hidden" style="background:radial-gradient(ellipse 55% 55% at 12% 0%, rgba(197,160,89,0.1), transparent 60%), radial-gradient(ellipse 55% 55% at 88% 100%, rgba(94,234,212,0.08), transparent 60%), var(--primary);">
+    <div class="relative z-10 max-w-5xl mx-auto px-6 md:px-10 pt-28 md:pt-36 pb-8 md:pb-12 text-center">
+        <h1 class="reveal is-visible font-display mt-6 text-3xl sm:text-4xl md:text-6xl font-semibold leading-tight" style="color:var(--text-hi);">
+            On Every <span style="color:var(--accent);">Platform</span>
+        </h1>
+        <p class="reveal is-visible mt-5 max-w-xl mx-auto text-sm md:text-base" style="color:var(--text-muted);">
+            Institute, keynote, and plenary lectures delivered across India and abroad,
+            1997–2019 — from Antarctic lake sedimentology to Himalayan sediment dynamics.
+        </p>
+
+        <div class="reveal is-visible mt-10 grid grid-cols-3 gap-4 md:gap-16 max-w-lg mx-auto">
+            <div>
+                <div class="font-display text-3xl md:text-4xl font-bold" style="color:var(--text-hi);">40</div>
+                <div class="font-mono text-[0.6rem] md:text-xs uppercase mt-2" style="color:var(--text-muted);">Lectures</div>
+            </div>
+            <div>
+                <div class="font-display text-3xl md:text-4xl font-bold" style="color:var(--accent);">20</div>
+                <div class="font-mono text-[0.6rem] md:text-xs uppercase mt-2" style="color:var(--text-muted);">In&nbsp;India</div>
+            </div>
+            <div>
+                <div class="font-display text-3xl md:text-4xl font-bold" style="color:var(--signal);">20</div>
+                <div class="font-mono text-[0.6rem] md:text-xs uppercase mt-2" style="color:var(--text-muted);">Abroad</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================
+     SPLIT PANELS
+     ============================================================ -->
+<main class="max-w-5xl mx-auto px-5 md:px-10 py-12 md:py-16">
+
+    <div class="reveal relative mb-12">
+        <i class="fas fa-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-sm" style="color:var(--text-muted);"></i>
+        <input id="search-input" type="text" placeholder="Search by title, venue, or location…"
+               class="w-full pl-11 pr-4 py-3 rounded-lg text-sm font-medium"
+               style="background:var(--primary-2); border:1px solid var(--accent-dim); color:var(--text-hi);">
+        <span id="count-label" class="block mt-3 font-mono text-xs" style="color:var(--text-muted);"></span>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-10 md:gap-14">
+        <section>
+            <div class="reveal panel-head india">
+                <h2><i class="fas fa-map-pin mr-1"></i> In India</h2>
+                <span class="n" id="count-india">20 lectures</span>
+            </div>
+            <div id="list-india" class="panel-india"></div>
+        </section>
+
+        <section>
+            <div class="reveal panel-head abroad">
+                <h2><i class="fas fa-earth-americas mr-1"></i> Abroad</h2>
+                <span class="n" id="count-abroad">20 lectures</span>
+            </div>
+            <div id="list-abroad" class="panel-abroad"></div>
+        </section>
+    </div>
+
+    <p id="empty-msg" class="text-center text-sm mt-10" style="color:var(--text-muted);" hidden>
+        No lectures match "<span id="empty-query"></span>."
+    </p>
+</main>
+
+<script>
+var LECTURES = [
+/* ===== India ===== */
+{region:"india",y:1997,date:"7 Aug 1997",t:"XVI Indian Scientific Expedition to Antarctica \u2013 Goals & Achievements.",v:"IIT Kanpur",badge:"Institute Lecture"},
+{region:"india",y:1997,date:"17\u201319 Dec 1997",t:"Sedimentology in the icy continent of Antarctica.",v:"XIV Convention of the Indian Association of Sedimentologists, University of Madras, Chennai",badge:"Popular Lecture"},
+{region:"india",y:1998,date:"15\u201316 Sep 1998",t:"Ash Dykes and Ashfills.",v:"Regional Workshop on Flyash Disposal and Utilization, Kota",badge:null},
+{region:"india",y:1999,date:"5\u201312 Jan 1999",t:"Wetland hydrology, water budget and sedimentation.",v:"Training Workshop on Wetland Research Methodology, Wildlife Institute of India, Chilika, Orissa",badge:null},
+{region:"india",y:1999,date:"15 Apr 1999",t:"Lake sedimentology and paleoclimatic analysis in the icy continent of Antarctica.",v:"Birbal Sahni Institute of Paleobotany, Lucknow",badge:"Institute Lecture"},
+{region:"india",y:2004,date:"12\u201313 Feb 2004",t:"Aggradation-degradation in Gangetic river systems: a process-response framework.",v:"National Conference on Silting in Rivers, Central Water Commission, New Delhi",badge:null},
+{region:"india",y:2004,date:"16\u201317 Nov 2004",t:"River morphology and hydrology.",v:"Short course on fluvial systems, M.S. University of Baroda, Vadodara",badge:null},
+{region:"india",y:2004,date:"16\u201317 Nov 2004",t:"Fluvial depositional models.",v:"Short course on fluvial systems, M.S. University of Baroda, Vadodara",badge:null},
+{region:"india",y:2005,date:"4 Jul 2005",t:"Quaternary geomorphology and sedimentation pattern in the Indo-Gangetic plains.",v:"Training Workshop, Wadia Institute of Himalayan Geology, Dehradun",badge:null},
+{region:"india",y:2005,date:"15\u201316 Nov 2005",t:"Palaeoclimatic reconstruction from Thar Desert playas: Results to date and future directions.",v:"Diamond Jubilee Year Celebrations, Birbal Sahni Institute of Paleobotany, Lucknow",badge:null},
+{region:"india",y:2005,date:"21\u201323 Nov 2005",t:"Stratigraphic response of the Quaternary fluvial systems of the Ganga plains to climatic shifts and geomorphic diversity: Results to date and future directions.",v:"Annual Convention of the Indian Association of Sedimentologists, Dehradun",badge:"Keynote Lecture"},
+{region:"india",y:2006,date:"13\u201324 Feb 2006",t:"Geomorphic Markers of Tectonic Deformation.",v:"SERC School on Crustal Deformation and Tectonic Geomorphology (Module 2), CMMACS, Bangalore",badge:null},
+{region:"india",y:2006,date:"17 Jul 2006",t:"River interlinking: impact on earth systems.",v:"Regional meeting of the North Indian Chapter, Geological Society of India, BSIP, Lucknow",badge:null},
+{region:"india",y:2006,date:"15\u201317 Nov 2006",t:"Calcretes in Ganga Plains: a proxy for paleoprecipitation and paleovegetation (MIS 3-5).",v:"International Conference on Changing Scenario in Paleobotany and Allied Subjects, BSIP, Lucknow",badge:"Keynote Lecture"},
+{region:"india",y:2007,date:"6\u201320 Feb 2007",t:"Active tectonics and alluvial rivers: concepts, methods and examples.",v:"SERC School on Crustal Deformation and Tectonic Geomorphology (Module 3), Wadia Institute of Himalayan Geology, Dehradun",badge:null},
+{region:"india",y:2011,date:"3 Aug 2011",t:"Keynote lecture at the Second National Working Group meeting of IGCP-582: Tropical Rivers, Hydro-physical Processes, Impacts, Hazards and Management.",v:"Geological Survey of India, New Delhi",badge:"Keynote Lecture"},
+{region:"india",y:2011,date:"12 Sep 2011",t:"Himalayan river systems: challenges of fresh water supply and eco-system management in a changing climate scenario.",v:"National Conference on Science of Climate Change and Earth's Sustainability, Lucknow",badge:"Plenary Lecture"},
+{region:"india",y:2011,date:"24\u201326 Nov 2011",t:"Evidence for a \u2018Lost\u2019 river in north western India using an integrated approach (also chaired a session).",v:"National Seminar on Modern and Palaeo Sediments, JNU, New Delhi",badge:"Keynote Lecture"},
+{region:"india",y:2012,date:"24 May 2012",t:"\u2018Lost\u2019 river in north western India inferred through resistivity soundings, sedimentology and geochemistry: Testing River-Culture Hypothesis.",v:"NGRI, Hyderabad",badge:"Institute Lecture"},
+{region:"india",y:2018,date:"24\u201326 Nov 2018",t:"Sediment management: an important component of Ganga rejuvenation.",v:"India Rivers Week",badge:"River Lecture"},
+
+/* ===== Abroad ===== */
+{region:"abroad",y:2000,date:"27 Jun 2000",t:"Tectono-Geomorphic and Geochemical Evolution of the hypersaline Sambhar Lake in Thar Desert, India.",v:"University of Karlsruhe",loc:"Germany",badge:null},
+{region:"abroad",y:2001,date:"10 Nov 2001",t:"Himalayan River Systems: Morphology, Processes and Sedimentation Pattern.",v:"University of Paris",loc:"France",badge:null},
+{region:"abroad",y:2003,date:"15 Jul 2003",t:"Mega-Geomorphology and fluvial dynamics of the Gangetic River systems, Himalayan Foreland Basin, India.",v:"University of Dresden",loc:"Germany",badge:null},
+{region:"abroad",y:2003,date:"25 Jun 2003",t:"Geomorphic Evolution and Stratigraphic Development of the Quaternary Alluvial Plains of the Gangetic Rivers, India.",v:"University of Maring\u00e1",loc:"Brazil",badge:null},
+{region:"abroad",y:2005,date:"20\u201324 Jun 2005",t:"Himalayan foreland: Tectonics and Sedimentation History (SE30).",v:"AOGS 2nd Annual Meeting",loc:"Singapore",badge:"Session Organizer"},
+{region:"abroad",y:2006,date:"3\u20134 Dec 2006",t:"Climate connections.",v:"2nd National Frontiers of Science (NatFoS) for Young Indian Scientists, INSA, New Delhi",loc:"India (listed under Abroad in source)",badge:"Session Organizer"},
+{region:"abroad",y:2007,date:"18\u201320 Jan 2007",t:"Climate Connections.",v:"Second Indo-US Frontiers of Science Symposium, Indo-US S&T Forum and U.S. National Academy of Sciences, Irvine, California",loc:"USA",badge:"Session Organizer"},
+{region:"abroad",y:2007,date:"6 Jun 2007",t:"Climatic controls on alluvial architecture of the Ganga plains.",v:"Department of Geography, University of Durham",loc:"UK",badge:null},
+{region:"abroad",y:2007,date:"7 Jun 2007",t:"River response to climate change: why, where and how?",v:"St. Mary's College, University of Durham",loc:"UK",badge:null},
+{region:"abroad",y:2007,date:"18 Jun 2007",t:"Calcretes in Ganga plains: a proxy for paleo-precipitation and paleo-vegetation (MIS 3-5).",v:"Department of Geography, University of Newcastle",loc:"UK",badge:null},
+{region:"abroad",y:2011,date:"23 Jun 2011",t:"River Dynamics in a Large Himalayan River: the case of the Kosi, India and Nepal.",v:"Institut de Physique du Globe, Paris",loc:"France",badge:null},
+{region:"abroad",y:2011,date:"21\u201327 Jul 2011",t:"\u2018Buried\u2019 paleo-Ghaggar channel belt inferred through resistivity soundings around Kalibangan Harappan site, north western Rajasthan, India.",v:"International Quaternary Association (INQUA) Congress, Bern",loc:"Switzerland",badge:null},
+{region:"abroad",y:null,date:"",t:"Sediment dynamics and sediment connectivity in the Kosi basin: implications for river hazards.",v:"Department of Earth and Environmental Science Seminar, University of Potsdam",loc:"Germany",badge:null},
+{region:"abroad",y:2018,date:"10 Dec 2018",t:"Sedimentation in the Koshi river: drivers and impacts.",v:"International Centre for Integrated Mountain Development (ICIMOD), Kathmandu",loc:"Nepal",badge:null},
+{region:"abroad",y:2019,date:"18 Feb 2019",t:"Sediment dynamics and sediment connectivity in the upper Kosi basin, Central Himalaya: implications for river hazards.",v:"IHRR Seminars and Public Lecture, University of Durham",loc:"UK",badge:null},
+{region:"abroad",y:2019,date:"16 May 2019",t:"Megafans in the Himalayan foreland: Geomorphic processes and controlling factors.",v:"Physical Geography Seminar, University of Durham",loc:"UK",badge:null},
+{region:"abroad",y:2019,date:"23 May 2019",t:"Mapping of Critical Zone Observatory (CZO) through Airborne Technologies.",v:"University of Leeds",loc:"UK",badge:null},
+{region:"abroad",y:2019,date:"25\u201329 Sep 2019",t:"Mapping historical-scale planform dynamics for sediment budgeting of the Ganga river, India.",v:"EXAQUA meeting, Zagreb",loc:"Croatia",badge:null},
+{region:"abroad",y:2019,date:"7 Nov 2019",t:"Sediment flux from the Himalayan rivers: causes, controls and consequences.",v:"University of Padova",loc:"Italy",badge:null},
+{region:"abroad",y:2019,date:"15 Nov 2019",t:"Sediment flux from the Himalayan rivers: causes, controls and consequences.",v:"University of Kiel",loc:"Germany",badge:null}
+];
+
+(function(){
+    "use strict";
+
+    var listIndia = document.getElementById('list-india');
+    var listAbroad = document.getElementById('list-abroad');
+    var countIndia = document.getElementById('count-india');
+    var countAbroad = document.getElementById('count-abroad');
+    var searchInput = document.getElementById('search-input');
+    var countLabel = document.getElementById('count-label');
+    var emptyMsg = document.getElementById('empty-msg');
+    var emptyQuery = document.getElementById('empty-query');
+
+    function rowHtml(l){
+        var badge = l.badge ? '<span class="lec-badge">' + l.badge + '</span>' : '';
+        var venueLine = l.region === 'abroad' ? (l.v + ', ' + l.loc) : l.v;
+        var dateStr = l.date || '';
+        return '<div class="lec-row reveal is-visible">' +
+            '<div class="lec-top">' +
+                (l.y ? '<span class="lec-year">' + l.y + '</span>' : '<span class="lec-year">n.d.</span>') +
+                badge +
+            '</div>' +
+            '<p class="lec-title">' + l.t + '</p>' +
+            '<p class="lec-venue">' + venueLine + (dateStr ? ' \u2014 ' + dateStr : '') + '</p>' +
+        '</div>';
+    }
+
+    function renderAll(){
+        var india = LECTURES.filter(function(l){ return l.region === 'india'; });
+        var abroad = LECTURES.filter(function(l){ return l.region === 'abroad'; });
+        listIndia.innerHTML = india.map(rowHtml).join('');
+        listAbroad.innerHTML = abroad.map(rowHtml).join('');
+        countIndia.textContent = india.length + ' lectures';
+        countAbroad.textContent = abroad.length + ' lectures';
+        countLabel.textContent = '';
+        emptyMsg.hidden = true;
+    }
+    renderAll();
+
+    searchInput.addEventListener('input', function(){
+        var q = searchInput.value.trim().toLowerCase();
+        if (!q) { renderAll(); return; }
+
+        function match(l){
+            var hay = (l.t + ' ' + l.v + ' ' + (l.loc || '') + ' ' + (l.badge || '')).toLowerCase();
+            return hay.indexOf(q) !== -1;
+        }
+        var india = LECTURES.filter(function(l){ return l.region === 'india' && match(l); });
+        var abroad = LECTURES.filter(function(l){ return l.region === 'abroad' && match(l); });
+
+        listIndia.innerHTML = india.map(rowHtml).join('');
+        listAbroad.innerHTML = abroad.map(rowHtml).join('');
+        countIndia.textContent = india.length + ' lectures';
+        countAbroad.textContent = abroad.length + ' lectures';
+
+        var total = india.length + abroad.length;
+        countLabel.textContent = 'Showing ' + total + ' of ' + LECTURES.length;
+        emptyMsg.hidden = total !== 0;
+        emptyQuery.textContent = searchInput.value.trim();
+    });
+})();
+</script>
+<script src="script.js"></script>
+</body>
+</html>

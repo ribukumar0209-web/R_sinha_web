@@ -1,0 +1,773 @@
+
+/* =========================================================
+   RESPONSIVE GLASS NAVBAR
+========================================================= */
+
+.top-navbar {
+    position: fixed;
+    top: 18px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: max-content;
+    max-width: calc(100vw - 30px);
+
+    padding: 8px 10px;
+
+    z-index: 99999;
+
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(22px);
+    -webkit-backdrop-filter: blur(22px);
+
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 20px;
+
+    box-shadow:
+        0 12px 35px rgba(0, 0, 0, 0.18),
+        inset 0 1px rgba(255, 255, 255, 0.18);
+
+    transition:
+        background 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+/* Hide scrollbar */
+.top-navbar::-webkit-scrollbar {
+    display: none;
+}
+
+.top-navbar {
+    scrollbar-width: none;
+}
+
+
+/* =========================================================
+   NAV MENU
+========================================================= */
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 5px;
+
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+}
+
+
+/* =========================================================
+   NAV ITEMS
+========================================================= */
+
+.nav-menu > li {
+    position: relative;
+}
+
+
+/* =========================================================
+   NAV LINK
+========================================================= */
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    min-height: 44px;
+
+    padding: 11px 13px;
+
+    border: none;
+    outline: none;
+
+    background: transparent;
+
+    color: #f8fafc;
+
+    text-decoration: none;
+
+    font-family: inherit;
+    font-size: 0.91rem;
+    font-weight: 600;
+
+    border-radius: 12px;
+
+    cursor: pointer;
+
+    white-space: nowrap;
+
+    position: relative;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+
+/* Icons */
+
+.nav-link > i:first-child {
+    color: #d4af37;
+    font-size: 16px;
+
+    transition:
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+
+/* Hover */
+
+.nav-link:hover {
+    background: rgba(255, 255, 255, 0.12);
+    color: #ffffff;
+
+    transform: translateY(-2px);
+}
+
+.nav-link:hover > i:first-child {
+    color: #ffd86a;
+    transform: scale(1.1);
+}
+
+
+/* ================================
+   ACTIVE NAVIGATION — GOLDEN LINE
+================================ */
+
+.nav-link.active {
+    background: transparent !important;
+    color: #ffffff !important;
+    box-shadow: none !important;
+    transform: none;
+}
+
+/* Golden underline */
+.nav-link.active::after {
+    content: "";
+    position: absolute;
+    left: 12px;
+    right: 12px;
+    bottom: 3px;
+    height: 3px;
+    background: #d4af37;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(212, 175, 55, 0.45);
+}
+
+/* Active icon */
+.nav-link.active i {
+    color: #d4af37 !important;
+}
+
+
+/* =========================================================
+   PUBLICATION BUTTON
+========================================================= */
+
+.publication-toggle {
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+
+/* Dropdown arrow */
+
+.dropdown-arrow {
+    margin-left: 2px;
+
+    color: #d4af37 !important;
+
+    font-size: 10px !important;
+
+    transition:
+        transform 0.3s ease,
+        color 0.3s ease !important;
+}
+
+
+/* Rotate arrow */
+
+.nav-dropdown.open .dropdown-arrow {
+    transform: rotate(180deg);
+}
+
+
+/* =========================================================
+   PUBLICATION DROPDOWN
+   IMPORTANT:
+   position:absolute means it DOES NOT disturb navbar
+========================================================= */
+
+.publication-dropdown {
+    position: absolute;
+
+    top: calc(100% + 10px);
+    left: 50%;
+
+    transform:
+        translateX(-50%)
+        translateY(-8px);
+
+    width: 235px;
+
+    padding: 8px;
+
+    background: rgba(8, 18, 32, 0.96);
+
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+
+    border: 1px solid rgba(255, 255, 255, 0.14);
+
+    border-radius: 16px;
+
+    box-shadow:
+        0 20px 45px rgba(0, 0, 0, 0.38),
+        inset 0 1px rgba(255, 255, 255, 0.08);
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    z-index: 100000;
+
+    transition:
+        opacity 0.25s ease,
+        transform 0.25s ease,
+        visibility 0.25s ease;
+}
+
+
+/* Dropdown opened */
+
+.nav-dropdown.open .publication-dropdown {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+
+    transform:
+        translateX(-50%)
+        translateY(0);
+}
+
+
+/* =========================================================
+   DROPDOWN ITEMS
+========================================================= */
+
+.dropdown-item {
+    display: flex;
+    align-items: center;
+
+    gap: 11px;
+
+    width: 100%;
+
+    padding: 11px 13px;
+
+    border-radius: 10px;
+
+    color: #e2e8f0;
+
+    text-decoration: none;
+
+    font-size: 0.88rem;
+    font-weight: 600;
+
+    white-space: nowrap;
+
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        transform 0.25s ease;
+}
+
+.dropdown-item i {
+    width: 18px;
+
+    text-align: center;
+
+    color: #d4af37;
+
+    font-size: 14px;
+
+    transition: transform 0.25s ease;
+}
+
+.dropdown-item:hover {
+    background: rgba(255, 255, 255, 0.11);
+
+    color: #ffffff;
+
+    transform: translateX(3px);
+}
+
+.dropdown-item:hover i {
+    transform: scale(1.12);
+    color: #ffd86a;
+}
+
+
+/* =========================================================
+   HAMBURGER
+========================================================= */
+
+.menu-toggle {
+    display: none;
+
+    width: 50px;
+    height: 50px;
+
+    padding: 0;
+
+    border: none;
+    background: transparent;
+
+    cursor: pointer;
+
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 6px;
+}
+
+.menu-toggle span {
+    display: block;
+
+    width: 26px;
+    height: 2.8px;
+
+    background: #ffffff;
+
+    border-radius: 10px;
+
+    transition:
+        transform 0.35s ease,
+        opacity 0.35s ease;
+}
+
+
+/* Hamburger animation */
+
+.menu-toggle.active span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+
+/* =========================================================
+   LARGE SCREENS
+========================================================= */
+
+@media (min-width: 1401px) {
+
+    .top-navbar {
+        padding: 9px 12px;
+    }
+
+    .nav-menu {
+        gap: 6px;
+    }
+
+    .nav-link {
+        padding: 12px 15px;
+        font-size: 0.94rem;
+    }
+}
+
+
+/* =========================================================
+   LAPTOP / SMALL DESKTOP
+========================================================= */
+
+@media (max-width: 1400px) and (min-width: 1201px) {
+
+    .nav-menu {
+        gap: 3px;
+    }
+
+    .nav-link {
+        padding: 10px 11px;
+        font-size: 0.87rem;
+        gap: 7px;
+    }
+
+    .nav-link > i:first-child {
+        font-size: 15px;
+    }
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1200px) and (min-width: 993px) {
+
+    .top-navbar {
+        max-width: calc(100vw - 24px);
+    }
+
+    .nav-menu {
+        gap: 2px;
+    }
+
+    .nav-link {
+        padding: 9px 9px;
+        font-size: 0.82rem;
+        gap: 6px;
+    }
+
+    .nav-link > i:first-child {
+        font-size: 14px;
+    }
+
+    .publication-dropdown {
+        width: 220px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE / TABLET NAVIGATION
+========================================================= */
+
+@media (max-width: 992px) {
+
+    .top-navbar {
+        top: 18px;
+        right: 18px;
+        left: auto;
+
+        transform: none;
+
+        width: 60px;
+        height: 60px;
+
+        padding: 0;
+
+        border-radius: 16px;
+
+        justify-content: center;
+        align-items: center;
+    }
+
+
+    /* Show hamburger */
+
+    .menu-toggle {
+        display: flex;
+
+        width: 60px;
+        height: 60px;
+    }
+
+
+    /* Mobile menu */
+
+    .nav-menu {
+        position: absolute;
+
+        top: 72px;
+        right: 0;
+
+        width: min(300px, calc(100vw - 30px));
+
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 5px;
+
+        padding: 10px;
+
+        background: rgba(8, 18, 32, 0.96);
+
+        backdrop-filter: blur(22px);
+        -webkit-backdrop-filter: blur(22px);
+
+        border: 1px solid rgba(255, 255, 255, 0.12);
+
+        border-radius: 18px;
+
+        box-shadow:
+            0 20px 45px rgba(0, 0, 0, 0.38);
+
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+
+        transform: translateY(-10px);
+
+        transition:
+            opacity 0.3s ease,
+            visibility 0.3s ease,
+            transform 0.3s ease;
+    }
+
+
+    /* Open mobile menu */
+
+    .nav-menu.show {
+        opacity: 1;
+
+        visibility: visible;
+
+        pointer-events: auto;
+
+        transform: translateY(0);
+    }
+
+
+    .nav-menu > li {
+        width: 100%;
+    }
+
+
+    .nav-link {
+        width: 100%;
+
+        min-height: 46px;
+
+        justify-content: flex-start;
+
+        padding: 12px 15px;
+
+        font-size: 0.93rem;
+
+        border-radius: 11px;
+    }
+
+
+    /* =====================================================
+       MOBILE PUBLICATION DROPDOWN
+    ===================================================== */
+
+    .nav-dropdown {
+        width: 100%;
+    }
+
+
+    .publication-toggle {
+        justify-content: flex-start;
+    }
+
+
+    .publication-toggle .dropdown-arrow {
+        margin-left: auto;
+    }
+
+
+    .publication-dropdown {
+
+        /* Override desktop absolute positioning */
+        position: relative;
+
+        top: auto;
+        left: auto;
+
+        transform: none;
+
+        width: 100%;
+
+        margin-top: 4px;
+
+        padding: 6px;
+
+        background: rgba(255, 255, 255, 0.05);
+
+        border: 1px solid rgba(255, 255, 255, 0.08);
+
+        border-radius: 12px;
+
+        box-shadow: none;
+
+        opacity: 0;
+
+        visibility: hidden;
+
+        pointer-events: none;
+
+        max-height: 0;
+
+        overflow: hidden;
+
+        transition:
+            max-height 0.35s ease,
+            opacity 0.25s ease,
+            visibility 0.25s ease;
+    }
+
+
+    /* Open mobile dropdown */
+
+    .nav-dropdown.open .publication-dropdown {
+
+        opacity: 1;
+
+        visibility: visible;
+
+        pointer-events: auto;
+
+        max-height: 500px;
+
+        transform: none;
+    }
+
+
+    .dropdown-item {
+        padding: 11px 13px;
+
+        font-size: 0.88rem;
+    }
+}
+
+
+/* =========================================================
+   SMALL PHONES
+========================================================= */
+
+@media (max-width: 576px) {
+
+    .top-navbar {
+        top: 14px;
+        right: 14px;
+
+        width: 56px;
+        height: 56px;
+
+        border-radius: 15px;
+    }
+
+
+    .menu-toggle {
+        width: 56px;
+        height: 56px;
+    }
+
+
+    .menu-toggle span {
+        width: 24px;
+    }
+
+
+    .nav-menu {
+        top: 67px;
+
+        right: 0;
+
+        width: calc(100vw - 28px);
+
+        max-width: 320px;
+
+        padding: 8px;
+
+        border-radius: 16px;
+    }
+
+
+    .nav-link {
+        min-height: 44px;
+
+        padding: 11px 13px;
+
+        font-size: 0.88rem;
+    }
+
+
+    .dropdown-item {
+        font-size: 0.84rem;
+
+        padding: 10px 11px;
+    }
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+========================================================= */
+
+@media (max-width: 380px) {
+
+    .top-navbar {
+        top: 10px;
+        right: 10px;
+
+        width: 52px;
+        height: 52px;
+    }
+
+
+    .menu-toggle {
+        width: 52px;
+        height: 52px;
+    }
+
+
+    .nav-menu {
+        top: 62px;
+
+        width: calc(100vw - 20px);
+    }
+
+
+    .nav-link {
+        font-size: 0.84rem;
+
+        padding: 10px 11px;
+    }
+}
+
+
+/* =========================================================
+   SCROLLED NAVBAR
+========================================================= */
+
+.top-navbar.navbar-scrolled {
+    background: rgba(8, 18, 32, 0.78);
+
+    box-shadow:
+        0 16px 40px rgba(0, 0, 0, 0.28),
+        inset 0 1px rgba(255, 255, 255, 0.12);
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .top-navbar,
+    .nav-link,
+    .dropdown-item,
+    .publication-dropdown,
+    .menu-toggle span {
+        transition: none !important;
+    }
+}
+
