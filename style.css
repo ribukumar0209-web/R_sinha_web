@@ -611,7 +611,7 @@ button[onclick^="moveAwards"] {
 
 .geo-tag{
     display:inline-flex; align-items:center; gap:9px; width:fit-content; max-width:100%;
-    font-family:'JetBrains Mono',monospace; font-size:clamp(0.6rem,1.4vw,0.75rem); letter-spacing:1.2px;
+    font-family:'Fraunces',serif; font-size:clamp(1.1rem,1.8vw,1.3rem); letter-spacing:1.2px;
     color:var(--accent); background:rgba(197,160,89,0.08); border:1px solid var(--accent-dim);
     padding:clamp(5px,1vw,7px) clamp(10px,2vw,15px); border-radius:2px; margin-bottom:clamp(12px,2.4vh,22px);
     white-space:normal; word-break:break-word;
@@ -701,13 +701,13 @@ button[onclick^="moveAwards"] {
     backdrop-filter:blur(15px);
     background:rgba(7,26,44,0.6);
 }
-.ticker .track{ display:flex; width:max-content; animation:marquee 34s linear infinite; }
+.ticker .track{ display:flex; width:max-content; animation:marquee 34s linear infinite;;}
 .ticker span{
-    font-family:'JetBrains Mono',monospace; font-size:clamp(0.58rem,1.6vw,0.8rem); letter-spacing:1.2px;
+    font-family:'Fraunces',serif; font-size:clamp(0.7rem,1.8vw,1.0rem); letter-spacing:1.2px;
     color:var(--text-muted); white-space:nowrap;
     display:flex; align-items:center; gap:clamp(12px,2vw,28px); padding-inline:clamp(12px,2vw,28px);
 }
-.ticker span i{ color:var(--accent); font-size:0.6rem; }
+.ticker span i{ color:var(--accent); font-size:1.2rem; }
 @keyframes marquee{ from{ transform:translateX(0); } to{ transform:translateX(-50%); } }
 
 /* ============================================================
