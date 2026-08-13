@@ -3,218 +3,144 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Awards & Achievements</title>
+    <title>Honors & Awards | Prof. Rajiv Sinha</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="nav.css">
 </head>
 <body>
-<nav class="top-navbar">
-    <!-- Mobile Toggle -->
-    <button class="menu-toggle"
-            aria-label="Toggle Navigation"
-            aria-expanded="false"
-            type="button">
-        <span></span>
-        <span></span>
-        <span></span>
-    </button>
-    <!-- Navigation -->
-    <ul class="nav-menu">
-        <li><a href="Rs_web.html#hero" class="nav-link"><i class="fas fa-home"></i><span>Home</span></a></li>
-        <li class="nav-dropdown">
-            <button class="nav-link publication-toggle"
-                    type="button"
-                    aria-expanded="false"
-                    aria-haspopup="true">
-                <i class="fas fa-user-tie"></i>
-                <span>Career Profile</span>
-                <i class="fas fa-chevron-down dropdown-arrow"></i>
-            </button>
-            <!-- Dropdown -->
-            <div class="publication-dropdown">
-                <a href="resume.html" class="dropdown-item">
-                    <i class="fas fa-user-tie"></i>
-                    <span>Education & Experience</span>
-                </a>
-                <a href="services.html" class="dropdown-item">
-                    <i class="fas fa-briefcase"></i>
-                    <span>Professional Experience</span>
-                </a>
-            </div>
-        </li>
-        <li class="nav-dropdown">
-            <button class="nav-link publication-toggle"
-                    type="button"
-                    aria-expanded="false"
-                    aria-haspopup="true">
-                <i class="fas fa-chart-line"></i>
-                <span>Research & Scholarly Activities</span>
-                <i class="fas fa-chevron-down dropdown-arrow"></i>
-            </button>
-            <!-- Dropdown -->
-            <div class="publication-dropdown">
-                <a href="research_expertise.html" class="dropdown-item">
-                    <i class="fas fa-flask"></i>
-                    <span>Skills & Expertise</span>
-                </a>
-                <a href="research.html" class="dropdown-item">
-                    <i class="fas fa-book-open"></i>
-                    <span>Research & Publications</span>
-                </a>
-                <a href="Peer_review_books.html" class="dropdown-item">
-                    <i class="fas fa-pen-to-square"></i>
-                    <span>Reviewed Writings</span>
-                </a>
-                <a href="Citations.html" class="dropdown-item">
-                    <i class="fas fa-chart-column"></i>
-                    <span>Citation Impacts</span>
-                </a>
-                <a href="conferences.html" class="dropdown-item">
-                    <i class="fas fa-users"></i>
-                    <span>Conferences</span>
-                </a>
-                <a href="invited_lectures.html" class="dropdown-item">
-                    <i class="fas fa-microphone-lines"></i>
-                    <span>Lectures</span>
-                </a>
-            </div>
-        </li>
-        <li class="nav-dropdown">
-            <button class="nav-link publication-toggle"
-                    type="button"
-                    aria-expanded="false"
-                    aria-haspopup="true">
-                <i class="fas fa-chalkboard-teacher"></i>
-                <span>Teaching & Mentorship</span>
-                <i class="fas fa-chevron-down dropdown-arrow"></i>
-            </button>
-            <!-- Dropdown -->
-            <div class="publication-dropdown">
-                <a href="teaching.html" class="dropdown-item">
-                    <i class="fas fa-book-open"></i>
-                    <span>Courses</span>
-                </a>
-                <a href="outreach.html" class="dropdown-item">
-                    <i class="fas fa-globe"></i>
-                    <span>Outreach Activities</span>
-                </a>
-                <a href="Thesis.html" class="dropdown-item">
-                    <i class="fas fa-file-pen"></i>
-                    <span>Thesis Mentored</span>
-                </a>
-            </div>
-        </li>
-        <li><a href="lab_page/HB_new.html" class="nav-link"target="_blank"><i class="fas fa-microscope"></i><span>Labs</span></a></li>
-        <li><a href="grants.html" class="nav-link"><i class="fas fa-user-graduate"></i><span>Research Grants</span></a></li>
-        <li><a href="students.html" class="nav-link"><i class="fas fa-user-graduate"></i><span>Students</span></a></li>
-        <li><a href="awards.html" class="nav-link"><i class="fas fa-award"></i><span>Awards</span></a></li>
-        <li><a href="Rs_web.html#contact" class="nav-link"><i class="fas fa-envelope"></i><span>Contact</span></a></li>
-    </ul>
-</nav>
-<section id="honours" class="scroll-animate section-padding bg-slate-900 active">
-    <div class="container relative">
-        <div class="centered mb-10">
-            
-            <h2 class="text-5xl font-black text-[#c5a059] mb-2">Awards & Honours</h2>
+
+<!-- Top Branding Bar -->
+<div class="top-branding-bar">
+    <div class="brand-info">
+        <img src="IITK_logo_white.png" alt="IIT Kanpur Logo" class="brand-logo">
+        <div class="brand-text">
+            <h1>Indian Institute of Technology Kanpur</h1>
+            <p>Department of Earth Sciences</p>
         </div>
-
-        <div class="relative px-4 md:px-0">
-            <!--<button type="button" id="btnAwardLeft" onclick="moveAwards(-1)" 
-        class="absolute -left-4 md:-left-12 top-1/2 -translate-y-1/2 z-10 bg-white border border-slate-200 h-11 w-11 rounded-full flex items-center justify-center text-slate-400 hover:text-[#c5a059] hover:shadow-xl transition-all shadow-sm disabled:opacity-0">
-        <i class="fas fa-chevron-left"></i>
-    </button>-->
-            <div class="relative z-10">
-                <div id="awardsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-                    
-                    <div class="px-0">
-                        <div class="card award-card h-full m-0"><i class="fas fa-user-tie"></i><h4>Fellowship</h4><p>Indian National Science Academy New Delhi (2026)</p></div>
-                    </div>
-                    <div class="px-0">
-                        <div class="card award-card h-full m-0"><i class="fas fa-user-tie"></i><h4>Fellowship</h4><p>Indian Academy of Sciences, Bangalore (2021)</p></div>
-                    </div>
-                    <div class="px-0">
-                        <div class="card award-card h-full m-0"><i class="fas fa-user-tie"></i><h4>Fellowship</h4><p>National Academy of Sciences, Allahabad (2016)</p></div>
-                    </div>
-                    <div class="px-0">
-                        <div class="card award-card h-full m-0"><i class="fas fa-users"></i><h4>Lalit Mohan Kapoor Chair</h4><p>IIT Kanpur (2018-2021)</p></div>
-                    </div>
-                    <div class="px-0">
-                        <div class="card award-card h-full m-0"><i class="fas fa-users"></i><h4>Pandit Girish Ranjan and Sushma Rani Pathak Chair</h4><p>IIT Kanpur (2014-16)</p></div>
-                    </div>
-                    <div class="px-0">
-                        <div class="card award-card h-full m-0"><i class="fas fa-user-tie"></i><h4>COFUND Senior Research Fellowship</h4><p>Durham University (2014-2019)</p></div>
-                    </div>
-                    <div class="px-0">
-                        <div class="card award-card h-full m-0"><i class="fas fa-award"></i><h4>Best paper award</h4><p>Indian Society of Remote sensing (2008)</p></div>
-                    </div>
-                    <div class="px-0">
-                        <div class="card award-card h-full m-0"><i class="fas fa-user-tie"></i><h4>Centenary Visiting fellowship</h4><p>St. Mary’s College, Durham University, UK (2007)</p></div>
-                    </div>
-                    <div class="px-0">
-                        <div class="card award-card h-full m-0"><i class="fas fa-award"></i><h4>S.S. Merh Award</h4><p>contributions in Quaternary Geology, Geological Society of India (2006)</p></div>
-                    </div>
-                    <div class="px-0">
-                        <div class="card award-card h-full m-0"><i class="fas fa-award"></i><h4>National Mineral Award</h4><p> Ministry of Mines, Govt. of India (2002)</p></div>
-                    </div>
-                    <div class="px-0">
-                        <div class="card award-card h-full m-0"><i class="fas fa-user-tie"></i><h4>Alexander von Humboldt Fellowship for Post-doctoral research</h4><p>Germany (2000)</p></div>
-                    </div>
-                    <div class="px-0">
-                        <div class="card award-card h-full m-0"><i class="fas fa-award"></i><h4>Career Award for Young Teachers</h4><p>All India Council for Technical Education (1998)</p></div>
-                    </div>
-                    <div class="px-0">
-                        <div class="card award-card h-full m-0"><i class="fas fa-award"></i><h4>Letter of appreciation for courses ESO208</h4><p>(1997-98 I semester), CE640 (2011-12)</p></div>
-                    </div>
-                    <div class="px-0">
-                        <div class="card award-card h-full m-0"><i class="fas fa-award"></i><h4>Participated in the XVI Indian Scientific Expedition to Antarctica</h4><p>Dec.’96-Mar’97</p></div>
-                    </div>
-                    <div class="px-0">
-                        <div class="card award-card h-full m-0"><i class="fas fa-award"></i><h4>Lundgren & Cambridge Philosophical Research Award</h4><p>Cambridge University, UK (1992)</p></div>
-                    </div>
-                    <div class="px-0">
-                        <div class="card award-card h-full m-0"><i class="fas fa-award"></i><h4>Cambridge Nehru Scholarship (Doctoral Research)</h4><p>Cambridge University, UK (1989)</p></div>
-                    </div>
-                    <div class="px-0">
-                        <div class="card award-card h-full m-0"><i class="fas fa-user-tie"></i><h4>University Grants Commission (UGC) Research Fellowship</h4><p> Engg & Tech (1988)</p></div>
-                    </div>
-                    <div class="px-0">
-                        <div class="card award-card h-full m-0"><i class="fas fa-award"></i><h4>University Gold Medal</h4><p>M.Tech, University of Roorkee (1987)</p></div>
-                    </div>
-                    <div class="px-0">
-                        <div class="card award-card h-full m-0"><i class="fas fa-award"></i><h4>State Merit Scholarship and University Grants Commission (UGC) Merit Scholarship</h4><p>M.Tech, University of Roorkee (1986)</p></div>
-                    </div>
-                </div>
-            </div>
-        <!--<button type="button" id="btnAwardright" onclick="moveAwards(1)" 
-        class="absolute -right-4 md:-right-12 top-1/2 -translate-y-1/2 z-10 bg-white border border-slate-200 h-11 w-11 rounded-full flex items-center justify-center text-slate-400 hover:text-[#c5a059] hover:shadow-xl transition-all shadow-sm disabled:opacity-0">
-        <i class="fas fa-chevron-right"></i>
-    </button>-->
-
     </div>
+    <div class="header-quick-links">
+        <a href="mailto:rsinha@iitk.ac.in" class="header-icon-link" aria-label="Email" title="Email"><i class="fas fa-envelope"></i></a>
+        <a href="https://scholar.google.com/citations?user=VkRcwwEAAAAJ&hl=en&oi=ao" target="_blank" class="header-icon-link" aria-label="Google Scholar" title="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
+        <a href="https://www.linkedin.com/in/rajiv-sinha-a87a68b2/" target="_blank" class="header-icon-link" aria-label="LinkedIn" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="lab_page/HB_new.html" target="_blank" class="header-link-pill"><i class="fas fa-microscope"></i> Lab Site</a>
     </div>
-</section></div>
-
-<div class="bg-slate-900 py-4">
-<div class="section-divider"></div>
 </div>
 
-<section id="affiliations" class="scroll-animate section-padding bg-slate-900 active ">
+<!-- Navigation -->
+<nav class="top-navbar">
+    <div class="nav-container">
+        <button class="menu-toggle" aria-label="Toggle Navigation" type="button">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <ul class="nav-menu">
+            <li><a href="Rs_web.html" class="nav-link"><i class="fas fa-home"></i><span>Home</span></a></li>
+            <li class="nav-dropdown">
+                <button class="nav-link publication-toggle" type="button">
+                    <i class="fas fa-user-tie"></i>
+                    <span>Career Profile</span>
+                    <i class="fas fa-chevron-down dropdown-arrow"></i>
+                </button>
+                <div class="publication-dropdown">
+                    <a href="resume.html" class="dropdown-item"><i class="fas fa-id-card"></i><span>Education & Experience</span></a>
+                    <a href="services.html" class="dropdown-item"><i class="fas fa-briefcase"></i><span>Professional Service</span></a>
+                    <a href="awards.html" class="dropdown-item"><i class="fas fa-trophy"></i><span>Honors & Awards</span></a>
+                </div>
+            </li>
+            <li class="nav-dropdown">
+                <button class="nav-link publication-toggle" type="button">
+                    <i class="fas fa-flask"></i>
+                    <span>Research</span>
+                    <i class="fas fa-chevron-down dropdown-arrow"></i>
+                </button>
+                <div class="publication-dropdown">
+                    <a href="research_expertise.html" class="dropdown-item"><i class="fas fa-microscope"></i><span>Research Expertise</span></a>
+                    <a href="research.html" class="dropdown-item"><i class="fas fa-journal-whills"></i><span>Journal Publications</span></a>
+                    <a href="Peer_review_books.html" class="dropdown-item"><i class="fas fa-book"></i><span>Books & Chapters</span></a>
+                    <a href="Citations.html" class="dropdown-item"><i class="fas fa-chart-line"></i><span>Citation Impact</span></a>
+                    <a href="grants.html" class="dropdown-item"><i class="fas fa-hand-holding-usd"></i><span>Grants & Projects</span></a>
+                    <a href="conferences.html" class="dropdown-item"><i class="fas fa-users"></i><span>Conferences & Talks</span></a>
+                    <a href="invited_lectures.html" class="dropdown-item"><i class="fas fa-microphone"></i><span>Invited Lectures</span></a>
+                </div>
+            </li>
+            <li class="nav-dropdown">
+                <button class="nav-link publication-toggle" type="button">
+                    <i class="fas fa-chalkboard-teacher"></i>
+                    <span>Teaching & Mentorship</span>
+                    <i class="fas fa-chevron-down dropdown-arrow"></i>
+                </button>
+                <div class="publication-dropdown">
+                    <a href="teaching.html" class="dropdown-item"><i class="fas fa-book-open"></i><span>Courses Taught</span></a>
+                    <a href="students.html" class="dropdown-item"><i class="fas fa-user-friends"></i><span>Students & Scholars</span></a>
+                    <a href="Thesis.html" class="dropdown-item"><i class="fas fa-graduation-cap"></i><span>Thesis Supervised</span></a>
+                </div>
+            </li>
+            <li><a href="outreach.html" class="nav-link"><i class="fas fa-globe-asia"></i><span>Outreach & Media</span></a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- Page Header -->
+<section style="background: var(--bg-card); border-bottom: 1px solid var(--border-color); padding: 40px 8%;">
     <div class="container">
-        <div class="centered mb-7">
-            <h2 class="text-4xl font-black text-[#c5a059] mb-4">Professional Affiliations</h2>
+        <span class="section-tag">Honors & Recognition</span>
+        <h2 class="section-title serif-heading">Awards & Honours</h2>
+        <p class="section-subtitle">Fellowships, national awards, endowed chairs, and international recognitions spanning a distinguished career in Earth Sciences.</p>
+    </div>
+</section>
+
+<!-- Awards Grid -->
+<section>
+    <div class="container">
+        <div class="grid-4-col">
+            <div class="award-card"><i class="fas fa-user-tie"></i><h4>Fellowship</h4><p>Indian National Science Academy New Delhi (2026)</p></div>
+            <div class="award-card"><i class="fas fa-user-tie"></i><h4>Fellowship</h4><p>Indian Academy of Sciences, Bangalore (2021)</p></div>
+            <div class="award-card"><i class="fas fa-user-tie"></i><h4>Fellowship</h4><p>National Academy of Sciences, Allahabad (2016)</p></div>
+            <div class="award-card"><i class="fas fa-users"></i><h4>Lalit Mohan Kapoor Chair</h4><p>IIT Kanpur (2018-2021)</p></div>
+            <div class="award-card"><i class="fas fa-users"></i><h4>Pandit Girish Ranjan and Sushma Rani Pathak Chair</h4><p>IIT Kanpur (2014-16)</p></div>
+            <div class="award-card"><i class="fas fa-user-tie"></i><h4>COFUND Senior Research Fellowship</h4><p>Durham University (2014-2019)</p></div>
+            <div class="award-card"><i class="fas fa-award"></i><h4>Best paper award</h4><p>Indian Society of Remote sensing (2008)</p></div>
+            <div class="award-card"><i class="fas fa-user-tie"></i><h4>Centenary Visiting fellowship</h4><p>St. Mary's College, Durham University, UK (2007)</p></div>
+            <div class="award-card"><i class="fas fa-award"></i><h4>S.S. Merh Award</h4><p>Contributions in Quaternary Geology, Geological Society of India (2006)</p></div>
+            <div class="award-card"><i class="fas fa-award"></i><h4>National Mineral Award</h4><p>Ministry of Mines, Govt. of India (2002)</p></div>
+            <div class="award-card"><i class="fas fa-user-tie"></i><h4>Alexander von Humboldt Fellowship for Post-doctoral research</h4><p>Germany (2000)</p></div>
+            <div class="award-card"><i class="fas fa-award"></i><h4>Career Award for Young Teachers</h4><p>All India Council for Technical Education (1998)</p></div>
+            <div class="award-card"><i class="fas fa-award"></i><h4>Letter of appreciation for courses ESO208</h4><p>(1997-98 I semester), CE640 (2011-12)</p></div>
+            <div class="award-card"><i class="fas fa-award"></i><h4>Participated in the XVI Indian Scientific Expedition to Antarctica</h4><p>Dec.'96-Mar'97</p></div>
+            <div class="award-card"><i class="fas fa-award"></i><h4>Lundgren & Cambridge Philosophical Research Award</h4><p>Cambridge University, UK (1992)</p></div>
+            <div class="award-card"><i class="fas fa-award"></i><h4>Cambridge Nehru Scholarship (Doctoral Research)</h4><p>Cambridge University, UK (1989)</p></div>
+            <div class="award-card"><i class="fas fa-user-tie"></i><h4>University Grants Commission (UGC) Research Fellowship</h4><p>Engg & Tech (1988)</p></div>
+            <div class="award-card"><i class="fas fa-award"></i><h4>University Gold Medal</h4><p>M.Tech, University of Roorkee (1987)</p></div>
+            <div class="award-card"><i class="fas fa-award"></i><h4>State Merit Scholarship and University Grants Commission (UGC) Merit Scholarship</h4><p>M.Tech, University of Roorkee (1986)</p></div>
         </div>
-        <div class="grid-layout affiliation-grid">
+    </div>
+</section>
+
+<!-- Professional Affiliations -->
+<section style="background: var(--bg-alt);">
+    <div class="container">
+        <div class="centered">
+            <span class="section-tag">Professional Memberships</span>
+            <h2 class="section-title serif-heading">Professional Affiliations</h2>
+            <div class="section-divider"></div>
+        </div>
+
+        <h3 class="cat-title"><i class="fas fa-pen-nib" style="margin-right: 8px; color: var(--accent-gold);"></i>Editorial Board Memberships</h3>
+        <div class="affiliation-grid">
             <div class="aff-item"><i class="fas fa-file-contract"></i><span>Earth Surface Processes & Landforms (Wiley Interscience) (2010-present)</span></div>
             <div class="aff-item"><i class="fas fa-file-contract"></i><span>Current Science, Indian Academy of Sciences, Bangalore (2015-present)</span></div>
             <div class="aff-item"><i class="fas fa-file-contract"></i><span>Journal of Sedimentary Research (SEPM) (2012-15)</span></div>
-            <div class="aff-item"><i class="fas fa-file-contract"></i><span>Quaternary International (Elsevier) (2010-2015)</span></div>          
+            <div class="aff-item"><i class="fas fa-file-contract"></i><span>Quaternary International (Elsevier) (2010-2015)</span></div>
             <div class="aff-item"><i class="fas fa-file-contract"></i><span>The Open Geology Journal (Bentham)</span></div>
             <div class="aff-item"><i class="fas fa-file-contract"></i><span>Indian Journal of Polar Research (NESA)</span></div>
             <div class="aff-item"><i class="fas fa-file-contract"></i><span>Journal of Indian Association of Sedimentologists</span></div>
+        </div>
+
+        <h3 class="cat-title" style="margin-top: 45px;"><i class="fas fa-users" style="margin-right: 8px; color: var(--accent-gold);"></i>Society Memberships</h3>
+        <div class="affiliation-grid">
             <div class="aff-item"><i class="fas fa-users"></i><span>International Association of Sedimentologists (IAS) (National Correspondent)</span></div>
             <div class="aff-item"><i class="fas fa-users"></i><span>Society for Sedimentary Geology (SEPM)</span></div>
             <div class="aff-item"><i class="fas fa-users"></i><span>Quaternary Research Association, UK</span></div>
@@ -226,20 +152,20 @@
     </div>
 </section>
 
-<div class="section-divider-full"></div>
-
-<section id="special" class="scroll-animate section-padding accent-bg active">
+<!-- Special Achievements -->
+<section>
     <div class="container">
         <div class="centered">
             <span class="section-tag">Impact</span>
-            <h2 class="text-4xl font-black text-slate-900 mb-4">Special Achievements</h2>
+            <h2 class="section-title serif-heading">Special Achievements</h2>
+            <div class="section-divider"></div>
         </div>
         <div class="special-container">
             <div class="special-feature">
                 <div class="special-icon"><i class="fas fa-snowflake"></i></div>
                 <div class="special-text">
                     <h4>Antarctica Scientific Expedition</h4>
-                    <p>Participated in the XVI Indian expedition to Antarctica, December’96 – April’97 and executed a project on hydrology and sedimentology of Priyadarshini Lake, Schirmacher Oasis, Antarctica. Awarded 1998.</p>
+                    <p>Participated in the XVI Indian expedition to Antarctica, December'96 – April'97 and executed a project on hydrology and sedimentology of Priyadarshini Lake, Schirmacher Oasis, Antarctica. Awarded 1998.</p>
                 </div>
             </div>
             <div class="special-feature">
@@ -252,6 +178,45 @@
         </div>
     </div>
 </section>
+
+<!-- Footer -->
+<footer>
+    <div class="container footer-grid">
+        <div class="footer-brand">
+            <h3>Prof. Rajiv Sinha</h3>
+            <p>Department of Earth Sciences<br>Indian Institute of Technology Kanpur<br>Kanpur - 208016, Uttar Pradesh, India</p>
+            <div class="footer-socials">
+                <a href="mailto:rsinha@iitk.ac.in" title="Email"><i class="fas fa-envelope"></i></a>
+                <a href="https://scholar.google.com/citations?user=VkRcwwEAAAAJ&hl=en&oi=ao" target="_blank" title="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
+                <a href="https://www.linkedin.com/in/rajiv-sinha-a87a68b2/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+        <div>
+            <h4 class="footer-title">Quick Links</h4>
+            <ul class="footer-links">
+                <li><a href="Rs_web.html">Home Profile</a></li>
+                <li><a href="research_expertise.html">Research Expertise</a></li>
+                <li><a href="research.html">Journal Publications</a></li>
+                <li><a href="awards.html">Awards & Honors</a></li>
+                <li><a href="grants.html">Sponsored Projects</a></li>
+            </ul>
+        </div>
+        <div>
+            <h4 class="footer-title">Mentorship</h4>
+            <ul class="footer-links">
+                <li><a href="teaching.html">Courses Taught</a></li>
+                <li><a href="students.html">PhD & Master's Scholars</a></li>
+                <li><a href="Thesis.html">Thesis Supervised</a></li>
+                <li><a href="outreach.html">Outreach & Media</a></li>
+                <li><a href="lab_page/HB_new.html" target="_blank">Earth & River Dynamics Lab</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2026 Prof. Rajiv Sinha. Department of Earth Sciences, IIT Kanpur. All Rights Reserved.</p>
+    </div>
+</footer>
+
 <script src="script.js"></script>
 </body>
 </html>

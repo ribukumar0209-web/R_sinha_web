@@ -3,178 +3,200 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Academic Courses & Curriculum | Prof. Rajiv Sinha</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="nav.css">
 </head>
 <body>
+
+<!-- Top Branding Bar -->
+<div class="top-branding-bar">
+    <div class="brand-info">
+        <img src="IITK_logo_white.png" alt="IIT Kanpur Logo" class="brand-logo">
+        <div class="brand-text">
+            <h1>Indian Institute of Technology Kanpur</h1>
+            <p>Department of Earth Sciences | Earth & River Dynamics Lab</p>
+        </div>
+    </div>
+    <div class="header-quick-links">
+        <a href="mailto:rsinha@iitk.ac.in" class="header-icon-link" aria-label="Email" title="Email"><i class="fas fa-envelope"></i></a>
+        <a href="https://scholar.google.com/citations?user=VkRcwwEAAAAJ&hl=en&oi=ao" target="_blank" class="header-icon-link" aria-label="Google Scholar" title="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
+        <a href="https://www.linkedin.com/in/rajiv-sinha-a87a68b2/" target="_blank" class="header-icon-link" aria-label="LinkedIn" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="lab_page/HB_new.html" target="_blank" class="header-link-pill"><i class="fas fa-microscope"></i> Lab Site</a>
+    </div>
+</div>
+
+<!-- Navigation -->
 <nav class="top-navbar">
-    <!-- Mobile Toggle -->
-    <button class="menu-toggle"
-            aria-label="Toggle Navigation"
-            aria-expanded="false"
-            type="button">
-        <span></span>
-        <span></span>
-        <span></span>
-    </button>
-    <!-- Navigation -->
-    <ul class="nav-menu">
-        <li><a href="Rs_web.html#hero" class="nav-link"><i class="fas fa-home"></i><span>Home</span></a></li>
-        <li class="nav-dropdown">
-            <button class="nav-link publication-toggle"
-                    type="button"
-                    aria-expanded="false"
-                    aria-haspopup="true">
-                <i class="fas fa-user-tie"></i>
-                <span>Career Profile</span>
-                <i class="fas fa-chevron-down dropdown-arrow"></i>
-            </button>
-            <!-- Dropdown -->
-            <div class="publication-dropdown">
-                <a href="resume.html" class="dropdown-item">
+    <div class="nav-container">
+        <button class="menu-toggle" aria-label="Toggle Navigation" type="button">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <ul class="nav-menu">
+            <li><a href="Rs_web.html" class="nav-link"><i class="fas fa-home"></i><span>Home</span></a></li>
+            <li class="nav-dropdown">
+                <button class="nav-link publication-toggle" type="button">
                     <i class="fas fa-user-tie"></i>
-                    <span>Education & Experience</span>
-                </a>
-                <a href="services.html" class="dropdown-item">
-                    <i class="fas fa-briefcase"></i>
-                    <span>Professional Experience</span>
-                </a>
-            </div>
-        </li>
-        <li class="nav-dropdown">
-            <button class="nav-link publication-toggle"
-                    type="button"
-                    aria-expanded="false"
-                    aria-haspopup="true">
-                <i class="fas fa-chart-line"></i>
-                <span>Research & Scholarly Activities</span>
-                <i class="fas fa-chevron-down dropdown-arrow"></i>
-            </button>
-            <!-- Dropdown -->
-            <div class="publication-dropdown">
-                <a href="research_expertise.html" class="dropdown-item">
+                    <span>Career Profile</span>
+                    <i class="fas fa-chevron-down dropdown-arrow"></i>
+                </button>
+                <div class="publication-dropdown">
+                    <a href="resume.html" class="dropdown-item"><i class="fas fa-id-card"></i><span>Education & Experience</span></a>
+                    <a href="services.html" class="dropdown-item"><i class="fas fa-briefcase"></i><span>Professional Service</span></a>
+                    <a href="awards.html" class="dropdown-item"><i class="fas fa-trophy"></i><span>Honors & Awards</span></a>
+                </div>
+            </li>
+            <li class="nav-dropdown">
+                <button class="nav-link publication-toggle" type="button">
                     <i class="fas fa-flask"></i>
-                    <span>Skills & Expertise</span>
-                </a>
-                <a href="research.html" class="dropdown-item">
-                    <i class="fas fa-book-open"></i>
-                    <span>Research & Publications</span>
-                </a>
-                <a href="Peer_review_books.html" class="dropdown-item">
-                    <i class="fas fa-pen-to-square"></i>
-                    <span>Reviewed Writings</span>
-                </a>
-                <a href="Citations.html" class="dropdown-item">
-                    <i class="fas fa-chart-column"></i>
-                    <span>Citation Impacts</span>
-                </a>
-                <a href="conferences.html" class="dropdown-item">
-                    <i class="fas fa-users"></i>
-                    <span>Conferences</span>
-                </a>
-                <a href="invited_lectures.html" class="dropdown-item">
-                    <i class="fas fa-microphone-lines"></i>
-                    <span>Lectures</span>
-                </a>
-            </div>
-        </li>
-        <li class="nav-dropdown">
-            <button class="nav-link publication-toggle"
-                    type="button"
-                    aria-expanded="false"
-                    aria-haspopup="true">
-                <i class="fas fa-chalkboard-teacher"></i>
-                <span>Teaching & Mentorship</span>
-                <i class="fas fa-chevron-down dropdown-arrow"></i>
-            </button>
-            <!-- Dropdown -->
-            <div class="publication-dropdown">
-                <a href="teaching.html" class="dropdown-item">
-                    <i class="fas fa-book-open"></i>
-                    <span>Courses</span>
-                </a>
-                <a href="outreach.html" class="dropdown-item">
-                    <i class="fas fa-globe"></i>
-                    <span>Outreach Activities</span>
-                </a>
-                <a href="Thesis.html" class="dropdown-item">
-                    <i class="fas fa-file-pen"></i>
-                    <span>Thesis Mentored</span>
-                </a>
-            </div>
-        </li>
-        <li><a href="lab_page/HB_new.html" class="nav-link"target="_blank"><i class="fas fa-microscope"></i><span>Labs</span></a></li>
-        <li><a href="grants.html" class="nav-link"><i class="fas fa-user-graduate"></i><span>Research Grants</span></a></li>
-        <li><a href="students.html" class="nav-link"><i class="fas fa-user-graduate"></i><span>Students</span></a></li>
-        <li><a href="awards.html" class="nav-link"><i class="fas fa-award"></i><span>Awards</span></a></li>
-        <li><a href="Rs_web.html#contact" class="nav-link"><i class="fas fa-envelope"></i><span>Contact</span></a></li>
-    </ul>
+                    <span>Research</span>
+                    <i class="fas fa-chevron-down dropdown-arrow"></i>
+                </button>
+                <div class="publication-dropdown">
+                    <a href="research_expertise.html" class="dropdown-item"><i class="fas fa-microscope"></i><span>Research Expertise</span></a>
+                    <a href="research.html" class="dropdown-item"><i class="fas fa-journal-whills"></i><span>Journal Publications</span></a>
+                    <a href="Peer_review_books.html" class="dropdown-item"><i class="fas fa-book"></i><span>Books & Chapters</span></a>
+                    <a href="Citations.html" class="dropdown-item"><i class="fas fa-chart-line"></i><span>Citation Impact</span></a>
+                    <a href="grants.html" class="dropdown-item"><i class="fas fa-hand-holding-usd"></i><span>Grants & Projects</span></a>
+                    <a href="conferences.html" class="dropdown-item"><i class="fas fa-users"></i><span>Conferences & Talks</span></a>
+                    <a href="invited_lectures.html" class="dropdown-item"><i class="fas fa-microphone"></i><span>Invited Lectures</span></a>
+                </div>
+            </li>
+            <li class="nav-dropdown">
+                <button class="nav-link publication-toggle" type="button">
+                    <i class="fas fa-chalkboard-teacher"></i>
+                    <span>Teaching & Mentorship</span>
+                    <i class="fas fa-chevron-down dropdown-arrow"></i>
+                </button>
+                <div class="publication-dropdown">
+                    <a href="teaching.html" class="dropdown-item"><i class="fas fa-book-open"></i><span>Courses Taught</span></a>
+                    <a href="students.html" class="dropdown-item"><i class="fas fa-user-friends"></i><span>Students & Scholars</span></a>
+                    <a href="Thesis.html" class="dropdown-item"><i class="fas fa-graduation-cap"></i><span>Thesis Supervised</span></a>
+                </div>
+            </li>
+            <li><a href="outreach.html" class="nav-link"><i class="fas fa-globe-asia"></i><span>Outreach & Media</span></a></li>
+        </ul>
+    </div>
 </nav>
-    <section id="teaching" class="text-center pt-15 md:pt-25 lg:pt-20 mb-10" >
-        <div class="centered"><h2 class="text-5xl font-black text-[#c5a059] mb-4">Academic Courses</h2></div>
+
+<!-- Page Header -->
+<section style="background: var(--bg-card); border-bottom: 1px solid var(--border-color); padding: 40px 8%;">
+    <div class="container">
+        <span class="section-tag">Curriculum & Course Syllabi</span>
+        <h2 class="section-title serif-heading">Teaching & Academic Courses</h2>
+        <p class="section-subtitle">Undergraduate and postgraduate courses taught at IIT Kanpur across Earth System Processes, Applied Sedimentology, River Science, Global Climate Change, and Remote Sensing & GIS.</p>
+    </div>
+</section>
+
+<!-- Courses Section -->
+<section style="padding: 40px 8% 60px 8%;">
+    <div class="container">
         <div class="grid-3-col">
             <div class="teaching-card" onclick="toggleTeachingCard(this)">
-                <h4 class="text-2xl font-black text-slate-500 mb-4">ES313: Earth System Processes</h4>
-                <p>Earth system is characterized by an interaction of atmosphere, lithosphere, hydrosphere and biosphere. Each of these sub-systems have a distinct set of processes and feedbacks the understanding of which form the main emphasis of this course. Some of the important topics include hydrological cycle, surface and ground water systems, tectonic processes and landform evolution under different geomorphic settings.</p>
+                <h4 style="font-size: 1.25rem; font-weight: 700; color: var(--primary-dark); margin-bottom: 12px;">ES313: Earth System Processes</h4>
+                <p style="font-size: 0.92rem; color: var(--text-body); line-height: 1.6;">Earth system is characterized by an interaction of atmosphere, lithosphere, hydrosphere and biosphere. Each of these sub-systems have a distinct set of processes and feedbacks the understanding of which form the main emphasis of this course.</p>
                 <div class="expand-content">
-                    <p>Earth System processes, geomorphic systems, Threshold and equilibrium; scale in geomorphology, key concepts in geomorphology, hydrologic cycle. Exogenetic and endogenetic processes, climatic vs. geomorphic processes, soil and weathering system. Drainage basins and river systems, river morphology and hydrology, fluvial erosion, transport and sedimentation, fluvial depositional landforms, geomorphometric concepts and drainage basin morphometry; Groundwater in hydrological cycle, water table, groundwater flow and storage; porosity and permeability, aquifers, chemistry of groundwater. Atmospheric composition and mixing, atmospheric circulation, greenhouse effect. Coastal environment, waves, tides and currents, description and classification of coasts, shoreline development, coastal erosion and resulting topographic features, coastal deposition and landforms. Earth’s physiography and landscape evolution; Landforms and tectonics of plate margins and plate interiors; Tectonic uplifts and denudation – rates and controlling factors, Sea level change – evidence, mechanism and effects; coupled tectonic-surface process models.</p>
-                    <div class="teaching-img-grid">
-                        <img src="https://home.iitk.ac.in/~rsinha/img/Earthsystemprocess_teaching.jpg">
+                    <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.6; margin-top: 12px;">Earth System processes, geomorphic systems, Threshold and equilibrium; scale in geomorphology, key concepts in geomorphology, hydrologic cycle. Exogenetic and endogenetic processes, climatic vs. geomorphic processes, soil and weathering system. Drainage basins and river systems, river morphology and hydrology, fluvial erosion, transport and sedimentation, fluvial depositional landforms, geomorphometric concepts and drainage basin morphometry; Groundwater in hydrological cycle, water table, groundwater flow and storage; porosity and permeability, aquifers, chemistry of groundwater. Atmospheric composition and mixing, atmospheric circulation, greenhouse effect. Coastal environment, waves, tides and currents, description and classification of coasts, shoreline development, coastal erosion and resulting topographic features, coastal deposition and landforms. Earth’s physiography and landscape evolution; Landforms and tectonics of plate margins and plate interiors; Tectonic uplifts and denudation – rates and controlling factors, Sea level change – evidence, mechanism and effects; coupled tectonic-surface process models.</p>
+                    <div class="teaching-img-grid" style="margin-top: 15px;">
+                        <img src="https://home.iitk.ac.in/~rsinha/img/Earthsystemprocess_teaching.jpg" alt="Earth System Processes" style="width: 100%; border-radius: var(--radius-sm);">
                     </div>
                 </div>
-                <button class="view-more-toggle">View More</button>
+                <button class="view-more-toggle" style="margin-top: 15px;">View Full Syllabus</button>
             </div>
+
             <div class="teaching-card" onclick="toggleTeachingCard(this)">
-                <h4 class="text-2xl font-black text-slate-500 mb-4">ES653: Applied Sedimentology and Basin Analysis</h4>
-                <p>This course deals with sedimentary basins in different environments ranging from continental to marine. Sedimentary basins are important reservoirs of water and hydrocarbons and they evolve through long-term geological processes. A thorough understanding of sedimentary basins and sedimentology could be very rewarding for resource exploration.</p>
+                <h4 style="font-size: 1.25rem; font-weight: 700; color: var(--primary-dark); margin-bottom: 12px;">ES653: Applied Sedimentology and Basin Analysis</h4>
+                <p style="font-size: 0.92rem; color: var(--text-body); line-height: 1.6;">This course deals with sedimentary basins in different environments ranging from continental to marine. Sedimentary basins are important reservoirs of water and hydrocarbons and they evolve through long-term geological processes.</p>
                 <div class="expand-content">
-                    <p>Introduction to Applied Sedimentology; Clastic sediment as a chemical and physical breakdown product; Carbonate, Silicates, Iron-rich and Evaporite sediments; Physical properties of particles, porosity and permeability; Types of fluid motion and sediment in fluid and fluid flow; Bedforms and sedimentary structures in flows and under waves; Deposits of sediment gravity flows; Sediment to rock - the Subsurface Environment; Allochthonous Sediments; Autochthonous Sediments; Sedimentary Basins- Basin-forming mechanisms; Basins due to lithospheric stretching; Basins due to flexure; Sedimentary basins: classification, evolution, metallogeny, and petroleum system; Major external controls on sedimentation; Continental sedimentary environments; Marine sedimentary environment; Basin fills and stratigraphy; Subsidence and Thermal history.</p>
-                    <div class="teaching-img-grid">
-                        <img src="https://home.iitk.ac.in/~rsinha/img/sedimentology_teaching.jpg">
+                    <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.6; margin-top: 12px;">Introduction to Applied Sedimentology; Clastic sediment as a chemical and physical breakdown product; Carbonate, Silicates, Iron-rich and Evaporite sediments; Physical properties of particles, porosity and permeability; Types of fluid motion and sediment in fluid and fluid flow; Bedforms and sedimentary structures in flows and under waves; Deposits of sediment gravity flows; Sediment to rock - the Subsurface Environment; Allochthonous Sediments; Autochthonous Sediments; Sedimentary Basins- Basin-forming mechanisms; Basins due to lithospheric stretching; Basins due to flexure; Sedimentary basins: classification, evolution, metallogeny, and petroleum system; Major external controls on sedimentation; Continental sedimentary environments; Marine sedimentary environment; Basin fills and stratigraphy; Subsidence and Thermal history.</p>
+                    <div class="teaching-img-grid" style="margin-top: 15px;">
+                        <img src="https://home.iitk.ac.in/~rsinha/img/sedimentology_teaching.jpg" alt="Applied Sedimentology" style="width: 100%; border-radius: var(--radius-sm);">
                     </div>
                 </div>
-                <button class="view-more-toggle">View More</button>
+                <button class="view-more-toggle" style="margin-top: 15px;">View Full Syllabus</button>
             </div>
+
             <div class="teaching-card" onclick="toggleTeachingCard(this)">
-                <h4 class="text-2xl font-black text-slate-500 mb-4">ES415:Remote Sensing and GIS for Georesource Evaluation</h4>
-                <p>This course focuses on remote sensing and GIS techniques for various earth science related applications. Basic principles of remote sensing and GIS techniques is covered and application studies are discussed using examples and case studies from India and other parts of the world.</p>
+                <h4 style="font-size: 1.25rem; font-weight: 700; color: var(--primary-dark); margin-bottom: 12px;">ES415: Remote Sensing & GIS for Georesource Evaluation</h4>
+                <p style="font-size: 0.92rem; color: var(--text-body); line-height: 1.6;">This course focuses on remote sensing and GIS techniques for various earth science related applications. Basic principles of remote sensing and GIS techniques are covered alongside practical case studies.</p>
                 <div class="expand-content">
-                    <p>Remote sensing platforms – satellite-based and airborne sensors; Basic principles of image interpretation; Spectra of earth’s surface material; Interpretation of regional geological and geomorphological features; Lithological and structural mapping, mapping of landforms and interpretation; Basic principles of Geographic Information System (GIS) and its application; Analytical Hierarchy Process (AHP) technique and its integration into GIS. River basin management – drainage mapping, channel movement and morphological changes; river erosion studies; Identification of groundwater potential zones; criteria for identification, integration of controlling factors into GIS; Lake and wetland studies using remote sensing; Water quality mapping; water quality parameters, indices of water quality monitoring; Vegetation Mapping and forestry applications; Application in glaciology and snow hydrology; Coastal zone mapping and other related applications; Natural hazards – floods, landslides, earthquakes; causative factors, choice of data and use of remote sensing technique for mapping and prediction; Mineral resources evaluation with particular reference to digital remote sensing; Application of thermal infrared data for mapping surface moisture and rock types and environmental studies.</p>
-                    <div class="teaching-img-grid">
-                        <img src="https://home.iitk.ac.in/~rsinha/img/remotesen2_teaching.jpg">
+                    <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.6; margin-top: 12px;">Remote sensing platforms – satellite-based and airborne sensors; Basic principles of image interpretation; Spectra of earth’s surface material; Interpretation of regional geological and geomorphological features; Lithological and structural mapping, mapping of landforms and interpretation; Basic principles of Geographic Information System (GIS) and its application; Analytical Hierarchy Process (AHP) technique and its integration into GIS. River basin management – drainage mapping, channel movement and morphological changes; river erosion studies; Identification of groundwater potential zones; criteria for identification, integration of controlling factors into GIS; Lake and wetland studies using remote sensing; Water quality mapping; water quality parameters, indices of water quality monitoring; Vegetation Mapping and forestry applications; Application in glaciology and snow hydrology; Coastal zone mapping and other related applications; Natural hazards – floods, landslides, earthquakes; causative factors, choice of data and use of remote sensing technique for mapping and prediction; Mineral resources evaluation with particular reference to digital remote sensing; Application of thermal infrared data for mapping surface moisture and rock types and environmental studies.</p>
+                    <div class="teaching-img-grid" style="margin-top: 15px;">
+                        <img src="https://home.iitk.ac.in/~rsinha/img/remotesen2_teaching.jpg" alt="Remote Sensing GIS" style="width: 100%; border-radius: var(--radius-sm);">
                     </div>
                 </div>
-                <button class="view-more-toggle">View More</button>
+                <button class="view-more-toggle" style="margin-top: 15px;">View Full Syllabus</button>
             </div>
+
             <div class="teaching-card" onclick="toggleTeachingCard(this)">
-                <h4 class="text-2xl font-black text-slate-500 mb-4">Global Climatic Change</h4>
-                <p>This course focuses on the science of climate change and its impacts on oceans, rivers, and cryosphere. The course covers the forcing functions of climate change operating at various spatio-temporal scales and geopolitics of climate change.</p>
+                <h4 style="font-size: 1.25rem; font-weight: 700; color: var(--primary-dark); margin-bottom: 12px;">ES648: Global Climatic Change</h4>
+                <p style="font-size: 0.92rem; color: var(--text-body); line-height: 1.6;">This course focuses on the science of climate change and its impacts on oceans, rivers, and cryosphere. The course covers forcing functions operating at various spatio-temporal scales and climate geopolitics.</p>
                 <div class="expand-content">
-                    <p>Introduction, geologic time, time scale of climate change, earth systems; Climate system and interactions, climate forcings, Earth’s radiation budget, factors controlling heat receipt, climate system response, climate feedbacks; Earth’s radiation budget, water in climate system; Climate forcings, feedbacks and climate sensitivity; Energy-climate Nexus; Carbon cycle and climate change; Archives and proxies; Historical-scale climate change; Future climate change, projections of emission scenarios; Orbital scale climate change, Eccentricity, tilt and precession; Climate change impacts on Oceans, Cryosphere, rivers and water resources; Orbital scale changes in CO2 and CH4, carbon cycle and exchanges, carbon reservoirs, ocean pumping hypothesis; Stable isotopes and orbital response; Deglacial and millennial scale climate change, glacial maximum, deglacial sea level rise and melt water pulses, Younger Drayas, Tropical monsoon maximum, millennial scale oscillations, Heinrich events, Solar variability, CH4 changes, monsoonal reconstruction, teleconnections, Indian case studies; CCS, Climate policy, protocols and summits.</p>
-                    <div class="teaching-img-grid">
-                        <img src="https://home.iitk.ac.in/~rsinha/img/remotesen2_teaching.jpg">
+                    <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.6; margin-top: 12px;">Introduction, geologic time, time scale of climate change, earth systems; Climate system and interactions, climate forcings, Earth’s radiation budget, factors controlling heat receipt, climate system response, climate feedbacks; Earth’s radiation budget, water in climate system; Climate forcings, feedbacks and climate sensitivity; Energy-climate Nexus; Carbon cycle and climate change; Archives and proxies; Historical-scale climate change; Future climate change, projections of emission scenarios; Orbital scale climate change, Eccentricity, tilt and precession; Climate change impacts on Oceans, Cryosphere, rivers and water resources; Orbital scale changes in CO2 and CH4, carbon cycle and exchanges, carbon reservoirs, ocean pumping hypothesis; Stable isotopes and orbital response; Deglacial and millennial scale climate change, glacial maximum, deglacial sea level rise and melt water pulses, Younger Drayas, Tropical monsoon maximum, millennial scale oscillations, Heinrich events, Solar variability, CH4 changes, monsoonal reconstruction, teleconnections, Indian case studies; CCS, Climate policy, protocols and summits.</p>
+                    <div class="teaching-img-grid" style="margin-top: 15px;">
+                        <img src="https://home.iitk.ac.in/~rsinha/img/remotesen2_teaching.jpg" alt="Global Climatic Change" style="width: 100%; border-radius: var(--radius-sm);">
                     </div>
                 </div>
-                <button class="view-more-toggle">View More</button>
+                <button class="view-more-toggle" style="margin-top: 15px;">View Full Syllabus</button>
             </div>
+
             <div class="teaching-card" onclick="toggleTeachingCard(this)">
-                <h4 class="text-2xl font-black text-slate-500 mb-4">ES645: River Science</h4>
-                <p>This course deals with the science of rivers particularly on the geomorphic processes in river systems and their relationship with river ecology. The course will aim to develop awareness about rivers and their sustainable management through process-based understanding.</p>
+                <h4 style="font-size: 1.25rem; font-weight: 700; color: var(--primary-dark); margin-bottom: 12px;">ES645: River Science</h4>
+                <p style="font-size: 0.92rem; color: var(--text-body); line-height: 1.6;">This course deals with the science of rivers particularly on the geomorphic processes in river systems and their relationship with river ecology and sustainable management.</p>
                 <div class="expand-content">
-                    <p>Integrated Multi-Disciplinary Approach in river science; River Science in Indian Context; Geomorphic Analysis of River Systems - Key Concepts in River Geomorphology, Catchment Scale Controls on River Morphology, Catchment Hydrology, Sediment Movement and Deposition in River System, Channel Geometry, Floodplain Forms and Processes, River Diversity and River Evolution, Human Impacts on River Systems; River Ecosystem Synthesis - Introduction to hydrogeomorphic patches, functional process zones, hierarchical patch dynamics and biocomplexity, river as a continuum, longitudinal, lateral, temporal, vertical dimensions; Hierarchical patch dynamics in riverine landscapes; hydrogeomorphic character of a riverine ecosystem.; Ecological Implications of RES Biocomplexity Concepts; River Health and River Futures - Human impacts on river systems including climate change impacts; river hazards and their causes, Environmental Flow (e-flow) – definition, data requirement, different approaches for e-flow estimation; Integrated approach to river management, River health and river futures.</p>
-                    <div class="teaching-img-grid">
-                        <img src="https://home.iitk.ac.in/~rsinha/img/riverscience_teaching.jpg">
+                    <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.6; margin-top: 12px;">Integrated Multi-Disciplinary Approach in river science; River Science in Indian Context; Geomorphic Analysis of River Systems - Key Concepts in River Geomorphology, Catchment Scale Controls on River Morphology, Catchment Hydrology, Sediment Movement and Deposition in River System, Channel Geometry, Floodplain Forms and Processes, River Diversity and River Evolution, Human Impacts on River Systems; River Ecosystem Synthesis - Introduction to hydrogeomorphic patches, functional process zones, hierarchical patch dynamics and biocomplexity, river as a continuum, longitudinal, lateral, temporal, vertical dimensions; Hierarchical patch dynamics in riverine landscapes; hydrogeomorphic character of a riverine ecosystem.; Ecological Implications of RES Biocomplexity Concepts; River Health and River Futures - Human impacts on river systems including climate change impacts; river hazards and their causes, Environmental Flow (e-flow) – definition, data requirement, different approaches for e-flow estimation; Integrated approach to river management, River health and river futures.</p>
+                    <div class="teaching-img-grid" style="margin-top: 15px;">
+                        <img src="https://home.iitk.ac.in/~rsinha/img/riverscience_teaching.jpg" alt="River Science" style="width: 100%; border-radius: var(--radius-sm);">
                     </div>
                 </div>
-                <button class="view-more-toggle">View More</button>
+                <button class="view-more-toggle" style="margin-top: 15px;">View Full Syllabus</button>
             </div>
         </div>
-    </section>
-    <script src="script.js"></script>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+    <div class="container footer-grid">
+        <div class="footer-brand">
+            <h3>Prof. Rajiv Sinha</h3>
+            <p>Department of Earth Sciences<br>Indian Institute of Technology Kanpur<br>Kanpur - 208016, Uttar Pradesh, India</p>
+            <div class="footer-socials">
+                <a href="mailto:rsinha@iitk.ac.in" title="Email"><i class="fas fa-envelope"></i></a>
+                <a href="https://scholar.google.com/citations?user=VkRcwwEAAAAJ&hl=en&oi=ao" target="_blank" title="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
+                <a href="https://www.linkedin.com/in/rajiv-sinha-a87a68b2/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+        <div>
+            <h4 class="footer-title">Quick Links</h4>
+            <ul class="footer-links">
+                <li><a href="Rs_web.html">Home Profile</a></li>
+                <li><a href="research_expertise.html">Research Expertise</a></li>
+                <li><a href="research.html">Journal Publications</a></li>
+                <li><a href="awards.html">Awards & Honors</a></li>
+                <li><a href="grants.html">Sponsored Projects</a></li>
+            </ul>
+        </div>
+        <div>
+            <h4 class="footer-title">Mentorship</h4>
+            <ul class="footer-links">
+                <li><a href="teaching.html">Courses Taught</a></li>
+                <li><a href="students.html">PhD & Master's Scholars</a></li>
+                <li><a href="Thesis.html">Thesis Supervised</a></li>
+                <li><a href="outreach.html">Outreach & Media</a></li>
+                <li><a href="lab_page/HB_new.html" target="_blank">Earth & River Dynamics Lab</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2026 Prof. Rajiv Sinha. Department of Earth Sciences, IIT Kanpur. All Rights Reserved.</p>
+    </div>
+</footer>
+
+<script src="script.js"></script>
 </body>
 </html>

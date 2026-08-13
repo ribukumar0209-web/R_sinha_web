@@ -3,770 +3,512 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Scholars</title>
+    <title>Students & Scholars | Prof. Rajiv Sinha</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="nav.css">
 </head>
 <body>
+
+<!-- Top Branding Bar -->
+<div class="top-branding-bar">
+    <div class="brand-info">
+        <img src="IITK_logo_white.png" alt="IIT Kanpur Logo" class="brand-logo">
+        <div class="brand-text">
+            <h1>Indian Institute of Technology Kanpur</h1>
+            <p>Department of Earth Sciences</p>
+        </div>
+    </div>
+    <div class="header-quick-links">
+        <a href="mailto:rsinha@iitk.ac.in" class="header-icon-link" aria-label="Email" title="Email"><i class="fas fa-envelope"></i></a>
+        <a href="https://scholar.google.com/citations?user=VkRcwwEAAAAJ&hl=en&oi=ao" target="_blank" class="header-icon-link" aria-label="Google Scholar" title="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
+        <a href="https://www.linkedin.com/in/rajiv-sinha-a87a68b2/" target="_blank" class="header-icon-link" aria-label="LinkedIn" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="lab_page/HB_new.html" target="_blank" class="header-link-pill"><i class="fas fa-microscope"></i> Lab Site</a>
+    </div>
+</div>
+
+<!-- Sticky Navigation -->
 <nav class="top-navbar">
-    <!-- Mobile Toggle -->
-    <button class="menu-toggle"
-            aria-label="Toggle Navigation"
-            aria-expanded="false"
-            type="button">
-        <span></span>
-        <span></span>
-        <span></span>
-    </button>
-    <!-- Navigation -->
-    <ul class="nav-menu">
-        <li><a href="Rs_web.html#hero" class="nav-link"><i class="fas fa-home"></i><span>Home</span></a></li>
-        <li class="nav-dropdown">
-            <button class="nav-link publication-toggle"
-                    type="button"
-                    aria-expanded="false"
-                    aria-haspopup="true">
-                <i class="fas fa-user-tie"></i>
-                <span>Career Profile</span>
-                <i class="fas fa-chevron-down dropdown-arrow"></i>
-            </button>
-            <!-- Dropdown -->
-            <div class="publication-dropdown">
-                <a href="resume.html" class="dropdown-item">
+    <div class="nav-container">
+        <button class="menu-toggle" aria-label="Toggle Navigation" type="button">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <ul class="nav-menu">
+            <li><a href="Rs_web.html" class="nav-link"><i class="fas fa-home"></i><span>Home</span></a></li>
+            <li class="nav-dropdown">
+                <button class="nav-link publication-toggle" type="button">
                     <i class="fas fa-user-tie"></i>
-                    <span>Education & Experience</span>
-                </a>
-                <a href="services.html" class="dropdown-item">
-                    <i class="fas fa-briefcase"></i>
-                    <span>Professional Experience</span>
-                </a>
-            </div>
-        </li>
-        <li class="nav-dropdown">
-            <button class="nav-link publication-toggle"
-                    type="button"
-                    aria-expanded="false"
-                    aria-haspopup="true">
-                <i class="fas fa-chart-line"></i>
-                <span>Research & Scholarly Activities</span>
-                <i class="fas fa-chevron-down dropdown-arrow"></i>
-            </button>
-            <!-- Dropdown -->
-            <div class="publication-dropdown">
-                <a href="research_expertise.html" class="dropdown-item">
+                    <span>Career Profile</span>
+                    <i class="fas fa-chevron-down dropdown-arrow"></i>
+                </button>
+                <div class="publication-dropdown">
+                    <a href="resume.html" class="dropdown-item"><i class="fas fa-id-card"></i><span>Education & Experience</span></a>
+                    <a href="services.html" class="dropdown-item"><i class="fas fa-briefcase"></i><span>Professional Service</span></a>
+                    <a href="awards.html" class="dropdown-item"><i class="fas fa-trophy"></i><span>Honors & Awards</span></a>
+                </div>
+            </li>
+            <li class="nav-dropdown">
+                <button class="nav-link publication-toggle" type="button">
                     <i class="fas fa-flask"></i>
-                    <span>Skills & Expertise</span>
-                </a>
-                <a href="research.html" class="dropdown-item">
-                    <i class="fas fa-book-open"></i>
-                    <span>Research & Publications</span>
-                </a>
-                <a href="Peer_review_books.html" class="dropdown-item">
-                    <i class="fas fa-pen-to-square"></i>
-                    <span>Reviewed Writings</span>
-                </a>
-                <a href="Citations.html" class="dropdown-item">
-                    <i class="fas fa-chart-column"></i>
-                    <span>Citation Impacts</span>
-                </a>
-                <a href="conferences.html" class="dropdown-item">
-                    <i class="fas fa-users"></i>
-                    <span>Conferences</span>
-                </a>
-                <a href="invited_lectures.html" class="dropdown-item">
-                    <i class="fas fa-microphone-lines"></i>
-                    <span>Lectures</span>
-                </a>
-            </div>
-        </li>
-        <li class="nav-dropdown">
-            <button class="nav-link publication-toggle"
-                    type="button"
-                    aria-expanded="false"
-                    aria-haspopup="true">
-                <i class="fas fa-chalkboard-teacher"></i>
-                <span>Teaching & Mentorship</span>
-                <i class="fas fa-chevron-down dropdown-arrow"></i>
-            </button>
-            <!-- Dropdown -->
-            <div class="publication-dropdown">
-                <a href="teaching.html" class="dropdown-item">
-                    <i class="fas fa-book-open"></i>
-                    <span>Courses</span>
-                </a>
-                <a href="outreach.html" class="dropdown-item">
-                    <i class="fas fa-globe"></i>
-                    <span>Outreach Activities</span>
-                </a>
-                <a href="Thesis.html" class="dropdown-item">
-                    <i class="fas fa-file-pen"></i>
-                    <span>Thesis Mentored</span>
-                </a>
-            </div>
-        </li>
-        <li><a href="lab_page/HB_new.html" class="nav-link"target="_blank"><i class="fas fa-microscope"></i><span>Labs</span></a></li>
-        <li><a href="grants.html" class="nav-link"><i class="fas fa-user-graduate"></i><span>Research Grants</span></a></li>
-        <li><a href="students.html" class="nav-link"><i class="fas fa-user-graduate"></i><span>Students</span></a></li>
-        <li><a href="awards.html" class="nav-link"><i class="fas fa-award"></i><span>Awards</span></a></li>
-        <li><a href="Rs_web.html#contact" class="nav-link"><i class="fas fa-envelope"></i><span>Contact</span></a></li>
-    </ul>
+                    <span>Research</span>
+                    <i class="fas fa-chevron-down dropdown-arrow"></i>
+                </button>
+                <div class="publication-dropdown">
+                    <a href="research_expertise.html" class="dropdown-item"><i class="fas fa-microscope"></i><span>Research Expertise</span></a>
+                    <a href="research.html" class="dropdown-item"><i class="fas fa-journal-whills"></i><span>Journal Publications</span></a>
+                    <a href="Peer_review_books.html" class="dropdown-item"><i class="fas fa-book"></i><span>Books & Chapters</span></a>
+                    <a href="Citations.html" class="dropdown-item"><i class="fas fa-chart-line"></i><span>Citation Impact</span></a>
+                    <a href="grants.html" class="dropdown-item"><i class="fas fa-hand-holding-usd"></i><span>Grants & Projects</span></a>
+                    <a href="conferences.html" class="dropdown-item"><i class="fas fa-users"></i><span>Conferences & Talks</span></a>
+                    <a href="invited_lectures.html" class="dropdown-item"><i class="fas fa-microphone"></i><span>Invited Lectures</span></a>
+                </div>
+            </li>
+            <li class="nav-dropdown">
+                <button class="nav-link publication-toggle" type="button">
+                    <i class="fas fa-chalkboard-teacher"></i>
+                    <span>Teaching & Mentorship</span>
+                    <i class="fas fa-chevron-down dropdown-arrow"></i>
+                </button>
+                <div class="publication-dropdown">
+                    <a href="teaching.html" class="dropdown-item"><i class="fas fa-book-open"></i><span>Courses Taught</span></a>
+                    <a href="students.html" class="dropdown-item"><i class="fas fa-user-friends"></i><span>Students & Scholars</span></a>
+                    <a href="Thesis.html" class="dropdown-item"><i class="fas fa-graduation-cap"></i><span>Thesis Supervised</span></a>
+                </div>
+            </li>
+            <li><a href="outreach.html" class="nav-link"><i class="fas fa-globe-asia"></i><span>Outreach & Media</span></a></li>
+        </ul>
+    </div>
 </nav>
-    <!-- Scholars & Collaborators (Updated Section) -->
-    <section id="team" class="pt-40 pb-32 bg-slate-900 active">
-        <div class="max-w-[1800px] mx-auto px-8">
-            <div class="text-center mb-10">
-                <h2 class="text-5xl font-black text-[#c5a059] mb-4">Students Mentored</h2>
-            </div>
 
-            <!-- Current PhD Scholars -->
-            <div class="mb-20 ">
-    <h3 class="text-xl font-bold text-[#c5a059] mb-5 flex items-center gap-4 uppercase tracking-widest">
-        <span class="w-10 h-px bg-[#c5a059]"></span> Current PhD Scholars
-    </h3>
-    
-    <div class="relative group">
-        <button id="scholarPrev" onclick="moveScholar(-1)" class="absolute -left-4 md:-left-12 top-1/2 -translate-y-1/2 z-10 bg-white border border-slate-200 h-10 w-10 rounded-full flex items-center justify-center text-slate-400 hover:text-[#c5a059] hover:shadow-lg transition shadow-sm disabled:opacity-0">
-            <i class="fas fa-chevron-left text-sm"></i>
-        </button>
-
-        <button id="scholarNext" onclick="moveScholar(1)" class="absolute -right-4 md:-right-12 top-1/2 -translate-y-1/2 z-10 bg-white border border-slate-200 h-10 w-10 rounded-full flex items-center justify-center text-slate-400 hover:text-[#c5a059] hover:shadow-lg transition shadow-sm disabled:opacity-0">
-            <i class="fas fa-chevron-right text-sm"></i>
-        </button>
-
-        <div class="overflow-hidden">
-            <div id="scholarTrack" class="flex transition-transform duration-500 ease-in-out">
-
-                <div class="min-w-full sm:min-w-[50%] lg:min-w-[20%] p-2">
-                    <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200 flex flex-col items-center text-center h-full hover:border-[#c5a059] hover:shadow-md transition-all">
-                        <img src="Current_phd_students/Ajusree VK.jpg" 
-                        alt="Dummy profile" 
-                        class="w-25 h-25 rounded-full object-cover mb-2" />
-                        <h4 class="font-bold text-slate-900">Ajusree VK</h4>
-                        <p class="text-[10px] text-slate-400 mt-2 uppercase tracking-widest">Hydrology and Remote Sensing</p>
-                        <p class="js-bio-text text-[11px] text-slate-500 mt-3 leading-relaxed">I'm working on restoration and management strategies of Loktak wetland system using remote sensing datasets</p>
-                    </div>
-                </div>
-
-                <div class="min-w-full sm:min-w-[50%] lg:min-w-[20%] p-2">
-                    <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200 flex flex-col items-center text-center h-full hover:border-[#c5a059] hover:shadow-md transition-all">
-                        <img src="Current_phd_students/Atmika Ray.jpg" 
-                        alt="Dummy profile" 
-                        class="w-25 h-25 rounded-full object-cover mb-2" />
-                        <h4 class="font-bold text-slate-900">Atmika Ray</h4>
-                        <p class="text-[10px] text-slate-400 mt-2 uppercase tracking-widest">River Sciences</p>
-                        <p class="js-bio-text text-[11px] text-slate-500 mt-3 leading-relaxed">Fluvial geomorphology.</p>
-                    </div>
-                </div>
-
-                <div class="min-w-full sm:min-w-[50%] lg:min-w-[20%] p-2">
-                    <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200 flex flex-col items-center text-center h-full hover:border-[#c5a059] hover:shadow-md transition-all">
-                        <img src="Current_phd_students\SARITA SAHOO.jpeg" 
-                        alt="Dummy profile" 
-                        class="w-25 h-25 rounded-full object-cover mb-2" />
-                        <h4 class="font-bold text-slate-900">Sarita Sahoo</h4>
-                        <p class="text-[10px] text-slate-400 mt-2 uppercase tracking-widest">Hyperspectral Remote Sensing</p>
-                        <p class="js-bio-text text-[11px] text-slate-500 mt-3 leading-relaxed">My research focuses on coastal geomorphology and wetland dynamics, particularly shoreline evolution, sediment processes, and anthropogenic impacts using geospatial techniques, along with experience in UAV-based hyperspectral water quality monitoring.</p>
-                    </div>
-                </div>
-
-                <div class="min-w-full sm:min-w-[50%] lg:min-w-[20%] p-2">
-                    <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200 flex flex-col items-center text-center h-full hover:border-[#c5a059] hover:shadow-md transition-all">
-                        <img src="Current_phd_students\Ankit yadav.jpg" 
-                        alt="Dummy profile" 
-                        class="w-25 h-25 rounded-full object-cover mb-2" />
-                        <h4 class="font-bold text-slate-900">Ankit Yadav</h4>
-                        <p class="text-[10px] text-slate-400 mt-2 uppercase tracking-widest">Sediment dynamics</p>
-                        <p class="js-bio-text text-[11px] text-slate-500 mt-3 leading-relaxed">I am a Research Scholar in Earth Sciences at the Indian Institute of Technology Kanpur (IIT Kanpur), working on sediment dynamics, geomorphic processes, and cascading natural hazards in the Himalayan mountain systems. My doctoral research focuses on developing an integrated geospatial and process-based framework to quantify sediment flux, erosion dynamics, and multi-hazard interactions, including landslides, debris flows, and floods in the Alaknanda Basin, Garhwal Himalaya.
-
-                        My work combines UAV-based remote sensing, LiDAR analysis, terrain morphometry, field investigations, and numerical hazard modeling using GIS, Python, R, SAR and Google Earth Engine to support hazard risk assessment and disaster risk reduction.</p>
-                    </div>
-                </div>
-
-                <div class="min-w-full sm:min-w-[50%] lg:min-w-[20%] p-2">
-                    <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200 flex flex-col items-center text-center h-full hover:border-[#c5a059] hover:shadow-md transition-all">
-                        <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" 
-                        alt="Dummy profile" 
-                        class="w-25 h-25 rounded-full object-cover mb-2" />
-                        <h4 class="font-bold text-slate-900">Shefali Kuril</h4>
-                        <p class="text-[10px] text-slate-400 mt-2 uppercase tracking-widest">Agricultural Monitoring</p>
-                        <p class="js-bio-text text-[11px] text-slate-500 mt-3 leading-relaxed">Thermal and Multi-spectral imaging in agriculture-dominated CZO in Ganga basin.</p>
-                    </div>
-                </div>
-
-                </div>
-        </div>
+<!-- Page Header Section (matches research.html / Rs_web.html theme) -->
+<section style="background: var(--bg-card); border-bottom: 1px solid var(--border-color); padding: 40px 8%;">
+    <div class="container">
+        <span class="section-tag">Teaching &amp; Mentorship</span>
+        <h2 class="section-title serif-heading">Students &amp; Scholars</h2>
+        <p class="section-subtitle">Current and past scholars mentored by Prof. Rajiv Sinha across PhD and M.Tech programs in Earth Sciences, Remote Sensing, and Hydrology.</p>
     </div>
-</div>
-<!-- Past PhD Scholars -->
-<div class="mb-20 ">
-    <h3 class="text-xl font-bold text-[#c5a059] mb-5 flex items-center gap-4 uppercase tracking-widest">
-        <span class="w-10 h-px bg-[#c5a059]"></span> Past PhD Scholars
-    </h3>
-    
-    <div class="relative group">
-        <button id="assocPrev" onclick="moveScholarSlider(-1, 'assocTrack')" class="absolute -left-4 md:-left-12 top-1/2 -translate-y-1/2 z-10 bg-white border border-slate-200 h-11 w-11 rounded-full flex items-center justify-center text-slate-400 hover:text-[#c5a059] hover:shadow-xl transition-all shadow-sm disabled:opacity-0">
-            <i class="fas fa-chevron-left text-lg"></i>
-        </button>
-
-        <button id="assocNext" onclick="moveScholarSlider(1, 'assocTrack')" class="absolute -right-4 md:-right-12 top-1/2 -translate-y-1/2 z-10 bg-white border border-slate-200 h-11 w-11 rounded-full flex items-center justify-center text-slate-400 hover:text-[#c5a059] hover:shadow-xl transition-all shadow-sm disabled:opacity-0">
-            <i class="fas fa-chevron-right text-lg"></i>
-        </button>
-
-        <div class="overflow-hidden">
-            <div id="assocTrack" class="flex transition-transform duration-500 ease-out">
-                <div class="min-w-full sm:min-w-[50%] lg:min-w-[20%] p-2">
-                    <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200 flex flex-col items-center text-center h-full hover:border-[#c5a059] hover:shadow-md transition-all">
-                        <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" 
-                        alt="Dummy profile" 
-                        class="w-25 h-25 rounded-full object-cover mb-2" />
-                        <h4 class="font-bold text-slate-900">Abhishek Sinha</h4>
-                        <p class="text-[10px] text-slate-400 mt-2 uppercase tracking-widest">Wetland Health</p>
-                        <p class="js-bio-text text-[11px] text-slate-500 mt-3 leading-relaxed">Assessment of hydrologic connectivity in Ganga wetlands.</p>
-                    </div>
-                </div>
-
-                <div class="min-w-full sm:min-w-[50%] lg:min-w-[20%] p-2">
-                    <div class="bg-white p-3 rounded-2xl shadow-sm border border-slate-200 flex flex-col items-center text-center h-full hover:border-[#c5a059] hover:shadow-md transition-all">
-                        <img src="Current_phd_students/Shobhit Singh.JPG" 
-                        alt="Dummy profile" 
-                        class="w-25 h-25 rounded-full object-cover mb-2" />
-                        <h4 class="font-bold text-slate-900">Shobhit Singh</h4>
-                        <p class="text-[10px] text-slate-400 mt-2 uppercase tracking-widest">Hydro-Geomorphic</p>
-                        <p class="js-bio-text text-[11px] text-slate-500 mt-3 leading-relaxed">My research focuses on hydrogeomorphology and flood hazard assessment, using remote sensing and geospatial analysis to understand river dynamics and flood processes. I work with satellite data, particularly SAR, and drone-based technologies to map flood inundation, study sediment dynamics, and analyse river morphodynamics for improved disaster risk management and environmental planning.</p>
-                    </div>
-                </div>
-
-                <div class="min-w-full sm:min-w-[50%] lg:min-w-[20%] p-2">
-                    <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200 flex flex-col items-center text-center h-full hover:border-[#c5a059] hover:shadow-md transition-all">
-                        <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" 
-                        alt="Dummy profile" 
-                        class="w-25 h-25 rounded-full object-cover mb-2" />
-                        <h4 class="font-bold text-slate-900">Moumita Akuria</h4>
-                        <p class="text-[10px] text-slate-400 mt-2 uppercase tracking-widest">Connectivity</p>
-                        <p class="js-bio-text text-[11px] text-slate-500 mt-3 leading-relaxed">Anthropogenic impacts on hydrological connectivity.</p>
-                    </div>
-                </div>
-
-                <div class="min-w-full sm:min-w-[50%] lg:min-w-[20%] p-2">
-                    <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200 flex flex-col items-center text-center h-full hover:border-[#c5a059] hover:shadow-md transition-all">
-                        <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" 
-                        alt="Dummy profile" 
-                        class="w-25 h-25 rounded-full object-cover mb-2" />
-                        <h4 class="font-bold text-slate-900">Aqib Ansari</h4>
-                        <p class="text-[10px] text-slate-400 mt-2 uppercase tracking-widest">River Health</p>
-                        <p class="js-bio-text text-[11px] text-slate-500 mt-3 leading-relaxed">Health Assessment of Ganga-Ramganga using Flow Cytometry.</p>
-                    </div>
-                </div>
-
-                <div class="min-w-full sm:min-w-[50%] lg:min-w-[20%] p-2">
-                    <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200 flex flex-col items-center text-center h-full hover:border-[#c5a059] hover:shadow-md transition-all">
-                        <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" 
-                        alt="Dummy profile" 
-                        class="w-25 h-25 rounded-full object-cover mb-2" />
-                        <h4 class="font-bold text-slate-900">Sohini Bhattacharya</h4>
-                        <p class="text-[10px] text-slate-400 mt-2 uppercase tracking-widest">Sediment Flux</p>
-                        <p class="js-bio-text text-[11px] text-slate-500 mt-3 leading-relaxed">Understanding soil variability in the Anthropocene (U. Potsdam joint).</p>
-                    </div>
-                </div>
-
-                 <div class="min-w-full sm:min-w-[50%] lg:min-w-[20%] p-2">
-                    <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200 flex flex-col items-center text-center h-full hover:border-[#c5a059] hover:shadow-md transition-all">
-                        <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" 
-                        alt="Dummy profile" 
-                        class="w-25 h-25 rounded-full object-cover mb-2" />
-                        <h4 class="font-bold text-slate-900">Saroj Kumar Dash</h4>
-                        <p class="text-[10px] text-slate-400 mt-2 uppercase tracking-widest">CZO Modeling</p>
-                        <p class="js-bio-text text-[11px] text-slate-500 mt-3 leading-relaxed">Estimating soil moisture & crop water stress in Ganga CZO.</p>
-                    </div>
-                </div>
-
-                <div class="min-w-full sm:min-w-[50%] lg:min-w-[20%] p-2">
-                    <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200 flex flex-col items-center text-center h-full hover:border-[#c5a059] hover:shadow-md transition-all">
-                        <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" 
-                        alt="Dummy profile" 
-                        class="w-25 h-25 rounded-full object-cover mb-2" />
-                        <h4 class="font-bold text-slate-900">Pavani Misra</h4>
-                        <p class="text-[10px] text-slate-400 mt-2 uppercase tracking-widest">Deposition Analysis</p>
-                        <p class="js-bio-text text-[11px] text-slate-500 mt-3 leading-relaxed">High resolution paleoclimatic reconstruction and depositional environments of paleolake sediments in the Ganga plains.</p>
-                    </div>
-                </div>
-
-                <div class="min-w-full sm:min-w-[50%] lg:min-w-[20%] p-2">
-                    <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200 flex flex-col items-center text-center h-full hover:border-[#c5a059] hover:shadow-md transition-all">
-                        <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" 
-                        alt="Dummy profile" 
-                        class="w-25 h-25 rounded-full object-cover mb-2" />
-                        <h4 class="font-bold text-slate-900">Dipro Sarkar</h4>
-                        <p class="text-[10px] text-slate-400 mt-2 uppercase tracking-widest">Terrain Monitoring</p>
-                        <p class="js-bio-text text-[11px] text-slate-500 mt-3 leading-relaxed">Terrain mapping and water quality monitoring from airborne platforms. Integrating UAV Technology with community-based tools for Monitoring Water Quality of the Ganga River.</p>
-                    </div>
-                </div>
-
-                <div class="min-w-full sm:min-w-[50%] lg:min-w-[20%] p-2">
-                    <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200 flex flex-col items-center text-center h-full hover:border-[#c5a059] hover:shadow-md transition-all">
-                        <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" 
-                        alt="Dummy profile" 
-                        class="w-25 h-25 rounded-full object-cover mb-2" />
-                        <h4 class="font-bold text-slate-900">Somil Swrankar</h4>
-                        <p class="text-[10px] text-slate-400 mt-2 uppercase tracking-widest">Sedimentology</p>
-                        <p class="js-bio-text text-[11px] text-slate-500 mt-3 leading-relaxed">Soil erosion and sediment flux estimation from landscape evolution models.</p>
-                    </div>
-                </div>
-
-                <div class="min-w-full sm:min-w-[50%] lg:min-w-[20%] p-2">
-                    <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200 flex flex-col items-center text-center h-full hover:border-[#c5a059] hover:shadow-md transition-all">
-                        <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" 
-                        alt="Dummy profile" 
-                        class="w-25 h-25 rounded-full object-cover mb-2" />
-                        <h4 class="font-bold text-slate-900">Kanchan Mishra</h4>
-                        <p class="text-[10px] text-slate-400 mt-2 uppercase tracking-widest">Sedimentology</p>
-                        <p class="js-bio-text text-[11px] text-slate-500 mt-3 leading-relaxed">Sediment dynamics and sediment connectivity in the Kosi basin: implications for river hazards.</p>
-                    </div>
-                </div>
-
-                <div class="min-w-full sm:min-w-[50%] lg:min-w-[20%] p-2">
-                    <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200 flex flex-col items-center text-center h-full hover:border-[#c5a059] hover:shadow-md transition-all">
-                        <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" 
-                        alt="Dummy profile" 
-                        class="w-25 h-25 rounded-full object-cover mb-2" />
-                        <h4 class="font-bold text-slate-900">Imran Khan</h4>
-                        <p class="text-[10px] text-slate-400 mt-2 uppercase tracking-widest">Drainage Analysis</p>
-                        <p class="js-bio-text text-[11px] text-slate-500 mt-3 leading-relaxed">Drainage reorganisation and sub-surface stratigraphy of the paleo-Yamuna River in Haryana Plains, NW India and its linkage to Harappan Civilization.</p>
-                    </div>
-                </div>
-
-                <div class="min-w-full sm:min-w-[50%] lg:min-w-[20%] p-2">
-                    <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200 flex flex-col items-center text-center h-full hover:border-[#c5a059] hover:shadow-md transition-all">
-                        <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" 
-                        alt="Dummy profile" 
-                        class="w-25 h-25 rounded-full object-cover mb-2" />
-                        <h4 class="font-bold text-slate-900">Manudeo Narayan Singh</h4>
-                        <p class="text-[10px] text-slate-400 mt-2 uppercase tracking-widest">Wetlands</p>
-                        <p class="js-bio-text text-[11px] text-slate-500 mt-3 leading-relaxed">Wetland dynamics and hydrological connectivity in a tropical floodplain setting, Kaabar Tal, North Bihar, India.</p>
-                    </div>
-                </div>
-
-                <div class="min-w-full sm:min-w-[50%] lg:min-w-[20%] p-2">
-                    <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200 flex flex-col items-center text-center h-full hover:border-[#c5a059] hover:shadow-md transition-all">
-                        <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" 
-                        alt="Dummy profile" 
-                        class="w-25 h-25 rounded-full object-cover mb-2" />
-                        <h4 class="font-bold text-slate-900">Suneel Kumar Joshi</h4>
-                        <p class="text-[10px] text-slate-400 mt-2 uppercase tracking-widest">Groundwater Dynamics</p>
-                        <p class="js-bio-text text-[11px] text-slate-500 mt-3 leading-relaxed">Deciphering groundwater dynamics in the Ghaggar basin in northwest India using historical water level data and isotopic techniques.</p>
-                    </div>
-                </div>
-
-                <div class="min-w-full sm:min-w-[50%] lg:min-w-[20%] p-2">
-                    <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200 flex flex-col items-center text-center h-full hover:border-[#c5a059] hover:shadow-md transition-all">
-                        <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" 
-                        alt="Dummy profile" 
-                        class="w-25 h-25 rounded-full object-cover mb-2" />
-                        <h4 class="font-bold text-slate-900">Haridas Mohanta</h4>
-                        <p class="text-[10px] text-slate-400 mt-2 uppercase tracking-widest">Geomorphology</p>
-                        <p class="js-bio-text text-[11px] text-slate-500 mt-3 leading-relaxed">Geomorphic diversity, connectivity and river health assessment of the Ganga River and their application for river management.</p>
-                    </div>
-                </div>
-
-                <div class="min-w-full sm:min-w-[50%] lg:min-w-[20%] p-2">
-                    <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200 flex flex-col items-center text-center h-full hover:border-[#c5a059] hover:shadow-md transition-all">
-                        <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" 
-                        alt="Dummy profile" 
-                        class="w-25 h-25 rounded-full object-cover mb-2" />
-                        <h4 class="font-bold text-slate-900">Gaurav Kumar</h4>
-                        <p class="text-[10px] text-slate-400 mt-2 uppercase tracking-widest">Morphology</p>
-                        <p class="js-bio-text text-[11px] text-slate-500 mt-3 leading-relaxed">Morphology of alluvia rivers (jointly with Francois Metivier and Olivier Devauchelle, IPG Paris).</p>
-                    </div>
-                </div>
-
-                <div class="min-w-full sm:min-w-[50%] lg:min-w-[20%] p-2">
-                    <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200 flex flex-col items-center text-center h-full hover:border-[#c5a059] hover:shadow-md transition-all">
-                        <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" 
-                        alt="Dummy profile" 
-                        class="w-25 h-25 rounded-full object-cover mb-2" />
-                        <h4 class="font-bold text-slate-900">Swati Sinha</h4>
-                        <p class="text-[10px] text-slate-400 mt-2 uppercase tracking-widest">Climate</p>
-                        <p class="js-bio-text text-[11px] text-slate-500 mt-3 leading-relaxed">Tectonic and climatic controls on landscape evolution in the Dehradun-Nahan salient-recess in the frontal Himalaya.</p>
-                    </div>
-                </div>
-
-                <div class="min-w-full sm:min-w-[50%] lg:min-w-[20%] p-2">
-                    <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200 flex flex-col items-center text-center h-full hover:border-[#c5a059] hover:shadow-md transition-all">
-                        <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" 
-                        alt="Dummy profile" 
-                        class="w-25 h-25 rounded-full object-cover mb-2" />
-                        <h4 class="font-bold text-slate-900">Ajit Singh</h4>
-                        <p class="text-[10px] text-slate-400 mt-2 uppercase tracking-widest">Sedimentology</p>
-                        <p class="js-bio-text text-[11px] text-slate-500 mt-3 leading-relaxed">Sub-surface stratigraphy and sedimentology of the Ghaggar plains: linkage of landscape evolution and cultural heritage.</p>
-                    </div>
-                </div>
-
-                <div class="min-w-full sm:min-w-[50%] lg:min-w-[20%] p-2">
-                    <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200 flex flex-col items-center text-center h-full hover:border-[#c5a059] hover:shadow-md transition-all">
-                        <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" 
-                        alt="Dummy profile" 
-                        class="w-25 h-25 rounded-full object-cover mb-2" />
-                        <h4 class="font-bold text-slate-900">S. K. Lahiri</h4>
-                        <p class="text-[10px] text-slate-400 mt-2 uppercase tracking-widest">Morphology</p>
-                        <p class="js-bio-text text-[11px] text-slate-500 mt-3 leading-relaxed">Basin evolution, morpho-tectonics and fluvial processes in the Brahmaputra river system, Assam.</p>
-                    </div>
-                </div>
-
-                <div class="min-w-full sm:min-w-[50%] lg:min-w-[20%] p-2">
-                    <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200 flex flex-col items-center text-center h-full hover:border-[#c5a059] hover:shadow-md transition-all">
-                        <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" 
-                        alt="Dummy profile" 
-                        class="w-25 h-25 rounded-full object-cover mb-2" />
-                        <h4 class="font-bold text-slate-900">Noni Gopal Roy</h4>
-                        <p class="text-[10px] text-slate-400 mt-2 uppercase tracking-widest">Morphology</p>
-                        <p class="js-bio-text text-[11px] text-slate-500 mt-3 leading-relaxed">Morphodynamics and Late Quaternary Valley- interfluve Stratigraphy of the Western Ganga Plains: Rythmic Sequences and Monsoonal Forcing.</p>
-                    </div>
-                </div>
-
-                <div class="min-w-full sm:min-w-[50%] lg:min-w-[20%] p-2">
-                    <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200 flex flex-col items-center text-center h-full hover:border-[#c5a059] hover:shadow-md transition-all">
-                        <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" 
-                        alt="Dummy profile" 
-                        class="w-25 h-25 rounded-full object-cover mb-2" />
-                        <h4 class="font-bold text-slate-900">Ananda Sankar Dasgupta</h4>
-                        <p class="text-[10px] text-slate-400 mt-2 uppercase tracking-widest">Geomorphology</p>
-                        <p class="js-bio-text text-[11px] text-slate-500 mt-3 leading-relaxed">Valley and interfluve geomorphology and stratigraphy of the southern Ganga plains: implications for Late Quaternary landscape evolution.</p>
-                    </div>
-                </div>
-
-                <div class="min-w-full sm:min-w-[50%] lg:min-w-[20%] p-2">
-                    <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200 flex flex-col items-center text-center h-full hover:border-[#c5a059] hover:shadow-md transition-all">
-                        <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" 
-                        alt="Dummy profile" 
-                        class="w-25 h-25 rounded-full object-cover mb-2" />
-                        <h4 class="font-bold text-slate-900">Vikrant Jain</h4>
-                        <p class="text-[10px] text-slate-400 mt-2 uppercase tracking-widest">Geomorpholgy</p>
-                        <p class="js-bio-text text-[11px] text-slate-500 mt-3 leading-relaxed">Fluvio-Geomorphological analysis of Baghmati river system, North Bihar with special reference to fluvial hazard.</p>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </div>
-</div>
-
-
-<!--Current M.tech Scholars -->
-<div class="max-w-[1800px] mx-auto px-8">
-    <h3 class="text-xl font-bold text-[#c5a059] mb-5 flex items-center gap-4 uppercase tracking-widest">
-        <span class="w-10 h-px bg-[#c5a059]"></span> M.Tech Scholars
-    </h3>
-    
-    <div class="relative group">
-        <button id="mtechPrev" onclick="moveScholarSlider(-1, 'mtechTrack')" class="absolute -left-4 md:-left-12 top-1/2 -translate-y-1/2 z-10 bg-white border border-slate-200 h-11 w-11 rounded-full flex items-center justify-center text-slate-400 hover:text-[#c5a059] hover:shadow-xl transition-all shadow-sm disabled:opacity-0">
-            <i class="fas fa-chevron-left text-lg"></i>
-        </button>
-
-        <button id="mtechNext" onclick="moveScholarSlider(1, 'mtechTrack')" class="absolute -right-4 md:-right-12 top-1/2 -translate-y-1/2 z-10 bg-white border border-slate-200 h-11 w-11 rounded-full flex items-center justify-center text-slate-400 hover:text-[#c5a059] hover:shadow-xl transition-all shadow-sm disabled:opacity-0">
-            <i class="fas fa-chevron-right text-lg"></i>
-        </button>
-
-        <div class="overflow-hidden">
-            <div id="mtechTrack" class="flex transition-transform duration-500 ease-out">
-
-                <div class="min-w-full sm:min-w-[50%] lg:min-w-[20%] p-2">
-                    <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200 flex flex-col items-center text-center h-full card-hover hover:border-[#c5a059] transition-all">
-                        <img src="M.tech_students/Niharika Kote.jpeg" 
-                        alt="Dummy profile" 
-                        class="w-25 h-25 rounded-full object-cover mb-2" />
-                        <h4 class="font-bold text-slate-900">Niharika Kote</h4>
-                        <p class="text-[10px] text-slate-400 mt-2 uppercase tracking-widest">CZO Modeling</p>
-                        <p class="js-bio-text text-[11px] text-slate-500 mt-3 leading-relaxed">My research focuses on understanding sediment dynamics and sediment connectivity in the Bhagirathi basin. I am broadly interested in applying geomorphological principles to analyze soil erosion processes and their role in landscape evolution.</p>
-                    </div>
-                </div>
-
-                <div class="min-w-full sm:min-w-[50%] lg:min-w-[20%] p-2">
-                    <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200 flex flex-col items-center text-center h-full card-hover hover:border-[#c5a059] transition-all">
-                        <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" 
-                        alt="Dummy profile" 
-                        class="w-25 h-25 rounded-full object-cover mb-2" />
-                        <h4 class="font-bold text-slate-900">Shefali Kuril</h4>
-                        <p class="text-[10px] text-slate-400 mt-2 uppercase tracking-widest">Agriculture</p>
-                        <p class="js-bio-text text-[11px] text-slate-500 mt-3 leading-relaxed">Agricultural Monitoring, CZO, Ganga Basin.</p>
-                    </div>
-                </div>
-
-                <div class="min-w-full sm:min-w-[50%] lg:min-w-[20%] p-2">
-                    <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200 flex flex-col items-center text-center h-full card-hover hover:border-[#c5a059] transition-all">
-                        <img src="Current_phd_students/Ankit yadav.jpg" 
-                        alt="Dummy profile" 
-                        class="w-25 h-25 rounded-full object-cover mb-2" />
-                        <h4 class="font-bold text-slate-900">Ankit Yadav</h4>
-                        <p class="text-[10px] text-slate-400 mt-2 uppercase tracking-widest">Active Remote sensing</p>
-                        <p class="js-bio-text text-[11px] text-slate-500 mt-3 leading-relaxed">Active Remote sensing.</p>
-                    </div>
-                </div>
-                
-                <div class="min-w-full sm:min-w-[50%] lg:min-w-[20%] p-2">
-                    <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200 flex flex-col items-center text-center h-full card-hover hover:border-[#c5a059] transition-all">
-                        <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" 
-                        alt="Dummy profile" 
-                        class="w-25 h-25 rounded-full object-cover mb-2" />
-                        <h4 class="font-bold text-slate-900">Aayush Tiwari</h4>
-                        <p class="text-[10px] text-slate-400 mt-2 uppercase tracking-widest">Morphology</p>
-                        <p class="js-bio-text text-[11px] text-slate-500 mt-3 leading-relaxed">Morphological study of the smooth impact melt deposits on the Moon's far side.</p>
-                    </div>
-                </div>
-
-                <div class="min-w-full sm:min-w-[50%] lg:min-w-[20%] p-2">
-                    <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200 flex flex-col items-center text-center h-full card-hover hover:border-[#c5a059] transition-all">
-                        <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" 
-                        alt="Dummy profile" 
-                        class="w-25 h-25 rounded-full object-cover mb-2" />
-                        <h4 class="font-bold text-slate-900">Sambit Behera</h4>
-                        <p class="text-[10px] text-slate-400 mt-2 uppercase tracking-widest">Agriculture</p>
-                        <p class="js-bio-text text-[11px] text-slate-500 mt-3 leading-relaxed">Understanding soil moisture – temperature interaction in an Agriculture dominated CZO in the Ganga Basin, India</p>
-                    </div>
-                </div>
-
-                <div class="min-w-full sm:min-w-[50%] lg:min-w-[20%] p-2">
-                    <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200 flex flex-col items-center text-center h-full card-hover hover:border-[#c5a059] transition-all">
-                        <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" 
-                        alt="Dummy profile" 
-                        class="w-25 h-25 rounded-full object-cover mb-2" />
-                        <h4 class="font-bold text-slate-900">Unnati Patel</h4>
-                        <p class="text-[10px] text-slate-400 mt-2 uppercase tracking-widest">Geomorphology</p>
-                        <p class="js-bio-text text-[11px] text-slate-500 mt-3 leading-relaxed">Assessment of geomorphic connectivity under changing LULC scenarios and its implications for management of a coastal wetland, Chilika Lagoon, Odisha, India.</p>
-                    </div>
-                </div>
-
-                <div class="min-w-full sm:min-w-[50%] lg:min-w-[20%] p-2">
-                    <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200 flex flex-col items-center text-center h-full card-hover hover:border-[#c5a059] transition-all">
-                        <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" 
-                        alt="Dummy profile" 
-                        class="w-25 h-25 rounded-full object-cover mb-2" />
-                        <h4 class="font-bold text-slate-900">Satyasri Alka</h4>
-                        <p class="text-[10px] text-slate-400 mt-2 uppercase tracking-widest">Wetlands</p>
-                        <p class="js-bio-text text-[11px] text-slate-500 mt-3 leading-relaxed">Deciphering Optical Water Types (OWTs) of wetlands using Earth Observation (EO) datasets.</p>
-                    </div>
-                </div>
-
-                <div class="min-w-full sm:min-w-[50%] lg:min-w-[20%] p-2">
-                    <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200 flex flex-col items-center text-center h-full card-hover hover:border-[#c5a059] transition-all">
-                        <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" 
-                        alt="Dummy profile" 
-                        class="w-25 h-25 rounded-full object-cover mb-2" />
-                        <h4 class="font-bold text-slate-900">Arnab Laha</h4>
-                        <p class="text-[10px] text-slate-400 mt-2 uppercase tracking-widest">Hazards</p>
-                        <p class="js-bio-text text-[11px] text-slate-500 mt-3 leading-relaxed">Forest Fire risk assessment for Sikkim using Remote Sensing data and multi-criteria decision making technique</p>
-                    </div>
-                </div>
-
-                <div class="min-w-full sm:min-w-[50%] lg:min-w-[20%] p-2">
-                    <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200 flex flex-col items-center text-center h-full card-hover hover:border-[#c5a059] transition-all">
-                        <img src="Current_phd_students/Shobhit Singh.JPG" 
-                        alt="Dummy profile" 
-                        class="w-25 h-25 rounded-full object-cover mb-2" />
-                        <h4 class="font-bold text-slate-900">Shobhit Singh</h4>
-                        <p class="text-[10px] text-slate-400 mt-2 uppercase tracking-widest">Hydro-Geomorphic</p>
-                        <p class="js-bio-text text-[11px] text-slate-500 mt-3 leading-relaxed">Flood risk assessment of the Ghaghra River system.</p>
-                    </div>
-                </div>
-
-                <div class="min-w-full sm:min-w-[50%] lg:min-w-[20%] p-2">
-                    <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200 flex flex-col items-center text-center h-full card-hover hover:border-[#c5a059] transition-all">
-                        <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" 
-                        alt="Dummy profile" 
-                        class="w-25 h-25 rounded-full object-cover mb-2" />
-                        <h4 class="font-bold text-slate-900">Rajat Rana</h4>
-                        <p class="text-[10px] text-slate-400 mt-2 uppercase tracking-widest">Groundwater</p>
-                        <p class="js-bio-text text-[11px] text-slate-500 mt-3 leading-relaxed">Groundwater Modeling for Punjab and Haryana using Numerical Approach.</p>
-                    </div>
-                </div>
-
-                <div class="min-w-full sm:min-w-[50%] lg:min-w-[20%] p-2">
-                    <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200 flex flex-col items-center text-center h-full card-hover hover:border-[#c5a059] transition-all">
-                        <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" 
-                        alt="Dummy profile" 
-                        class="w-25 h-25 rounded-full object-cover mb-2" />
-                        <h4 class="font-bold text-slate-900">Siba Mohanty</h4>
-                        <p class="text-[10px] text-slate-400 mt-2 uppercase tracking-widest">LULC Mapping</p>
-                        <p class="js-bio-text text-[11px] text-slate-500 mt-3 leading-relaxed">Linking river space to LULC mapping: towards policy interventions.</p>
-                    </div>
-                </div>
-
-                <div class="min-w-full sm:min-w-[50%] lg:min-w-[20%] p-2">
-                    <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200 flex flex-col items-center text-center h-full card-hover hover:border-[#c5a059] transition-all">
-                        <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" 
-                        alt="Dummy profile" 
-                        class="w-25 h-25 rounded-full object-cover mb-2" />
-                        <h4 class="font-bold text-slate-900">Rimali Mitra</h4>
-                        <p class="text-[10px] text-slate-400 mt-2 uppercase tracking-widest">Hydrology</p>
-                        <p class="js-bio-text text-[11px] text-slate-500 mt-3 leading-relaxed">Hydrologic connectivity analysis in the Ramganga basin.</p>
-                    </div>
-                </div>
-
-                <div class="min-w-full sm:min-w-[50%] lg:min-w-[20%] p-2">
-                    <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200 flex flex-col items-center text-center h-full card-hover hover:border-[#c5a059] transition-all">
-                        <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" 
-                        alt="Dummy profile" 
-                        class="w-25 h-25 rounded-full object-cover mb-2" />
-                        <h4 class="font-bold text-slate-900">Devanshi Pathak</h4>
-                        <p class="text-[10px] text-slate-400 mt-2 uppercase tracking-widest">Sediment</p>
-                        <p class="js-bio-text text-[11px] text-slate-500 mt-3 leading-relaxed">Simulating flows and sediment dynamics in the Ramganga basin using INCA-Sed model.</p>
-                    </div>
-                </div>
-
-                <div class="min-w-full sm:min-w-[50%] lg:min-w-[20%] p-2">
-                    <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200 flex flex-col items-center text-center h-full card-hover hover:border-[#c5a059] transition-all">
-                        <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" 
-                        alt="Dummy profile" 
-                        class="w-25 h-25 rounded-full object-cover mb-2" />
-                        <h4 class="font-bold text-slate-900">R. Chandrashekhar</h4>
-                        <p class="text-[10px] text-slate-400 mt-2 uppercase tracking-widest">Geomorphlogy</p>
-                        <p class="js-bio-text text-[11px] text-slate-500 mt-3 leading-relaxed">Geomorphology and LULC changes in the Chilika Lake basin, Odisha.</p>
-                    </div>
-                </div>
-
-                <div class="min-w-full sm:min-w-[50%] lg:min-w-[20%] p-2">
-                    <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200 flex flex-col items-center text-center h-full card-hover hover:border-[#c5a059] transition-all">
-                        <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" 
-                        alt="Dummy profile" 
-                        class="w-25 h-25 rounded-full object-cover mb-2" />
-                        <h4 class="font-bold text-slate-900">Sana Khan</h4>
-                        <p class="text-[10px] text-slate-400 mt-2 uppercase tracking-widest">Sediment</p>
-                        <p class="js-bio-text text-[11px] text-slate-500 mt-3 leading-relaxed">Assessing flows and sediment dynamics in the Ganga river under modern and future climate scenarios.</p>
-                    </div>
-                </div>
-
-                <div class="min-w-full sm:min-w-[50%] lg:min-w-[20%] p-2">
-                    <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200 flex flex-col items-center text-center h-full card-hover hover:border-[#c5a059] transition-all">
-                        <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" 
-                        alt="Dummy profile" 
-                        class="w-25 h-25 rounded-full object-cover mb-2" />
-                        <h4 class="font-bold text-slate-900">Shivika Saxena</h4>
-                        <p class="text-[10px] text-slate-400 mt-2 uppercase tracking-widest">Wetlands</p>
-                        <p class="js-bio-text text-[11px] text-slate-500 mt-3 leading-relaxed">Wetland classification and mapping using remote sensing and GIS techniques: a case study from north Bihar plains.</p>
-                    </div>
-                </div>
-
-                <div class="min-w-full sm:min-w-[50%] lg:min-w-[20%] p-2">
-                    <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200 flex flex-col items-center text-center h-full card-hover hover:border-[#c5a059] transition-all">
-                        <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" 
-                        alt="Dummy profile" 
-                        class="w-25 h-25 rounded-full object-cover mb-2" />
-                        <h4 class="font-bold text-slate-900">Sajal Mittal</h4>
-                        <p class="text-[10px] text-slate-400 mt-2 uppercase tracking-widest">Geomorphology</p>
-                        <p class="js-bio-text text-[11px] text-slate-500 mt-3 leading-relaxed">Geomorphology and riverine flood risk analysis of Mahanadi delta, India based on remote sensing and GIS.</p>
-                    </div>
-                </div>
-
-                <div class="min-w-full sm:min-w-[50%] lg:min-w-[20%] p-2">
-                    <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200 flex flex-col items-center text-center h-full card-hover hover:border-[#c5a059] transition-all">
-                        <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" 
-                        alt="Dummy profile" 
-                        class="w-25 h-25 rounded-full object-cover mb-2" />
-                        <h4 class="font-bold text-slate-900">Dipro Sarkar</h4>
-                        <p class="text-[10px] text-slate-400 mt-2 uppercase tracking-widest">River Sciences</p>
-                        <p class="js-bio-text text-[11px] text-slate-500 mt-3 leading-relaxed">Impact of anthropogenic interventions and human transformations on the Ganga river around Kanpur region.</p>
-                    </div>
-                </div>
-
-                <div class="min-w-full sm:min-w-[50%] lg:min-w-[20%] p-2">
-                    <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200 flex flex-col items-center text-center h-full card-hover hover:border-[#c5a059] transition-all">
-                        <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" 
-                        alt="Dummy profile" 
-                        class="w-25 h-25 rounded-full object-cover mb-2" />
-                        <h4 class="font-bold text-slate-900">Sananda Sarkar</h4>
-                        <p class="text-[10px] text-slate-400 mt-2 uppercase tracking-widest">River Sciences</p>
-                        <p class="js-bio-text text-[11px] text-slate-500 mt-3 leading-relaxed">Assessing present and future river flows and water quality in the Ganga basin due to climate change.</p>
-                    </div>
-                </div>
-
-                <div class="min-w-full sm:min-w-[50%] lg:min-w-[20%] p-2">
-                    <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200 flex flex-col items-center text-center h-full card-hover hover:border-[#c5a059] transition-all">
-                        <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" 
-                        alt="Dummy profile" 
-                        class="w-25 h-25 rounded-full object-cover mb-2" />
-                        <h4 class="font-bold text-slate-900">Somil Swrankar</h4>
-                        <p class="text-[10px] text-slate-400 mt-2 uppercase tracking-widest">Sedimentation</p>
-                        <p class="js-bio-text text-[11px] text-slate-500 mt-3 leading-relaxed">Soil erosion and sediment transport modeling in the Garra basin using CEASER-Lissflood model.</p>
-                    </div>
-                </div>
-
-                <div class="min-w-full sm:min-w-[50%] lg:min-w-[20%] p-2">
-                    <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200 flex flex-col items-center text-center h-full card-hover hover:border-[#c5a059] transition-all">
-                        <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" 
-                        alt="Dummy profile" 
-                        class="w-25 h-25 rounded-full object-cover mb-2" />
-                        <h4 class="font-bold text-slate-900">Anshu Malini</h4>
-                        <p class="text-[10px] text-slate-400 mt-2 uppercase tracking-widest">Sedimentation</p>
-                        <p class="js-bio-text text-[11px] text-slate-500 mt-3 leading-relaxed">Modeling sediment transport and morpho-dynamics in parts of the Ganga basin in climate change scenario.</p>
-                    </div>
-                </div>
-
-                <div class="min-w-full sm:min-w-[50%] lg:min-w-[20%] p-2">
-                    <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200 flex flex-col items-center text-center h-full card-hover hover:border-[#c5a059] transition-all">
-                        <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" 
-                        alt="Dummy profile" 
-                        class="w-25 h-25 rounded-full object-cover mb-2" />
-                        <h4 class="font-bold text-slate-900">Jawed Ahmad</h4>
-                        <p class="text-[10px] text-slate-400 mt-2 uppercase tracking-widest">River Dynamics</p>
-                        <p class="js-bio-text text-[11px] text-slate-500 mt-3 leading-relaxed">Shallow sub-surface stratigraphy of the Kosi and Gandak megafans as interpreted from electrical resistivity.</p>
-                    </div>
-                </div>
-
-                <div class="min-w-full sm:min-w-[50%] lg:min-w-[20%] p-2">
-                    <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200 flex flex-col items-center text-center h-full card-hover hover:border-[#c5a059] transition-all">
-                        <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" 
-                        alt="Dummy profile" 
-                        class="w-25 h-25 rounded-full object-cover mb-2" />
-                        <h4 class="font-bold text-slate-900">S. Priyanka</h4>
-                        <p class="text-[10px] text-slate-400 mt-2 uppercase tracking-widest">River Dynamics</p>
-                        <p class="js-bio-text text-[11px] text-slate-500 mt-3 leading-relaxed">River dynamics, flood risk evaluation and integrated basin management with special reference to the Kosi river, north Bihar.</p>
-                    </div>
-                </div>
-
-                <div class="min-w-full sm:min-w-[50%] lg:min-w-[20%] p-2">
-                    <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200 flex flex-col items-center text-center h-full card-hover hover:border-[#c5a059] transition-all">
-                        <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" 
-                        alt="Dummy profile" 
-                        class="w-25 h-25 rounded-full object-cover mb-2" />
-                        <h4 class="font-bold text-slate-900">B V Suresh Reddy</h4>
-                        <p class="text-[10px] text-slate-400 mt-2 uppercase tracking-widest">Hydrology</p>
-                        <p class="js-bio-text text-[11px] text-slate-500 mt-3 leading-relaxed">Hydro-geomorphic impact assessment of the Ken-Betwa interlinking project.</p>
-                    </div>
-                </div>
-
-                <div class="min-w-full sm:min-w-[50%] lg:min-w-[20%] p-2">
-                    <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200 flex flex-col items-center text-center h-full card-hover hover:border-[#c5a059] transition-all">
-                        <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" 
-                        alt="Dummy profile" 
-                        class="w-25 h-25 rounded-full object-cover mb-2" />
-                        <h4 class="font-bold text-slate-900">Sujit Kumar Sarkar</h4>
-                        <p class="text-[10px] text-slate-400 mt-2 uppercase tracking-widest">Geomorphology</p>
-                        <p class="js-bio-text text-[11px] text-slate-500 mt-3 leading-relaxed">Geomorphic elements and sedimentary environments of the Ganga Delta: Exploring Facies and Magnetic Signatures.</p>
-                    </div>
-                </div>
-
-                <div class="min-w-full sm:min-w-[50%] lg:min-w-[20%] p-2">
-                    <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200 flex flex-col items-center text-center h-full card-hover hover:border-[#c5a059] transition-all">
-                        <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" 
-                        alt="Dummy profile" 
-                        class="w-25 h-25 rounded-full object-cover mb-2" />
-                        <h4 class="font-bold text-slate-900">Santosh Ghosh</h4>
-                        <p class="text-[10px] text-slate-400 mt-2 uppercase tracking-widest">River Dynamics</p>
-                        <p class="js-bio-text text-[11px] text-slate-500 mt-3 leading-relaxed">Landscape evolution and fluvial dynamics of the Lower Ganga plains.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-   </div>
-
-</div>
 </section>
 
+<!-- Content Section -->
+<section class="content-section" style="padding: 60px 0; background: var(--bg-page);">
+    <div class="container">
+
+        <div style="margin-bottom: 3rem;">
+            <h3 class="subsection-title" style="color: var(--primary-navy); border-bottom: 2px solid var(--accent-gold); padding-bottom: 10px; margin-bottom: 30px;">Current PhD Scholars</h3>
+<div class="student-grid">
+    <div class="student-card">
+        <img src="Current_phd_students/Ajusree VK.jpg" alt="Ajusree VK" class="student-avatar">
+        <h4 class="student-name">Ajusree VK</h4>
+        <div class="student-role">Hydrology and Remote Sensing</div>
+        <p class="student-topic">I'm working on restoration and management strategies of Loktak wetland system using remote sensing datasets</p>
+    </div>
+    <div class="student-card">
+        <img src="Current_phd_students/Atmika Ray.jpg" alt="Atmika Ray" class="student-avatar">
+        <h4 class="student-name">Atmika Ray</h4>
+        <div class="student-role">River Sciences</div>
+        <p class="student-topic">Fluvial geomorphology.</p>
+    </div>
+    <div class="student-card">
+        <img src="Current_phd_students\SARITA SAHOO.jpeg" alt="Sarita Sahoo" class="student-avatar">
+        <h4 class="student-name">Sarita Sahoo</h4>
+        <div class="student-role">Hyperspectral Remote Sensing</div>
+        <p class="student-topic"><span class="bio-short">My research focuses on coastal geomorphology and wetland dynamics, particularly shoreline evolution, sediment processes, and anthropogenic impacts using geospatial techniques,...</span><span class="bio-full" style="display:none;">My research focuses on coastal geomorphology and wetland dynamics, particularly shoreline evolution, sediment processes, and anthropogenic impacts using geospatial techniques, along with experience in UAV-based hyperspectral water quality monitoring.</span><button class="view-more-btn" onclick="toggleBio(this)">View more</button></p>
+    </div>
+    <div class="student-card">
+        <img src="Current_phd_students\Ankit yadav.jpg" alt="Ankit Yadav" class="student-avatar">
+        <h4 class="student-name">Ankit Yadav</h4>
+        <div class="student-role">Sediment dynamics</div>
+        <p class="student-topic"><span class="bio-short">I am a Research Scholar in Earth Sciences at the Indian Institute of Technology Kanpur (IIT Kanpur), working on sediment...</span><span class="bio-full" style="display:none;">I am a Research Scholar in Earth Sciences at the Indian Institute of Technology Kanpur (IIT Kanpur), working on sediment dynamics, geomorphic processes, and cascading natural hazards in the Himalayan mountain systems. My doctoral research focuses on developing an integrated geospatial and process-based framework to quantify sediment flux, erosion dynamics, and multi-hazard interactions, including landslides, debris flows, and floods in the Alaknanda Basin, Garhwal Himalaya.
+
+                        My work combines UAV-based remote sensing, LiDAR analysis, terrain morphometry, field investigations, and numerical hazard modeling using GIS, Python, R, SAR and Google Earth Engine to support hazard risk assessment and disaster risk reduction.</span><button class="view-more-btn" onclick="toggleBio(this)">View more</button></p>
+    </div>
+    <div class="student-card">
+        <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" alt="Shefali Kuril" class="student-avatar">
+        <h4 class="student-name">Shefali Kuril</h4>
+        <div class="student-role">Agricultural Monitoring</div>
+        <p class="student-topic">Thermal and Multi-spectral imaging in agriculture-dominated CZO in Ganga basin.</p>
+    </div>
+</div>
+
+        </div>
+
+        <div style="margin-bottom: 3rem; margin-top: 4rem;">
+            <h3 class="subsection-title" style="color: var(--primary-navy); border-bottom: 2px solid var(--accent-gold); padding-bottom: 10px; margin-bottom: 30px;">Past PhD Scholars</h3>
+<div class="student-grid">
+    <div class="student-card">
+        <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" alt="Abhishek Sinha" class="student-avatar">
+        <h4 class="student-name">Abhishek Sinha</h4>
+        <div class="student-role">Wetland Health</div>
+        <p class="student-topic">Assessment of hydrologic connectivity in Ganga wetlands.</p>
+    </div>
+    <div class="student-card">
+        <img src="Current_phd_students/Shobhit Singh.JPG" alt="Shobhit Singh" class="student-avatar">
+        <h4 class="student-name">Shobhit Singh</h4>
+        <div class="student-role">Hydro-Geomorphic</div>
+        <p class="student-topic"><span class="bio-short">My research focuses on hydrogeomorphology and flood hazard assessment, using remote sensing and geospatial analysis to understand river dynamics and...</span><span class="bio-full" style="display:none;">My research focuses on hydrogeomorphology and flood hazard assessment, using remote sensing and geospatial analysis to understand river dynamics and flood processes. I work with satellite data, particularly SAR, and drone-based technologies to map flood inundation, study sediment dynamics, and analyse river morphodynamics for improved disaster risk management and environmental planning.</span><button class="view-more-btn" onclick="toggleBio(this)">View more</button></p>
+    </div>
+    <div class="student-card">
+        <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" alt="Moumita Akuria" class="student-avatar">
+        <h4 class="student-name">Moumita Akuria</h4>
+        <div class="student-role">Connectivity</div>
+        <p class="student-topic">Anthropogenic impacts on hydrological connectivity.</p>
+    </div>
+    <div class="student-card">
+        <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" alt="Aqib Ansari" class="student-avatar">
+        <h4 class="student-name">Aqib Ansari</h4>
+        <div class="student-role">River Health</div>
+        <p class="student-topic">Health Assessment of Ganga-Ramganga using Flow Cytometry.</p>
+    </div>
+    <div class="student-card">
+        <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" alt="Sohini Bhattacharya" class="student-avatar">
+        <h4 class="student-name">Sohini Bhattacharya</h4>
+        <div class="student-role">Sediment Flux</div>
+        <p class="student-topic">Understanding soil variability in the Anthropocene (U. Potsdam joint).</p>
+    </div>
+    <div class="student-card">
+        <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" alt="Saroj Kumar Dash" class="student-avatar">
+        <h4 class="student-name">Saroj Kumar Dash</h4>
+        <div class="student-role">CZO Modeling</div>
+        <p class="student-topic">Estimating soil moisture & crop water stress in Ganga CZO.</p>
+    </div>
+    <div class="student-card">
+        <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" alt="Pavani Misra" class="student-avatar">
+        <h4 class="student-name">Pavani Misra</h4>
+        <div class="student-role">Deposition Analysis</div>
+        <p class="student-topic">High resolution paleoclimatic reconstruction and depositional environments of paleolake sediments in the Ganga plains.</p>
+    </div>
+    <div class="student-card">
+        <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" alt="Dipro Sarkar" class="student-avatar">
+        <h4 class="student-name">Dipro Sarkar</h4>
+        <div class="student-role">Terrain Monitoring</div>
+        <p class="student-topic"><span class="bio-short">Terrain mapping and water quality monitoring from airborne platforms. Integrating UAV Technology with community-based tools for Monitoring Water Quality of...</span><span class="bio-full" style="display:none;">Terrain mapping and water quality monitoring from airborne platforms. Integrating UAV Technology with community-based tools for Monitoring Water Quality of the Ganga River.</span><button class="view-more-btn" onclick="toggleBio(this)">View more</button></p>
+    </div>
+    <div class="student-card">
+        <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" alt="Somil Swrankar" class="student-avatar">
+        <h4 class="student-name">Somil Swrankar</h4>
+        <div class="student-role">Sedimentology</div>
+        <p class="student-topic">Soil erosion and sediment flux estimation from landscape evolution models.</p>
+    </div>
+    <div class="student-card">
+        <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" alt="Kanchan Mishra" class="student-avatar">
+        <h4 class="student-name">Kanchan Mishra</h4>
+        <div class="student-role">Sedimentology</div>
+        <p class="student-topic">Sediment dynamics and sediment connectivity in the Kosi basin: implications for river hazards.</p>
+    </div>
+    <div class="student-card">
+        <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" alt="Imran Khan" class="student-avatar">
+        <h4 class="student-name">Imran Khan</h4>
+        <div class="student-role">Drainage Analysis</div>
+        <p class="student-topic">Drainage reorganisation and sub-surface stratigraphy of the paleo-Yamuna River in Haryana Plains, NW India and its linkage to Harappan Civilization.</p>
+    </div>
+    <div class="student-card">
+        <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" alt="Manudeo Narayan Singh" class="student-avatar">
+        <h4 class="student-name">Manudeo Narayan Singh</h4>
+        <div class="student-role">Wetlands</div>
+        <p class="student-topic">Wetland dynamics and hydrological connectivity in a tropical floodplain setting, Kaabar Tal, North Bihar, India.</p>
+    </div>
+    <div class="student-card">
+        <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" alt="Suneel Kumar Joshi" class="student-avatar">
+        <h4 class="student-name">Suneel Kumar Joshi</h4>
+        <div class="student-role">Groundwater Dynamics</div>
+        <p class="student-topic">Deciphering groundwater dynamics in the Ghaggar basin in northwest India using historical water level data and isotopic techniques.</p>
+    </div>
+    <div class="student-card">
+        <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" alt="Haridas Mohanta" class="student-avatar">
+        <h4 class="student-name">Haridas Mohanta</h4>
+        <div class="student-role">Geomorphology</div>
+        <p class="student-topic">Geomorphic diversity, connectivity and river health assessment of the Ganga River and their application for river management.</p>
+    </div>
+    <div class="student-card">
+        <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" alt="Gaurav Kumar" class="student-avatar">
+        <h4 class="student-name">Gaurav Kumar</h4>
+        <div class="student-role">Morphology</div>
+        <p class="student-topic">Morphology of alluvia rivers (jointly with Francois Metivier and Olivier Devauchelle, IPG Paris).</p>
+    </div>
+    <div class="student-card">
+        <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" alt="Swati Sinha" class="student-avatar">
+        <h4 class="student-name">Swati Sinha</h4>
+        <div class="student-role">Climate</div>
+        <p class="student-topic">Tectonic and climatic controls on landscape evolution in the Dehradun-Nahan salient-recess in the frontal Himalaya.</p>
+    </div>
+    <div class="student-card">
+        <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" alt="Ajit Singh" class="student-avatar">
+        <h4 class="student-name">Ajit Singh</h4>
+        <div class="student-role">Sedimentology</div>
+        <p class="student-topic">Sub-surface stratigraphy and sedimentology of the Ghaggar plains: linkage of landscape evolution and cultural heritage.</p>
+    </div>
+    <div class="student-card">
+        <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" alt="S. K. Lahiri" class="student-avatar">
+        <h4 class="student-name">S. K. Lahiri</h4>
+        <div class="student-role">Morphology</div>
+        <p class="student-topic">Basin evolution, morpho-tectonics and fluvial processes in the Brahmaputra river system, Assam.</p>
+    </div>
+    <div class="student-card">
+        <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" alt="Noni Gopal Roy" class="student-avatar">
+        <h4 class="student-name">Noni Gopal Roy</h4>
+        <div class="student-role">Morphology</div>
+        <p class="student-topic">Morphodynamics and Late Quaternary Valley- interfluve Stratigraphy of the Western Ganga Plains: Rythmic Sequences and Monsoonal Forcing.</p>
+    </div>
+    <div class="student-card">
+        <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" alt="Ananda Sankar Dasgupta" class="student-avatar">
+        <h4 class="student-name">Ananda Sankar Dasgupta</h4>
+        <div class="student-role">Geomorphology</div>
+        <p class="student-topic">Valley and interfluve geomorphology and stratigraphy of the southern Ganga plains: implications for Late Quaternary landscape evolution.</p>
+    </div>
+    <div class="student-card">
+        <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" alt="Vikrant Jain" class="student-avatar">
+        <h4 class="student-name">Vikrant Jain</h4>
+        <div class="student-role">Geomorpholgy</div>
+        <p class="student-topic">Fluvio-Geomorphological analysis of Baghmati river system, North Bihar with special reference to fluvial hazard.</p>
+    </div>
+</div>
+
+        </div>
+
+        <div style="margin-bottom: 3rem; margin-top: 4rem;">
+            <h3 class="subsection-title" style="color: var(--primary-navy); border-bottom: 2px solid var(--accent-gold); padding-bottom: 10px; margin-bottom: 30px;">M.Tech Scholars</h3>
+<div class="student-grid">
+    <div class="student-card">
+        <img src="M.tech_students/Niharika Kote.jpeg" alt="Niharika Kote" class="student-avatar">
+        <h4 class="student-name">Niharika Kote</h4>
+        <div class="student-role">CZO Modeling</div>
+        <p class="student-topic"><span class="bio-short">My research focuses on understanding sediment dynamics and sediment connectivity in the Bhagirathi basin. I am broadly interested in applying...</span><span class="bio-full" style="display:none;">My research focuses on understanding sediment dynamics and sediment connectivity in the Bhagirathi basin. I am broadly interested in applying geomorphological principles to analyze soil erosion processes and their role in landscape evolution.</span><button class="view-more-btn" onclick="toggleBio(this)">View more</button></p>
+    </div>
+    <div class="student-card">
+        <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" alt="Shefali Kuril" class="student-avatar">
+        <h4 class="student-name">Shefali Kuril</h4>
+        <div class="student-role">Agriculture</div>
+        <p class="student-topic">Agricultural Monitoring, CZO, Ganga Basin.</p>
+    </div>
+    <div class="student-card">
+        <img src="Current_phd_students/Ankit yadav.jpg" alt="Ankit Yadav" class="student-avatar">
+        <h4 class="student-name">Ankit Yadav</h4>
+        <div class="student-role">Active Remote sensing</div>
+        <p class="student-topic">Active Remote sensing.</p>
+    </div>
+    <div class="student-card">
+        <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" alt="Aayush Tiwari" class="student-avatar">
+        <h4 class="student-name">Aayush Tiwari</h4>
+        <div class="student-role">Morphology</div>
+        <p class="student-topic">Morphological study of the smooth impact melt deposits on the Moon's far side.</p>
+    </div>
+    <div class="student-card">
+        <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" alt="Sambit Behera" class="student-avatar">
+        <h4 class="student-name">Sambit Behera</h4>
+        <div class="student-role">Agriculture</div>
+        <p class="student-topic">Understanding soil moisture – temperature interaction in an Agriculture dominated CZO in the Ganga Basin, India</p>
+    </div>
+    <div class="student-card">
+        <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" alt="Unnati Patel" class="student-avatar">
+        <h4 class="student-name">Unnati Patel</h4>
+        <div class="student-role">Geomorphology</div>
+        <p class="student-topic"><span class="bio-short">Assessment of geomorphic connectivity under changing LULC scenarios and its implications for management of a coastal wetland, Chilika Lagoon, Odisha,...</span><span class="bio-full" style="display:none;">Assessment of geomorphic connectivity under changing LULC scenarios and its implications for management of a coastal wetland, Chilika Lagoon, Odisha, India.</span><button class="view-more-btn" onclick="toggleBio(this)">View more</button></p>
+    </div>
+    <div class="student-card">
+        <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" alt="Satyasri Alka" class="student-avatar">
+        <h4 class="student-name">Satyasri Alka</h4>
+        <div class="student-role">Wetlands</div>
+        <p class="student-topic">Deciphering Optical Water Types (OWTs) of wetlands using Earth Observation (EO) datasets.</p>
+    </div>
+    <div class="student-card">
+        <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" alt="Arnab Laha" class="student-avatar">
+        <h4 class="student-name">Arnab Laha</h4>
+        <div class="student-role">Hazards</div>
+        <p class="student-topic">Forest Fire risk assessment for Sikkim using Remote Sensing data and multi-criteria decision making technique</p>
+    </div>
+    <div class="student-card">
+        <img src="Current_phd_students/Shobhit Singh.JPG" alt="Shobhit Singh" class="student-avatar">
+        <h4 class="student-name">Shobhit Singh</h4>
+        <div class="student-role">Hydro-Geomorphic</div>
+        <p class="student-topic">Flood risk assessment of the Ghaghra River system.</p>
+    </div>
+    <div class="student-card">
+        <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" alt="Rajat Rana" class="student-avatar">
+        <h4 class="student-name">Rajat Rana</h4>
+        <div class="student-role">Groundwater</div>
+        <p class="student-topic">Groundwater Modeling for Punjab and Haryana using Numerical Approach.</p>
+    </div>
+    <div class="student-card">
+        <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" alt="Siba Mohanty" class="student-avatar">
+        <h4 class="student-name">Siba Mohanty</h4>
+        <div class="student-role">LULC Mapping</div>
+        <p class="student-topic">Linking river space to LULC mapping: towards policy interventions.</p>
+    </div>
+    <div class="student-card">
+        <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" alt="Rimali Mitra" class="student-avatar">
+        <h4 class="student-name">Rimali Mitra</h4>
+        <div class="student-role">Hydrology</div>
+        <p class="student-topic">Hydrologic connectivity analysis in the Ramganga basin.</p>
+    </div>
+    <div class="student-card">
+        <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" alt="Devanshi Pathak" class="student-avatar">
+        <h4 class="student-name">Devanshi Pathak</h4>
+        <div class="student-role">Sediment</div>
+        <p class="student-topic">Simulating flows and sediment dynamics in the Ramganga basin using INCA-Sed model.</p>
+    </div>
+    <div class="student-card">
+        <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" alt="R. Chandrashekhar" class="student-avatar">
+        <h4 class="student-name">R. Chandrashekhar</h4>
+        <div class="student-role">Geomorphlogy</div>
+        <p class="student-topic">Geomorphology and LULC changes in the Chilika Lake basin, Odisha.</p>
+    </div>
+    <div class="student-card">
+        <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" alt="Sana Khan" class="student-avatar">
+        <h4 class="student-name">Sana Khan</h4>
+        <div class="student-role">Sediment</div>
+        <p class="student-topic">Assessing flows and sediment dynamics in the Ganga river under modern and future climate scenarios.</p>
+    </div>
+    <div class="student-card">
+        <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" alt="Shivika Saxena" class="student-avatar">
+        <h4 class="student-name">Shivika Saxena</h4>
+        <div class="student-role">Wetlands</div>
+        <p class="student-topic">Wetland classification and mapping using remote sensing and GIS techniques: a case study from north Bihar plains.</p>
+    </div>
+    <div class="student-card">
+        <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" alt="Sajal Mittal" class="student-avatar">
+        <h4 class="student-name">Sajal Mittal</h4>
+        <div class="student-role">Geomorphology</div>
+        <p class="student-topic">Geomorphology and riverine flood risk analysis of Mahanadi delta, India based on remote sensing and GIS.</p>
+    </div>
+    <div class="student-card">
+        <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" alt="Dipro Sarkar" class="student-avatar">
+        <h4 class="student-name">Dipro Sarkar</h4>
+        <div class="student-role">River Sciences</div>
+        <p class="student-topic">Impact of anthropogenic interventions and human transformations on the Ganga river around Kanpur region.</p>
+    </div>
+    <div class="student-card">
+        <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" alt="Sananda Sarkar" class="student-avatar">
+        <h4 class="student-name">Sananda Sarkar</h4>
+        <div class="student-role">River Sciences</div>
+        <p class="student-topic">Assessing present and future river flows and water quality in the Ganga basin due to climate change.</p>
+    </div>
+    <div class="student-card">
+        <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" alt="Somil Swrankar" class="student-avatar">
+        <h4 class="student-name">Somil Swrankar</h4>
+        <div class="student-role">Sedimentation</div>
+        <p class="student-topic">Soil erosion and sediment transport modeling in the Garra basin using CEASER-Lissflood model.</p>
+    </div>
+    <div class="student-card">
+        <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" alt="Anshu Malini" class="student-avatar">
+        <h4 class="student-name">Anshu Malini</h4>
+        <div class="student-role">Sedimentation</div>
+        <p class="student-topic">Modeling sediment transport and morpho-dynamics in parts of the Ganga basin in climate change scenario.</p>
+    </div>
+    <div class="student-card">
+        <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" alt="Jawed Ahmad" class="student-avatar">
+        <h4 class="student-name">Jawed Ahmad</h4>
+        <div class="student-role">River Dynamics</div>
+        <p class="student-topic">Shallow sub-surface stratigraphy of the Kosi and Gandak megafans as interpreted from electrical resistivity.</p>
+    </div>
+    <div class="student-card">
+        <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" alt="S. Priyanka" class="student-avatar">
+        <h4 class="student-name">S. Priyanka</h4>
+        <div class="student-role">River Dynamics</div>
+        <p class="student-topic">River dynamics, flood risk evaluation and integrated basin management with special reference to the Kosi river, north Bihar.</p>
+    </div>
+    <div class="student-card">
+        <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" alt="B V Suresh Reddy" class="student-avatar">
+        <h4 class="student-name">B V Suresh Reddy</h4>
+        <div class="student-role">Hydrology</div>
+        <p class="student-topic">Hydro-geomorphic impact assessment of the Ken-Betwa interlinking project.</p>
+    </div>
+    <div class="student-card">
+        <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" alt="Sujit Kumar Sarkar" class="student-avatar">
+        <h4 class="student-name">Sujit Kumar Sarkar</h4>
+        <div class="student-role">Geomorphology</div>
+        <p class="student-topic">Geomorphic elements and sedimentary environments of the Ganga Delta: Exploring Facies and Magnetic Signatures.</p>
+    </div>
+    <div class="student-card">
+        <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" alt="Santosh Ghosh" class="student-avatar">
+        <h4 class="student-name">Santosh Ghosh</h4>
+        <div class="student-role">River Dynamics</div>
+        <p class="student-topic">Landscape evolution and fluvial dynamics of the Lower Ganga plains.</p>
+    </div>
+</div>
+
+        </div>
+    </div>
+</section>
+
+<style>
+.view-more-btn {
+    display: block;
+    margin: 10px auto 0 auto;
+    background: none;
+    border: none;
+    color: var(--accent-gold);
+    font-weight: 700;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    cursor: pointer;
+    padding: 4px 0;
+    text-align: center;
+    transition: opacity 0.2s;
+}
+.view-more-btn:hover {
+    opacity: 0.75;
+}
+</style>
+
+<script>
+function toggleBio(btn) {
+    const p = btn.parentElement;
+    const shortText = p.querySelector('.bio-short');
+    const fullText = p.querySelector('.bio-full');
+    if (fullText.style.display === 'none') {
+        fullText.style.display = 'inline';
+        shortText.style.display = 'none';
+        btn.textContent = 'View less';
+    } else {
+        fullText.style.display = 'none';
+        shortText.style.display = 'inline';
+        btn.textContent = 'View more';
+    }
+}
+</script>
+
+<footer>
+    <div class="container footer-grid">
+        <div class="footer-brand">
+            <h3>Prof. Rajiv Sinha</h3>
+            <p>Department of Earth Sciences<br>Indian Institute of Technology Kanpur<br>Kanpur - 208016, Uttar Pradesh, India</p>
+            <div class="footer-socials">
+                <a href="mailto:rsinha@iitk.ac.in" title="Email"><i class="fas fa-envelope"></i></a>
+                <a href="https://scholar.google.com/citations?user=VkRcwwEAAAAJ&hl=en&oi=ao" target="_blank" title="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
+                <a href="https://www.linkedin.com/in/rajiv-sinha-a87a68b2/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+        <div>
+            <h4 class="footer-title">Quick Links</h4>
+            <ul class="footer-links">
+                <li><a href="Rs_web.html">Home Profile</a></li>
+                <li><a href="research_expertise.html">Research Expertise</a></li>
+                <li><a href="research.html">Journal Publications</a></li>
+                <li><a href="awards.html">Awards & Honors</a></li>
+                <li><a href="grants.html">Sponsored Projects</a></li>
+            </ul>
+        </div>
+        <div>
+            <h4 class="footer-title">Mentorship</h4>
+            <ul class="footer-links">
+                <li><a href="teaching.html">Courses Taught</a></li>
+                <li><a href="students.html">PhD & Master's Scholars</a></li>
+                <li><a href="Thesis.html">Thesis Supervised</a></li>
+                <li><a href="outreach.html">Outreach & Media</a></li>
+                <li><a href="lab_page/HB_new.html" target="_blank">Earth & River Dynamics Lab</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2026 Prof. Rajiv Sinha. Department of Earth Sciences, IIT Kanpur. All Rights Reserved.</p>
+    </div>
+</footer>
+
+<script src="home_script.js"></script>
 <script src="script.js"></script>
 </body>
 </html>

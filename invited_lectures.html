@@ -1,240 +1,169 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Invited Lectures — Rajiv Sinha</title>
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-<script src="https://cdn.tailwindcss.com"></script>
-<link rel="stylesheet" href="nav.css">
-
-<style>
-:root{
-    --primary:      #000c18;
-    --primary-2:    #0a1d31;
-    --accent:       #c5a059;
-    --accent-dim:   rgba(197,160,89,0.28);
-    --signal:       #5eead4;
-    --signal-dim:   rgba(94,234,212,0.28);
-    --text-hi:      #f4f1ea;
-    --text-muted:   #94a4b5;
-    --transition:   all .35s cubic-bezier(.16,1,.3,1);
-}
-*{ box-sizing:border-box; margin:0; padding:0; }
-html{ scroll-behavior:smooth; }
-body{ font-family:'Inter',sans-serif; background:var(--primary); color:var(--text-hi); line-height:1.6; overflow-x:hidden; }
-
-.font-display{ font-family:'Fraunces',serif; }
-.font-mono{ font-family:'JetBrains Mono',monospace; }
-
-.reveal{ opacity:0; transform:translateY(16px); transition:opacity .6s cubic-bezier(.16,1,.3,1), transform .6s cubic-bezier(.16,1,.3,1); }
-.reveal.is-visible{ opacity:1; transform:translateY(0); }
-
-.texture{ position:absolute; inset:0; opacity:.14; pointer-events:none; }
-
-.panel-head{
-    display:flex; align-items:baseline; justify-content:space-between; gap:10px;
-    padding-bottom:14px; margin-bottom:6px; border-bottom:2px solid;
-}
-.panel-head.india{ border-color:var(--accent); }
-.panel-head.abroad{ border-color:var(--signal); }
-.panel-head h2{ font-family:'Fraunces',serif; font-size:1.5rem; font-weight:600; }
-.panel-head.india h2{ color:var(--accent); }
-.panel-head.abroad h2{ color:var(--signal); }
-.panel-head .n{ font-family:'JetBrains Mono',monospace; font-size:.7rem; color:var(--text-muted); }
-
-.lec-row{ padding:16px 4px; border-bottom:1px solid rgba(148,164,181,0.1); transition:var(--transition); }
-.lec-row:hover{ background:rgba(197,160,89,0.03); }
-.lec-row:last-child{ border-bottom:none; }
-.lec-top{ display:flex; align-items:center; gap:8px; flex-wrap:wrap; margin-bottom:6px; }
-.lec-year{ font-family:'JetBrains Mono',monospace; font-size:.72rem; font-weight:700; }
-.panel-india .lec-year{ color:var(--accent); }
-.panel-abroad .lec-year{ color:var(--signal); }
-.lec-badge{
-    font-family:'JetBrains Mono',monospace; font-size:.58rem; font-weight:700; letter-spacing:.05em; text-transform:uppercase;
-    padding:2px 8px; border-radius:999px; border:1px solid;
-}
-.panel-india .lec-badge{ color:var(--accent); border-color:var(--accent-dim); background:rgba(197,160,89,0.06); }
-.panel-abroad .lec-badge{ color:var(--signal); border-color:var(--signal-dim); background:rgba(94,234,212,0.06); }
-.lec-title{ font-size:.88rem; color:var(--text-hi); }
-.lec-venue{ font-size:.78rem; color:var(--text-muted); margin-top:4px; }
-
-#search-input::placeholder{ color:var(--text-muted); }
-#search-input:focus{ outline:none; border-color:var(--accent); box-shadow:0 0 0 3px rgba(197,160,89,0.12); }
-
-@media (prefers-reduced-motion: reduce){ .reveal{ transition:none; opacity:1; transform:none; } }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invited & Keynote Lectures | Prof. Rajiv Sinha</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="nav.css">
+    <style>
+        .panel-head {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            padding-bottom: 12px;
+            margin-bottom: 20px;
+            border-bottom: 2px solid var(--accent-blue);
+        }
+        .panel-head.india { border-color: var(--accent-gold); }
+        .panel-head.abroad { border-color: var(--accent-teal); }
+        .panel-head h3 { font-size: 1.3rem; font-weight: 700; color: var(--primary-dark); }
+        .panel-head .n { font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; font-weight: 600; color: var(--text-muted); }
+        
+        .lec-row {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            padding: 18px 20px;
+            margin-bottom: 14px;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+        }
+        .lec-row:hover {
+            box-shadow: var(--shadow-md);
+            transform: translateY(-2px);
+            border-color: var(--accent-blue);
+        }
+        .lec-top { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+        .lec-year { font-family: 'JetBrains Mono', monospace; font-size: 0.85rem; font-weight: 700; color: var(--accent-gold); }
+        .lec-badge {
+            font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;
+            padding: 2px 8px; border-radius: var(--radius-full); background: rgba(217, 119, 6, 0.1); color: var(--accent-gold);
+        }
+        .lec-title { font-size: 0.95rem; font-weight: 700; color: var(--primary-dark); line-height: 1.5; margin-bottom: 6px; }
+        .lec-venue { font-size: 0.85rem; color: var(--text-muted); }
+    </style>
 </head>
 <body>
-<nav class="top-navbar">
-    <!-- Mobile Toggle -->
-    <button class="menu-toggle"
-            aria-label="Toggle Navigation"
-            aria-expanded="false"
-            type="button">
-        <span></span>
-        <span></span>
-        <span></span>
-    </button>
-    <!-- Navigation -->
-    <ul class="nav-menu">
-        <li><a href="Rs_web.html#hero" class="nav-link"><i class="fas fa-home"></i><span>Home</span></a></li>
-        <li class="nav-dropdown">
-            <button class="nav-link publication-toggle"
-                    type="button"
-                    aria-expanded="false"
-                    aria-haspopup="true">
-                <i class="fas fa-user-tie"></i>
-                <span>Career Profile</span>
-                <i class="fas fa-chevron-down dropdown-arrow"></i>
-            </button>
-            <!-- Dropdown -->
-            <div class="publication-dropdown">
-                <a href="resume.html" class="dropdown-item">
-                    <i class="fas fa-user-tie"></i>
-                    <span>Education & Experience</span>
-                </a>
-                <a href="services.html" class="dropdown-item">
-                    <i class="fas fa-briefcase"></i>
-                    <span>Professional Experience</span>
-                </a>
-            </div>
-        </li>
-        <li class="nav-dropdown">
-            <button class="nav-link publication-toggle"
-                    type="button"
-                    aria-expanded="false"
-                    aria-haspopup="true">
-                <i class="fas fa-chart-line"></i>
-                <span>Research & Scholarly Activities</span>
-                <i class="fas fa-chevron-down dropdown-arrow"></i>
-            </button>
-            <!-- Dropdown -->
-            <div class="publication-dropdown">
-                <a href="research_expertise.html" class="dropdown-item">
-                    <i class="fas fa-flask"></i>
-                    <span>Skills & Expertise</span>
-                </a>
-                <a href="research.html" class="dropdown-item">
-                    <i class="fas fa-book-open"></i>
-                    <span>Research & Publications</span>
-                </a>
-                <a href="Peer_review_books.html" class="dropdown-item">
-                    <i class="fas fa-pen-to-square"></i>
-                    <span>Reviewed Writings</span>
-                </a>
-                <a href="Citations.html" class="dropdown-item">
-                    <i class="fas fa-chart-column"></i>
-                    <span>Citation Impacts</span>
-                </a>
-                <a href="conferences.html" class="dropdown-item">
-                    <i class="fas fa-users"></i>
-                    <span>Conferences</span>
-                </a>
-                <a href="invited_lectures.html" class="dropdown-item">
-                    <i class="fas fa-microphone-lines"></i>
-                    <span>Lectures</span>
-                </a>
-            </div>
-        </li>
-        <li class="nav-dropdown">
-            <button class="nav-link publication-toggle"
-                    type="button"
-                    aria-expanded="false"
-                    aria-haspopup="true">
-                <i class="fas fa-chalkboard-teacher"></i>
-                <span>Teaching & Mentorship</span>
-                <i class="fas fa-chevron-down dropdown-arrow"></i>
-            </button>
-            <!-- Dropdown -->
-            <div class="publication-dropdown">
-                <a href="teaching.html" class="dropdown-item">
-                    <i class="fas fa-book-open"></i>
-                    <span>Courses</span>
-                </a>
-                <a href="outreach.html" class="dropdown-item">
-                    <i class="fas fa-globe"></i>
-                    <span>Outreach Activities</span>
-                </a>
-                <a href="Thesis.html" class="dropdown-item">
-                    <i class="fas fa-file-pen"></i>
-                    <span>Thesis Mentored</span>
-                </a>
-            </div>
-        </li>
-        <li><a href="lab_page/HB_new.html" class="nav-link"target="_blank"><i class="fas fa-microscope"></i><span>Labs</span></a></li>
-        <li><a href="grants.html" class="nav-link"><i class="fas fa-user-graduate"></i><span>Research Grants</span></a></li>
-        <li><a href="students.html" class="nav-link"><i class="fas fa-user-graduate"></i><span>Students</span></a></li>
-        <li><a href="awards.html" class="nav-link"><i class="fas fa-award"></i><span>Awards</span></a></li>
-        <li><a href="Rs_web.html#contact" class="nav-link"><i class="fas fa-envelope"></i><span>Contact</span></a></li>
-    </ul>
-</nav>
-<!-- ============================================================
-     HEADER
-     ============================================================ -->
-<section class="relative overflow-hidden" style="background:radial-gradient(ellipse 55% 55% at 12% 0%, rgba(197,160,89,0.1), transparent 60%), radial-gradient(ellipse 55% 55% at 88% 100%, rgba(94,234,212,0.08), transparent 60%), var(--primary);">
-    <div class="relative z-10 max-w-5xl mx-auto px-6 md:px-10 pt-28 md:pt-36 pb-8 md:pb-12 text-center">
-        <h1 class="reveal is-visible font-display mt-6 text-3xl sm:text-4xl md:text-6xl font-semibold leading-tight" style="color:var(--text-hi);">
-            On Every <span style="color:var(--accent);">Platform</span>
-        </h1>
-        <p class="reveal is-visible mt-5 max-w-xl mx-auto text-sm md:text-base" style="color:var(--text-muted);">
-            Institute, keynote, and plenary lectures delivered across India and abroad,
-            1997–2019 — from Antarctic lake sedimentology to Himalayan sediment dynamics.
-        </p>
 
-        <div class="reveal is-visible mt-10 grid grid-cols-3 gap-4 md:gap-16 max-w-lg mx-auto">
-            <div>
-                <div class="font-display text-3xl md:text-4xl font-bold" style="color:var(--text-hi);">40</div>
-                <div class="font-mono text-[0.6rem] md:text-xs uppercase mt-2" style="color:var(--text-muted);">Lectures</div>
-            </div>
-            <div>
-                <div class="font-display text-3xl md:text-4xl font-bold" style="color:var(--accent);">20</div>
-                <div class="font-mono text-[0.6rem] md:text-xs uppercase mt-2" style="color:var(--text-muted);">In&nbsp;India</div>
-            </div>
-            <div>
-                <div class="font-display text-3xl md:text-4xl font-bold" style="color:var(--signal);">20</div>
-                <div class="font-mono text-[0.6rem] md:text-xs uppercase mt-2" style="color:var(--text-muted);">Abroad</div>
-            </div>
+<!-- Top Branding Bar -->
+<div class="top-branding-bar">
+    <div class="brand-info">
+        <img src="IITK_logo_white.png" alt="IIT Kanpur Logo" class="brand-logo">
+        <div class="brand-text">
+            <h1>Indian Institute of Technology Kanpur</h1>
+            <p>Department of Earth Sciences</p>
         </div>
+    </div>
+    <div class="header-quick-links">
+        <a href="mailto:rsinha@iitk.ac.in" class="header-icon-link" aria-label="Email" title="Email"><i class="fas fa-envelope"></i></a>
+        <a href="https://scholar.google.com/citations?user=VkRcwwEAAAAJ&hl=en&oi=ao" target="_blank" class="header-icon-link" aria-label="Google Scholar" title="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
+        <a href="https://www.linkedin.com/in/rajiv-sinha-a87a68b2/" target="_blank" class="header-icon-link" aria-label="LinkedIn" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="lab_page/HB_new.html" target="_blank" class="header-link-pill"><i class="fas fa-microscope"></i> Lab Site</a>
+    </div>
+</div>
+
+<!-- Navigation -->
+<nav class="top-navbar">
+    <div class="nav-container">
+        <button class="menu-toggle" aria-label="Toggle Navigation" type="button">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <ul class="nav-menu">
+            <li><a href="Rs_web.html" class="nav-link"><i class="fas fa-home"></i><span>Home</span></a></li>
+            <li class="nav-dropdown">
+                <button class="nav-link publication-toggle" type="button">
+                    <i class="fas fa-user-tie"></i>
+                    <span>Career Profile</span>
+                    <i class="fas fa-chevron-down dropdown-arrow"></i>
+                </button>
+                <div class="publication-dropdown">
+                    <a href="resume.html" class="dropdown-item"><i class="fas fa-id-card"></i><span>Education & Experience</span></a>
+                    <a href="services.html" class="dropdown-item"><i class="fas fa-briefcase"></i><span>Professional Service</span></a>
+                    <a href="awards.html" class="dropdown-item"><i class="fas fa-trophy"></i><span>Honors & Awards</span></a>
+                </div>
+            </li>
+            <li class="nav-dropdown">
+                <button class="nav-link publication-toggle" type="button">
+                    <i class="fas fa-flask"></i>
+                    <span>Research</span>
+                    <i class="fas fa-chevron-down dropdown-arrow"></i>
+                </button>
+                <div class="publication-dropdown">
+                    <a href="research_expertise.html" class="dropdown-item"><i class="fas fa-microscope"></i><span>Research Expertise</span></a>
+                    <a href="research.html" class="dropdown-item"><i class="fas fa-journal-whills"></i><span>Journal Publications</span></a>
+                    <a href="Peer_review_books.html" class="dropdown-item"><i class="fas fa-book"></i><span>Books & Chapters</span></a>
+                    <a href="Citations.html" class="dropdown-item"><i class="fas fa-chart-line"></i><span>Citation Impact</span></a>
+                    <a href="grants.html" class="dropdown-item"><i class="fas fa-hand-holding-usd"></i><span>Grants & Projects</span></a>
+                    <a href="conferences.html" class="dropdown-item"><i class="fas fa-users"></i><span>Conferences & Talks</span></a>
+                    <a href="invited_lectures.html" class="dropdown-item"><i class="fas fa-microphone"></i><span>Invited Lectures</span></a>
+                </div>
+            </li>
+            <li class="nav-dropdown">
+                <button class="nav-link publication-toggle" type="button">
+                    <i class="fas fa-chalkboard-teacher"></i>
+                    <span>Teaching & Mentorship</span>
+                    <i class="fas fa-chevron-down dropdown-arrow"></i>
+                </button>
+                <div class="publication-dropdown">
+                    <a href="teaching.html" class="dropdown-item"><i class="fas fa-book-open"></i><span>Courses Taught</span></a>
+                    <a href="students.html" class="dropdown-item"><i class="fas fa-user-friends"></i><span>Students & Scholars</span></a>
+                    <a href="Thesis.html" class="dropdown-item"><i class="fas fa-graduation-cap"></i><span>Thesis Supervised</span></a>
+                </div>
+            </li>
+            <li><a href="outreach.html" class="nav-link"><i class="fas fa-globe-asia"></i><span>Outreach & Media</span></a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- Page Header -->
+<section style="background: var(--bg-card); border-bottom: 1px solid var(--border-color); padding: 40px 8%;">
+    <div class="container">
+        <span class="section-tag">Keynote & Guest Addresses</span>
+        <h2 class="section-title serif-heading">Invited & Keynote Lectures</h2>
+        <p class="section-subtitle">Plenary, keynote, and invited scientific lectures delivered across prestigious universities, national academies, and international research institutes in India and abroad.</p>
     </div>
 </section>
 
-<!-- ============================================================
-     SPLIT PANELS
-     ============================================================ -->
-<main class="max-w-5xl mx-auto px-5 md:px-10 py-12 md:py-16">
-
-    <div class="reveal relative mb-12">
-        <i class="fas fa-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-sm" style="color:var(--text-muted);"></i>
-        <input id="search-input" type="text" placeholder="Search by title, venue, or location…"
-               class="w-full pl-11 pr-4 py-3 rounded-lg text-sm font-medium"
-               style="background:var(--primary-2); border:1px solid var(--accent-dim); color:var(--text-hi);">
-        <span id="count-label" class="block mt-3 font-mono text-xs" style="color:var(--text-muted);"></span>
-    </div>
-
-    <div class="grid md:grid-cols-2 gap-10 md:gap-14">
-        <section>
-            <div class="reveal panel-head india">
-                <h2><i class="fas fa-map-pin mr-1"></i> In India</h2>
-                <span class="n" id="count-india">20 lectures</span>
+<!-- Split Panels Section -->
+<section style="padding: 40px 8% 60px 8%;">
+    <div class="container" style="max-width: 1150px;">
+        <div class="filter-search-bar">
+            <div class="search-input-wrapper">
+                <i class="fas fa-search"></i>
+                <input id="search-input" type="text" placeholder="Search invited lectures by title, venue, or location…" class="search-input">
             </div>
-            <div id="list-india" class="panel-india"></div>
-        </section>
+            <span id="count-label" style="font-size: 0.85rem; font-weight: 600; color: var(--text-muted);"></span>
+        </div>
 
-        <section>
-            <div class="reveal panel-head abroad">
-                <h2><i class="fas fa-earth-americas mr-1"></i> Abroad</h2>
-                <span class="n" id="count-abroad">20 lectures</span>
+        <div class="grid-2-col" style="align-items: start; gap: 30px;">
+            <div>
+                <div class="panel-head india">
+                    <h3 class="serif-heading"><i class="fas fa-map-marker-alt" style="color: var(--accent-gold); margin-right: 8px;"></i> In India</h3>
+                    <span class="n" id="count-india">20 lectures</span>
+                </div>
+                <div id="list-india"></div>
             </div>
-            <div id="list-abroad" class="panel-abroad"></div>
-        </section>
-    </div>
 
-    <p id="empty-msg" class="text-center text-sm mt-10" style="color:var(--text-muted);" hidden>
-        No lectures match "<span id="empty-query"></span>."
-    </p>
+            <div>
+                <div class="panel-head abroad">
+                    <h3 class="serif-heading"><i class="fas fa-globe" style="color: var(--accent-teal); margin-right: 8px;"></i> Abroad</h3>
+                    <span class="n" id="count-abroad">20 lectures</span>
+                </div>
+                <div id="list-abroad"></div>
+            </div>
+        </div>
+
+        <p id="empty-msg" style="text-align:center; color:var(--text-muted); margin-top: 20px;" hidden>
+            No lectures match "<span id="empty-query"></span>."
+        </p>
+    </div>
+</section>
+
 </main>
 
 <script>
@@ -274,7 +203,7 @@ var LECTURES = [
 {region:"abroad",y:2007,date:"18 Jun 2007",t:"Calcretes in Ganga plains: a proxy for paleo-precipitation and paleo-vegetation (MIS 3-5).",v:"Department of Geography, University of Newcastle",loc:"UK",badge:null},
 {region:"abroad",y:2011,date:"23 Jun 2011",t:"River Dynamics in a Large Himalayan River: the case of the Kosi, India and Nepal.",v:"Institut de Physique du Globe, Paris",loc:"France",badge:null},
 {region:"abroad",y:2011,date:"21\u201327 Jul 2011",t:"\u2018Buried\u2019 paleo-Ghaggar channel belt inferred through resistivity soundings around Kalibangan Harappan site, north western Rajasthan, India.",v:"International Quaternary Association (INQUA) Congress, Bern",loc:"Switzerland",badge:null},
-{region:"abroad",y:null,date:"",t:"Sediment dynamics and sediment connectivity in the Kosi basin: implications for river hazards.",v:"Department of Earth and Environmental Science Seminar, University of Potsdam",loc:"Germany",badge:null},
+{region:"abroad",y:2018,date:"",t:"Sediment dynamics and sediment connectivity in the Kosi basin: implications for river hazards.",v:"Department of Earth and Environmental Science Seminar, University of Potsdam",loc:"Germany",badge:null},
 {region:"abroad",y:2018,date:"10 Dec 2018",t:"Sedimentation in the Koshi river: drivers and impacts.",v:"International Centre for Integrated Mountain Development (ICIMOD), Kathmandu",loc:"Nepal",badge:null},
 {region:"abroad",y:2019,date:"18 Feb 2019",t:"Sediment dynamics and sediment connectivity in the upper Kosi basin, Central Himalaya: implications for river hazards.",v:"IHRR Seminars and Public Lecture, University of Durham",loc:"UK",badge:null},
 {region:"abroad",y:2019,date:"16 May 2019",t:"Megafans in the Himalayan foreland: Geomorphic processes and controlling factors.",v:"Physical Geography Seminar, University of Durham",loc:"UK",badge:null},
@@ -338,13 +267,53 @@ var LECTURES = [
         countIndia.textContent = india.length + ' lectures';
         countAbroad.textContent = abroad.length + ' lectures';
 
-        var total = india.length + abroad.length;
-        countLabel.textContent = 'Showing ' + total + ' of ' + LECTURES.length;
-        emptyMsg.hidden = total !== 0;
-        emptyQuery.textContent = searchInput.value.trim();
-    });
+            var total = india.length + abroad.length;
+            countLabel.textContent = 'Showing ' + total + ' of ' + LECTURES.length;
+            emptyMsg.hidden = total !== 0;
+            emptyQuery.textContent = searchInput.value.trim();
+        });
 })();
 </script>
-<script src="script.js"></script>
+
+<!-- Footer -->
+<footer>
+    <div class="container footer-grid">
+        <div class="footer-brand">
+            <h3>Prof. Rajiv Sinha</h3>
+            <p>Department of Earth Sciences<br>Indian Institute of Technology Kanpur<br>Kanpur - 208016, Uttar Pradesh, India</p>
+            <div class="footer-socials">
+                <a href="mailto:rsinha@iitk.ac.in" title="Email"><i class="fas fa-envelope"></i></a>
+                <a href="https://scholar.google.com/citations?user=VkRcwwEAAAAJ&hl=en&oi=ao" target="_blank" title="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
+                <a href="https://www.linkedin.com/in/rajiv-sinha-a87a68b2/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+        <div>
+            <h4 class="footer-title">Quick Links</h4>
+            <ul class="footer-links">
+                <li><a href="Rs_web.html">Home Profile</a></li>
+                <li><a href="research_expertise.html">Research Expertise</a></li>
+                <li><a href="research.html">Journal Publications</a></li>
+                <li><a href="awards.html">Awards & Honors</a></li>
+                <li><a href="grants.html">Sponsored Projects</a></li>
+            </ul>
+        </div>
+        <div>
+            <h4 class="footer-title">Mentorship</h4>
+            <ul class="footer-links">
+                <li><a href="teaching.html">Courses Taught</a></li>
+                <li><a href="students.html">PhD & Master's Scholars</a></li>
+                <li><a href="Thesis.html">Thesis Supervised</a></li>
+                <li><a href="outreach.html">Outreach & Media</a></li>
+                <li><a href="lab_page/HB_new.html" target="_blank">Earth & River Dynamics Lab</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2026 Prof. Rajiv Sinha. Department of Earth Sciences, IIT Kanpur. All Rights Reserved.</p>
+    </div>
+</footer>
+
+<script src="home_script.js"></script>
 </body>
 </html>
+

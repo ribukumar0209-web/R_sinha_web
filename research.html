@@ -1,258 +1,174 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Publications</title>
-
-<script src="https://cdn.tailwindcss.com"></script>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-<script src="https://cdn.tailwindcss.com"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="nav.css">
-
-<style>
-body { font-family: 'Inter', sans-serif; }
-.pub a { color:#38bdf8; word-break: break-all; }
-.pub a:hover { text-decoration: underline; }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Journal Publications | Prof. Rajiv Sinha</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="nav.css">
+    <style>
+        .pub {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-left: 4px solid var(--primary-navy);
+            border-radius: var(--radius-md);
+            padding: 16px 20px;
+            margin-bottom: 12px;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+        }
+        .pub:hover {
+            border-left-color: var(--accent-gold);
+            box-shadow: var(--shadow-md);
+            transform: translateX(3px);
+        }
+        .pub i {
+            color: var(--accent-blue);
+            font-style: italic;
+        }
+        .pub a {
+            color: var(--accent-gold);
+            word-break: break-all;
+            font-weight: 600;
+        }
+        .pub a:hover {
+            text-decoration: underline;
+        }
+        .year-heading {
+            font-size: 1.8rem;
+            color: var(--primary-dark);
+            margin: 40px 0 20px 0;
+            padding-bottom: 6px;
+            border-bottom: 2px solid var(--accent-gold);
+            display: inline-block;
+        }
+    </style>
 </head>
+<body>
 
-<body class="bg-slate-900 text-white">
+<!-- Top Branding Bar -->
+<div class="top-branding-bar">
+    <div class="brand-info">
+        <img src="IITK_logo_white.png" alt="IIT Kanpur Logo" class="brand-logo">
+        <div class="brand-text">
+            <h1>Indian Institute of Technology Kanpur</h1>
+            <p>Department of Earth Sciences</p>
+        </div>
+    </div>
+    <div class="header-quick-links">
+        <a href="mailto:rsinha@iitk.ac.in" class="header-icon-link" aria-label="Email" title="Email"><i class="fas fa-envelope"></i></a>
+        <a href="https://scholar.google.com/citations?user=VkRcwwEAAAAJ&hl=en&oi=ao" target="_blank" class="header-icon-link" aria-label="Google Scholar" title="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
+        <a href="https://www.linkedin.com/in/rajiv-sinha-a87a68b2/" target="_blank" class="header-icon-link" aria-label="LinkedIn" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="lab_page/HB_new.html" target="_blank" class="header-link-pill"><i class="fas fa-microscope"></i> Lab Site</a>
+    </div>
+</div>
+
+<!-- Navigation -->
 <nav class="top-navbar">
-    <!-- Mobile Toggle -->
-    <button class="menu-toggle"
-            aria-label="Toggle Navigation"
-            aria-expanded="false"
-            type="button">
-        <span></span>
-        <span></span>
-        <span></span>
-    </button>
-    <!-- Navigation -->
-    <ul class="nav-menu">
-        <li><a href="Rs_web.html#hero" class="nav-link"><i class="fas fa-home"></i><span>Home</span></a></li>
-        <li class="nav-dropdown">
-            <button class="nav-link publication-toggle"
-                    type="button"
-                    aria-expanded="false"
-                    aria-haspopup="true">
-                <i class="fas fa-user-tie"></i>
-                <span>Career Profile</span>
-                <i class="fas fa-chevron-down dropdown-arrow"></i>
-            </button>
-            <!-- Dropdown -->
-            <div class="publication-dropdown">
-                <a href="resume.html" class="dropdown-item">
+    <div class="nav-container">
+        <button class="menu-toggle" aria-label="Toggle Navigation" type="button">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <ul class="nav-menu">
+            <li><a href="Rs_web.html" class="nav-link"><i class="fas fa-home"></i><span>Home</span></a></li>
+            <li class="nav-dropdown">
+                <button class="nav-link publication-toggle" type="button">
                     <i class="fas fa-user-tie"></i>
-                    <span>Education & Experience</span>
-                </a>
-                <a href="services.html" class="dropdown-item">
-                    <i class="fas fa-briefcase"></i>
-                    <span>Professional Experience</span>
-                </a>
-            </div>
-        </li>
-        <li class="nav-dropdown">
-            <button class="nav-link publication-toggle"
-                    type="button"
-                    aria-expanded="false"
-                    aria-haspopup="true">
-                <i class="fas fa-chart-line"></i>
-                <span>Research & Scholarly Activities</span>
-                <i class="fas fa-chevron-down dropdown-arrow"></i>
-            </button>
-            <!-- Dropdown -->
-            <div class="publication-dropdown">
-                <a href="research_expertise.html" class="dropdown-item">
+                    <span>Career Profile</span>
+                    <i class="fas fa-chevron-down dropdown-arrow"></i>
+                </button>
+                <div class="publication-dropdown">
+                    <a href="resume.html" class="dropdown-item"><i class="fas fa-id-card"></i><span>Education & Experience</span></a>
+                    <a href="services.html" class="dropdown-item"><i class="fas fa-briefcase"></i><span>Professional Service</span></a>
+                    <a href="awards.html" class="dropdown-item"><i class="fas fa-trophy"></i><span>Honors & Awards</span></a>
+                </div>
+            </li>
+            <li class="nav-dropdown">
+                <button class="nav-link publication-toggle" type="button">
                     <i class="fas fa-flask"></i>
-                    <span>Skills & Expertise</span>
-                </a>
-                <a href="research.html" class="dropdown-item">
-                    <i class="fas fa-book-open"></i>
-                    <span>Research & Publications</span>
-                </a>
-                <a href="Peer_review_books.html" class="dropdown-item">
-                    <i class="fas fa-pen-to-square"></i>
-                    <span>Reviewed Writings</span>
-                </a>
-                <a href="Citations.html" class="dropdown-item">
-                    <i class="fas fa-chart-column"></i>
-                    <span>Citation Impacts</span>
-                </a>
-                <a href="conferences.html" class="dropdown-item">
-                    <i class="fas fa-users"></i>
-                    <span>Conferences</span>
-                </a>
-                <a href="invited_lectures.html" class="dropdown-item">
-                    <i class="fas fa-microphone-lines"></i>
-                    <span>Lectures</span>
-                </a>
-            </div>
-        </li>
-        <li class="nav-dropdown">
-            <button class="nav-link publication-toggle"
-                    type="button"
-                    aria-expanded="false"
-                    aria-haspopup="true">
-                <i class="fas fa-chalkboard-teacher"></i>
-                <span>Teaching & Mentorship</span>
-                <i class="fas fa-chevron-down dropdown-arrow"></i>
-            </button>
-            <!-- Dropdown -->
-            <div class="publication-dropdown">
-                <a href="teaching.html" class="dropdown-item">
-                    <i class="fas fa-book-open"></i>
-                    <span>Courses</span>
-                </a>
-                <a href="outreach.html" class="dropdown-item">
-                    <i class="fas fa-globe"></i>
-                    <span>Outreach Activities</span>
-                </a>
-                <a href="Thesis.html" class="dropdown-item">
-                    <i class="fas fa-file-pen"></i>
-                    <span>Thesis Mentored</span>
-                </a>
-            </div>
-        </li>
-        <li><a href="lab_page/HB_new.html" class="nav-link"target="_blank"><i class="fas fa-microscope"></i><span>Labs</span></a></li>
-        <li><a href="grants.html" class="nav-link"><i class="fas fa-user-graduate"></i><span>Research Grants</span></a></li>
-        <li><a href="students.html" class="nav-link"><i class="fas fa-user-graduate"></i><span>Students</span></a></li>
-        <li><a href="awards.html" class="nav-link"><i class="fas fa-award"></i><span>Awards</span></a></li>
-        <li><a href="Rs_web.html#contact" class="nav-link"><i class="fas fa-envelope"></i><span>Contact</span></a></li>
-    </ul>
+                    <span>Research</span>
+                    <i class="fas fa-chevron-down dropdown-arrow"></i>
+                </button>
+                <div class="publication-dropdown">
+                    <a href="research_expertise.html" class="dropdown-item"><i class="fas fa-microscope"></i><span>Research Expertise</span></a>
+                    <a href="research.html" class="dropdown-item"><i class="fas fa-journal-whills"></i><span>Journal Publications</span></a>
+                    <a href="Peer_review_books.html" class="dropdown-item"><i class="fas fa-book"></i><span>Books & Chapters</span></a>
+                    <a href="Citations.html" class="dropdown-item"><i class="fas fa-chart-line"></i><span>Citation Impact</span></a>
+                    <a href="grants.html" class="dropdown-item"><i class="fas fa-hand-holding-usd"></i><span>Grants & Projects</span></a>
+                    <a href="conferences.html" class="dropdown-item"><i class="fas fa-users"></i><span>Conferences & Talks</span></a>
+                    <a href="invited_lectures.html" class="dropdown-item"><i class="fas fa-microphone"></i><span>Invited Lectures</span></a>
+                </div>
+            </li>
+            <li class="nav-dropdown">
+                <button class="nav-link publication-toggle" type="button">
+                    <i class="fas fa-chalkboard-teacher"></i>
+                    <span>Teaching & Mentorship</span>
+                    <i class="fas fa-chevron-down dropdown-arrow"></i>
+                </button>
+                <div class="publication-dropdown">
+                    <a href="teaching.html" class="dropdown-item"><i class="fas fa-book-open"></i><span>Courses Taught</span></a>
+                    <a href="students.html" class="dropdown-item"><i class="fas fa-user-friends"></i><span>Students & Scholars</span></a>
+                    <a href="Thesis.html" class="dropdown-item"><i class="fas fa-graduation-cap"></i><span>Thesis Supervised</span></a>
+                </div>
+            </li>
+            <li><a href="outreach.html" class="nav-link"><i class="fas fa-globe-asia"></i><span>Outreach & Media</span></a></li>
+        </ul>
+    </div>
 </nav>
-<section class="pt-36 md:pt-40 lg:pt-44 pb-8 px-6 text-center">
 
-  <!-- Section Heading -->
-  <h2 class="text-4xl sm:text-5xl font-black text-[#c5a059] mb-3 leading-tight">
-    Research and Publications
-  </h2>
-
-  <p class="text-slate-400 text-base md:text-lg max-w-4xl mx-auto leading-relaxed mb-10">
-    Peer-reviewed journal articles, research papers, and scholarly contributions
-    spanning more than three decades of Earth and environmental research.
-  </p>
-
-  <!-- Publication Statistics -->
-  <div class="max-w-6xl mx-auto grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
-
-    <!-- Publications -->
-    <div class="group relative overflow-hidden rounded-2xl
-                border border-[#c5a059]/20
-                bg-white/[0.04] backdrop-blur-md
-                px-4 py-6 md:px-6 md:py-7
-                transition-all duration-300
-                hover:-translate-y-1 hover:border-[#c5a059]/50
-                hover:bg-[#c5a059]/[0.06]">
-
-      <div class="absolute -top-10 -right-10 w-24 h-24
-                  bg-[#c5a059]/10 rounded-full blur-2xl
-                  group-hover:bg-[#c5a059]/20 transition-all duration-300">
-      </div>
-
-      <div class="relative">
-        <div class="text-3xl sm:text-4xl font-black text-[#c5a059]">
-          200+
-        </div>
-
-        <div class="mt-2 text-xs sm:text-sm font-bold
-                    uppercase tracking-[0.18em] text-slate-300">
-          Publications
-        </div>
-      </div>
+<!-- Page Header Section -->
+<section style="background: var(--bg-card); border-bottom: 1px solid var(--border-color); padding: 40px 8%;">
+    <div class="container">
+        <span class="section-tag">Scholarly Contributions</span>
+        <h2 class="section-title serif-heading">Peer-Reviewed Journal Publications</h2>
+        <p class="section-subtitle">Complete list of research articles, journal papers, and monographs spanning more than three decades of research in Earth surface processes, river science, and Quaternary geology.</p>
     </div>
-
-
-    <!-- Years -->
-    <div class="group relative overflow-hidden rounded-2xl
-                border border-[#c5a059]/20
-                bg-white/[0.04] backdrop-blur-md
-                px-4 py-6 md:px-6 md:py-7
-                transition-all duration-300
-                hover:-translate-y-1 hover:border-[#c5a059]/50
-                hover:bg-[#c5a059]/[0.06]">
-
-      <div class="absolute -top-10 -right-10 w-24 h-24
-                  bg-[#c5a059]/10 rounded-full blur-2xl
-                  group-hover:bg-[#c5a059]/20 transition-all duration-300">
-      </div>
-
-      <div class="relative">
-        <div class="text-3xl sm:text-4xl font-black text-[#c5a059]">
-          13478
-        </div>
-
-        <div class="mt-2 text-xs sm:text-sm font-bold
-                    uppercase tracking-[0.18em] text-slate-300">
-          Total Citations
-        </div>
-      </div>
-    </div>
-
-
-    <!-- Journal Articles -->
-    <div class="group relative overflow-hidden rounded-2xl
-                border border-[#c5a059]/20
-                bg-white/[0.04] backdrop-blur-md
-                px-4 py-6 md:px-6 md:py-7
-                transition-all duration-300
-                hover:-translate-y-1 hover:border-[#c5a059]/50
-                hover:bg-[#c5a059]/[0.06]">
-
-      <div class="absolute -top-10 -right-10 w-24 h-24
-                  bg-[#c5a059]/10 rounded-full blur-2xl
-                  group-hover:bg-[#c5a059]/20 transition-all duration-300">
-      </div>
-
-      <div class="relative">
-        <div class="text-3xl sm:text-4xl font-black text-[#c5a059]">
-          66
-        </div>
-
-        <div class="mt-2 text-xs sm:text-sm font-bold
-                    uppercase tracking-[0.18em] text-slate-300">
-          h index
-        </div>
-      </div>
-    </div>
-
-
-    <!-- Research Themes -->
-    <div class="group relative overflow-hidden rounded-2xl
-                border border-[#c5a059]/20
-                bg-white/[0.04] backdrop-blur-md
-                px-4 py-6 md:px-6 md:py-7
-                transition-all duration-300
-                hover:-translate-y-1 hover:border-[#c5a059]/50
-                hover:bg-[#c5a059]/[0.06]">
-
-      <div class="absolute -top-10 -right-10 w-24 h-24
-                  bg-[#c5a059]/10 rounded-full blur-2xl
-                  group-hover:bg-[#c5a059]/20 transition-all duration-300">
-      </div>
-
-      <div class="relative">
-        <div class="text-3xl sm:text-4xl font-black text-[#c5a059]">
-          168
-        </div>
-
-        <div class="mt-2 text-xs sm:text-sm font-bold
-                    uppercase tracking-[0.18em] text-slate-300">
-          i10 index
-        </div>
-      </div>
-    </div>
-
-  </div>
-
 </section>
 
-<section class="-mt-10 md:-mt-14 pb-20 md:pb-28 px-4 md:px-6">
-<div class="max-w-7xl mx-auto space-y-14">
+<!-- Metrics & Search Bar -->
+<section style="padding: 40px 8% 20px 8%;">
+    <div class="container">
+        <div class="stats-grid" style="grid-template-columns: repeat(4, 1fr); margin-bottom: 30px;">
+            <div class="stat-card" style="background: var(--bg-card); border-color: var(--border-color); color: var(--text-main);">
+                <i class="fas fa-book-open stat-icon"></i>
+                <div class="stat-number" style="color: var(--primary-dark);">200+</div>
+                <div class="stat-label">Journal Articles</div>
+            </div>
+            <div class="stat-card" style="background: var(--bg-card); border-color: var(--border-color); color: var(--text-main);">
+                <i class="fas fa-quote-right stat-icon"></i>
+                <div class="stat-number" style="color: var(--primary-dark);">14005+</div>
+                <div class="stat-label">Total Citations</div>
+            </div>
+            <div class="stat-card" style="background: var(--bg-card); border-color: var(--border-color); color: var(--text-main);">
+                <i class="fas fa-chart-line stat-icon"></i>
+                <div class="stat-number" style="color: var(--primary-dark);">67</div>
+                <div class="stat-label">H-Index</div>
+            </div>
+            <div class="stat-card" style="background: var(--bg-card); border-color: var(--border-color); color: var(--text-main);">
+                <i class="fas fa-award stat-icon"></i>
+                <div class="stat-number" style="color: var(--primary-dark);">175</div>
+                <div class="stat-label">i10-Index</div>
+            </div>
+        </div>
+
+        <!-- Interactive Search Bar -->
+        <div class="filter-search-bar">
+            <div class="search-input-wrapper">
+                <i class="fas fa-search"></i>
+                <input type="text" id="pubSearchInput" class="search-input" placeholder="Search publications by keyword, title, author, or journal (e.g. Ganga, Hydrology, 2026)...">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Publications List Container -->
+<section style="padding: 0 8% 60px 8%;">
+<div class="container" id="publicationsList">
+
 
 <!-- ================= 2026 ================= -->
 <div>
@@ -1933,9 +1849,65 @@ body { font-family: 'Inter', sans-serif; }
 </div>
 </section>
 
-<footer class="border-t border-white/10 py-4 text-center text-xs text-slate-400">
-© Publications | Academic Use
+<!-- Footer -->
+<footer>
+    <div class="container footer-grid">
+        <div class="footer-brand">
+            <h3>Prof. Rajiv Sinha</h3>
+            <p>Department of Earth Sciences<br>Indian Institute of Technology Kanpur<br>Kanpur - 208016, Uttar Pradesh, India</p>
+            <div class="footer-socials">
+                <a href="mailto:rsinha@iitk.ac.in" title="Email"><i class="fas fa-envelope"></i></a>
+                <a href="https://scholar.google.com/citations?user=VkRcwwEAAAAJ&hl=en&oi=ao" target="_blank" title="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
+                <a href="https://www.linkedin.com/in/rajiv-sinha-a87a68b2/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+        <div>
+            <h4 class="footer-title">Quick Links</h4>
+            <ul class="footer-links">
+                <li><a href="Rs_web.html">Home Profile</a></li>
+                <li><a href="research_expertise.html">Research Expertise</a></li>
+                <li><a href="research.html">Journal Publications</a></li>
+                <li><a href="awards.html">Awards & Honors</a></li>
+                <li><a href="grants.html">Sponsored Projects</a></li>
+            </ul>
+        </div>
+        <div>
+            <h4 class="footer-title">Mentorship</h4>
+            <ul class="footer-links">
+                <li><a href="teaching.html">Courses Taught</a></li>
+                <li><a href="students.html">PhD & Master's Scholars</a></li>
+                <li><a href="Thesis.html">Thesis Supervised</a></li>
+                <li><a href="outreach.html">Outreach & Media</a></li>
+                <li><a href="lab_page/HB_new.html" target="_blank">Earth & River Dynamics Lab</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2026 Prof. Rajiv Sinha. Department of Earth Sciences, IIT Kanpur. All Rights Reserved.</p>
+    </div>
 </footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const searchInput = document.getElementById('pubSearchInput');
+    const pubItems = document.querySelectorAll('.pub');
+
+    if (searchInput) {
+        searchInput.addEventListener('input', function() {
+            const query = this.value.toLowerCase().trim();
+            pubItems.forEach(item => {
+                const text = item.textContent.toLowerCase();
+                if (text.includes(query)) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        });
+    }
+});
+</script>
 <script src="script.js"></script>
 </body>
 </html>
+
