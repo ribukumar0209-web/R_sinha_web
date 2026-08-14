@@ -631,7 +631,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const careerPages = [
 
         "resume.html",
-        "services.html"
+        "services.html",
+        "awards.html"
 
     ];
 
@@ -642,6 +643,7 @@ document.addEventListener("DOMContentLoaded", function () {
         "research.html",
         "peer_review_books.html",
         "citations.html",
+        "grants.html",
         "conferences.html",
         "invited_lectures.html"
 
@@ -651,7 +653,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const teachingPages = [
 
         "teaching.html",
-        "outreach.html",
+        "students.html",
         "thesis.html"
 
     ];
@@ -846,10 +848,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
         clearActiveLinks();
 
-        const homeLink =
+        let homeLink =
             document.querySelector(
                 `.nav-link[href="Rs_web.html${target}"]`
             );
+
+        if (!homeLink) {
+            homeLink = document.querySelector(
+                `.nav-link[href="Rs_web.html"]`
+            );
+        }
 
         if (homeLink) {
 

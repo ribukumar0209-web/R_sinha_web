@@ -135,31 +135,31 @@ a:hover {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    background: linear-gradient(135deg, var(--accent-gold), #eab308);
-    border: none;
-    color: var(--primary-dark);
-    padding: 8px 18px;
-    border-radius: var(--radius-full);
-    font-size: 0.82rem;
-    font-weight: 700;
-    box-shadow: 0 4px 12px rgba(217, 119, 6, 0.25);
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: var(--accent-gold);
+    padding: 8px 20px;
+    border-radius: var(--radius-md);
+    font-size: 0.85rem;
+    font-weight: 500;
     transition: var(--transition);
     letter-spacing: 0.5px;
+    text-decoration: none;
 }
 
 .header-link-pill:hover {
-    background: linear-gradient(135deg, #fde047, var(--accent-gold));
+    background: var(--accent-gold);
+    border-color: var(--accent-gold);
     color: var(--primary-dark);
     transform: translateY(-2px);
-    box-shadow: 0 6px 16px rgba(217, 119, 6, 0.4);
 }
 
 .header-link-pill i {
-    color: var(--primary-dark);
+    color: inherit;
 }
 
 .header-link-pill:hover i {
-    color: var(--primary-dark);
+    color: inherit;
 }
 
 .header-icon-link {

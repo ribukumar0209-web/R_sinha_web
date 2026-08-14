@@ -154,9 +154,16 @@
     padding-left: 22px;
 }
 
-.dropdown-item:hover i {
-    color: #fbbf24;
+
+
+.dropdown-item.active {
+    background: #1e3e62;
+    color: #ffffff;
+    font-weight: 700;
+    border-left: 3px solid #d97706;
 }
+
+
 
 /* Mobile Toggle */
 .menu-toggle {
