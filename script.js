@@ -362,7 +362,7 @@ document.addEventListener("DOMContentLoaded", function () {
             event.stopPropagation();
 
             const isOpen =
-                menu.classList.toggle("show");
+                menu.classList.toggle("mobile-active");
 
             menuToggle.classList.toggle(
                 "active",
@@ -417,7 +417,7 @@ document.addEventListener("DOMContentLoaded", function () {
     function closeMobileMenu() {
 
         if (menu) {
-            menu.classList.remove("show");
+            menu.classList.remove("mobile-active");
         }
 
         if (menuToggle) {

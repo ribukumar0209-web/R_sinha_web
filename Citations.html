@@ -24,21 +24,28 @@
             box-sizing: border-box;
         }
         .pub-table-wrapper .academic-table {
-            table-layout: fixed;
             width: 100%;
-            min-width: 500px;
         }
         .pub-table-wrapper .academic-table th:nth-child(1),
         .pub-table-wrapper .academic-table td:nth-child(1) {
-            width: 90px;
+            width: 60px;
         }
         .pub-table-wrapper .academic-table th:nth-child(3),
         .pub-table-wrapper .academic-table td:nth-child(3) {
-            width: 150px;
+            width: 100px;
         }
         .pub-table-wrapper .academic-table th:nth-child(2),
         .pub-table-wrapper .academic-table td:nth-child(2) {
             /* Publication column gets remaining space */
+        }
+        @media (max-width: 600px) {
+            .pub-table-wrapper .academic-table th, 
+            .pub-table-wrapper .academic-table td {
+                padding: 10px 8px;
+            }
+            .cite-count {
+                font-size: 0.85rem;
+            }
         }
         .pub-table-wrapper .academic-table td p {
             word-break: break-word;
@@ -133,7 +140,7 @@
         <h2 class="section-title serif-heading">Citation Impact Dashboard</h2>
         <p class="section-subtitle">Citation records across journal articles ranked by impact, sortable by year and citation count.</p>
         
-        <div style="display: flex; gap: 40px; margin-top: 30px;">
+        <div style="display: flex; gap: 40px; margin-top: 30px; flex-wrap: wrap;">
             <div>
                 <div style="font-family: 'Merriweather', serif; font-size: 2.5rem; font-weight: 700; color: var(--accent-gold);">14,005</div>
                 <div style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.8rem; text-transform: uppercase; color: #718096; margin-top: 5px;">Total Citations</div>
@@ -424,7 +431,7 @@ var PUBS = [
                     '<p class="text-sm" style="color:var(--text-hi);">' + p.c + '</p>' +
                     '<p class="text-xs mt-1" style="color:var(--text-muted);">' + p.j + '</p>' +
                 '</td>' +
-                '<td style="text-align:right; min-width:120px;">' + citeHtml + '</td>' +
+                '<td style="text-align:right;">' + citeHtml + '</td>' +
             '</tr>';
         }).join('');
 

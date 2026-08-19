@@ -289,7 +289,7 @@ h2.section-title {
 
 .faculty-photo-wrapper img {
     width: 100%;
-    height: 380px;
+    aspect-ratio: 4 / 5;
     object-fit: cover;
     display: block;
     transition: var(--transition);
@@ -958,7 +958,8 @@ h2.section-title {
     background: var(--bg-card);
     border: 1px solid var(--border-color);
     border-radius: var(--radius-md);
-    overflow: hidden;
+    overflow-x: auto;
+    overflow-y: hidden;
     box-shadow: var(--shadow-sm);
     margin-top: 20px;
 }
@@ -1396,8 +1397,13 @@ footer {
         gap: 30px;
     }
     
+    .faculty-photo-wrapper {
+        max-width: 320px;
+        margin: 0 auto;
+    }
+    
     .faculty-photo-wrapper img {
-        height: 320px;
+        height: auto;
     }
     
     .stats-grid {
@@ -1436,7 +1442,25 @@ footer {
     }
     
     .stats-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+    
+    .stat-card {
+        padding: 20px 10px;
+    }
+    
+    .stat-number {
+        font-size: 2rem;
+    }
+    
+    .stat-icon {
+        font-size: 1.5rem;
+    }
+    
+    .stat-label {
+        font-size: 0.75rem;
+        letter-spacing: 0.5px;
     }
     
     .grid-3-col, .grid-2-col, .grid-4-col {
