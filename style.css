@@ -1405,6 +1405,20 @@ footer {
     .faculty-photo-wrapper img {
         height: auto;
     }
+
+    .faculty-info-content {
+        align-items: center;
+        text-align: center;
+    }
+
+    .badges-container, 
+    .academic-links-bar {
+        justify-content: center;
+    }
+
+    .faculty-contact-grid {
+        text-align: left;
+    }
     
     .stats-grid {
         grid-template-columns: repeat(2, 1fr);
