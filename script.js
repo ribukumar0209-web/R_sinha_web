@@ -642,10 +642,7 @@ document.addEventListener("DOMContentLoaded", function () {
         "research_expertise.html",
         "research.html",
         "peer_review_books.html",
-        "citations.html",
-        "grants.html",
-        "conferences.html",
-        "invited_lectures.html"
+        "grants.html"
 
     ];
 

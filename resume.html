@@ -1,357 +1,207 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Education & Experience | Prof. Rajiv Sinha</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="nav.css">
-</head>
-<body>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Education &amp; Experience | Prof. Rajiv Sinha</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link href="style.css" rel="stylesheet"/>
+<link href="nav.css" rel="stylesheet"/>
+<style id="single-box-timeline">
+/* Override timeline styles to merge items into a single simple list box per section */
+.timeline-wrapper {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+    padding: 15px 25px !important;
+    margin-top: -10px !important;
+    margin-left: 0 !important;
+}
 
+/* Hide the vertical timeline line */
+.timeline-wrapper::before {
+    display: none !important;
+}
+
+/* Hide the timeline dots */
+.timeline-dot {
+    display: none !important;
+}
+
+.timeline-item {
+    margin-bottom: 0 !important;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--border-color);
+    margin-top: 20px;
+    padding-left: 0 !important; /* reset any left padding */
+}
+
+.timeline-item:first-child {
+    margin-top: 0;
+}
+
+.timeline-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.timeline-content {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important; /* Remove all padding */
+}
+
+/* Make year less prominent or just normal text, it was styled for the timeline */
+.timeline-year {
+    display: inline-block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--accent-blue);
+    background: transparent !important;
+    padding: 0 !important;
+}
+</style></head>
+<body>
 <!-- Top Branding Bar -->
 <div class="top-branding-bar">
-    <div class="brand-info">
-        <img src="IITK_logo_white.png" alt="IIT Kanpur Logo" class="brand-logo">
-        <div class="brand-text">
-            <h1>Indian Institute of Technology Kanpur</h1>
-            <p>Department of Earth Sciences</p>
-        </div>
-    </div>
-    <div class="header-quick-links">
-        <a href="mailto:rsinha@iitk.ac.in" class="header-icon-link" aria-label="Email" title="Email"><i class="fas fa-envelope"></i></a>
-        <a href="https://scholar.google.com/citations?user=VkRcwwEAAAAJ&hl=en&oi=ao" target="_blank" class="header-icon-link" aria-label="Google Scholar" title="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
-        <a href="https://www.linkedin.com/in/rajiv-sinha-a87a68b2/" target="_blank" class="header-icon-link" aria-label="LinkedIn" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-        <a href="lab_page/HB_new.html" target="_blank" class="header-link-pill"><i class="fas fa-microscope"></i> Lab Site</a>
-    </div>
+<div class="brand-info">
+<img alt="IIT Kanpur Logo" class="brand-logo" src="IITK_logo_white.png"/>
+<div class="brand-text">
+<h1>Indian Institute of Technology Kanpur</h1>
+<p>Department of Earth Sciences</p>
 </div>
-
+</div>
+<div class="header-quick-links">
+<a aria-label="Email" class="header-icon-link" href="mailto:rsinha@iitk.ac.in" title="Email"><i class="fas fa-envelope"></i></a>
+<a aria-label="Google Scholar" class="header-icon-link" href="https://scholar.google.com/citations?user=VkRcwwEAAAAJ&amp;hl=en&amp;oi=ao" target="_blank" title="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
+<a aria-label="LinkedIn" class="header-icon-link" href="https://www.linkedin.com/in/rajiv-sinha-a87a68b2/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+<a class="header-link-pill" href="lab_page/HB_new.html" target="_blank"><i class="fas fa-microscope"></i> Lab Site</a>
+</div>
+</div>
 <!-- Navigation -->
 <nav class="top-navbar">
-    <div class="nav-container">
-        <button class="menu-toggle" aria-label="Toggle Navigation" type="button">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-        <ul class="nav-menu">
-            <li><a href="Rs_web.html" class="nav-link"><i class="fas fa-home"></i><span>Home</span></a></li>
-            <li class="nav-dropdown">
-                <button class="nav-link active publication-toggle" type="button">
-                    <i class="fas fa-user-tie"></i>
-                    <span>Career Profile</span>
-                    <i class="fas fa-chevron-down dropdown-arrow"></i>
-                </button>
-                <div class="publication-dropdown">
-                    <a href="resume.html" class="dropdown-item active"><i class="fas fa-id-card"></i><span>Education & Experience</span></a>
-                    <a href="services.html" class="dropdown-item"><i class="fas fa-briefcase"></i><span>Professional Service</span></a>
-                    <a href="awards.html" class="dropdown-item"><i class="fas fa-trophy"></i><span>Honors & Awards</span></a>
-                </div>
-            </li>
-            <li class="nav-dropdown">
-                <button class="nav-link publication-toggle" type="button">
-                    <i class="fas fa-flask"></i>
-                    <span>Research</span>
-                    <i class="fas fa-chevron-down dropdown-arrow"></i>
-                </button>
-                <div class="publication-dropdown">
-                    <a href="research_expertise.html" class="dropdown-item"><i class="fas fa-microscope"></i><span>Research Expertise</span></a>
-                    <a href="research.html" class="dropdown-item"><i class="fas fa-journal-whills"></i><span>Journal Publications</span></a>
-                    <a href="Peer_review_books.html" class="dropdown-item"><i class="fas fa-book"></i><span>Books & Chapters</span></a>
-                    <a href="Citations.html" class="dropdown-item"><i class="fas fa-chart-line"></i><span>Citation Impact</span></a>
-                    <a href="grants.html" class="dropdown-item"><i class="fas fa-hand-holding-usd"></i><span>Grants & Projects</span></a>
-                    <a href="conferences.html" class="dropdown-item"><i class="fas fa-users"></i><span>Conferences & Talks</span></a>
-                    <a href="invited_lectures.html" class="dropdown-item"><i class="fas fa-microphone"></i><span>Invited Lectures</span></a>
-                </div>
-            </li>
-            <li class="nav-dropdown">
-                <button class="nav-link publication-toggle" type="button">
-                    <i class="fas fa-chalkboard-teacher"></i>
-                    <span>Teaching & Mentorship</span>
-                    <i class="fas fa-chevron-down dropdown-arrow"></i>
-                </button>
-                <div class="publication-dropdown">
-                    <a href="teaching.html" class="dropdown-item"><i class="fas fa-book-open"></i><span>Courses Taught</span></a>
-                    <a href="students.html" class="dropdown-item"><i class="fas fa-user-friends"></i><span>Students & Scholars</span></a>
-                    <a href="Thesis.html" class="dropdown-item"><i class="fas fa-graduation-cap"></i><span>Thesis Supervised</span></a>
-                </div>
-            </li>
-            <li><a href="outreach.html" class="nav-link"><i class="fas fa-globe-asia"></i><span>Outreach & Media</span></a></li>
-        </ul>
-    </div>
+<div class="nav-container">
+<button aria-label="Toggle Navigation" class="menu-toggle" type="button">
+<span></span>
+<span></span>
+<span></span>
+</button>
+<ul class="nav-menu">
+<li><a class="nav-link" href="Rs_web.html"><i class="fas fa-home"></i><span>Home</span></a></li>
+<li class="nav-dropdown">
+<button class="nav-link active publication-toggle" type="button">
+<i class="fas fa-user-tie"></i>
+<span>Career Profile</span>
+<i class="fas fa-chevron-down dropdown-arrow"></i>
+</button>
+<div class="publication-dropdown">
+<a class="dropdown-item active" href="resume.html"><i class="fas fa-id-card"></i><span>Education &amp; Experience</span></a>
+<a class="dropdown-item" href="services.html"><i class="fas fa-briefcase"></i><span>Professional Service</span></a>
+<a class="dropdown-item" href="awards.html"><i class="fas fa-trophy"></i><span>Honors &amp; Awards</span></a>
+</div>
+</li>
+<li class="nav-dropdown">
+<button class="nav-link publication-toggle" type="button">
+<i class="fas fa-flask"></i>
+<span>Research</span>
+<i class="fas fa-chevron-down dropdown-arrow"></i>
+</button>
+<div class="publication-dropdown">
+<a class="dropdown-item" href="research_expertise.html"><i class="fas fa-microscope"></i><span>Research Expertise</span></a>
+<a class="dropdown-item" href="research.html"><i class="fas fa-journal-whills"></i><span>Journal Publications</span></a>
+<a class="dropdown-item" href="Peer_review_books.html"><i class="fas fa-book"></i><span>Books &amp; Chapters</span></a>
+<a class="dropdown-item" href="grants.html"><i class="fas fa-hand-holding-usd"></i><span>Grants &amp; Projects</span></a>
+</div>
+</li>
+<li class="nav-dropdown">
+<button class="nav-link publication-toggle" type="button">
+<i class="fas fa-chalkboard-teacher"></i>
+<span>Teaching &amp; Mentorship</span>
+<i class="fas fa-chevron-down dropdown-arrow"></i>
+</button>
+<div class="publication-dropdown">
+<a class="dropdown-item" href="teaching.html"><i class="fas fa-book-open"></i><span>Courses Taught</span></a>
+<a class="dropdown-item" href="students.html"><i class="fas fa-user-friends"></i><span>Students &amp; Scholars</span></a>
+</div>
+</li>
+<li><a class="nav-link" href="outreach.html"><i class="fas fa-globe-asia"></i><span>Outreach &amp; Media</span></a></li>
+</ul>
+</div>
 </nav>
-
 <!-- Page Header -->
 <section style="background: var(--bg-card); border-bottom: 1px solid var(--border-color); padding: 40px 8%;">
-    <div class="container">
-        <span class="section-tag">Academic Trajectory</span>
-        <h2 class="section-title serif-heading">Education & Professional Background</h2>
-        <p class="section-subtitle">A comprehensive chronological timeline of degrees, academic positions, and institutional leadership roles.</p>
-    </div>
+<div class="container">
+<span class="section-tag">Academic Trajectory</span>
+<h2 class="section-title serif-heading">Education &amp; Professional Background</h2>
+<p class="section-subtitle">A comprehensive chronological timeline of degrees, academic positions, and institutional leadership roles.</p>
+</div>
 </section>
-
 <!-- Timeline Grid Section -->
-<section>
-    <div class="container">
-        <div class="grid-3-col">
-            <!-- Educational Qualifications -->
-            <div>
-                <h3 class="cat-title serif-heading"><i class="fas fa-graduation-cap" style="color: var(--accent-gold); margin-right: 8px;"></i> Educational Qualifications</h3>
-                <div class="timeline-wrapper">
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-content">
-                            <div class="timeline-year">Nov 2000 - Nov 2001 & May-July 2002</div>
-                            <h4 class="timeline-title">Post Doctoral Research</h4>
-                            <div class="timeline-org">University of Karlsruhe, Germany</div>
-                            <p style="font-size: 0.88rem; color: var(--text-body);">Late Quaternary history and paleoclimatic reconstruction in Thar desert through lacustrine sequences in western Rajasthan, India.</p>
-                        </div>
-                    </div>
-
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-content">
-                            <div class="timeline-year">1989 - 1992</div>
-                            <h4 class="timeline-title">Doctor of Philosophy (Ph.D.)</h4>
-                            <div class="timeline-org">University of Cambridge, UK</div>
-                            <p style="font-size: 0.88rem; color: var(--text-body);">Fluvial Geomorphology and Sedimentology.</p>
-                        </div>
-                    </div>
-
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-content">
-                            <div class="timeline-year">1984 - 1987</div>
-                            <h4 class="timeline-title">Master of Technology (M.Tech)</h4>
-                            <div class="timeline-org">University of Roorkee, India</div>
-                            <p style="font-size: 0.88rem; color: var(--text-body);">Applied Geology.</p>
-                        </div>
-                    </div>
-
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-content">
-                            <div class="timeline-year">1981 - 1984</div>
-                            <h4 class="timeline-title">Bachelor of Science (B.Sc. Hons.)</h4>
-                            <div class="timeline-org">Patna University, India</div>
-                            <p style="font-size: 0.88rem; color: var(--text-body);">Geology Honours.</p>
-                        </div>
-                    </div>
-
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-content">
-                            <div class="timeline-year">1979 - 1981</div>
-                            <h4 class="timeline-title">Intermediate in Science (I.Sc.)</h4>
-                            <div class="timeline-org">Patna University, India</div>
-                        </div>
-                    </div>
-
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-content">
-                            <div class="timeline-year">1979</div>
-                            <h4 class="timeline-title">Secondary School Certificate</h4>
-                            <div class="timeline-org">Bihar Secondary Exam. Board, India</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Professional Positions -->
-            <div>
-                <h3 class="cat-title serif-heading"><i class="fas fa-briefcase" style="color: var(--accent-blue); margin-right: 8px;"></i> Professional Experience</h3>
-                <div class="timeline-wrapper">
-                    <div class="timeline-item">
-                        <div class="timeline-dot" style="background: var(--accent-blue); box-shadow: 0 0 0 2px var(--accent-blue);"></div>
-                        <div class="timeline-content">
-                            <div class="timeline-year">Aug 2014 - Present</div>
-                            <h4 class="timeline-title">HAG Professor</h4>
-                            <div class="timeline-org">Department of Earth Sciences, IIT Kanpur</div>
-                        </div>
-                    </div>
-
-                    <div class="timeline-item">
-                        <div class="timeline-dot" style="background: var(--accent-blue); box-shadow: 0 0 0 2px var(--accent-blue);"></div>
-                        <div class="timeline-content">
-                            <div class="timeline-year">April 2014 - July 2014</div>
-                            <h4 class="timeline-title">Professor</h4>
-                            <div class="timeline-org">Department of Earth Sciences, IIT Kanpur</div>
-                        </div>
-                    </div>
-
-                    <div class="timeline-item">
-                        <div class="timeline-dot" style="background: var(--accent-blue); box-shadow: 0 0 0 2px var(--accent-blue);"></div>
-                        <div class="timeline-content">
-                            <div class="timeline-year">Dec 2005 - April 2014</div>
-                            <h4 class="timeline-title">Professor</h4>
-                            <div class="timeline-org">Department of Civil Engineering, IIT Kanpur</div>
-                        </div>
-                    </div>
-
-                    <div class="timeline-item">
-                        <div class="timeline-dot" style="background: var(--accent-blue); box-shadow: 0 0 0 2px var(--accent-blue);"></div>
-                        <div class="timeline-content">
-                            <div class="timeline-year">Oct 2001 - Dec 2005</div>
-                            <h4 class="timeline-title">Associate Professor</h4>
-                            <div class="timeline-org">Department of Civil Engineering, IIT Kanpur</div>
-                        </div>
-                    </div>
-
-                    <div class="timeline-item">
-                        <div class="timeline-dot" style="background: var(--accent-blue); box-shadow: 0 0 0 2px var(--accent-blue);"></div>
-                        <div class="timeline-content">
-                            <div class="timeline-year">Dec 1995 - Sept 2001</div>
-                            <h4 class="timeline-title">Assistant Professor</h4>
-                            <div class="timeline-org">Department of Civil Engineering, IIT Kanpur</div>
-                        </div>
-                    </div>
-
-                    <div class="timeline-item">
-                        <div class="timeline-dot" style="background: var(--accent-blue); box-shadow: 0 0 0 2px var(--accent-blue);"></div>
-                        <div class="timeline-content">
-                            <div class="timeline-year">June 1994 - Nov 1995</div>
-                            <h4 class="timeline-title">Lecturer</h4>
-                            <div class="timeline-org">Department of Civil Engineering, IIT Kanpur</div>
-                        </div>
-                    </div>
-
-                    <div class="timeline-item">
-                        <div class="timeline-dot" style="background: var(--accent-blue); box-shadow: 0 0 0 2px var(--accent-blue);"></div>
-                        <div class="timeline-content">
-                            <div class="timeline-year">April 1993 - June 1994</div>
-                            <h4 class="timeline-title">Scientist</h4>
-                            <div class="timeline-org">National Institute of Hydrology, Roorkee</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Administrative Experience -->
-            <div>
-                <h3 class="cat-title serif-heading"><i class="fas fa-sitemap" style="color: var(--accent-teal); margin-right: 8px;"></i> Administrative Experience</h3>
-                <div class="timeline-wrapper">
-                    <div class="timeline-item">
-                        <div class="timeline-dot" style="background: var(--accent-teal); box-shadow: 0 0 0 2px var(--accent-teal);"></div>
-                        <div class="timeline-content">
-                            <div class="timeline-year">Feb 2014 - Feb 2017</div>
-                            <h4 class="timeline-title">Founder Head of Department</h4>
-                            <div class="timeline-org">Department of Earth Sciences, IIT Kanpur</div>
-                        </div>
-                    </div>
-
-                    <div class="timeline-item">
-                        <div class="timeline-dot" style="background: var(--accent-teal); box-shadow: 0 0 0 2px var(--accent-teal);"></div>
-                        <div class="timeline-content">
-                            <div class="timeline-year">Oct 2011 - Sept 2012</div>
-                            <h4 class="timeline-title">Chairman</h4>
-                            <div class="timeline-org">Senate Post-Graduate Committee (SPGC), IIT Kanpur</div>
-                        </div>
-                    </div>
-
-                    <div class="timeline-item">
-                        <div class="timeline-dot" style="background: var(--accent-teal); box-shadow: 0 0 0 2px var(--accent-teal);"></div>
-                        <div class="timeline-content">
-                            <div class="timeline-year">Sept 2011 - Aug 2012</div>
-                            <h4 class="timeline-title">DPGC Convener</h4>
-                            <div class="timeline-org">Department of Civil Engineering, IIT Kanpur</div>
-                        </div>
-                    </div>
-
-                    <div class="timeline-item">
-                        <div class="timeline-dot" style="background: var(--accent-teal); box-shadow: 0 0 0 2px var(--accent-teal);"></div>
-                        <div class="timeline-content">
-                            <div class="timeline-year">Aug 2006 - Nov 2007</div>
-                            <h4 class="timeline-title">Chairman</h4>
-                            <div class="timeline-org">Students' Placement Committee, IIT Kanpur</div>
-                        </div>
-                    </div>
-
-                    <div class="timeline-item">
-                        <div class="timeline-dot" style="background: var(--accent-teal); box-shadow: 0 0 0 2px var(--accent-teal);"></div>
-                        <div class="timeline-content">
-                            <div class="timeline-year">Oct 2006 - Sept 2007</div>
-                            <h4 class="timeline-title">DPGC Convener</h4>
-                            <div class="timeline-org">Department of Civil Engineering, IIT Kanpur</div>
-                        </div>
-                    </div>
-
-                    <div class="timeline-item">
-                        <div class="timeline-dot" style="background: var(--accent-teal); box-shadow: 0 0 0 2px var(--accent-teal);"></div>
-                        <div class="timeline-content">
-                            <div class="timeline-year">May 2004 - 2010</div>
-                            <h4 class="timeline-title">Professor In-Charge</h4>
-                            <div class="timeline-org">Geosciences Laboratory, Civil Engg., IIT Kanpur</div>
-                        </div>
-                    </div>
-
-                    <div class="timeline-item">
-                        <div class="timeline-dot" style="background: var(--accent-teal); box-shadow: 0 0 0 2px var(--accent-teal);"></div>
-                        <div class="timeline-content">
-                            <div class="timeline-year">Oct 2003 - Sept 2005</div>
-                            <h4 class="timeline-title">Member</h4>
-                            <div class="timeline-org">Senate Library Committee, IIT Kanpur</div>
-                        </div>
-                    </div>
-
-                    <div class="timeline-item">
-                        <div class="timeline-dot" style="background: var(--accent-teal); box-shadow: 0 0 0 2px var(--accent-teal);"></div>
-                        <div class="timeline-content">
-                            <div class="timeline-year">Oct 2002 - Sept 2003</div>
-                            <h4 class="timeline-title">Chairman</h4>
-                            <div class="timeline-org">Senate Library Committee, IIT Kanpur</div>
-                        </div>
-                    </div>
-
-                    <div class="timeline-item">
-                        <div class="timeline-dot" style="background: var(--accent-teal); box-shadow: 0 0 0 2px var(--accent-teal);"></div>
-                        <div class="timeline-content">
-                            <div class="timeline-year">June 1999 - Nov 2000</div>
-                            <h4 class="timeline-title">Computer Coordinator (CE) and Member CCCC</h4>
-                            <div class="timeline-org">IIT Kanpur</div>
-                        </div>
-                    </div>
-
-                    <div class="timeline-item">
-                        <div class="timeline-dot" style="background: var(--accent-teal); box-shadow: 0 0 0 2px var(--accent-teal);"></div>
-                        <div class="timeline-content">
-                            <div class="timeline-year">Aug 1996 - July 1997</div>
-                            <h4 class="timeline-title">Member, DPGC</h4>
-                            <div class="timeline-org">Department of Civil Engineering, IIT Kanpur</div>
-                        </div>
-                    </div>
-
-                    <div class="timeline-item">
-                        <div class="timeline-dot" style="background: var(--accent-teal); box-shadow: 0 0 0 2px var(--accent-teal);"></div>
-                        <div class="timeline-content">
-                            <div class="timeline-year">Aug 1994 - July 1996</div>
-                            <h4 class="timeline-title">Member, DUGC</h4>
-                            <div class="timeline-org">Department of Civil Engineering, IIT Kanpur</div>
-                        </div>
-                    </div>
-
-                    <div class="timeline-item">
-                        <div class="timeline-dot" style="background: var(--accent-teal); box-shadow: 0 0 0 2px var(--accent-teal);"></div>
-                        <div class="timeline-content">
-                            <div class="timeline-year">March 1994 - March 1995</div>
-                            <h4 class="timeline-title">Warden</h4>
-                            <div class="timeline-org">Hall V, IIT Kanpur</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+<section style="padding-top: 20px;">
+<div class="container">
+<div style="display: flex; flex-direction: column; gap: 40px;">
+<!-- Educational Qualifications -->
+<div>
+<h3 class="cat-title serif-heading" style="margin-top: 0;"><i class="fas fa-graduation-cap" style="color: var(--accent-gold); margin-right: 8px;"></i> Educational Qualifications</h3>
+<div class="timeline-wrapper">
+<ul style="list-style-type: disc; padding-left: 20px; line-height: 1.6; margin: 0;">
+    <li style="margin-bottom: 12px;"><strong>Nov 2000 - Nov 2001 &amp; May-July 2002:</strong> Post Doctoral Research, University of Karlsruhe, Germany. <span style="font-size: 0.9rem; color: var(--text-body);">Late Quaternary history and paleoclimatic reconstruction in Thar desert through lacustrine sequences in western Rajasthan, India.</span></li>
+    <li style="margin-bottom: 12px;"><strong>1989 - 1992:</strong> Doctor of Philosophy (Ph.D.), University of Cambridge, UK. <span style="font-size: 0.9rem; color: var(--text-body);">Fluvial Geomorphology and Sedimentology.</span></li>
+    <li style="margin-bottom: 12px;"><strong>1984 - 1987:</strong> Master of Technology (M.Tech), University of Roorkee, India. <span style="font-size: 0.9rem; color: var(--text-body);">Applied Geology.</span></li>
+    <li style="margin-bottom: 12px;"><strong>1981 - 1984:</strong> Bachelor of Science (B.Sc. Hons.), Patna University, India. <span style="font-size: 0.9rem; color: var(--text-body);">Geology Honours.</span></li>
+    <li style="margin-bottom: 12px;"><strong>1979 - 1981:</strong> Intermediate in Science (I.Sc.), Patna University, India.</li>
+    <li><strong>1979:</strong> Secondary School Certificate, Bihar Secondary Exam. Board, India.</li>
+</ul>
+</div>
+</div>
+<!-- Professional Experience -->
+<div>
+<h3 class="cat-title serif-heading"><i class="fas fa-briefcase" style="color: var(--accent-blue); margin-right: 8px;"></i> Professional Experience</h3>
+<div class="timeline-wrapper">
+<ul style="list-style-type: disc; padding-left: 20px; line-height: 1.6; margin: 0;">
+    <li style="margin-bottom: 12px;"><strong>Aug 2014 - Present:</strong> HAG Professor, Department of Earth Sciences, IIT Kanpur.</li>
+    <li style="margin-bottom: 12px;"><strong>April 2014 - July 2014:</strong> Professor, Department of Earth Sciences, IIT Kanpur.</li>
+    <li style="margin-bottom: 12px;"><strong>Dec 2005 - April 2014:</strong> Professor, Department of Civil Engineering, IIT Kanpur.</li>
+    <li style="margin-bottom: 12px;"><strong>Oct 2001 - Dec 2005:</strong> Associate Professor, Department of Civil Engineering, IIT Kanpur.</li>
+    <li style="margin-bottom: 12px;"><strong>Dec 1995 - Sept 2001:</strong> Assistant Professor, Department of Civil Engineering, IIT Kanpur.</li>
+    <li style="margin-bottom: 12px;"><strong>June 1994 - Nov 1995:</strong> Lecturer, Department of Civil Engineering, IIT Kanpur.</li>
+    <li><strong>April 1993 - June 1994:</strong> Scientist, National Institute of Hydrology, Roorkee.</li>
+</ul>
+</div>
+</div>
+<!-- Administrative Experience -->
+<div>
+<h3 class="cat-title serif-heading"><i class="fas fa-sitemap" style="color: var(--accent-teal); margin-right: 8px;"></i> Administrative Experience</h3>
+<div class="timeline-wrapper">
+<ul style="list-style-type: disc; padding-left: 20px; line-height: 1.6; margin: 0;">
+    <li style="margin-bottom: 12px;"><strong>Feb 2014 - Feb 2017:</strong> Founder Head of Department, Department of Earth Sciences, IIT Kanpur.</li>
+    <li style="margin-bottom: 12px;"><strong>Oct 2011 - Sept 2012:</strong> Chairman, Senate Post-Graduate Committee (SPGC), IIT Kanpur.</li>
+    <li style="margin-bottom: 12px;"><strong>Sept 2011 - Aug 2012:</strong> DPGC Convener, Department of Civil Engineering, IIT Kanpur.</li>
+    <li style="margin-bottom: 12px;"><strong>Aug 2006 - Nov 2007:</strong> Chairman, Students' Placement Committee, IIT Kanpur.</li>
+    <li style="margin-bottom: 12px;"><strong>Oct 2006 - Sept 2007:</strong> DPGC Convener, Department of Civil Engineering, IIT Kanpur.</li>
+    <li style="margin-bottom: 12px;"><strong>May 2004 - 2010:</strong> Professor In-Charge, Geosciences Laboratory, Civil Engg., IIT Kanpur.</li>
+    <li style="margin-bottom: 12px;"><strong>Oct 2003 - Sept 2005:</strong> Member, Senate Library Committee, IIT Kanpur.</li>
+    <li style="margin-bottom: 12px;"><strong>Oct 2002 - Sept 2003:</strong> Chairman, Senate Library Committee, IIT Kanpur.</li>
+    <li style="margin-bottom: 12px;"><strong>June 1999 - Nov 2000:</strong> Computer Coordinator (CE) and Member CCCC, IIT Kanpur.</li>
+    <li style="margin-bottom: 12px;"><strong>Aug 1996 - July 1997:</strong> Member, DPGC, Department of Civil Engineering, IIT Kanpur.</li>
+    <li style="margin-bottom: 12px;"><strong>Aug 1994 - July 1996:</strong> Member, DUGC, Department of Civil Engineering, IIT Kanpur.</li>
+    <li><strong>March 1994 - March 1995:</strong> Warden, Hall V, IIT Kanpur.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
 </section>
-
 <!-- Footer -->
 <footer>
     <div class="container footer-grid">
         <div class="footer-brand">
-            <h3>Prof. Rajiv Sinha</h3>
-            <p>Department of Earth Sciences<br>Indian Institute of Technology Kanpur<br>Kanpur - 208016, Uttar Pradesh, India</p>
+            <h3>Rajiv Sinha</h3>
+            <p>303B Western Lab Extention<br>Department of Earth Sciences<br>Indian Institute of Technology Kanpur<br>Kanpur - 208016, Uttar Pradesh, India</p>
             <div class="footer-socials">
                 <a href="mailto:rsinha@iitk.ac.in" title="Email"><i class="fas fa-envelope"></i></a>
                 <a href="https://scholar.google.com/citations?user=VkRcwwEAAAAJ&hl=en&oi=ao" target="_blank" title="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
@@ -373,17 +223,15 @@
             <ul class="footer-links">
                 <li><a href="teaching.html">Courses Taught</a></li>
                 <li><a href="students.html">PhD & Master's Scholars</a></li>
-                <li><a href="Thesis.html">Thesis Supervised</a></li>
                 <li><a href="outreach.html">Outreach & Media</a></li>
                 <li><a href="lab_page/HB_new.html" target="_blank">Research Labs</a></li>
             </ul>
         </div>
     </div>
     <div class="footer-bottom">
-        <p>&copy; 2026 Prof. Rajiv Sinha. Department of Earth Sciences, IIT Kanpur. All Rights Reserved.</p>
+        <p>&copy; 2026 Rajiv Sinha. Department of Earth Sciences, IIT Kanpur. All Rights Reserved.</p>
     </div>
 </footer>
-
 <script src="script.js"></script>
 </body>
 </html>

@@ -8,74 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="nav.css">
-    <style>
-        .decade-head {
-            display: flex;
-            align-items: center;
-            margin: 40px 0 20px 0;
-            padding-bottom: 10px;
-            border-bottom: 2px solid var(--accent-gold);
-        }
-        .decade-head .num {
-            font-family: 'Merriweather', serif;
-            font-weight: 700;
-            font-size: 1.6rem;
-            color: var(--primary-dark);
-            margin-right: 15px;
-        }
-        .decade-head .n {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            font-size: 0.85rem;
-            color: #718096;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-        .ledger-row {
-            display: flex;
-            align-items: flex-start;
-            padding: 15px;
-            background: white;
-            border: 1px solid var(--border-color);
-            border-radius: 6px;
-            margin-bottom: 15px;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
-        .ledger-row:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-        }
-        .ledger-row .yr {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            font-size: 0.9rem;
-            font-weight: 700;
-            color: var(--accent-gold);
-            width: 120px;
-            flex-shrink: 0;
-            padding-top: 2px;
-        }
-        .ledger-row .desc {
-            font-size: 0.95rem;
-            color: var(--text-dark);
-            line-height: 1.5;
-            flex: 1;
-        }
-        .ledger-row.ongoing {
-            border-left: 4px solid #38bdf8;
-        }
-        .ledger-row.ongoing .yr {
-            color: #38bdf8;
-        }
-        @media (max-width: 768px) {
-            .ledger-row {
-                flex-direction: column;
-            }
-            .ledger-row .yr {
-                width: auto;
-                margin-bottom: 8px;
-            }
-        }
-    </style>
+    <style></style>
 </head>
 <body>
 
@@ -128,10 +61,7 @@
                     <a href="research_expertise.html" class="dropdown-item"><i class="fas fa-microscope"></i><span>Research Expertise</span></a>
                     <a href="research.html" class="dropdown-item"><i class="fas fa-journal-whills"></i><span>Journal Publications</span></a>
                     <a href="Peer_review_books.html" class="dropdown-item"><i class="fas fa-book"></i><span>Books & Chapters</span></a>
-                    <a href="Citations.html" class="dropdown-item"><i class="fas fa-chart-line"></i><span>Citation Impact</span></a>
                     <a href="grants.html" class="dropdown-item"><i class="fas fa-hand-holding-usd"></i><span>Grants & Projects</span></a>
-                    <a href="conferences.html" class="dropdown-item"><i class="fas fa-users"></i><span>Conferences & Talks</span></a>
-                    <a href="invited_lectures.html" class="dropdown-item"><i class="fas fa-microphone"></i><span>Invited Lectures</span></a>
                 </div>
             </li>
             <li class="nav-dropdown">
@@ -143,7 +73,6 @@
                 <div class="publication-dropdown">
                     <a href="teaching.html" class="dropdown-item"><i class="fas fa-book-open"></i><span>Courses Taught</span></a>
                     <a href="students.html" class="dropdown-item"><i class="fas fa-user-friends"></i><span>Students & Scholars</span></a>
-                    <a href="Thesis.html" class="dropdown-item"><i class="fas fa-graduation-cap"></i><span>Thesis Supervised</span></a>
                 </div>
             </li>
             <li><a href="outreach.html" class="nav-link"><i class="fas fa-globe-asia"></i><span>Outreach & Media</span></a></li>
@@ -152,7 +81,7 @@
 </nav>
 
 <!-- Page Header -->
-<section style="background: var(--bg-card); border-bottom: 1px solid var(--border-color); padding: 40px 8%;">
+<section style="background: var(--bg-card); border-bottom: 1px solid var(--border-color); padding: 40px 8% 20px 8%;">
     <div class="container">
         <span class="section-tag">Research & Consultancy</span>
         <h2 class="section-title serif-heading">Grants & Consultancy</h2>
@@ -172,28 +101,28 @@
 </section>
 
 <!-- Content Section -->
-<section style="padding: 40px 8% 60px 8%;">
+<section style="padding: 20px 8% 60px 8%;">
     <div class="container">
-        <section style="margin-bottom: 60px;">
-            <h3 style="font-size: 1.8rem; font-weight: 700; color: var(--primary-dark); margin-bottom: 5px; font-family: 'Merriweather', serif;">
+        <div style="margin-bottom: 40px;">
+            <h3 style="font-size: 1.8rem; font-weight: 700; color: var(--primary-dark); margin-top: 0px; margin-bottom: 5px; font-family: 'Merriweather', serif;">
                 <i class="fas fa-flask" style="color: var(--accent-gold); margin-right: 10px;"></i>Sponsored Projects
             </h3>
-            <p style="color: #718096; font-size: 0.95rem; margin-bottom: 20px;">Completed and ongoing, grouped by decade of completion (or current phase for ongoing work).</p>
+            <p style="color: #718096; font-size: 0.95rem; margin-bottom: 10px;">Completed and ongoing projects.</p>
             <div id="ledger-sponsored"></div>
-        </section>
+        </div>
 
-        <section>
-            <h3 style="font-size: 1.8rem; font-weight: 700; color: var(--primary-dark); margin-bottom: 5px; font-family: 'Merriweather', serif;">
+        <div>
+            <h3 style="font-size: 1.8rem; font-weight: 700; color: var(--primary-dark); margin-top: 0; margin-bottom: 5px; font-family: 'Merriweather', serif;">
                 <i class="fas fa-handshake" style="color: var(--accent-gold); margin-right: 10px;"></i>Consultancy Projects
             </h3>
-            <p style="color: #718096; font-size: 0.95rem; margin-bottom: 20px;">Applied and technical consultancy for government bodies, industry, and international agencies.</p>
+            <p style="color: #718096; font-size: 0.95rem; margin-bottom: 10px;">Applied and technical consultancy for government bodies, industry, and international agencies.</p>
             <div id="ledger-consultancy"></div>
-        </section>
+        </div>
     </div>
 </section>
 
 <!-- Footer -->
-<footer>
+<footer style="padding-top: 20px;">
     <div class="container footer-grid">
         <div class="footer-brand">
             <h3>Prof. Rajiv Sinha</h3>
@@ -219,7 +148,6 @@
             <ul class="footer-links">
                 <li><a href="teaching.html">Courses Taught</a></li>
                 <li><a href="students.html">PhD & Master's Scholars</a></li>
-                <li><a href="Thesis.html">Thesis Supervised</a></li>
                 <li><a href="outreach.html">Outreach & Media</a></li>
                 <li><a href="lab_page/HB_new.html" target="_blank">Research Labs</a></li>
             </ul>
@@ -332,35 +260,22 @@ var CONSULTANCY = [
 (function(){
     "use strict";
 
-    function decadeLabel(y){
-        if (y >= 9000) return "Ongoing";
-        if (y < 2000) return "1990s";
-        if (y < 2010) return "2000s";
-        if (y < 2020) return "2010s";
-        return "2020s";
-    }
-
     function renderLedger(containerId, data){
         var container = document.getElementById(containerId);
-        var sorted = data.slice().sort(function(a,b){ return a.sortY - b.sortY; });
-        var groups = {};
-        var order = [];
-        sorted.forEach(function(item){
-            var label = decadeLabel(item.sortY);
-            if (!groups[label]) { groups[label] = []; order.push(label); }
-            groups[label].push(item);
+        // Reverse order (newest first)
+        var sorted = data.slice().sort(function(a,b){ return b.sortY - a.sortY; });
+        var html = '<ul style="list-style: none; padding-left: 0; margin-left: 0; margin-top: 5px; margin-bottom: 0; line-height: 1.5; color: var(--text-main);">';
+        sorted.forEach(function(item, index){
+            var yearHtml = '<strong style="color: var(--accent-gold);">' + item.year + '</strong>';
+            if (item.ongoing) {
+                yearHtml = '<strong style="color: #38bdf8;">' + item.year + '</strong>';
+            }
+            html += '<li style="position: relative; padding-left: 28px; margin-bottom: 8px;">' +
+                    '<span style="position: absolute; left: 0; color: var(--text-main);">' + (index + 1) + '.</span>' +
+                    yearHtml + ': ' + item.t + 
+                    '</li>';
         });
-        var html = '';
-        order.forEach(function(label){
-            var items = groups[label];
-            html += '<div class="decade-head"><span class="num">' + label + '</span><span class="n">' + items.length + (items.length === 1 ? ' project' : ' projects') + '</span></div>';
-            items.forEach(function(item){
-                html += '<div class="ledger-row' + (item.ongoing ? ' ongoing' : '') + '">' +
-                    '<div class="yr">' + (item.ongoing ? '<i class="fas fa-circle" style="font-size:0.5rem; margin-right:5px; position:relative; top:-2px;"></i>' : '') + item.year + '</div>' +
-                    '<div class="desc">' + item.t + '</div>' +
-                '</div>';
-            });
-        });
+        html += '</ul>';
         container.innerHTML = html;
     }
 
